@@ -18,11 +18,25 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+
+    $name = $faker->name;
+
+    $days = ['M', 'T', 'W', 'Th', 'F', 'S', 'Su'];
+
     return [
-        'name' => $faker->name,
+        'name' => $name,
+        'lastname' => $faker->lastName(),
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
+
+        'slug' => Str::slug($name),
+        'phone' => $faker->e164PhoneNumber(),
+        'birthday_date' => $faker->dateTimeThisCentury(),
+        'presentation' => $faker->realText(250),
+        'detailed_description' => $faker->realText(500),
+        'is_available' => $faker->boolean(),
+        'business_days' => implode($faker->randomElements($days, $faker->numberBetween(0, count($days)))),
     ];
 });
