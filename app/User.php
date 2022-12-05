@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App;
 
 use App\models\Inbox;
 use App\models\Sponsor;
