@@ -15,6 +15,15 @@ class CreateInboxesTable extends Migration
     {
         Schema::create('inboxes', function (Blueprint $table) {
             $table->id();
+
+            $table->string('nickname', 32);
+            $table->string('title', 32);
+            $table->text('content')->nullable();
+            $table->string('email', 64);
+            $table->string('phone', 16);
+
+            $table->foreignId('user_id')->constrained();
+
             $table->timestamps();
         });
     }
