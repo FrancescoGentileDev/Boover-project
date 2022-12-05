@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::middleware('auth')->
-namespace('Admin')->
-name('admin.')->
-prefix('admin')->
+namespace('Dashboard')->
+name('dashboard.')->
+prefix('dashboard')->
 group(function () {
     Route::get('/', function() {
-        return view('admin.index');
+        return view('dashboard.index');
     })->name('index');
 });
 
