@@ -14,13 +14,13 @@ class CreateReviewsTable extends Migration
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->id();            
+            $table->id();
             $table->string('nickname',32);
             $table->string('title',32);
             $table->text('description');
             $table->string('image');
-            $table->integer('vote');            
-            $table->foreingId('user_id')->constrained();
+            $table->integer('vote');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
