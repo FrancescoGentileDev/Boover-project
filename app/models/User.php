@@ -1,8 +1,9 @@
 <?php
 
-namespace App;
+namespace App\models;
 
 use App\models\Inbox;
+use App\models\Sponsor;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -49,5 +50,10 @@ class User extends Authenticatable
     public function skills()
     {
         return $this->belongsToMany(Skill::class);
+    }
+
+    public function sponsors()
+    {
+        return $this->belongsToMany(Sponsor::class);
     }
 }
