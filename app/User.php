@@ -41,7 +41,13 @@ class User extends Authenticatable
 
     // ELoquent Relationships
 
-    public function inboxes() {
+    public function inboxes()
+    {
         return $this->hasMany(Inbox::class);
+    }
+
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class);
     }
 }
