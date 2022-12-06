@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c822cde6c8bb4d5a30f1d6e09f9761f",
+    "content-hash": "5ed4741a40b1bf432cea3a3f1b7ec62f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2351,6 +2351,61 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "sh-sabbir/faker-php-avatar",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sh-sabbir/FakerPHP-Avatar.git",
+                "reference": "5ae0ff562e2232cac85ea2ebbe73225158852f2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sh-sabbir/FakerPHP-Avatar/zipball/5ae0ff562e2232cac85ea2ebbe73225158852f2a",
+                "reference": "5ae0ff562e2232cac85ea2ebbe73225158852f2a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "fakerphp/faker": "~1",
+                "php": "^5.4 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sabbir\\Faker\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sabbir Hasan",
+                    "email": "sabbirshouvo@gmail.com",
+                    "homepage": "https://iamsabbir.dev"
+                }
+            ],
+            "description": "A provider for FakerPHP/Faker to generate Avatar Based on DiceBear",
+            "keywords": [
+                "DiceBear",
+                "avatar",
+                "avatar-library",
+                "avatar-provider",
+                "faker",
+                "provider"
+            ],
+            "support": {
+                "issues": "https://github.com/sh-sabbir/FakerPHP-Avatar/issues",
+                "source": "https://github.com/sh-sabbir/FakerPHP-Avatar/tree/master"
+            },
+            "time": "2022-02-24T07:07:53+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -7074,7 +7129,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "sh-sabbir/faker-php-avatar": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
