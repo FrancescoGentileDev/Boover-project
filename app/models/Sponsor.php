@@ -13,6 +13,6 @@ class Sponsor extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withPivot('expire_date', 'created_at');
     }
 }
