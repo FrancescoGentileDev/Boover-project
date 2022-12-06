@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         // $this->call(InboxesTableSeeder::class);
-        $users = factory(App\User::class, 10)->create();
+        $users = factory(App\User::class, 20)->create();
         foreach ($users as $user) {
             $user->save();
         }
