@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SkillUserSeeder::class);
         $this->call(SponsorSeeder::class);
         $this->call(SponsorUserSeeder::class);
+        $this->call(ReviewSeeder::class);
 
 
     }
