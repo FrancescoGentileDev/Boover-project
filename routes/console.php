@@ -34,15 +34,10 @@ Artisan::command('skilltest', function (Faker $faker) {
         ['Sport di Squadra', 'Discipline Olimpiche', 'Lezioni di Scacchi', 'Sport Invernali'], // Sport e Hobby
         ['Altro'], // Altro
     ];
+    foreach($skills as $skill=> $groups) {
 
-    foreach ($skills as $skill => $i) {
-        $this->comment($i);
-        // $addSkill = new Skill();
-        // $addSkill->name = $skill;
-        // $addSkill->category_id =
-        //     $addSkill->slug = Str::slug($addSkill->name);
-        // $addSkill->description = $faker->realText(256);
-        // $addSkill->image = $faker->image();
-        // $addSkill->save();
-    };
+        foreach($groups as $group) {
+
+        };
+    }
 });

@@ -17,7 +17,7 @@ class SkillSeeder extends Seeder
     {
         //
         // Il commento di fianco indica la Category di appartenenza di quelle Skills
-        $skills = [
+        $groups = [
             ['Gaming', 'Brand Identity', 'Social Media', 'Moda e Accessori'], // Grafica e Design
             ['Pubbliche Relazioni', 'E-Commerce', 'Web Analytics', 'Display Advertising'], // Marketing
             ['Blog Post', 'Traduzione di Testi', 'Scrittura Creativa', 'Case Study'], // Scrittura e Traduzione
@@ -28,15 +28,17 @@ class SkillSeeder extends Seeder
             ['Sport di Squadra', 'Discipline Olimpiche', 'Lezioni di Scacchi', 'Sport Invernali'], // Sport e Hobby
             ['Altro'], // Altro
         ];
+        foreach ($groups as $group => $skills) {
 
-        foreach ($skills as $skill) {
-            $addSkill = new Skill();
-            $addSkill->name = $skill;
-            $addSkill->category_id =
+            foreach ($skills as $skill) {
+                $addSkill = new Skill();
+                $addSkill->name = $skill;
+                $addSkill->category_id = $group + 1 ;
                 $addSkill->slug = Str::slug($addSkill->name);
-            $addSkill->description = $faker->realText(256);
-            $addSkill->image = $faker->image();
-            $addSkill->save();
+                $addSkill->description = $faker->realText(256);
+                $addSkill->image = $faker->image();
+                $addSkill->save();
+            };
         }
     }
 }
