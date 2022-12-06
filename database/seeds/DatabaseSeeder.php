@@ -13,14 +13,19 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         // $this->call(InboxesTableSeeder::class);
-        $users = factory(App\User::class, 20)->create();
+        $users = factory(App\User::class, 50)->create();
         foreach ($users as $user) {
             $user->save();
         }
-
         $inboxes = factory(App\models\Inbox::class, 30)->create();
         foreach ($inboxes as $inbox) {
             $inbox->save();
         }
+        $this->call(CategoryTableSeeder::class);
+        $this->call(SkillSeeder::class);
+        $this->call(SkillUserSeeder::class);
+
+
+
     }
 }
