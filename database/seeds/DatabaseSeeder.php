@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\User;
 class DatabaseSeeder extends Seeder
 {
+
     /**
      * Seed the application's database.
      *
@@ -11,6 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $admin = new User();
+        $admin->name = 'admin';
+        $admin->password = '$2y$10$9g6Jf09cuegp1SnkkDMdteUnLnUuL.0TJJZKykT0BsoOJcvIw2Wei';
+        $admin->email = 'admin@admin.it';
+        $admin->save();
         // $this->call(UsersTableSeeder::class);
         // $this->call(InboxesTableSeeder::class);
         $users = factory(App\User::class, 50)->create();
