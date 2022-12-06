@@ -4,6 +4,7 @@ namespace App;
 
 use App\models\Inbox;
 use App\models\Sponsor;
+use App\models\Skill;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
