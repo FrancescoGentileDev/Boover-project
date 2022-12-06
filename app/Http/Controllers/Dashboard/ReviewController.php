@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
-use App\Review;
+use App\Http\Controllers\Controller;
+use App\models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
