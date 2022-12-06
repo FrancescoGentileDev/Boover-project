@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(InboxesTableSeeder::class);
         $users = factory(App\User::class, 50)->create();
         foreach ($users as $user) {
+            $user->avatar = $this->getAvatar($user->id);
             $user->save();
         }
         $inboxes = factory(App\models\Inbox::class, 30)->create();
@@ -34,4 +35,13 @@ class DatabaseSeeder extends Seeder
 
 
     }
+    public function getAvatar($id) {
+        $gender = ['men', 'women'];
+        $baseUrl = 'https://randomuser.me/api/portraits/';
+
+        return $baseUrl . $gender[rand(0,1)] . '/'. $id . '.jpg';
+
+
+    }
+
 }
