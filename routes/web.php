@@ -20,9 +20,7 @@ namespace('Dashboard')->
 name('dashboard.')->
 prefix('dashboard')->
 group(function () {
-    Route::get('/', function() {
-        return view('dashboard.index');
-    })->name('index');
+    Route::get('/', 'DashboardController@index');
 });
 
 Route::get('{any?}', function () {
