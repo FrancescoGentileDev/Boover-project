@@ -24,7 +24,7 @@ group(function () {
 
     Route::get('reviews', 'ReviewController@index')->name('reviews');
 
-    Route::resource('inboxes', 'InboxController')->except(['update', 'edit']);
+    Route::resource('inboxes', 'InboxController@index')->except(['update', 'edit']);
 
     Route::get('profile', 'UserController@profile')->name('profile');
     Route::post('profile', 'UserController@updateProfile')->name('profile.update');
