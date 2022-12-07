@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Controller;
 use App\models\Inbox;
 use Illuminate\Http\Request;
 
@@ -55,10 +55,6 @@ class InboxController extends Controller
      * @param  \App\models\Inbox  $inbox
      * @return \Illuminate\Http\Response
      */
-    public function edit(Inbox $inbox)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -67,11 +63,6 @@ class InboxController extends Controller
      * @param  \App\models\Inbox  $inbox
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Inbox $inbox)
-    {
-        //
-    }
-
     /**
      * Remove the specified resource from storage.
      *

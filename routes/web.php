@@ -24,13 +24,13 @@ group(function () {
 
     Route::get('reviews', 'ReviewController@index')->name('reviews');
 
-    Route::resource('inboxes', 'InboxController@index')->except(['update', 'edit']);
+    Route::resource('inboxes', 'InboxController@index')->except(['update', 'edit', 'create', 'store']);
 
-    Route::get('profile', 'UserController@profile')->name('profile');
-    Route::post('profile', 'UserController@updateProfile')->name('profile.update');
+    Route::get('profile', 'ProfileController@profile')->name('profile');
+    Route::post('profile', 'ProfileController@updateProfile')->name('profile.update');
 
-    Route::get('profile/sponsor', 'UserController@sponsor')->name('sponsor');
-    Route::post('profile/sponsor', 'UserController@addToSponsor')->name('profile.sponsor');
+    Route::get('profile/sponsor', 'ProfileController@sponsor')->name('sponsor');
+    Route::post('profile/sponsor', 'ProfileController@addToSponsor')->name('profile.sponsor');
 
 });
 
