@@ -221,7 +221,7 @@
 
   <div>
     <div class="px-8 md:px-0 lg:pl-64 container mx-auto">
-        @yield('content');
+        @yield('content')
     </div>
   </div>
 
