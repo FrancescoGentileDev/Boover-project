@@ -28,7 +28,7 @@ group(function () {
     Route::resource('inboxes', 'InboxController@index')->except(['update', 'edit', 'create', 'store']);
 
     Route::get('profile', 'ProfileController@profile')->name('profile');
-    Route::post('profile', 'ProfileController@updateProfile')->name('profile.update');
+    Route::match(['put','patch'],'profile', 'ProfileController@updateProfile')->name('profile.update');
 
     Route::get('profile/sponsor', 'ProfileController@sponsor')->name('sponsor');
     Route::post('profile/sponsor', 'ProfileController@addToSponsor')->name('profile.sponsor');
