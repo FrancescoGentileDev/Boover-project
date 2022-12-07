@@ -86,9 +86,9 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/chart.js/dist/chart.js":
+/***/ "./node_modules/chart.js/dist/Chart.js":
 /*!*********************************************!*\
-  !*** ./node_modules/chart.js/dist/chart.js ***!
+  !*** ./node_modules/chart.js/dist/Chart.js ***!
   \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -38035,7 +38035,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Chart = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/chart.js");
+var Chart = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Chart.js");
 
 /***/ }),
 
