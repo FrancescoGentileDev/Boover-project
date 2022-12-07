@@ -20,6 +20,7 @@ namespace('Dashboard')->
 name('dashboard.')->
 prefix('dashboard')->
 group(function () {
+
     Route::get('/', 'DashboardController@index');
 
     Route::get('reviews', 'ReviewController@index')->name('reviews');
@@ -31,6 +32,8 @@ group(function () {
 
     Route::get('profile/sponsor', 'ProfileController@sponsor')->name('sponsor');
     Route::post('profile/sponsor', 'ProfileController@addToSponsor')->name('profile.sponsor');
+
+    Route::get('stats','StatisticsController@index')->name('stats');
 
 });
 
