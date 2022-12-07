@@ -38046,7 +38046,7 @@ var Chart = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Ch
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Desktop\Boolean\Boover-project\resources\js\backOffice.js */"./resources/js/backOffice.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/php_project/PROGETTO-FINALE/Boover-project/resources/js/backOffice.js */"./resources/js/backOffice.js");
 
 
 /***/ })

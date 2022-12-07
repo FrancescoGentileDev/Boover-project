@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-   <p class="text-4xl">GUEST</p>
+   <p class="text-2xl">GUEST</p>
 </body>
 </html>
