@@ -18,7 +18,6 @@ class SponsorUserSeeder extends Seeder
         foreach($users as $user) {
             $sponsor = Sponsor::inRandomOrder()->first();
             $newDate = date("Y-m-d H:i:s", strtotime("+{$sponsor->duration} hours"));
-            $user->sponsors->expire_date = $newDate;
             $user->sponsors()->attach($sponsor->id, ['expire_date' => $newDate, 'created_at' => date('Y-m-d H:i:s')]);
         }
 
