@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/backOffice.js') }}"></script>
+    @yield('head')
     <title>Document</title>
 
 </head>
@@ -229,4 +230,5 @@
 
 
 </body>
+@yield('styles')
 </html>
