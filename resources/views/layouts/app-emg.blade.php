@@ -16,8 +16,6 @@
         :pageTitle="$pageTitle ?? 'Boover'"
     />
 
-
-
     <main>
         @yield('content')
     </main>

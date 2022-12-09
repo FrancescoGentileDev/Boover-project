@@ -7,4 +7,6 @@
 
 @section('content')
   <p>This is the inbox index</p>
+
+  @dump($inboxes)
 @endsection

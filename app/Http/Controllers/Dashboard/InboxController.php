@@ -14,7 +14,10 @@ class InboxController extends Controller
      */
     public function index()
     {
-        //
+
+      return view('dashboard.inboxes.index', [
+        'inboxes' => Inbox::all(),
+      ]);
     }
 
     /**
@@ -46,7 +49,7 @@ class InboxController extends Controller
      */
     public function show(Inbox $inbox)
     {
-        //
+      return view('dashboard.inboxes.show', compact('inbox'));
     }
 
     /**
