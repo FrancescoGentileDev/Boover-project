@@ -13,7 +13,7 @@ class ReviewController extends Controller
     public function index()
     {
         //
-        $reviews = Review::all();
+        $reviews = Review::paginate(10);
         return view('dashboard.reviews.index', compact('reviews'));
     }
 
