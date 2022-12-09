@@ -19,7 +19,7 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 
     Route::get('/', 'DashboardController@index');
 
-    Route::get('reviews', 'ReviewController@index')->name('reviews');
+    Route::get('reviews/{page_number}', 'ReviewController@index')->name('reviews');
 
     Route::resource('inboxes', 'InboxController@index')->except(['update', 'edit', 'create', 'store']);
 

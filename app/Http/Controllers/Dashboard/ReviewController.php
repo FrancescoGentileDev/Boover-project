@@ -10,9 +10,10 @@ use App\models\Review;
 class ReviewController extends Controller
 {
     //
-    public function index()
+    public function index($page_num)
     {
         //
+        //Review::getPaginator()->setCurrentPage($page_num);
         $reviews = Review::paginate(10);
         return view('dashboard.reviews.index', compact('reviews'));
     }
