@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [  "./resources/views/**/*.blade.php",
+    mode: 'jit',
+    // These paths are just examples, customize them to match your project structure
+    purge: [  "./resources/views/**/*.blade.php",
   "./resources/**/*.js",
   "./resources/**/*.vue",],
   theme: {
