@@ -7,7 +7,7 @@ use App\models\Skill;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
 class ProfileController extends Controller
 {
     //
@@ -26,13 +26,15 @@ class ProfileController extends Controller
 
     public function updateProfile(Request $request)
     {
+
         $request -> validate([
-            'name' => 'required',
-            'lastname' => 'required',
-            'presentation' => 'required',
+            'name' => 'required | string | max:255 | min:3  ',
+            'lastname' => 'required | string | max:255 | min:3 ',
+            'presentation' => 'required | string | max:255 | min:60 ',
             'phone' => 'required| numeric| digits_between:10,15| ',
-            'detailed_description' => 'required',
+            'detailed_description' => 'required | string | min:3 ',
             'skills_id' => ['required', 'array', 'min:1', 'max:5', 'exists:skills,id'],
+            'avatar' => ' file|mimes:jpg,jpeg,png,gif|max:1024',
         ]);
         $logged = Auth::user()->id;
         $user = User::find($logged);
@@ -41,8 +43,12 @@ class ProfileController extends Controller
         $user->presentation = $request->presentation;
         $user->phone = $request->phone;
         $user->detailed_description = $request->detailed_description;
+        if($request->hasFile('avatar')){
+            $path = Storage::putFile('uploads/avatars', $request->file('avatar'));
+            $user->avatar = asset('storage/' . $path);
+        }
         $user->skills()->sync($request->skills_id);
         $user->save();
-        return redirect()->route('dashboard.profile');
+        return redirect()->route('dashboard.profile')->with('success', 'Profile updated successfully');
     }
 }
