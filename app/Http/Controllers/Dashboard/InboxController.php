@@ -75,6 +75,7 @@ class InboxController extends Controller
      */
     public function destroy(Inbox $inbox)
     {
-        //
+      Inbox::destroy($inbox);
+      return redirect()->route('dashboard.inboxes.index');
     }
 }

@@ -16,6 +16,8 @@
 
       <p>Phone: {{ $inbox->phone }}</p>
       <p>Email: {{ $inbox->email }}</p>
+
+      <a href="{{ route('dashboard.inboxes.destroy', $inbox->id) }}">DELETE</a>
     </section>
   </article>
 
