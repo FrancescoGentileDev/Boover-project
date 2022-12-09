@@ -6,7 +6,18 @@
 )
 
 @section('content')
-  <p>This is the inbox show</p>
+  <article>
+    <h3>{{ $inbox->title }}</h3>
+    <p>by {{ $inbox->nickname }}</p>
+    <p>{{ $inbox->content }}</p>
 
-  @dump($inbox)
+    <section>
+      <h4>Contacts</h4>
+
+      <p>Phone: {{ $inbox->phone }}</p>
+      <p>Email: {{ $inbox->email }}</p>
+    </section>
+  </article>
+
+  {{-- @dump($inbox) --}}
 @endsection

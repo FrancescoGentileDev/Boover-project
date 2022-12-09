@@ -6,16 +6,15 @@
 )
 
 @section('content')
-  {{-- <h2>Your Inbox</h2>
-  @foreach ($inboxes as $inbox)
-    <article>
-      <h3>{{ $inbox.title }}</h3>
-      <p>by {{ $inbox.nickname }}</p>
+  <h2>Your Inbox</h2>
 
+  <ul>
+    @foreach ($inboxes as $inbox)
+      <li>
+        <p><a href="{{ route('dashboard.inboxes.show', $inbox->id) }}">{{ $inbox->title}}</a> <em>by {{ $inbox->nickname }}</em></p>
+      </li>
+    @endforeach
+  </ul>
 
-    </article>
-  @endforeach --}}
-
-
-  @dump($inboxes)
+  {{-- @dump($inboxes) --}}
 @endsection
