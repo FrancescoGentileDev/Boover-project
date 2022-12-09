@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="w-1/3" style="margin-top: 2rem">
+            <div class="w-full" style="margin-top: 2rem">
                 <label class="uppercase text-sm text-gray-600 font-bold" for="Multiselect">Select multiple roles</label>
                 <div class="relative flex w-full mt-4">
                     <select id="select-role" name="roles[]" multiple placeholder="Select roles..." autocomplete="off"
@@ -138,7 +138,7 @@
 @endsection
 
 @section('styles')
-    <style>
+    <style lang="scss">
         .ql-toolbar {
             --tw-bg-opacity: 1;
             background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
@@ -150,6 +150,7 @@
         }
 
         .ts-control {
+            padding: 0.75rem 0.5rem;
             --tw-bg-opacity: 1;
             background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
             --tw-text-opacity: 1;

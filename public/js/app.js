@@ -49722,14 +49722,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/styles.scss":
+/*!************************************!*\
+  !*** ./resources/sass/styles.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!***********************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/app.css ***!
-  \***********************************************************/
+/*!****************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/styles.scss ./resources/css/app.css ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! D:\Desktop\Boolean\Boover-project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\Desktop\Boolean\Boover-project\resources\sass\styles.scss */"./resources/sass/styles.scss");
 module.exports = __webpack_require__(/*! D:\Desktop\Boolean\Boover-project\resources\css\app.css */"./resources/css/app.css");
 
 
