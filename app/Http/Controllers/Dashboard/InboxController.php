@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\models\Inbox;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InboxController extends Controller
 {
@@ -16,7 +17,7 @@ class InboxController extends Controller
     {
 
       return view('dashboard.inboxes.index', [
-        'inboxes' => Inbox::all(),
+        'inboxes' => Inbox::where('user_id', Auth::id())->get(),
       ]);
     }
 

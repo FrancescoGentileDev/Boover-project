@@ -6,7 +6,16 @@
 )
 
 @section('content')
-  <p>This is the inbox index</p>
+  {{-- <h2>Your Inbox</h2>
+  @foreach ($inboxes as $inbox)
+    <article>
+      <h3>{{ $inbox.title }}</h3>
+      <p>by {{ $inbox.nickname }}</p>
+
+
+    </article>
+  @endforeach --}}
+
 
   @dump($inboxes)
 @endsection
