@@ -5,13 +5,15 @@
 
     {{-- CSS --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    {{-- JS --}}
     <script src="{{ asset('js/backOffice.js') }}"></script>
 
     <title>{{ $title ?? 'Boover Project' }}</title>
 </head>
 <body>
     <x-app-header
-        :titleHeading="$titleHeading ?? 'Boover'"
+        :pageTitle="$pageTitle ?? 'Boover'"
     />
 
     <main>
