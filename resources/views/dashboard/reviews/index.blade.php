@@ -27,7 +27,8 @@
                         Review:
                     </div>
                     <div>
-                        <span>Vote: </span> <span>{{ $review->vote }}</span>
+                        <span>Vote: </span> <span>{{ $review->vote }}</span><span> | rilasciata il:
+                        </span><span>{{ $review->created_at }}</span>
                     </div>
                     <div class="w-auto">
                         {{ $review->description }}
