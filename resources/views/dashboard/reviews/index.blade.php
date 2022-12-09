@@ -5,6 +5,14 @@
         Reviews List:
     </div>
 
+    <div class="mb-3">
+        <button>Prima Pagina</button>
+        <button>Indietro</button>
+        pagCorrente/totalePagine
+        <button>Avanti</button>
+        <button>Ultima Pagina</button>
+    </div>
+
     <div class="px-5">
         @foreach ($reviews as $review)
             <div class="mb-4 p-5 border-2">
