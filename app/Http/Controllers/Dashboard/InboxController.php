@@ -59,6 +59,10 @@ class InboxController extends Controller
      * @param  \App\models\Inbox  $inbox
      * @return \Illuminate\Http\Response
      */
+      public function edit(Inbox $inbox)
+      {
+
+      }
 
     /**
      * Update the specified resource in storage.
@@ -67,6 +71,11 @@ class InboxController extends Controller
      * @param  \App\models\Inbox  $inbox
      * @return \Illuminate\Http\Response
      */
+      public function update(Request $request, Inbox $inbox)
+      {
+
+      }
+
     /**
      * Remove the specified resource from storage.
      *
