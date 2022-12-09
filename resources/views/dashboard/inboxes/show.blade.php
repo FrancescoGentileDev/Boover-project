@@ -17,11 +17,8 @@
       <p>Phone: {{ $inbox->phone }}</p>
       <p>Email: {{ $inbox->email }}</p>
 
-      <form method="POST" action="{{ route('dashboard.inboxes.destroy', $inbox->id) }}">
-        @csrf
-        @method('DELETE')
-        <button type="submit">DELETE</button>
-      </form>
+      <x-delete-form :destroyRoute="route('dashboard.inboxes.destroy', $inbox->id)" />
+
     </section>
   </article>
 
