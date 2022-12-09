@@ -9,29 +9,36 @@
     <h2 class="text-4xl  lg:text-5xl font-bold leading-tight">
         Your Profile
     </h2>
-    <div class="px-5 grid gap-8 grid-cols-1 py-12 mt-6 text-gray-900 ">
+
+    <div class="px-5 grid gap-8 grid-cols-1 py-12 text-gray-900" style="margin-bottom: 10rem">
         <div class="flex justify-center items-start">
             <div class="flex flex-col justify-center items-center">
 
                 <div class="mt-16 md:mt-0 text-center">
                     @if ($user->avatar)
-                        <img class="w-64 rounded-full" src="{{ $user->avatar }}" alt="Contact" />
+                        <img id="avatar" class="w-64 rounded-full " src="{{ $user->avatar }}" alt="Contact" style="aspect-ratio: 1 / 1; object-fit: cover"/>
                     @else
-                        <img src="https://dummyimage.com/500x300" alt="Contact" />
+                        <img id="avatar" src="https://dummyimage.com/500x300" alt="Contact" class="w-64 rounded-full " style="aspect-ratio: 1 / 1; object-fit: cover" />
                     @endif
                 </div>
 
             </div>
         </div>
-        <form class="flex flex-col gap-8">
+        <form method="POST" id='form' action="{{ route('dashboard.profile.update') }}" enctype="multipart/form-data"
+            class="flex flex-col gap-8">
+            @csrf
+            @method('PUT')
+            <input type="file" name="avatar" id="avatar" accept="image/*" onchange="loadfile(event)">
             <div class="flex flex-col md:flex-row w-full gap-3">
                 <div class="flex w-full flex-col">
                     <span class="uppercase text-sm text-gray-600 font-bold">
                         Name
                     </span>
+                    <span class="text-red-500">ciao</span>
                     <input
                         class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400"
-                        type="text" placeholder="Enter your Name" required />
+                        type="text" placeholder="Enter your Name" name='name' required
+                        value="{{ old('name', $user->name) }}" />
                 </div>
                 <div class="flex flex-col w-full">
                     <span class="uppercase text-sm text-gray-600 font-bold">
@@ -39,7 +46,8 @@
                     </span>
                     <input
                         class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400"
-                        type="text" placeholder="Enter your Name" required />
+                        type="text" placeholder="Enter your Name" name='lastname' required
+                        value="{{ old('lastname', $user->lastname) }}" />
                 </div>
             </div>
             <div class="">
@@ -48,7 +56,8 @@
                 </span>
                 <input
                     class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400"
-                    type="email" placeholder="A short Bio about you" required />
+                    type="text" placeholder="A short Bio about you" name='presentation' required
+                    value="{{ old('presentation', $user->presentation) }}" />
             </div>
             <div class="">
                 <span class="uppercase text-sm text-gray-600 font-bold">
@@ -56,28 +65,33 @@
                 </span>
                 <input
                     class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400"
-                    type="phone" placeholder="Enter your Phone Number including country code" required />
+                    type="phone" placeholder="Enter your Phone Number including country code" name='phone' required
+                    value="{{ old('phone', $user->phone) }}" />
             </div>
 
             <span class="uppercase text-sm text-gray-600 font-bold">
                 Description
             </span>
-            <div class="pb-3">
+            <textarea name="detailed_description" id="detailed_description" cols="30" rows="10"
+                class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400">
+
+            </textarea>
+            {{-- <div class="pb-3">
                 <div id='editor' style="min-height: 300px; max-height: 600px;"
                     class="w-full bg-gray-200 text-gray-900 rounded-b-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400">
                 </div>
-            </div>
+            </div> --}}
 
             <div class="w-full" style="margin-top: 2rem">
-                <label class="uppercase text-sm text-gray-600 font-bold" for="Multiselect">Select multiple roles</label>
+                <label class="uppercase text-sm text-gray-600 font-bold" for="Multiselect">Select your Skills</label>
                 <div class="relative flex w-full mt-4">
-                    <select id="select-role" name="roles[]" multiple placeholder="Select roles..." autocomplete="off"
-                        class="w-full"
-                        multiple>
-                        <option value="1">super admin</option>
-                        <option value="2">admin</option>
-                        <option value="3">writer</option>
-                        <option value="4">user</option>
+                    <select id="skills" name="skills_id[]" multiple placeholder="Select skills..." autocomplete="off"
+                        class="w-full" multiple>
+                        {{-- @foreach ($skills as $skill)
+                            <option value="{{ $skill->id }}" {{ $user->skills->contains($skill) ? 'selected' : '' }}>
+                                {{ $skill->name }}
+                            </option>
+                        @endforeach --}}
                     </select>
                 </div>
             </div>
@@ -86,7 +100,7 @@
                 <button
                     class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline hover:bg-indigo-700"
                     type="submit">
-                    Send Message
+                    Save
                 </button>
             </div>
         </form>
@@ -101,39 +115,45 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
     <script>
-        new TomSelect('#select-role', {
+        var skills = {!! $skills !!}
+        new TomSelect('#skills', {
             plugins: [
                 'remove_button',
                 'checkbox_options'
             ],
+            options: skills,
             create: false,
             maxItems: 5,
-            valueField: 'value',
-            labelField: 'text',
-            searchField: ['text'],
-
-            options: [{
-                    value: '1',
-                    text: 'super admin'
-                },
-                {
-                    value: '2',
-                    text: 'admin'
-                },
-                {
-                    value: '3',
-                    text: 'writer'
-                },
-                {
-                    value: '4',
-                    text: 'user'
-                }
-            ],
+            valueField: 'id',
+            labelField: 'name',
+            searchField: ['name'],
         });
+
+        let tom = document.getElementById('skills').tomselect
+        tom.setValue({!! $user->skills->pluck('id') !!})
+
 
         var quill = new Quill('#editor', {
             theme: 'snow'
         });
+        var textarea = document.querySelector('textarea[name=detailed_description]');
+
+        textarea.value = `{!! old('detailed_description', $user->detailed_description) !!}`
+        skills()
+
+        function loadfile(event) {
+            var avatar = document.getElementById('avatar');
+            avatar.src = URL.createObjectURL(event.target.files[0]);
+            avatar.onload = function() {
+                URL.revokeObjectURL(avatar.src) // free memory
+            }
+        }
+        function skills() {
+            return false
+            var skills = document.getElementById('skills');
+            console.log(skills)
+
+        }
     </script>
 @endsection
 
@@ -160,7 +180,5 @@
             outline: 2px solid transparent;
             outline-offset: 2px;
         }
-
-
     </style>
 @endsection
