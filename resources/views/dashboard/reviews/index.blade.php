@@ -5,9 +5,9 @@
         Reviews List:
     </div>
 
-    <ul>
+    <div class="px-5">
         @foreach ($reviews as $review)
-            <div class="mb-4 p-5">
+            <div class="mb-4 p-5 border-2">
                 <div class="mb-1">
                     <div class="text-green-800 text-xl">
                         Review Title:
@@ -26,11 +26,14 @@
                     <div class="text-green-800">
                         Review:
                     </div>
+                    <div>
+                        <span>Vote: </span> <span>{{ $review->vote }}</span>
+                    </div>
                     <div class="w-auto">
                         {{ $review->description }}
                     </div>
                 </div>
             </div>
         @endforeach
-    </ul>
+    </div>
 @endsection
