@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,49 +9,47 @@
     <script src="{{ asset('js/backOffice.js') }}"></script>
     <title>Document</title>
     <style>
-
-        body{
+        body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        .sidebar-container{
+
+        .sidebar-container {
             width: 100%;
-            height:100vh;
+            height: 100vh;
             display: flex;
             justify-content: space-between;
         }
 
-        .content{
+        .content {
             min-width: 80%;
             padding: 2rem 0;
         }
 
-        .sidebar{
+        .sidebar {
             min-width: 15%;
             background-color: rgb(239, 239, 239);
             padding: 1rem;
         }
 
-        ul{
+        ul {
             list-style-type: none;
             padding: 0;
 
         }
 
-        li{
+        li {
             background-color: rgb(225, 225, 225);
             padding: 0.5rem;
             margin: 0.5rem 0;
             border-radius: 0.3pc;
         }
 
-        h1{
+        h1 {
             font-size: 2vw;
             font-family: sans-serif;
         }
-
-
     </style>
 </head>
 
@@ -59,42 +58,43 @@
 
 
 
-<div class="sidebar-container">
+    <div class="sidebar-container">
 
-  <!-- Sidebar -->
-  <div class="sidebar">
+        <!-- Sidebar -->
+        <div class="sidebar">
 
-    <h1 class="text-green-500">Dashboard</h1>
+            <h1 class="text-green-500">Dashboard</h1>
 
-    <nav>
-        <ul>
-            <li>
-               linkExample
-               {{--  <a href="{{ route('/path')}}" >link1</a> --}}
-            </li>
+            <nav>
+                <ul>
+                    <li>
+                        linkExample
+                        {{--  <a href="{{ route('/path')}}" >link1</a> --}}
+                    </li>
 
-            <li>
-               linkExample
-             {{--    <a href="{{ route('/path')}}" >link2</a> --}}
-            </li>
+                    <li>
+                        linkExample
+                        {{--    <a href="{{ route('/path')}}" >link2</a> --}}
+                    </li>
 
-            <li>
-               linkExample
-             {{--    <a href="{{ route('/path')}}" >link3</a> --}}
-            </li>
-        </ul>
-    </nav>
+                    <li>
+                        linkExample
+                        {{--    <a href="{{ route('/path')}}" >link3</a> --}}
+                    </li>
+                </ul>
+            </nav>
 
-  </div>
+        </div>
 
-  <!-- Content -->
-   <div class="content">
-    @yield('content');
-   </div>
+        <!-- Content -->
+        <div class="content">
+            @yield('content')
+        </div>
 
-</div>
+    </div>
 
 
 
 </body>
+
 </html>
