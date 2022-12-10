@@ -29,15 +29,5 @@ class ProfileController extends Controller
 
     }
 
-    public function sponsor()
-    {
-        //
-        $sponsors = Sponsor::all();
-        return view('dashboard.profile.sponsor', compact('sponsors'));
-    }
 
-    public function addToSponsor()
-    {
-        //
-    }
 }
