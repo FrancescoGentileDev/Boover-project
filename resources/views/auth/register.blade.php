@@ -6,12 +6,12 @@
             <form class="w-full max-w-md" action="{{ route('register') }}" method="POST" enctype='multipart/form-data'>
                 @csrf
                 <div class="flex items-center justify-center mt-6">
-                    <a href="#"
+                    <a href="/login"
                         class="w-1/3 pb-4 font-medium text-center text-gray-500 capitalize border-b dark:border-gray-400 dark:text-gray-300">
                         sign in
                     </a>
 
-                    <a href="#"
+                    <a href="/register"
                         class="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-blue-500 dark:border-blue-400 dark:text-white">
                         sign up
                     </a>
@@ -93,8 +93,8 @@
                 </div>
 
                 {{-- PROFILE PHOTO --}}
-                {{-- <label for="dropzone-file"
-                    class="flex items-center px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-lg cursor-pointer dark:border-gray-600 dark:bg-gray-900">
+                <label for="dropzone-file" style="justify-content: space-between;"
+                    class="flex items-center justify-between px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-lg cursor-pointer dark:border-gray-600 dark:bg-gray-900">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300 dark:text-gray-500" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -102,9 +102,10 @@
                     </svg>
 
                     <h2 class="mx-3 text-gray-400">Profile Photo</h2>
+                    <img id="avatar" class="w-12" src="" alt="">
 
-                    <input id="dropzone-file" name='avatar' type="file" accept="image/*" class="hidden" />
-                </label> --}}
+                    <input id="dropzone-file" name='avatar' type="file" accept="image/*" class="hidden" onchange="loadfile(event)"/>
+                </label>
 
                 {{-- PASSWORD --}}
                 <div class="relative flex items-center mt-4">
@@ -149,7 +150,7 @@
                     </button>
 
                     <div class="mt-6 text-center ">
-                        <a href="#" class="text-sm text-blue-500 hover:underline dark:text-blue-400">
+                        <a href="/login" class="text-sm text-blue-500 hover:underline dark:text-blue-400">
                             Already have an account?
                         </a>
                     </div>
@@ -168,6 +169,16 @@
             submitButton.disabled = true;
             submitButton.innerText = 'Loading...';
         });
+
+        function loadfile(event) {
+            console.log(event.target.files[0])
+            let avatar = document.getElementById('avatar');
+            avatar.src = URL.createObjectURL(event.target.files[0]);
+            avatar.onload = function() {
+                URL.revokeObjectURL(avatar.src) // free memory
+            }
+        }
+
     </script>
 
 @endsection
