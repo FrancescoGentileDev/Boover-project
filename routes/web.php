@@ -15,15 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::middleware('auth')->
-namespace('Dashboard')->
-name('dashboard.')->
-prefix('dashboard')->
-group(function () {
+Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('dashboard')->group(function () {
 
     Route::get('/', 'DashboardController@index');
 
-    Route::get('reviews', 'ReviewController@index')->name('reviews');
+    Route::get('reviews/{page_number}', 'ReviewController@index')->name('reviews');
 
     Route::resource('inboxes', 'InboxController@index')->except(['update', 'edit', 'create', 'store']);
 
@@ -33,8 +29,7 @@ group(function () {
     Route::get('profile/sponsor', 'ProfileController@sponsor')->name('sponsor');
     Route::post('profile/sponsor', 'ProfileController@addToSponsor')->name('profile.sponsor');
 
-    Route::get('stats','StatisticsController@index')->name('stats');
-
+    Route::get('stats', 'StatisticsController@index')->name('stats');
 });
 
 Route::get('{any?}', function () {
