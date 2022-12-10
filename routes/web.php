@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('dashboard')->group(function () {
 
-    Route::get('/', 'DashboardController@index');
+    Route::get('/', 'DashboardController@index')->name('home');
 
     Route::get('reviews', 'ReviewController@index')->name('reviews');
 
@@ -30,6 +30,11 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
     Route::post('profile/sponsor', 'ProfileController@addToSponsor')->name('profile.sponsor');
 
     Route::get('stats', 'StatisticsController@index')->name('stats');
+
+    Route::any('{catchall}', function () {
+        return redirect()->back();
+    })->where('catchall', '.*');
+
 });
 
 Route::get('{any?}', function () {
