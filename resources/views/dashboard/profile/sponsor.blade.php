@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-        <section class="text-gray-600 body-font overflow-hidden">
+    <section class="text-gray-600 body-font overflow-hidden">
+
+        @if ( Session::has('sponsorError'))
+            <h1> Errore{{ Session::has('sponsorError') }} </h1>
+        @endif
+
+
 
             {{-- intro --------------------------------------}}
             <div class="container px-5 py-24 mx-auto">
@@ -49,12 +55,22 @@
                             </span>{{ $sponsor_card->duration . ' ore' }} di boost
                             </p>
 
-                            <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
-                                Scopri di più
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                            </button>
+                            <form action='{{ route('dashboard.profile.sponsor.store') }}' method="POST" >
+
+                                @csrf
+
+                                <input type="hidden" name="sponsor" value="{{ $sponsor_card -> id }}" />
+
+                                <button onclick="toggleModal()" class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
+                                    Scopri di più
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+
+                                </button>
+
+                            </form>
+
 
                             <p class="text-xs text-gray-500 mt-3">Dai un boost al tuo profilo.</p>
 
@@ -62,10 +78,25 @@
                     </div>
                 @endforeach
                 {{-- sponsors cards loop END --------------------------------------}}
-
             </div>
 
-        </section>
+
+
+                <div id="modal" onclick="toggleModal()" class="fixed hidden right-0 top-0 w-[calc(100%-16rem)] translate-x-64 inset-0 bg-gray-500 bg-opacity-75 transition-opacity "></div>
+
+
+
+
+
+     </section>
+
+     <script>
+
+        let modal = document.getElementById('modal');
+
+        function toggleModal(){
+            modal.classList.toggle('hidden');
+        }
+
+     </script>
 @endsection
-
-

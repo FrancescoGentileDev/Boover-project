@@ -30,7 +30,7 @@ class SponsorController extends Controller
 
          if ($sponsorsRecords->expire_date > date('Y-m-d H:i:s') ) {
             # code...
-            return redirect()->route('dashboard.profile.sponsor.store')->with('justsponsor','sponzorizzazione fallita');
+            return redirect()->route('dashboard.profile.sponsor.store')->with('sponsorError','sponsorizzazione fallita');
         };
 
 
