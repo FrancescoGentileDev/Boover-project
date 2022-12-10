@@ -10,7 +10,7 @@ use App\models\Review;
 class ReviewController extends Controller
 {
     //
-    public function index($page_num)
+    public function index()
     {
         //
         //Review::getPaginator()->setCurrentPage($page_num);

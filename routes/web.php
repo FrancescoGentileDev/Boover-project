@@ -19,12 +19,12 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 
     Route::get('/', 'DashboardController@index');
 
-    Route::get('reviews/{page_number}', 'ReviewController@index')->name('reviews');
+    Route::get('reviews', 'ReviewController@index')->name('reviews');
 
     Route::resource('inboxes', 'InboxController@index')->except(['update', 'edit', 'create', 'store']);
 
     Route::get('profile', 'ProfileController@profile')->name('profile');
-    Route::match(['put','patch'],'profile', 'ProfileController@updateProfile')->name('profile.update');
+    Route::match(['put', 'patch'], 'profile', 'ProfileController@updateProfile')->name('profile.update');
 
     Route::get('profile/sponsor', 'ProfileController@sponsor')->name('sponsor');
     Route::post('profile/sponsor', 'ProfileController@addToSponsor')->name('profile.sponsor');
