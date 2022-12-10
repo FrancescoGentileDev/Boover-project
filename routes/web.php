@@ -21,7 +21,7 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 
     Route::get('reviews', 'ReviewController@index')->name('reviews');
 
-    Route::resource('inboxes', 'InboxController@index')->except(['update', 'edit', 'create', 'store']);
+    Route::resource('inboxes', 'InboxController')->except(['update', 'edit', 'create', 'store']);
 
     Route::get('profile', 'ProfileController@profile')->name('profile');
     Route::match(['put', 'patch'], 'profile', 'ProfileController@updateProfile')->name('profile.update');
