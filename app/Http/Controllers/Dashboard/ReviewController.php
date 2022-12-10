@@ -13,7 +13,6 @@ class ReviewController extends Controller
     public function index()
     {
         //
-        //Review::getPaginator()->setCurrentPage($page_num);
         $reviews = Review::paginate(10);
         return view('dashboard.reviews.index', compact('reviews'));
     }
