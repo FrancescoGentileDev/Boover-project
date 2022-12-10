@@ -5,14 +5,6 @@
         Reviews List:
     </div>
 
-    {{-- <div class="ml-5 mb-3">
-        <button class="mx-2">Prima Pagina</button>
-        <button class="mx-2">Indietro</button>
-        <span>pagCorrente/totalePagine</span>
-        <button class="mx-2">Avanti</button>
-        <button class="mx-2">Ultima Pagina</button>
-    </div> --}}
-
     <div>
         {{ $reviews->links() }}
     </div>
