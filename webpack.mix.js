@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const { memoize } = require('lodash');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/backOffice.js', 'public/js')
+    .sass("resources/sass/styles.scss", "public/css")
     .postCss("resources/css/app.css", "public/css", [
         require("tailwindcss"),
       ]);

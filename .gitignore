@@ -1,5 +1,7 @@
 /node_modules
 /public/hot
+/public/css
+/public/js
 /public/storage
 /storage/*.key
 /vendor
@@ -11,5 +13,14 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 
-
 .EliGolam-README.md
+
+public/css/app.css
+public/css/styles.css
+public/css/app.css
+public/mix-manifest.json
+/public/fonts/vendor
+public/js/app.js
+public/js/backOffice.js
+public/js/app.js
+
