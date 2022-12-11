@@ -15,9 +15,11 @@
 
 <body>
 
-
-    <div style="height: 100vh; z-index: 30"
-        class="flex flex-col w-64 px-4 py-8 bg-white border-r dark:bg-gray-900 dark:border-gray-700 fixed h-screen">
+    <div id="sidebar"
+        class="flex flex-col w-48 md:w-64 px-4 py-8 bg-white border-r dark:bg-gray-900 dark:border-gray-700 fixed h-screen z-30 transition-all -left-48 duration-200 md:left-0">
+        <button id="button-sidebar " class=" md:hidden absolute top-0 left-48" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars text-3xl m-4"></i>
+        </button>
         <h2 class="text-3xl font-semibold text-center text-gray-800 dark:text-white">Boover!</h2>
 
         <div class="flex flex-col items-center mt-6 -mx-2">
@@ -96,13 +98,25 @@
         </div>
     </div>
 
-    <div class="px-8 md:px-0 container mx-auto pl-64" style="padding-left: 16rem">
+    <div class="px-8 md:px-0 container mx-auto md:pl-64">
         @yield('content')
     </div>
 
 
+    <script>
+        let sidebar = document.getElementById('sidebar');
+        function toggleSidebar() {
+            if (sidebar.classList.contains('-left-48')) {
+                sidebar.classList.remove('-left-48');
+                sidebar.classList.add('left-0');
+            } else {
+                sidebar.classList.remove('left-0');
+                sidebar.classList.add('-left-48');
+            }
 
 
+        }
+    </script>
 </body>
 @yield('styles')
 
