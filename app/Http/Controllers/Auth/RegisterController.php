@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Str;
 class RegisterController extends Controller
 {
     /*
@@ -81,8 +81,23 @@ class RegisterController extends Controller
             $path = Storage::putFile('uploads/avatars', $data['avatar']);
             $user->avatar = asset('storage/' . $path);
         }
+        $slug = $this->getSlug($user->name . ' ' . $user->lastname);
+        $user->slug = $slug;
         $user->save();
         return $user;
 
+    }
+
+    private function getSlug($fullname) {
+        $slug = Str::slug($fullname, '-');
+        $slugBase = $slug;
+        $userWithSlug = User::where('slug', $slug)->first();
+        $counter = 1;
+        while($userWithSlug) {
+            $slug = $slugBase . '-' . $counter;
+            $counter++;
+            $userWithSlug = User::where('slug', $slug)->first();
+        }
+        return $slug;
     }
 }

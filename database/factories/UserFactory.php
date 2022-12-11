@@ -20,16 +20,18 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
 
     $name = $faker->name;
+    $lastname = $faker->lastName;
+
     $days = ['M', 'T', 'W', 'Th', 'F', 'S', 'Su'];
 
     return [
         'name' => $name,
-        'lastname' => $faker->lastName(),
+        'lastname' => $lastname,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => bcrypt($faker->word()),
         'remember_token' => Str::random(10),
-        'slug' => Str::slug($name),
+        'slug' => getSlug($name . ' ' . $lastname),
         'phone' => $faker->e164PhoneNumber(),
         'birthday_date' => $faker->dateTimeThisCentury(),
         'presentation' => $faker->realText(250),
@@ -38,3 +40,15 @@ $factory->define(User::class, function (Faker $faker) {
         'business_days' => implode($faker->randomElements($days, $faker->numberBetween(0, count($days)))),
     ];
 });
+ function getSlug($fullname) {
+    $slug = Str::slug($fullname, '-');
+    $slugBase = $slug;
+    $userWithSlug = User::where('slug', $slug)->first();
+    $counter = 1;
+    while($userWithSlug) {
+        $slug = $slugBase . '-' . $counter;
+        $counter++;
+        $userWithSlug = User::where('slug', $slug)->first();
+    }
+    return $slug;
+}
