@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/dashboard/profile?newUser=true';
 
     /**
      * Create a new controller instance.
@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'birthday_date'=> ['required', 'date', 'before:today'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'avatar' => ['file', 'mimes:jpg,jpeg,png,gif', 'max:1024']
+            'avatar' => ['file', 'mimes:jpg,jpeg,png,gif', 'max:1024'],
         ]);
     }
 
@@ -75,6 +75,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'birthday_date' => $data['birthday_date'],
             'password' => Hash::make($data['password']),
+            'is_avaiable' => '0',
         ]);
         if (isset($data['avatar'])) {
             $path = Storage::putFile('uploads/avatars', $data['avatar']);
