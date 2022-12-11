@@ -14,46 +14,7 @@
 
 
 <body>
-  {{-- MODAL ALLERT --}}
-  @if(Request::get('newUser'))
-  <div class="relative flex justify-center">
 
-    <div id="modalNewUser"
-        class="fixed inset-0 z-10 overflow-y-auto"
-        aria-labelledby="modal-title" role="dialog" aria-modal="true"
-    >
-        <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
-            <div class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl rtl:text-right dark:bg-gray-900 sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
-                <div>
-                    <div class="flex items-center justify-center">
-                      <i class="fa-solid fa-triangle-exclamation text-5xl text-yellow-500"></i>
-                    </div>
-
-                    <div class="mt-2 text-center">
-                        <h3 class="text-lg font-medium leading-6 text-gray-800 capitalize dark:text-white" id="modal-title">Warning</h3>
-                        <p class="mt-2 text-md text-gray-500 dark:text-gray-800">
-                          If you do not complete this form, your account will remain invisible in the search, if you want to be found enter all the data and save
-                        </p>
-                    </div>
-                </div>
-
-                <div class="mt-5 sm:flex sm:items-center sm:justify-between">
-
-                    <div class="sm:flex sm:items-center justify-center w-full ">
-
-                        <button onclick="document.getElementById('modalNewUser').hidden = true" class="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-yellow-600 rounded-md sm:w-auto sm:mt-0 hover:bg-yellow-500 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-40">
-                          I read and acknowledged
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-@endif
 
   <div style="height: 100vh; z-index: 30" class="flex flex-col w-64 px-4 py-8 bg-white border-r dark:bg-gray-900 dark:border-gray-700 fixed h-screen">
     <h2 class="text-3xl font-semibold text-center text-gray-800 dark:text-white">Boover!</h2>
