@@ -14,31 +14,39 @@ class SponsorController extends Controller
     public function sponsor()
     {
         //
-        $user = Auth::user();
         $sponsors = Sponsor::all();
+        $logged = Auth::user()->id;
+        $user = User::find($logged);
+        $expireDate='';
 
-        return view('dashboard.profile.sponsor', compact('sponsors'));
+        $sponsorRecord = DB::table('sponsor_user')->where( 'user_id','=', $user->id )->orderByDesc('created_at')->first() ;
+
+
+         if ( $sponsorRecord == null ||  $sponsorRecord->expire_date < date('Y-m-d H:i:s') ) {
+            //
+            $isUserSponsorized = false;
+            //
+         } elseif ( $sponsorRecord->expire_date > date('Y-m-d H:i:s') ) {
+            //
+            $isUserSponsorized = true;
+            $expireDate = $sponsorRecord->expire_date;
+            //
+         }
+
+         /* dd($isUserSponsorized); */
+
+        return view('dashboard.profile.sponsor', compact('sponsors', 'isUserSponsorized','expireDate'));
     }
 
     public function addToSponsor(Request $request)
     {
         //
-
         $logged = Auth::user()->id;
         $user = User::find($logged);
-        $sponsorsRecords = DB::table('sponsor_user')->where( 'user_id','=', $logged )->orderByDesc('created_at')->first() ;
-
-         if ($sponsorsRecords->expire_date > date('Y-m-d H:i:s') ) {
-            # code...
-            return redirect()->route('dashboard.profile.sponsor.store')->with('sponsorError','sponsorizzazione fallita');
-        };
-
-
 
         $request->validate([
             'sponsor' => ['required', 'exists:sponsors,id']
         ]);
-
 
         $sponsor = Sponsor::find($request->sponsor);
 
@@ -47,6 +55,7 @@ class SponsorController extends Controller
 
         return redirect()->route('dashboard.profile.sponsor.store')->with('success','Sponsorizzazione aggiunta con successo!');
     }
+
 
 
 }
