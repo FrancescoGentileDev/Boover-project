@@ -26,8 +26,8 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
     Route::get('profile', 'ProfileController@profile')->name('profile');
     Route::match(['put', 'patch'], 'profile', 'ProfileController@updateProfile')->name('profile.update');
 
-    Route::get('profile/sponsor', 'ProfileController@sponsor')->name('sponsor');
-    Route::post('profile/sponsor', 'ProfileController@addToSponsor')->name('profile.sponsor');
+    Route::get('profile/sponsor', 'SponsorController@sponsor')->name('sponsor');
+    Route::post('profile/sponsor', 'SponsorController@addToSponsor')->name('profile.sponsor.store');
 
     Route::get('stats', 'StatisticsController@index')->name('stats');
 

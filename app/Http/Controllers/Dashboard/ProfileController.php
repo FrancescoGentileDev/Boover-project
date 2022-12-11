@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\models\Skill;
 use Illuminate\Http\Request;
 use App\User;
+use App\models\Sponsor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 class ProfileController extends Controller
