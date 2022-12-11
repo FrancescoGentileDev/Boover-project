@@ -20,7 +20,7 @@ class ProfileController extends Controller
         $user->skills->makeHidden(['created_at', 'updated_at', 'pivot', 'category_id', 'description', 'image', 'slug']); // hide pivot table
         $skills = Skill::all();
         $skills = $skills->makeHidden(['created_at', 'updated_at', 'category_id', 'description', 'image', 'slug']); // hide pivot table
-        return view('dashboard.profile', compact('user', 'skills'));
+        return view('dashboard.profile.profile', compact('user', 'skills'));
 
     }
 
@@ -38,11 +38,15 @@ class ProfileController extends Controller
         ]);
         $logged = Auth::user()->id;
         $user = User::find($logged);
-        $user->name = $request->name;
-        $user->lastname = $request->lastname;
-        $user->presentation = $request->presentation;
-        $user->phone = $request->phone;
-        $user->detailed_description = $request->detailed_description;
+        $user->make([
+            'name' => $request->name,
+            'lastname' => $request->lastname,
+            'presentation' => $request->presentation,
+            'phone' => $request->phone,
+            'detailed_description' => $request->detailed_description,
+            'is_avaiable' => '1',
+        ]);
+
         if($request->hasFile('avatar')){
             $path = Storage::putFile('uploads/avatars', $request->file('avatar'));
             $user->avatar = asset('storage/' . $path);
