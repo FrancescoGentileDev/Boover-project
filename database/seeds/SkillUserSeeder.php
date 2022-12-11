@@ -16,7 +16,7 @@ class SkillUserSeeder extends Seeder
         $users = User::all();
 
         foreach($users as $user) {
-           $skill = Skill::all()->random(1);
+           $skill = Skill::all()->random(5);
            $user->skills()->attach($skill);
         }
 

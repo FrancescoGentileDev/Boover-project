@@ -15,25 +15,25 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::middleware('auth')->
-namespace('Dashboard')->
-name('dashboard.')->
-prefix('dashboard')->
-group(function () {
+Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('dashboard')->group(function () {
 
-    Route::get('/', 'DashboardController@index');
+    Route::get('/', 'DashboardController@index')->name('home');
 
     Route::get('reviews', 'ReviewController@index')->name('reviews');
 
-    Route::resource('inboxes', 'InboxController@index')->except(['update', 'edit', 'create', 'store']);
+    Route::resource('inboxes', 'InboxController')->except(['update', 'edit', 'create', 'store']);
 
     Route::get('profile', 'ProfileController@profile')->name('profile');
-    Route::match(['put','patch'],'profile', 'ProfileController@updateProfile')->name('profile.update');
+    Route::match(['put', 'patch'], 'profile', 'ProfileController@updateProfile')->name('profile.update');
 
     Route::get('profile/sponsor', 'ProfileController@sponsor')->name('sponsor');
     Route::post('profile/sponsor', 'ProfileController@addToSponsor')->name('profile.sponsor');
 
-    Route::get('stats','StatisticsController@index')->name('stats');
+    Route::get('stats', 'StatisticsController@index')->name('stats');
+
+    Route::any('{catchall}', function () {
+        return redirect()->back();
+    })->where('catchall', '.*');
 
 });
 

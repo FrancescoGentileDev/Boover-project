@@ -6,78 +6,181 @@
 @endsection
 
 @section('content')
+    {{-- ERROR & Success ALLERT --}}
+    @if (\Session::has('success'))
+        <div
+            class="alert flex w-full fixed right-5 bottom-5 z-20 max-w-sm overflow-hidden bg-white rounded-lg shadow-lg border-2 border-green-500 dark:bg-gray-800">
+            <div class="flex items-center justify-center w-12 bg-green-500">
+                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+                </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+                <div class="mx-3">
+                    <span class="font-semibold text-emerald-500 dark:text-emerald-400">Success</span>
+                    <p class="text-sm text-gray-600 dark:text-gray-200">Your account was updated!</p>
+                </div>
+            </div>
+        </div>
+    @endif
+    @if ($errors->any())
+        <div
+            class="alert fixed flex right-5 bottom-5 w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 z-20">
+            <div class="flex items-center justify-center w-12 bg-red-500">
+                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
+                </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+                <div class="mx-3">
+                    <span class="font-semibold text-red-500 dark:text-red-400">Error</span>
+                    <p class="text-sm text-gray-600 dark:text-gray-200">
+                        There were some problems with your input.
+                    </p>
+                </div>
+            </div>
+        </div>
+    @endif
+    {{-- END ERROR ALLERT --}}
+
+
     <h2 class="text-4xl  lg:text-5xl font-bold leading-tight">
         Your Profile
     </h2>
-    <div class="px-5 grid gap-8 grid-cols-1 py-12 mt-6 text-gray-900 ">
+
+    <div class="px-5 grid gap-8 grid-cols-1 py-12 text-gray-900 " style="margin-bottom: 10rem">
         <div class="flex justify-center items-start">
             <div class="flex flex-col justify-center items-center">
 
                 <div class="mt-16 md:mt-0 text-center">
                     @if ($user->avatar)
-                        <img class="w-64 rounded-full" src="{{ $user->avatar }}" alt="Contact" />
+                        <img id="avatar" class="w-64 rounded-full " src="{{ $user->avatar }}" alt="Contact"
+                            style="aspect-ratio: 1 / 1; object-fit: cover" />
                     @else
-                        <img src="https://dummyimage.com/500x300" alt="Contact" />
+                        <img id="avatar" src="https://dummyimage.com/500x300" alt="Contact" class="w-64 rounded-full "
+                            style="aspect-ratio: 1 / 1; object-fit: cover" />
                     @endif
                 </div>
 
             </div>
         </div>
-        <form class="flex flex-col gap-8">
+        <form method="POST" id='form' action="{{ route('dashboard.profile.update') }}" enctype='multipart/form-data'
+            class="flex flex-col gap-8">
+            @csrf
+            @method('PUT')
+            <span class="uppercase text-sm text-gray-600 font-bold">
+                Upload Avatar
+                @error('avatar')
+                    <span class="text-red-500" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </span>
+            <input type="file" name="avatar" id="avatar" accept="image/*"  onchange="loadfile(event)">
             <div class="flex flex-col md:flex-row w-full gap-3">
                 <div class="flex w-full flex-col">
                     <span class="uppercase text-sm text-gray-600 font-bold">
                         Name
+                        @error('name')
+                            <span class="text-red-500" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </span>
                     <input
-                        class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400"
-                        type="text" placeholder="Enter your Name" required />
+                        class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                        @error('name') ring-2 ring-red-500 @enderror
+                        "
+                        type="text" placeholder="Enter your Name" name='name' required min="3" max="20"
+                        value="{{ old('name', $user->name) }}" />
                 </div>
                 <div class="flex flex-col w-full">
                     <span class="uppercase text-sm text-gray-600 font-bold">
                         Last Name
+                        @error('lastname')
+                            <span class="text-red-500" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </span>
                     <input
-                        class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400"
-                        type="text" placeholder="Enter your Name" required />
+                        class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                        @error('lastname') ring-2 ring-red-500 @enderror"
+                        type="text" placeholder="Enter your Name" name='lastname' required min="3" max="20"
+                        value="{{ old('lastname', $user->lastname) }}" />
                 </div>
             </div>
             <div class="">
                 <span class="uppercase text-sm text-gray-600 font-bold">
                     Bio
-                </span>
+                    @error('presentation')
+                        <span class="text-red-500" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    </span>
+                @enderror
                 <input
-                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400"
-                    type="email" placeholder="A short Bio about you" required />
+                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                    @error('presentation') ring-2 ring-red-500 @enderror"
+                    type="text" placeholder="A short Bio about you" name='presentation' required min="60" max="255"
+                    value="{{ old('presentation', $user->presentation) }}" />
             </div>
             <div class="">
                 <span class="uppercase text-sm text-gray-600 font-bold">
                     Phone Number
+                    @error('phone')
+                        <span class="text-red-500" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </span>
                 <input
-                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400"
-                    type="phone" placeholder="Enter your Phone Number including country code" required />
+                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                    @error('phone') ring-2 ring-red-500 @enderror"
+                    type="phone" placeholder="Enter your Phone Number including country code" name='phone' required min="9" max="20"
+                    value="{{ old('phone', $user->phone) }}" />
             </div>
 
             <span class="uppercase text-sm text-gray-600 font-bold">
                 Description
+                @error('detailed_description')
+                    <span class="text-red-500" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </span>
-            <div class="pb-3">
+            <textarea name="detailed_description" id="detailed_description" cols="30" rows="10" required min="60"
+                class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                @error('detailed_description') ring-2 ring-red-500 @enderror">
+
+            </textarea>
+            {{-- <div class="pb-3">
                 <div id='editor' style="min-height: 300px; max-height: 600px;"
                     class="w-full bg-gray-200 text-gray-900 rounded-b-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400">
                 </div>
-            </div>
+            </div> --}}
 
             <div class="w-full" style="margin-top: 2rem">
-                <label class="uppercase text-sm text-gray-600 font-bold" for="Multiselect">Select multiple roles</label>
+                <label class="uppercase text-sm text-gray-600 font-bold" for="Multiselect">Select your Skills</label>
+                @error('skills_id')
+                    <span class="text-red-500" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
                 <div class="relative flex w-full mt-4">
-                    <select id="select-role" name="roles[]" multiple placeholder="Select roles..." autocomplete="off"
-                        class="w-full"
-                        multiple>
-                        <option value="1">super admin</option>
-                        <option value="2">admin</option>
-                        <option value="3">writer</option>
-                        <option value="4">user</option>
+
+                    <select id="skills" name="skills_id[]" multiple placeholder="Select skills..." autocomplete="off"
+                        class="w-full
+                        @error('skills') ring-2 ring-red-500 @enderror" multiple>
+                        {{-- @foreach ($skills as $skill)
+                            <option value="{{ $skill->id }}" {{ $user->skills->contains($skill) ? 'selected' : '' }}>
+                                {{ $skill->name }}
+                            </option>
+                        @endforeach --}}
                     </select>
                 </div>
             </div>
@@ -86,7 +189,7 @@
                 <button
                     class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline hover:bg-indigo-700"
                     type="submit">
-                    Send Message
+                    Save
                 </button>
             </div>
         </form>
@@ -101,39 +204,47 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
     <script>
-        new TomSelect('#select-role', {
+        let skills = {!! $skills !!}
+        new TomSelect('#skills', {
             plugins: [
                 'remove_button',
                 'checkbox_options'
             ],
+            options: skills,
             create: false,
             maxItems: 5,
-            valueField: 'value',
-            labelField: 'text',
-            searchField: ['text'],
-
-            options: [{
-                    value: '1',
-                    text: 'super admin'
-                },
-                {
-                    value: '2',
-                    text: 'admin'
-                },
-                {
-                    value: '3',
-                    text: 'writer'
-                },
-                {
-                    value: '4',
-                    text: 'user'
-                }
-            ],
+            valueField: 'id',
+            labelField: 'name',
+            searchField: ['name'],
         });
 
-        var quill = new Quill('#editor', {
+        let tom = document.getElementById('skills').tomselect
+        tom.setValue({!! $user->skills->pluck('id') !!})
+
+
+        let quill = new Quill('#editor', {
             theme: 'snow'
         });
+        let textarea = document.querySelector('textarea[name=detailed_description]');
+
+        textarea.value = `{!! old('detailed_description', $user->detailed_description) !!}`
+
+        function loadfile(event) {
+            let avatar = document.getElementById('avatar');
+            avatar.src = URL.createObjectURL(event.target.files[0]);
+            avatar.onload = function() {
+                URL.revokeObjectURL(avatar.src) // free memory
+            }
+        }
+
+
+        let alert = document.querySelectorAll('.alert');
+        setTimeout(function() {
+            alert.forEach(element => {
+                element.remove();
+
+            });
+        }, 10000);
     </script>
 @endsection
 
@@ -148,7 +259,10 @@
             border-top-left-radius: 0.5rem;
 
         }
-
+        button[type='submit'][disabled] {
+            background-color: #a0aec0;
+            cursor: not-allowed;
+        }
         .ts-control {
             padding: 0.75rem 0.5rem;
             --tw-bg-opacity: 1;
@@ -160,7 +274,5 @@
             outline: 2px solid transparent;
             outline-offset: 2px;
         }
-
-
     </style>
 @endsection
