@@ -20,7 +20,7 @@ class ProfileController extends Controller
         $user->skills->makeHidden(['created_at', 'updated_at', 'pivot', 'category_id', 'description', 'image', 'slug']); // hide pivot table
         $skills = Skill::all();
         $skills = $skills->makeHidden(['created_at', 'updated_at', 'category_id', 'description', 'image', 'slug']); // hide pivot table
-        return view('dashboard.profile', compact('user', 'skills'));
+        return view('dashboard.profile.profile', compact('user', 'skills'));
 
     }
 
