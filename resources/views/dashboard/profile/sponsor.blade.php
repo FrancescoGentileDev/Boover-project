@@ -8,11 +8,16 @@
 @section('content')
 
 
-    {{-- @if ( Session::has('sponsorError'))
-    <h1> Errore{{ Session::has('sponsorError') }} </h1>
-    @endif --}}
+     @if ( \Session::has('error') )
 
-    @if ($isUserSponsorized)
+     <div class="alert alert-error shadow-lg">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <span>Error! Sponsorizzazione Fallita.</span>
+        </div>
+      </div>
+
+    @elseif ($isUserSponsorized)
 
         {{-- Vista per utenti con sponsorizzazione attiva --}}
         <section class="text-gray-600 body-font overflow-hidden">
@@ -24,7 +29,7 @@
             </div>
             @include('layouts.partials.sponsor.countdown');
         </section>
-    @else
+    @elseif (!$isUserSponsorized)
 
         {{-- Vista per utenti senza sponsorizzazione --}}
         <section class="text-gray-600 body-font overflow-hidden">
@@ -46,6 +51,7 @@
         </section>
 
     @endif
+
 
 
     <script>
