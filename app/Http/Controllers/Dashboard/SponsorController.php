@@ -33,7 +33,7 @@ class SponsorController extends Controller
             //
          }
 
-         /* dd($isUserSponsorized); */
+
 
         return view('dashboard.profile.sponsor', compact('sponsors', 'isUserSponsorized','expireDate'));
     }
@@ -44,18 +44,24 @@ class SponsorController extends Controller
         $logged = Auth::user()->id;
         $user = User::find($logged);
 
-        $request->validate([
-            'sponsor' => ['required', 'exists:sponsors,id']
-        ]);
+        $sponsorRecord = DB::table('sponsor_user')->where( 'user_id','=', $user->id )->orderByDesc('created_at')->first();
 
-        $sponsor = Sponsor::find($request->sponsor);
+        if ( $sponsorRecord == null ||  $sponsorRecord->expire_date < date('Y-m-d H:i:s') ) {
+            //
+            $request->validate([
+                'sponsor' => ['required', 'exists:sponsors,id']
+            ]);
 
-        $newDate = date("Y-m-d H:i:s", strtotime("+{$sponsor->duration} hours"));
-        $user->sponsors()->attach($sponsor->id, ['expire_date' => $newDate, 'created_at' => date('Y-m-d H:i:s')]);
+            $sponsor = Sponsor::find($request->sponsor);
+            $newDate = date("Y-m-d H:i:s", strtotime("+{$sponsor->duration} hours"));
+            $user->sponsors()->attach($sponsor->id, ['expire_date' => $newDate, 'created_at' => date('Y-m-d H:i:s')]);
 
-        return redirect()->route('dashboard.profile.sponsor.store')->with('success','Sponsorizzazione aggiunta con successo!');
+            return redirect()->route('dashboard.profile.sponsor.store')->with('success','Sponsorizzazione aggiunta con successo!');
+            //
+         } elseif ( $sponsorRecord->expire_date > date('Y-m-d H:i:s') ) {
+            //
+            return redirect()->route('dashboard.profile.sponsor.store')->with('error','Sponsorizzazione ');
+         }
+
     }
-
-
-
 }
