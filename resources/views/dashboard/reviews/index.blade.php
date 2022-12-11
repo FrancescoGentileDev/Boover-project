@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="text-3xl text-red-500 mb-5 pl-5">
+    <div class="text-3xl text-red-500 my-5 pl-5">
         Reviews List:
     </div>
 
-    <div>
+    <div class="mb-5">
         {{ $reviews->links() }}
     </div>
 
