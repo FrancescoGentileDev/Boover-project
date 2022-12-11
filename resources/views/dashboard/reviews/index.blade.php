@@ -5,7 +5,7 @@
         Reviews List:
     </div>
 
-    <div>
+    <div class="mb-5">
         {{ $reviews->links() }}
     </div>
 
