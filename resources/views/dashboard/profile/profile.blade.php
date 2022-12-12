@@ -7,51 +7,52 @@
 
 @section('content')
 
-      {{-- MODAL ALLERT --}}
-  @if(Request::get('newUser'))
-  <div class="relative flex justify-center">
+    {{-- MODAL ALLERT --}}
+    @if (Request::get('newUser') || Auth::user()->is_available == 0)
+        <div class="relative flex justify-center">
 
-    <div id="modalNewUser"
-        class="fixed inset-0 z-10 overflow-y-auto"
-        aria-labelledby="modal-title" role="dialog" aria-modal="true"
-    >
-        <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div id="modalNewUser" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
+                aria-modal="true">
+                <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-            <div class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl rtl:text-right dark:bg-gray-900 sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
-                <div>
-                    <div class="flex items-center justify-center">
-                      <i class="fa-solid fa-triangle-exclamation text-5xl text-yellow-500"></i>
-                    </div>
+                    <div
+                        class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-base-300 shadow-lg rounded-md sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                        <div>
+                            <div class="flex items-center justify-center">
+                                <i class="fa-solid fa-triangle-exclamation text-5xl text-yellow-500"></i>
+                            </div>
 
-                    <div class="mt-2 text-center">
-                        <h3 class="text-lg font-medium leading-6 text-gray-800 capitalize dark:text-white" id="modal-title">Warning</h3>
-                        <p class="mt-2 text-md text-gray-500 dark:text-gray-800">
-                          If you do not complete this form, your account will remain invisible in the search, if you want to be found enter all the data and save
-                        </p>
-                    </div>
-                </div>
+                            <div class="mt-2 text-center">
+                                <h3 class="text-lg font-medium leading-6 capitalize text-base-content"
+                                    id="modal-title">Warning</h3>
+                                <p class="mt-2 text-md text-base-content">
+                                    If you do not complete this form, your account will remain invisible in the search, if
+                                    you want to be found enter all the data and save
+                                </p>
+                            </div>
+                        </div>
 
-                <div class="mt-5 sm:flex sm:items-center sm:justify-between">
+                        <div class="mt-5 sm:flex sm:items-center sm:justify-between">
 
-                    <div class="sm:flex sm:items-center justify-center w-full ">
+                            <div class="sm:flex sm:items-center justify-center w-full ">
 
-                        <button onclick="document.getElementById('modalNewUser').hidden = true" class="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-yellow-600 rounded-md sm:w-auto sm:mt-0 hover:bg-yellow-500 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-40">
-                          I read and acknowledged
-                        </button>
+                                <button onclick="document.getElementById('modalNewUser').hidden = true"
+                                    class="w-full text-base-content px-4 py-2 mt-2 text-sm font-medium tracking-wide capitalize transition-colors duration-300 transform bg-yellow-600 rounded-md sm:w-auto sm:mt-0 hover:bg-yellow-500 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-40">
+                                    I read and acknowledged
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-@endif
+    @endif
 
     {{-- ERROR & Success ALLERT --}}
     @if (\Session::has('success'))
         <div
-            class="alert flex w-full fixed right-5 bottom-5 z-20 max-w-sm overflow-hidden bg-white rounded-lg shadow-lg border-2 border-green-500 dark:bg-gray-800">
+            class="alert flex w-full fixed right-5 bottom-5 z-20 max-w-sm overflow-hidden bg-white rounded-lg shadow-lg border-2  border-green-500 dark:bg-gray-800">
             <div class="flex items-center justify-center w-12 bg-green-500">
                 <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -89,9 +90,8 @@
     @endif
     {{-- END ERROR ALLERT --}}
 
-
-    <h2 class="text-4xl  lg:text-5xl font-bold leading-tight">
-        Your Profile
+    <h2 class="text-4xl lg:text-5xl text-center text-base-content font-bold leading-tight pt-7">
+        {{ $user->name . ' ' . $user->lastname }}
     </h2>
 
     <div class="px-5 grid gap-8 grid-cols-1 py-12 text-gray-900 " style="margin-bottom: 10rem">
@@ -108,7 +108,7 @@
 
             <div>
 
-                <div class="uppercase text-sm text-gray-600 font-bold text-center">
+                <div class="uppercase text-sm font-bold text-center text-secondary-content">
                     @error('avatar')
                         <span class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
@@ -119,7 +119,8 @@
                     onchange="loadfile(event)">
                 <div class="flex justify-center">
 
-                    <label for="avatar-input" class="label-image my-8 md:mt-0 text-center cursor-pointer relative inline-block"
+                    <label for="avatar-input"
+                        class="label-image my-8 md:mt-0 text-center cursor-pointer relative inline-block"
                         style="width: fit-content">
                         @if ($user->avatar)
                             <img id="avatar" class="w-64 rounded-full relative" src="{{ $user->avatar }}" alt="Contact"
@@ -128,19 +129,20 @@
                             <img id="avatar" src="https://dummyimage.com/500x300" alt="Contact"
                                 class="label-image w-64 rounded-full" style="aspect-ratio: 1 / 1; object-fit: cover" />
                         @endif
-                        <div class="w-full h-full z-40 bg-gray-600 absolute top-0 left-0 rounded-full opacity-0 transition-opacity hover:opacity-75
+                        <div
+                            class="w-full h-full z-40 bg-gray-600 absolute top-0 left-0 rounded-full opacity-0 transition-opacity hover:opacity-50
                             flex items-center justify-center text-white text-5xl
-                        " >
+                        ">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </div>
                     </label>
                 </div>
 
             </div>
-
+            {{-- name --}}
             <div class="flex flex-col md:flex-row w-full gap-3">
                 <div class="flex w-full flex-col">
-                    <span class="uppercase text-sm text-gray-600 font-bold">
+                    <span class="uppercase text-sm font-bold text-base-content label label-text">
                         Name
                         @error('name')
                             <span class="text-red-500" role="alert">
@@ -149,14 +151,16 @@
                         @enderror
                     </span>
                     <input
-                        class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                        class="w-full input input-bordered text-base-content bg-base-200
                         @error('name') ring-2 ring-red-500 @enderror
                         "
                         type="text" placeholder="Enter your Name" name='name' required min="3" max="20"
                         value="{{ old('name', $user->name) }}" />
                 </div>
+
+                {{-- lastname --}}
                 <div class="flex flex-col w-full">
-                    <span class="uppercase text-sm text-gray-600 font-bold">
+                    <span class="uppercase text-sm font-bold text-base-content label label-text">
                         Last Name
                         @error('lastname')
                             <span class="text-red-500" role="alert">
@@ -165,57 +169,64 @@
                         @enderror
                     </span>
                     <input
-                        class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                        class="w-full input input-bordered text-base-content bg-base-200
                         @error('lastname') ring-2 ring-red-500 @enderror"
-                        type="text" placeholder="Enter your Name" name='lastname' required min="3" max="20"
-                        value="{{ old('lastname', $user->lastname) }}" />
+                        type="text" placeholder="Enter your Name" name='lastname' required min="3"
+                        max="20" value="{{ old('lastname', $user->lastname) }}" />
                 </div>
             </div>
-            <div class="">
-                <span class="uppercase text-sm text-gray-600 font-bold">
+
+            {{-- bio --}}
+            <div class="flex flex-col">
+                <span class="uppercase text-sm font-bold text-base-content label-text">
                     Bio
                     @error('presentation')
-                        <span class="text-red-500" role="alert">
+                        <div class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
-                        </span>
+                        </div>
                     </span>
                 @enderror
                 <input
-                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
-                    @error('presentation') ring-2 ring-red-500 @enderror"
+                    class="w-full input input-bordered text-base-content bg-base-200 mt-2
+                    @error('presentation') input-error @enderror"
                     type="text" placeholder="A short Bio about you" name='presentation' required min="60"
                     max="255" value="{{ old('presentation', $user->presentation) }}" />
             </div>
+
+            {{-- phone --}}
             <div class="">
-                <span class="uppercase text-sm text-gray-600 font-bold">
+                <span class="uppercase text-sm font-bold text-base-content label label-text">
                     Phone Number
                     @error('phone')
-                        <span class="text-red-500" role="alert">
+                        <div class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
-                        </span>
+                        </div>
                     @enderror
                 </span>
                 <input
-                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                    class="w-full input input-bordered text-base-content bg-base-200
                     @error('phone') ring-2 ring-red-500 @enderror"
                     type="phone" placeholder="Enter your Phone Number including country code" name='phone' required
                     min="9" max="20" value="{{ old('phone', $user->phone) }}" />
             </div>
 
-            <span class="uppercase text-sm text-gray-600 font-bold">
-                Description
-                @error('detailed_description')
-                    <span class="text-red-500" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </span>
-            <textarea name="detailed_description" id="detailed_description" cols="30" rows="10" required
-                min="60"
-                class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
-                @error('detailed_description') ring-2 ring-red-500 @enderror">
+            <div>
 
-            </textarea>
+                <span class="uppercase text-sm font-bold text-base-content label label-text">
+                    Description
+                    @error('detailed_description')
+                        <div class="text-red-500" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @enderror
+                </span>
+                <textarea name="detailed_description" id="detailed_description" cols="30" rows="10" required
+                    min="60"
+                    class="w-full p-3 input input-bordered text-base-content bg-base-200 h-64
+                    @error('detailed_description') ring-2 ring-red-500 @enderror">
+                    {{ old('detailed_description', $user->detailed_description) }}
+                </textarea>
+            </div>
             {{-- <div class="pb-3">
                 <div id='editor' style="min-height: 300px; max-height: 600px;"
                     class="w-full bg-gray-200 text-gray-900 rounded-b-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400">
@@ -223,7 +234,7 @@
             </div> --}}
 
             <div class="w-full" style="margin-top: 2rem">
-                <label class="uppercase text-sm text-gray-600 font-bold" for="Multiselect">Select your Skills</label>
+                <label class="uppercase text-sm font-bold text-base-content label label-text" for="Multiselect">Select your Skills</label>
                 @error('skills_id')
                     <span class="text-red-500" role="alert">
                         <strong>{{ $message }}</strong>
@@ -231,14 +242,28 @@
                 @enderror
                 <div class="relative flex w-full mt-4">
 
+                    <?php
+                    $oldarray = [];
+                    foreach (old('skills_id',[])  as $id){
+                     $oldarray[] = $id;
+                    }
+                    if(empty($oldarray))
+                    {
+                    foreach ($user->skills  as $skill){
+                        $oldarray[] = $skill->id;
+                    }
+                    }
+                    ?>
+
+
                     <select id="skills" name="skills_id[]" multiple placeholder="Select skills..." autocomplete="off"
                         class="w-full
                         @error('skills') ring-2 ring-red-500 @enderror" multiple>
-                        {{-- @foreach ($skills as $skill)
-                            <option value="{{ $skill->id }}" {{ $user->skills->contains($skill) ? 'selected' : '' }}>
+                        @foreach ($skills as $skill)
+                            <option value="{{ $skill->id }}" {{ in_array($skill->id, $oldarray) ? 'selected' : '' }}>
                                 {{ $skill->name }}
                             </option>
-                        @endforeach --}}
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -256,19 +281,17 @@
 
 
 
-
-
-
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
     <script>
+
+
         let skills = {!! $skills !!}
         new TomSelect('#skills', {
             plugins: [
                 'remove_button',
                 'checkbox_options'
             ],
-            options: skills,
             create: false,
             maxItems: 5,
             valueField: 'id',
@@ -277,8 +300,6 @@
         });
 
         let tom = document.getElementById('skills').tomselect
-        tom.setValue({!! $user->skills->pluck('id') !!})
-
 
         let quill = new Quill('#editor', {
             theme: 'snow'
@@ -323,16 +344,6 @@
             cursor: not-allowed;
         }
 
-        .ts-control {
-            padding: 0.75rem 0.5rem;
-            --tw-bg-opacity: 1;
-            background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
-            --tw-text-opacity: 1;
-            color: rgba(17, 24, 39, var(--tw-text-opacity));
-            border-radius: 0.5rem;
-            /* 8px */
-            outline: 2px solid transparent;
-            outline-offset: 2px;
-        }
+
     </style>
 @endsection

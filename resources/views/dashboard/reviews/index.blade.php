@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="text-3xl text-red-500 my-5 pl-5">
+    <div class="text-3xl text-red-500 py-5 pl-5">
         Reviews List:
     </div>
 
