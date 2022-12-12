@@ -213,20 +213,22 @@
                     min="9" max="20" value="{{ old('phone', $user->phone) }}" />
             </div>
 
-            <span class="uppercase text-sm text-gray-600 font-bold">
-                Description
-                @error('detailed_description')
-                    <span class="text-red-500" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </span>
-            <textarea name="detailed_description" id="detailed_description" cols="30" rows="10" required
-                min="60"
-                class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+            <div>
+                <span class="uppercase text-sm text-gray-600 font-bold">
+                    Description
+                    @error('detailed_description')
+                        <span class="text-red-500" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </span>
+                <textarea name="detailed_description" id="detailed_description" cols="30" rows="10" required
+                    min="60"
+                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
                 @error('detailed_description') ring-2 ring-red-500 @enderror">
 
             </textarea>
+            </div>
             {{-- <div class="pb-3">
                 <div id='editor' style="min-height: 300px; max-height: 600px;"
                     class="w-full bg-gray-200 text-gray-900 rounded-b-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400">
