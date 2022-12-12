@@ -225,9 +225,9 @@
                 <textarea name="detailed_description" id="detailed_description" cols="30" rows="10" required
                     min="60"
                     class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
-                @error('detailed_description') ring-2 ring-red-500 @enderror">
-
-            </textarea>
+                    @error('detailed_description') ring-2 ring-red-500 @enderror">
+                    {{ old('detailed_description', $user->detailed_description) }}
+                </textarea>
             </div>
             {{-- <div class="pb-3">
                 <div id='editor' style="min-height: 300px; max-height: 600px;"
@@ -248,7 +248,8 @@
                         class="w-full
                         @error('skills') ring-2 ring-red-500 @enderror" multiple>
                         {{-- @foreach ($skills as $skill)
-                            <option value="{{ $skill->id }}" {{ $user->skills->contains($skill) ? 'selected' : '' }}>
+                            <option value="{{ $skill->id }}"
+                                {{ in_array($skill->id, old('skills', [])) ? 'selected' : '' }}>
                                 {{ $skill->name }}
                             </option>
                         @endforeach --}}
@@ -291,6 +292,7 @@
 
         let tom = document.getElementById('skills').tomselect
         tom.setValue({!! $user->skills->pluck('id') !!})
+        tom.setAttribute()
 
 
         let quill = new Quill('#editor', {
