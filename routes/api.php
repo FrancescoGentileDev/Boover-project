@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('users', 'api\UserController')->except(['create', 'edit', 'update', 'destroy'])->parameter('id', 'slug');
+Route::resource('reviews', 'api\ReviewController')->except(['create', 'edit', 'update', 'destroy', 'index'])->parameter('id', 'slug');
+Route::resource('skills', 'api\SkillController')->except(['create', 'edit', 'update', 'destroy'])->parameter('id', 'slug');
