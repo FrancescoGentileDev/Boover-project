@@ -39,6 +39,7 @@ class ProfileController extends Controller
         ]);
         $logged = Auth::user()->id;
         $user = User::find($logged);
+
         $user-> name = $request->name;
         $user-> lastname = $request->lastname;
         $user-> presentation = $request->presentation;
@@ -46,12 +47,15 @@ class ProfileController extends Controller
         $user-> detailed_description = $request->detailed_description;
         $user->  is_available = '1';
 
+
         if($request->hasFile('avatar')){
             $path = Storage::putFile('uploads/avatars', $request->file('avatar'));
             $user->avatar = asset('storage/' . $path);
         }
+
         $user->save();
         $user->skills()->sync($request->skills_id);
+
         return redirect()->route('dashboard.profile')->with('success', 'Profile updated successfully');
     }
 }

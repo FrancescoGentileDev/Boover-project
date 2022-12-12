@@ -2,19 +2,18 @@
 <html data-theme="light" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <script src="{{ asset('js/backOffice.js') }}"></script>
-    @yield('head')
-    <title>Document</title>
+  @include('layouts.partials.meta-head')
+
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+  <script src="{{ asset('js/backOffice.js') }}"></script>
+  @yield('head')
+
+  <title>{{ $title ?? 'Boover Project' }}</title>
 </head>
 
 
 <body>
-
     <div id="sidebar"
         class="flex flex-col w-48 md:w-64 px-4 py-8 bg-white border-r dark:bg-gray-900 dark:border-gray-700 fixed h-screen z-50 transition-all -left-48 duration-200 md:left-0">
         <button id="button-sidebar " class=" md:hidden absolute top-0 left-48" onclick="toggleSidebar()">
