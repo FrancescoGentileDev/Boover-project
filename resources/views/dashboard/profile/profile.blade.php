@@ -292,7 +292,6 @@
 
         let tom = document.getElementById('skills').tomselect
         tom.setValue({!! $user->skills->pluck('id') !!})
-        tom.setAttribute()
 
 
         let quill = new Quill('#editor', {
