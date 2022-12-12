@@ -14,8 +14,5 @@ const { memoize } = require('lodash');
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/backOffice.js', 'public/js')
     .sass("resources/sass/styles.scss", "public/css")
-    .postCss("resources/css/app.css", "public/css", [
-        require("tailwindcss"),
-      ]);
 
 mix.browserSync('127.0.0.1:8000');

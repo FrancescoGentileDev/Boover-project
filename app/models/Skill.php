@@ -1,9 +1,9 @@
 <?php
 
 namespace App\models;
-
+use App\models\Category;
 use Illuminate\Database\Eloquent\Model;
-
+use App\User;
 class Skill extends Model
 {
     //
