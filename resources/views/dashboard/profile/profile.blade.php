@@ -139,7 +139,7 @@
                                 class="label-image w-64 rounded-full" style="aspect-ratio: 1 / 1; object-fit: cover" />
                         @endif
                         <div
-                            class="w-full h-full z-40 bg-gray-600 absolute top-0 left-0 rounded-full opacity-0 transition-opacity hover:opacity-75
+                            class="w-full h-full z-40 bg-gray-600 absolute top-0 left-0 rounded-full opacity-0 transition-opacity hover:opacity-50
                             flex items-center justify-center text-white text-5xl
                         ">
                             <i class="fa-solid fa-pen-to-square"></i>
