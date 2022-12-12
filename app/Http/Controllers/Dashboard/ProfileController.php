@@ -39,6 +39,7 @@ class ProfileController extends Controller
         ]);
         $logged = Auth::user()->id;
         $user = User::find($logged);
+
         $user->make([
             'name' => $request->name,
             'lastname' => $request->lastname,
@@ -52,8 +53,10 @@ class ProfileController extends Controller
             $path = Storage::putFile('uploads/avatars', $request->file('avatar'));
             $user->avatar = asset('storage/' . $path);
         }
+
         $user->skills()->sync($request->skills_id);
         $user->save();
+
         return redirect()->route('dashboard.profile')->with('success', 'Profile updated successfully');
     }
 }

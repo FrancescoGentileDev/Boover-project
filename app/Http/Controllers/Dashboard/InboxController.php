@@ -15,7 +15,6 @@ class InboxController extends Controller
      */
     public function index()
     {
-
       return view('dashboard.inboxes.index', [
         'inboxes' => Inbox::where('user_id', Auth::id())->get(),
       ]);
@@ -50,7 +49,12 @@ class InboxController extends Controller
      */
     public function show(Inbox $inbox)
     {
-      return view('dashboard.inboxes.show', compact('inbox'));
+      if (Auth::id() === $inbox->user_id) {
+        return view('dashboard.inboxes.show', compact('inbox'));
+      }
+      else {
+        return view('dashboard.inboxes.index');
+      }
     }
 
     /**
