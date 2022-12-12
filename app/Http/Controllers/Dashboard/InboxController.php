@@ -51,7 +51,12 @@ class InboxController extends Controller
    */
   public function show(Inbox $inbox)
   {
-    return view('dashboard.inboxes.show', compact('inbox'));
+    if(Auth::id() === $inbox->user_id) {
+      return view('dashboard.inboxes.show', compact('inbox'));
+    }
+    else {
+      return redirect()->route('dashboard.inboxes.index');
+    }
   }
 
   /**
