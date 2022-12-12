@@ -38291,7 +38291,7 @@ function createTextVNode(val) {
 // multiple renders, cloning them avoids errors when DOM manipulations rely
 // on their elm reference.
 function cloneVNode(vnode) {
-    const cloned = new VNode(vnode.tag, vnode.data,
+    const cloned = new VNode(vnode.tag, vnode.data, 
     // #7975
     // clone children array to avoid mutating original in case of cloning
     // a child.
@@ -39687,7 +39687,7 @@ function bindObjectListeners(data, value) {
     return data;
 }
 
-function resolveScopedSlots(fns, res,
+function resolveScopedSlots(fns, res, 
 // the following are added in 2.6
 hasDynamicKeys, contentHashKey) {
     res = res || { $stable: !hasDynamicKeys };
@@ -41727,7 +41727,7 @@ let uid$1 = 0;
  */
 class Watcher {
     constructor(vm, expOrFn, cb, options, isRenderWatcher) {
-        recordEffectScope(this,
+        recordEffectScope(this, 
         // if the active effect scope is manually created (not a component scope),
         // prioritize it
         activeEffectScope && !activeEffectScope._vm
@@ -42627,14 +42627,14 @@ function createComponent(Ctor, data, context, children, tag) {
     const name = getComponentName(Ctor.options) || tag;
     const vnode = new VNode(
     // @ts-expect-error
-    `vue-component-${Ctor.cid}${name ? `-${name}` : ''}`, data, undefined, undefined, undefined, context,
+    `vue-component-${Ctor.cid}${name ? `-${name}` : ''}`, data, undefined, undefined, undefined, context, 
     // @ts-expect-error
     { Ctor, propsData, listeners, tag, children }, asyncFactory);
     return vnode;
 }
 function createComponentInstanceForVnode(
 // we know it's MountedComponentVNode but flow doesn't
-vnode,
+vnode, 
 // activeInstance in lifecycle state
 parent) {
     const options = {
@@ -44709,7 +44709,7 @@ function createPatchFunction(backend) {
                 const oldElm = oldVnode.elm;
                 const parentElm = nodeOps.parentNode(oldElm);
                 // create new node
-                createElm(vnode, insertedVnodeQueue,
+                createElm(vnode, insertedVnodeQueue, 
                 // extremely rare edge case: do not insert if old element is in a
                 // leaving transition. Only happens when combining transition +
                 // keep-alive + HOCs. (#4590)
@@ -45607,7 +45607,7 @@ function add(name, handler, capture, passive) {
     target.addEventListener(name, handler, supportsPassive ? { capture, passive } : capture);
 }
 function remove(name, handler, capture, _target) {
-    (_target || target).removeEventListener(name,
+    (_target || target).removeEventListener(name, 
     //@ts-expect-error
     handler._wrapper || handler, capture);
 }
@@ -49552,17 +49552,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -49680,7 +49669,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
-
+  
 )
 
 /* hot reload */
@@ -49700,7 +49689,7 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -49729,20 +49718,19 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Can't find stylesheet to import.\n  ╷\n2 │ @import \"~@fortawesome/fontawesome-free/scss/fontawesome\";\r\n  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  ╵\n  C:\\eliasdh\\dev\\Boover-project\\resources\\sass\\styles.scss 2:9  root stylesheet\n    at C:\\eliasdh\\dev\\Boover-project\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\eliasdh\\dev\\Boover-project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\eliasdh\\dev\\Boover-project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\eliasdh\\dev\\Boover-project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:101335:16)\n    at render_closure1.call$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:86356:12)\n    at _RootZone.runBinary$3$3 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:30046:18)\n    at _FutureListener.handleError$1 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28575:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28882:49)\n    at Object._Future__propagateToListeners (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:3911:77)\n    at _Future._completeError$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28728:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28376:12)\n    at Object._asyncRethrow (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:3713:17)\n    at C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:20076:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:3738:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28395:12)\n    at _awaitOnObject_closure0.call$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28389:25)\n    at _RootZone.runBinary$3$3 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:30046:18)\n    at _FutureListener.handleError$1 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28575:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28882:49)\n    at Object._Future__propagateToListeners (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:3911:77)\n    at _Future._completeError$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28728:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28376:12)\n    at Object._asyncRethrow (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:3713:17)\n    at C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:15513:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:3738:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28395:12)\n    at _awaitOnObject_closure0.call$2 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:28389:25)\n    at _RootZone.runBinary$3$3 (C:\\eliasdh\\dev\\Boover-project\\node_modules\\sass\\sass.dart.js:30046:18)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/styles.scss ./resources/css/app.css ***!
-  \****************************************************************************************/
+/*!****************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/styles.scss ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! D:\Desktop\Boolean\Boover-project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\Desktop\Boolean\Boover-project\resources\sass\styles.scss */"./resources/sass/styles.scss");
-module.exports = __webpack_require__(/*! D:\Desktop\Boolean\Boover-project\resources\css\app.css */"./resources/css/app.css");
+module.exports = __webpack_require__(/*! D:\Desktop\Boolean\Boover-project\resources\sass\styles.scss */"./resources/sass/styles.scss");
 
 
 /***/ })

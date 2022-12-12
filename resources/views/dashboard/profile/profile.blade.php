@@ -99,7 +99,7 @@
         </div>
     @endif
 
-    <h2 class="text-4xl lg:text-5xl text-center text-gray-600 font-bold leading-tight mt-7">
+    <h2 class="text-4xl lg:text-5xl text-center text-gray-600 font-bold leading-tight pt-[300px]">
         {{ $user->name . ' ' . $user->lastname }}
     </h2>
 
