@@ -25,5 +25,5 @@ Artisan::command('inspire', function () {
 Artisan::command('test', function (Faker $faker) {
    $user = User::find(3);
 
-   dd($user->sponsors->toArray());
+   dd($user->reviews->toArray());
 });
