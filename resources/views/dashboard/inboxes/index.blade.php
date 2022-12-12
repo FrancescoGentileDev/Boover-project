@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.app',
+  [
+    'title' => 'Boover | My Inbox',
+    'pageTitle' => 'My Inbox',
+  ]
+)
+
 
 @section('content')
     <div class="text-3xl text-center my-7">
