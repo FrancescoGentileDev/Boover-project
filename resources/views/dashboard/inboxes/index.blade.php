@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2 class="text-lg text-center">Your Inbox</h2>
+    <div class="text-3xl text-center my-7">
+        Your Inbox
+    </div>
 
     <div class="mb-5">
         {{ $inboxes->links() }}
