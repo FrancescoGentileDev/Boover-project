@@ -1622,7 +1622,7 @@ function getAlpha(string) {
 // generators
 function hexString(rgba, a) {
    var a = (a !== undefined && rgba.length === 3) ? a : rgba[3];
-   return "#" + hexDouble(rgba[0]) 
+   return "#" + hexDouble(rgba[0])
               + hexDouble(rgba[1])
               + hexDouble(rgba[2])
               + (
@@ -38046,7 +38046,7 @@ var Chart = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Ch
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\eliasdh\dev\Boover-project\resources\js\backOffice.js */"./resources/js/backOffice.js");
+module.exports = __webpack_require__(/*! D:\Desktop\Boolean\Boover-project\resources\js\backOffice.js */"./resources/js/backOffice.js");
 
 
 /***/ })
