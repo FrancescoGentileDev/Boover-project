@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     private $sendParams = ['name', 'lastname', 'avatar', 'slug', 'phone', 'presentation', 'detailed_description', 'birthday_date', 'id' ];
+
+
+	protected $casts = [
+
+	];
     /**
      * Display a listing of the resource.
      *
@@ -24,10 +29,14 @@ class UserController extends Controller
                 ->orWhere('lastname', 'like', '%' . $request->search . '%');
         }
 
+        //TODO: add filter by skills
+        //TODO PRIMA I PROFILI SPONSOR
+
         $users = $users->paginate(15, $this->sendParams);
 
         foreach ($users as $user) {
             $user->skills->makeHidden(['pivot', 'updated_at', 'created_at']);// hide pivot table
+
             $sponsorRecord = DB::table('sponsor_user')->where( 'user_id','=', $user->id )->orderByDesc('created_at')->first() ;
             if ( $sponsorRecord == null ||  $sponsorRecord->expire_date < date('Y-m-d H:i:s') ) {
                 $isUserSponsorized = false;

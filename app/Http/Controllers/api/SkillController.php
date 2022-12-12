@@ -30,6 +30,7 @@ class SkillController extends Controller
     {
         //
         $skill = Skill::find($id, ['id', 'name', 'description', 'image', 'created_at']);
+        //TODO PRIMA I PROFILI SPONSOR:
         $skill->users = $skill->users()->paginate(10);
         return response($skill);
     }

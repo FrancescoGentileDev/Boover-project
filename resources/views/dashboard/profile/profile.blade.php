@@ -286,7 +286,8 @@
 
         let tom = document.getElementById('skills').tomselect
         tom.setValue({!! $user->skills->pluck('id') !!})
-
+        let test = "{!! old('skills_id[]') !!}";
+        console.log(test)
 
         let quill = new Quill('#editor', {
             theme: 'snow'
