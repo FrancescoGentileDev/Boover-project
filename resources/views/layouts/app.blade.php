@@ -2,14 +2,19 @@
 <html data-theme="light" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <script src="{{ asset('js/backOffice.js') }}"></script>
-    @yield('head')
-    <title>Document</title>
+  @include('layouts.partials.meta-head')
+
+  {{-- CSS --}}
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+  {{-- JS --}}
+  <script src="{{ asset('js/backOffice.js') }}"></script>
+
+  @yield('head')
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>{{ $title ?? 'Boover Project' }}</title>
 </head>
 
 

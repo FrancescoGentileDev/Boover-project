@@ -5,6 +5,7 @@
 
   {{-- CSS --}}
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
   {{-- JS --}}
   <script src="{{ asset('js/app.js') }}" defer></script>
