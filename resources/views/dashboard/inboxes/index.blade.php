@@ -3,6 +3,10 @@
 @section('content')
     <h2 class="text-lg text-center">Your Inbox</h2>
 
+    <div class="mb-5">
+        {{ $inboxes->links() }}
+    </div>
+
     <ul id="inbox-list" class="w-full md:w-3/4 flex flex-col gap-3 mx-auto mt-4 mb-8">
         @foreach ($inboxes as $inbox)
             <li class="bg-purple-400 p-2 rounded
