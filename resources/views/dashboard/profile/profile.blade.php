@@ -88,7 +88,15 @@
         </div>
     @endif
     {{-- END ERROR ALLERT --}}
-
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
     <h2 class="text-4xl  lg:text-5xl font-bold leading-tight">
         Your Profile

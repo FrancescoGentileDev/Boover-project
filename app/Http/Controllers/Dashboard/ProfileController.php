@@ -31,7 +31,7 @@ class ProfileController extends Controller
         $request -> validate([
             'name' => 'required | string | max:255 | min:3  ',
             'lastname' => 'required | string | max:255 | min:3 ',
-            'presentation' => 'required | string | max:255 | min:60 ',
+            'presentation' => 'required | string | max:255 | min:3 ',
             'phone' => 'required| numeric| digits_between:10,15| ',
             'detailed_description' => 'required | string | min:3 ',
             'skills_id' => ['required', 'array', 'min:1', 'max:5', 'exists:skills,id'],
@@ -39,21 +39,19 @@ class ProfileController extends Controller
         ]);
         $logged = Auth::user()->id;
         $user = User::find($logged);
-        $user->make([
-            'name' => $request->name,
-            'lastname' => $request->lastname,
-            'presentation' => $request->presentation,
-            'phone' => $request->phone,
-            'detailed_description' => $request->detailed_description,
-            'is_avaiable' => '1',
-        ]);
+        $user-> name = $request->name;
+        $user-> lastname = $request->lastname;
+        $user-> presentation = $request->presentation;
+        $user->  phone = $request->phone;
+        $user-> detailed_description = $request->detailed_description;
+        $user->  is_available = '1';
 
         if($request->hasFile('avatar')){
             $path = Storage::putFile('uploads/avatars', $request->file('avatar'));
             $user->avatar = asset('storage/' . $path);
         }
-        $user->skills()->sync($request->skills_id);
         $user->save();
+        $user->skills()->sync($request->skills_id);
         return redirect()->route('dashboard.profile')->with('success', 'Profile updated successfully');
     }
 }
