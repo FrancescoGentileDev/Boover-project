@@ -40,3 +40,4 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 Route::get('{any?}', function () {
     return view('guest.home');
 })->where('any', '.*');
+
