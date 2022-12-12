@@ -239,14 +239,28 @@
                 @enderror
                 <div class="relative flex w-full mt-4">
 
+                    <?php
+                    $oldarray = [];
+                    foreach (old('skills_id',[])  as $id){
+                     $oldarray[] = $id;
+                    }
+                    if(empty($oldarray))
+                    {
+                    foreach ($user->skills  as $skill){
+                        $oldarray[] = $skill->id;
+                    }
+                    }
+                    ?>
+
+
                     <select id="skills" name="skills_id[]" multiple placeholder="Select skills..." autocomplete="off"
                         class="w-full
                         @error('skills') ring-2 ring-red-500 @enderror" multiple>
-                        {{-- @foreach ($skills as $skill)
-                            <option value="{{ $skill->id }}" {{ $user->skills->contains($skill) ? 'selected' : '' }}>
+                        @foreach ($skills as $skill)
+                            <option value="{{ $skill->id }}" {{ in_array($skill->id, $oldarray) ? 'selected' : '' }}>
                                 {{ $skill->name }}
                             </option>
-                        @endforeach --}}
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -264,19 +278,17 @@
 
 
 
-
-
-
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
     <script>
+
+
         let skills = {!! $skills !!}
         new TomSelect('#skills', {
             plugins: [
                 'remove_button',
                 'checkbox_options'
             ],
-            options: skills,
             create: false,
             maxItems: 5,
             valueField: 'id',
@@ -285,9 +297,7 @@
         });
 
         let tom = document.getElementById('skills').tomselect
-        tom.setValue({!! $user->skills->pluck('id') !!})
-        let test = "{!! old('skills_id[]') !!}";
-        console.log(test)
+
 
         let quill = new Quill('#editor', {
             theme: 'snow'
