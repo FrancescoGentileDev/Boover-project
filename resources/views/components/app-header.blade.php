@@ -1,3 +1,3 @@
 <header>
-  <h1>{{ $pageTitle }}</h1>
+  <h1 class="text-xl">{{ $pageTitle }}</h1>
 </header>

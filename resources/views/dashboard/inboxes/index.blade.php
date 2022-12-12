@@ -6,12 +6,17 @@
 )
 
 @section('content')
-  <h2>Your Inbox</h2>
+  <h2 class="text-lg text-center">Your Inbox</h2>
 
-  <ul>
+  <ul id="inbox-list" class="w-full md:w-3/4 flex flex-col gap-3 mx-auto mt-4 mb-8">
     @foreach ($inboxes as $inbox)
-      <li>
-        <p><a href="{{ route('dashboard.inboxes.show', $inbox->id) }}">{{ $inbox->title}}</a> <em>by {{ $inbox->nickname }}</em></p>
+      <li class="bg-purple-400 p-2 rounded
+        hover:bg-purple-300"
+      >
+        <a href="{{ route('dashboard.inboxes.show', $inbox->id) }}">
+          <p>{{ $inbox->title}}</p>
+          <p><em class="text-white text-sm">by {{ $inbox->nickname }}</em></p>
+        </a>
       </li>
     @endforeach
   </ul>
