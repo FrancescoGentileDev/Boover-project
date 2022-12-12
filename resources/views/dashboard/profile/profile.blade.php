@@ -154,9 +154,9 @@
                     <span class="uppercase text-sm text-gray-600 font-bold">
                         Name
                         @error('name')
-                            <span class="text-red-500" role="alert">
+                            <div class="text-red-500" role="alert">
                                 <strong>{{ $message }}</strong>
-                            </span>
+                            </div>
                         @enderror
                     </span>
                     <input
@@ -170,9 +170,9 @@
                     <span class="uppercase text-sm text-gray-600 font-bold">
                         Last Name
                         @error('lastname')
-                            <span class="text-red-500" role="alert">
+                            <div class="text-red-500" role="alert">
                                 <strong>{{ $message }}</strong>
-                            </span>
+                            </div>
                         @enderror
                     </span>
                     <input
@@ -186,9 +186,9 @@
                 <span class="uppercase text-sm text-gray-600 font-bold">
                     Bio
                     @error('presentation')
-                        <span class="text-red-500" role="alert">
+                        <div class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
-                        </span>
+                        </div>
                     </span>
                 @enderror
                 <input
@@ -201,9 +201,9 @@
                 <span class="uppercase text-sm text-gray-600 font-bold">
                     Phone Number
                     @error('phone')
-                        <span class="text-red-500" role="alert">
+                        <div class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
-                        </span>
+                        </div>
                     @enderror
                 </span>
                 <input
@@ -217,9 +217,9 @@
                 <span class="uppercase text-sm text-gray-600 font-bold">
                     Description
                     @error('detailed_description')
-                        <span class="text-red-500" role="alert">
+                        <div class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
-                        </span>
+                        </div>
                     @enderror
                 </span>
                 <textarea name="detailed_description" id="detailed_description" cols="30" rows="10" required
