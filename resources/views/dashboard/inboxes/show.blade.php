@@ -1,4 +1,4 @@
-@extends('layouts.app-emg',
+@extends('layouts.app',
   [
     'title' => 'Boover | My Inbox',
     'pageTitle' => 'My Inbox',
