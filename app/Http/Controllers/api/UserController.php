@@ -23,14 +23,16 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $users = User::query()->where('is_available', '1');
-
+        $search = explode('-', $request->search);
         if($request->has('search')){
-            $users->where('name', 'like', '%' . $request->search . '%')
-                ->orWhere('lastname', 'like', '%' . $request->search . '%');
+            foreach($search as $param)
+            {
+                $users ->whereRaw("concat(name, ' ', lastname) like '%" .$param. "%' ");
+            };
         }
 
-        //TODO: add filter by skills
         //TODO PRIMA I PROFILI SPONSOR
+
 
         $users = $users->paginate(15, $this->sendParams);
 
