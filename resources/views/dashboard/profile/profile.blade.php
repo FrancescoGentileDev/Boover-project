@@ -154,9 +154,9 @@
                     <span class="uppercase text-sm text-gray-600 font-bold">
                         Name
                         @error('name')
-                            <div class="text-red-500" role="alert">
+                            <span class="text-red-500" role="alert">
                                 <strong>{{ $message }}</strong>
-                            </div>
+                            </span>
                         @enderror
                     </span>
                     <input
@@ -170,9 +170,9 @@
                     <span class="uppercase text-sm text-gray-600 font-bold">
                         Last Name
                         @error('lastname')
-                            <div class="text-red-500" role="alert">
+                            <span class="text-red-500" role="alert">
                                 <strong>{{ $message }}</strong>
-                            </div>
+                            </span>
                         @enderror
                     </span>
                     <input
@@ -292,7 +292,6 @@
 
         let tom = document.getElementById('skills').tomselect
         tom.setValue({!! $user->skills->pluck('id') !!})
-
 
         let quill = new Quill('#editor', {
             theme: 'snow'
