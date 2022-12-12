@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.ts-control {
+    @apply bg-base-200 !important;
+    #skills-ts-control {
+        @apply text-base-content !important;
+
+    }
+}
+.ts-dropdown {
+    @apply bg-base-200 !important;
+    @apply text-base-content !important;
+}
+.ts-wrapper.multi .ts-control > div {
+    @apply bg-base-300 !important;
+    @apply text-base-content !important;
+}
+.ts-dropdown, .ts-control, .ts-control input {
+    @apply bg-base-200 !important;
+    @apply text-base-content !important;
+}

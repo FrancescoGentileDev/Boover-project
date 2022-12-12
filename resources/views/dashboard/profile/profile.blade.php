@@ -8,7 +8,7 @@
 @section('content')
 
     {{-- MODAL ALLERT --}}
-    @if (Request::get('newUser'))
+    @if (Request::get('newUser') || Auth::user()->is_available == 0)
         <div class="relative flex justify-center">
 
             <div id="modalNewUser" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
@@ -17,16 +17,16 @@
                     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
                     <div
-                        class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl rtl:text-right dark:bg-gray-900 sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                        class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-base-300 shadow-lg rounded-md sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
                         <div>
                             <div class="flex items-center justify-center">
                                 <i class="fa-solid fa-triangle-exclamation text-5xl text-yellow-500"></i>
                             </div>
 
                             <div class="mt-2 text-center">
-                                <h3 class="text-lg font-medium leading-6 text-gray-800 capitalize dark:text-white"
+                                <h3 class="text-lg font-medium leading-6 capitalize text-base-content"
                                     id="modal-title">Warning</h3>
-                                <p class="mt-2 text-md text-gray-500 dark:text-gray-800">
+                                <p class="mt-2 text-md text-base-content">
                                     If you do not complete this form, your account will remain invisible in the search, if
                                     you want to be found enter all the data and save
                                 </p>
@@ -38,7 +38,7 @@
                             <div class="sm:flex sm:items-center justify-center w-full ">
 
                                 <button onclick="document.getElementById('modalNewUser').hidden = true"
-                                    class="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-yellow-600 rounded-md sm:w-auto sm:mt-0 hover:bg-yellow-500 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-40">
+                                    class="w-full text-base-content px-4 py-2 mt-2 text-sm font-medium tracking-wide capitalize transition-colors duration-300 transform bg-yellow-600 rounded-md sm:w-auto sm:mt-0 hover:bg-yellow-500 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-40">
                                     I read and acknowledged
                                 </button>
                             </div>
@@ -52,7 +52,7 @@
     {{-- ERROR & Success ALLERT --}}
     @if (\Session::has('success'))
         <div
-            class="alert flex w-full fixed right-5 bottom-5 z-20 max-w-sm overflow-hidden bg-white rounded-lg shadow-lg border-2 border-green-500 dark:bg-gray-800">
+            class="alert flex w-full fixed right-5 bottom-5 z-20 max-w-sm overflow-hidden bg-white rounded-lg shadow-lg border-2  border-green-500 dark:bg-gray-800">
             <div class="flex items-center justify-center w-12 bg-green-500">
                 <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -89,17 +89,8 @@
         </div>
     @endif
     {{-- END ERROR ALLERT --}}
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
-    <h2 class="text-4xl lg:text-5xl text-center text-gray-600 font-bold leading-tight pt-[300px]">
+    <h2 class="text-4xl lg:text-5xl text-center text-base-content font-bold leading-tight pt-7">
         {{ $user->name . ' ' . $user->lastname }}
     </h2>
 
@@ -117,7 +108,7 @@
 
             <div>
 
-                <div class="uppercase text-sm text-gray-600 font-bold text-center">
+                <div class="uppercase text-sm font-bold text-center text-secondary-content">
                     @error('avatar')
                         <span class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
@@ -148,10 +139,10 @@
                 </div>
 
             </div>
-
+            {{-- name --}}
             <div class="flex flex-col md:flex-row w-full gap-3">
                 <div class="flex w-full flex-col">
-                    <span class="uppercase text-sm text-gray-600 font-bold">
+                    <span class="uppercase text-sm font-bold text-base-content label label-text">
                         Name
                         @error('name')
                             <span class="text-red-500" role="alert">
@@ -160,14 +151,16 @@
                         @enderror
                     </span>
                     <input
-                        class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                        class="w-full input input-bordered text-base-content bg-base-200
                         @error('name') ring-2 ring-red-500 @enderror
                         "
                         type="text" placeholder="Enter your Name" name='name' required min="3" max="20"
                         value="{{ old('name', $user->name) }}" />
                 </div>
+
+                {{-- lastname --}}
                 <div class="flex flex-col w-full">
-                    <span class="uppercase text-sm text-gray-600 font-bold">
+                    <span class="uppercase text-sm font-bold text-base-content label label-text">
                         Last Name
                         @error('lastname')
                             <span class="text-red-500" role="alert">
@@ -176,14 +169,16 @@
                         @enderror
                     </span>
                     <input
-                        class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                        class="w-full input input-bordered text-base-content bg-base-200
                         @error('lastname') ring-2 ring-red-500 @enderror"
                         type="text" placeholder="Enter your Name" name='lastname' required min="3"
                         max="20" value="{{ old('lastname', $user->lastname) }}" />
                 </div>
             </div>
-            <div class="">
-                <span class="uppercase text-sm text-gray-600 font-bold">
+
+            {{-- bio --}}
+            <div class="flex flex-col">
+                <span class="uppercase text-sm font-bold text-base-content label-text">
                     Bio
                     @error('presentation')
                         <div class="text-red-500" role="alert">
@@ -192,13 +187,15 @@
                     </span>
                 @enderror
                 <input
-                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
-                    @error('presentation') ring-2 ring-red-500 @enderror"
+                    class="w-full input input-bordered text-base-content bg-base-200 mt-2
+                    @error('presentation') input-error @enderror"
                     type="text" placeholder="A short Bio about you" name='presentation' required min="60"
                     max="255" value="{{ old('presentation', $user->presentation) }}" />
             </div>
+
+            {{-- phone --}}
             <div class="">
-                <span class="uppercase text-sm text-gray-600 font-bold">
+                <span class="uppercase text-sm font-bold text-base-content label label-text">
                     Phone Number
                     @error('phone')
                         <div class="text-red-500" role="alert">
@@ -207,14 +204,15 @@
                     @enderror
                 </span>
                 <input
-                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                    class="w-full input input-bordered text-base-content bg-base-200
                     @error('phone') ring-2 ring-red-500 @enderror"
                     type="phone" placeholder="Enter your Phone Number including country code" name='phone' required
                     min="9" max="20" value="{{ old('phone', $user->phone) }}" />
             </div>
 
             <div>
-                <span class="uppercase text-sm text-gray-600 font-bold">
+
+                <span class="uppercase text-sm font-bold text-base-content label label-text">
                     Description
                     @error('detailed_description')
                         <div class="text-red-500" role="alert">
@@ -224,7 +222,7 @@
                 </span>
                 <textarea name="detailed_description" id="detailed_description" cols="30" rows="10" required
                     min="60"
-                    class="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-400
+                    class="w-full p-3 input input-bordered text-base-content bg-base-200 h-64
                     @error('detailed_description') ring-2 ring-red-500 @enderror">
                     {{ old('detailed_description', $user->detailed_description) }}
                 </textarea>
@@ -236,7 +234,7 @@
             </div> --}}
 
             <div class="w-full" style="margin-top: 2rem">
-                <label class="uppercase text-sm text-gray-600 font-bold" for="Multiselect">Select your Skills</label>
+                <label class="uppercase text-sm font-bold text-base-content label label-text" for="Multiselect">Select your Skills</label>
                 @error('skills_id')
                     <span class="text-red-500" role="alert">
                         <strong>{{ $message }}</strong>
@@ -346,16 +344,6 @@
             cursor: not-allowed;
         }
 
-        .ts-control {
-            padding: 0.75rem 0.5rem;
-            --tw-bg-opacity: 1;
-            background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
-            --tw-text-opacity: 1;
-            color: rgba(17, 24, 39, var(--tw-text-opacity));
-            border-radius: 0.5rem;
-            /* 8px */
-            outline: 2px solid transparent;
-            outline-offset: 2px;
-        }
+
     </style>
 @endsection
