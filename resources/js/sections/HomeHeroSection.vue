@@ -24,11 +24,14 @@
                 lg:text-4xl
               "
             >
-              Find your premium new glasses exported from US
+              This hero's title
             </h1>
             <p class="mt-4 text-gray-600 dark:text-gray-300">
-              We work with the best remunated glasses dealers in US to find your
-              new glasses.
+              Hero's description: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Debitis dicta aspernatur, eveniet, dolorem
+              veniam odit dolorum assumenda quos, similique atque sed saepe!
+              Maiores provident commodi laudantium autem. Aperiam, dolore
+              laborum!
             </p>
             <div class="grid gap-6 mt-8 sm:grid-cols-2">
               <div
