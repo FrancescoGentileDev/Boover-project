@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-const { memoize } = require('lodash');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
