@@ -1,13 +1,16 @@
 <template>
-    <div>
+  <div>
+    <home-hero-section />
     <router-view></router-view>
-    </div>
+  </div>
 </template>
 
 <script>
-import homeView from './homeView.vue';
+import HomeHeroSection from "../sections/HomeHeroSection.vue";
+import homeView from "./homeView.vue";
 export default {
-  components: { homeView },};
+  components: { homeView, HomeHeroSection },
+};
 </script>
 
 <style></style>
