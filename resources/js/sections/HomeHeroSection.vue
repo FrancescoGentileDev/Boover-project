@@ -6,19 +6,60 @@
         <div id="contents" class="flex flex-col gap-y-2">
           <div>
             <div>Content Title 1</div>
-            <p>Description 1</p>
+            <p class="w-3/4">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Necessitatibus at totam et accusamus in vero sint. Ex, porro quo
+              error maxime praesentium eos cupiditate, labore debitis tempore
+              mollitia animi cum?
+            </p>
           </div>
           <div>
             <div>Content Title 2</div>
-            <p>Description 2</p>
+            <p class="w-3/4">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Voluptates quis nam quisquam mollitia aliquid alias ratione
+              impedit consectetur sint! Quos doloribus molestiae delectus
+              dolorem optio ipsum? Aspernatur laboriosam omnis consectetur!
+            </p>
           </div>
           <div>
             <div>Content Title 3</div>
-            <p>Description 3</p>
+            <p class="w-3/4">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
+              quia perspiciatis voluptatem quae pariatur sit velit omnis,
+              assumenda at quaerat. Adipisci ullam dolorum vel minima? Earum
+              beatae necessitatibus quod doloribus?
+            </p>
+          </div>
+          <div>
+            <div>Content Title 4</div>
+            <p class="w-3/4">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
+              quia perspiciatis voluptatem quae pariatur sit velit omnis,
+              assumenda at quaerat. Adipisci ullam dolorum vel minima? Earum
+              beatae necessitatibus quod doloribus?
+            </p>
+          </div>
+          <div>
+            <div>Content Title 5</div>
+            <p class="w-3/4">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
+              quia perspiciatis voluptatem quae pariatur sit velit omnis,
+              assumenda at quaerat. Adipisci ullam dolorum vel minima? Earum
+              beatae necessitatibus quod doloribus?
+            </p>
           </div>
         </div>
       </div>
-      <div class="w-2/4">RIGHT SIDE</div>
+      <div class="w-2/4">
+        <div class="py-8">
+          <img
+            src="https://images.unsplash.com/photo-1484591974057-265bb767ef71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+            alt=""
+            class="rounded-md"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
