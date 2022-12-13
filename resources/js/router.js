@@ -12,6 +12,11 @@ const router = new VueRouter({
             name: "home",
             component: () => import("./views/homeView.vue"),
         },
+        {
+          path: "/profile",
+          name: "profile",
+          component: () => import('./views/ProfileView.vue'),
+        }
     ],
 });
 
