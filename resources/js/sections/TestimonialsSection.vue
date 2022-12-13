@@ -1,9 +1,9 @@
 <template>
-    <div class="wrapper mt-96">
+    <div class="wrapper pt-24 pb-24">
         <!--  // -->
 
         <div class="flex w-4/5 m-auto gap-9 flex-col md:flex-row">
-            <div class="aspect-[4/2] md:w-2/4 w-full bg-slate-400">
+            <div class="aspect-[4/2] md:w-2/4 w-full bg-slate-400 rounded-md">
                 <img
                     src="https://placeimg.com/800/400/people"
                     class="w-full h-full object-cover rounded-lg shadow-2xl"
