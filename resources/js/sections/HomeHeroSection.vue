@@ -1,58 +1,174 @@
 <template>
-  <div id="hero-component" class="py-10">
-    <div class="container flex flex-row py-10">
-      <div class="w-2/4">
-        <div class="text-3xl font-semibold mb-5">Titolo di questa Hero</div>
-        <div id="contents" class="flex flex-col gap-y-2">
-          <!-- Example contents -->
-          <div class="my-3">
-            <div class="font-semibold">Content Title 1</div>
-            <p class="w-3/4">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Necessitatibus at totam et accusamus in vero sint. Ex, porro quo
-              error maxime praesentium eos cupiditate, labore debitis tempore
-              mollitia animi cum?
+  <div>
+    <header class="bg-gray-200 dark:bg-gray-900">
+      <div
+        class="
+          container
+          flex flex-col
+          px-6
+          py-10
+          mx-auto
+          space-y-6
+          lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center
+        "
+      >
+        <div class="w-full lg:w-1/2">
+          <div class="lg:max-w-lg">
+            <h1
+              class="
+                text-3xl
+                font-semibold
+                tracking-wide
+                text-gray-800
+                dark:text-white
+                lg:text-4xl
+              "
+            >
+              Find your premium new glasses exported from US
+            </h1>
+            <p class="mt-4 text-gray-600 dark:text-gray-300">
+              We work with the best remunated glasses dealers in US to find your
+              new glasses.
             </p>
-          </div>
-          <div class="my-3">
-            <div class="font-semibold">Content Title 2</div>
-            <p class="w-3/4">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptates quis nam quisquam mollitia aliquid alias ratione
-              impedit consectetur sint! Quos doloribus molestiae delectus
-              dolorem optio ipsum? Aspernatur laboriosam omnis consectetur!
-            </p>
-          </div>
-          <div class="my-3">
-            <div class="font-semibold">Content Title 3</div>
-            <p class="w-3/4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
-              quia perspiciatis voluptatem quae pariatur sit velit omnis,
-              assumenda at quaerat. Adipisci ullam dolorum vel minima? Earum
-              beatae necessitatibus quod doloribus?
-            </p>
-          </div>
-          <div class="my-3">
-            <div class="font-semibold">Content Title 4</div>
-            <p class="w-3/4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
-              quia perspiciatis voluptatem quae pariatur sit velit omnis,
-              assumenda at quaerat. Adipisci ullam dolorum vel minima? Earum
-              beatae necessitatibus quod doloribus?
-            </p>
+            <div class="grid gap-6 mt-8 sm:grid-cols-2">
+              <div
+                class="flex items-center text-gray-800 -px-3 dark:text-gray-200"
+              >
+                <svg
+                  class="w-5 h-5 mx-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+
+                <span class="mx-3">Premium selection</span>
+              </div>
+
+              <div
+                class="flex items-center text-gray-800 -px-3 dark:text-gray-200"
+              >
+                <svg
+                  class="w-5 h-5 mx-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+
+                <span class="mx-3">Insurance</span>
+              </div>
+
+              <div
+                class="flex items-center text-gray-800 -px-3 dark:text-gray-200"
+              >
+                <svg
+                  class="w-5 h-5 mx-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+
+                <span class="mx-3">All legal documents</span>
+              </div>
+
+              <div
+                class="flex items-center text-gray-800 -px-3 dark:text-gray-200"
+              >
+                <svg
+                  class="w-5 h-5 mx-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+
+                <span class="mx-3">From US glasses dealers</span>
+              </div>
+
+              <div
+                class="flex items-center text-gray-800 -px-3 dark:text-gray-200"
+              >
+                <svg
+                  class="w-5 h-5 mx-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+
+                <span class="mx-3">Payment Security</span>
+              </div>
+
+              <div
+                class="flex items-center text-gray-800 -px-3 dark:text-gray-200"
+              >
+                <svg
+                  class="w-5 h-5 mx-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+
+                <span class="mx-3">Fast shipping (+ Express)</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="w-2/4">
-        <div class="py-8">
+
+        <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
           <img
+            class="object-cover w-full h-full max-w-2xl rounded-md"
             src="https://images.unsplash.com/photo-1484591974057-265bb767ef71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-            alt=""
-            class="rounded-md"
+            alt="landscape"
           />
         </div>
       </div>
-    </div>
+    </header>
   </div>
 </template>
 
@@ -63,15 +179,5 @@ export default {};
 <style lang="scss" scoped>
 .container {
   margin: 0 auto;
-}
-
-// debug
-#hero-component {
-  background-color: red;
-}
-
-.container {
-  border: 1px solid black;
-  min-height: 600px;
 }
 </style>
