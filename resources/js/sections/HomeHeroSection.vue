@@ -1,5 +1,5 @@
 <template>
-    <div class='text-[600px]'>HOME</div>
+  <div>HERO</div>
 </template>
 
 <script>

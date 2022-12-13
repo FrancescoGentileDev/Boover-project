@@ -1,15 +1,18 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <title>Boolpress</title>
-    </head>
-    <body>
-      <div id="app"></div>
-        <script src="{{ asset('js/app.js') }}"></script>
-    </body>
-    <style>
-        body {
-            background-color: rgb(235, 235, 235)
-        }
-    </style>
+<!DOCTYPE html>
+<html data-theme='light' lang="en">
+<head>
+
+  @include('layouts.partials.meta-head')
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <script defer src="{{ asset('js/app.js') }}"></script>
+
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app"></div>
+
+</body>
 </html>

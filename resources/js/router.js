@@ -10,7 +10,7 @@ const router = new VueRouter({
             path: "/",
             alias: "/home",
             name: "home",
-            component: () => import("./views/homeSection.vue"),
+            component: () => import("./views/homeView.vue"),
         },
     ],
 });

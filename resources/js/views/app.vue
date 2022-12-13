@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import homeSection from './homeSection.vue';
+import homeView from './homeView.vue';
 export default {
-  components: { homeSection },};
+  components: { homeView },};
 </script>
 
 <style></style>
