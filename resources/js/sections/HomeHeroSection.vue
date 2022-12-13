@@ -2,10 +2,11 @@
   <div id="hero-component" class="py-10">
     <div class="container flex flex-row py-10">
       <div class="w-2/4">
-        <div class="text-2xl mb-5">Titolo di questa Hero</div>
+        <div class="text-3xl font-semibold mb-5">Titolo di questa Hero</div>
         <div id="contents" class="flex flex-col gap-y-2">
-          <div>
-            <div>Content Title 1</div>
+          <!-- Example contents -->
+          <div class="my-3">
+            <div class="font-semibold">Content Title 1</div>
             <p class="w-3/4">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Necessitatibus at totam et accusamus in vero sint. Ex, porro quo
@@ -13,8 +14,8 @@
               mollitia animi cum?
             </p>
           </div>
-          <div>
-            <div>Content Title 2</div>
+          <div class="my-3">
+            <div class="font-semibold">Content Title 2</div>
             <p class="w-3/4">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Voluptates quis nam quisquam mollitia aliquid alias ratione
@@ -22,8 +23,8 @@
               dolorem optio ipsum? Aspernatur laboriosam omnis consectetur!
             </p>
           </div>
-          <div>
-            <div>Content Title 3</div>
+          <div class="my-3">
+            <div class="font-semibold">Content Title 3</div>
             <p class="w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
               quia perspiciatis voluptatem quae pariatur sit velit omnis,
@@ -31,17 +32,8 @@
               beatae necessitatibus quod doloribus?
             </p>
           </div>
-          <div>
-            <div>Content Title 4</div>
-            <p class="w-3/4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
-              quia perspiciatis voluptatem quae pariatur sit velit omnis,
-              assumenda at quaerat. Adipisci ullam dolorum vel minima? Earum
-              beatae necessitatibus quod doloribus?
-            </p>
-          </div>
-          <div>
-            <div>Content Title 5</div>
+          <div class="my-3">
+            <div class="font-semibold">Content Title 4</div>
             <p class="w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
               quia perspiciatis voluptatem quae pariatur sit velit omnis,
