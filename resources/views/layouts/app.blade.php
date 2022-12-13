@@ -2,19 +2,19 @@
 <html data-theme="light" lang="en">
 
 <head>
-  @include('layouts.partials.meta-head')
+    @include('layouts.partials.meta-head')
 
-  {{-- CSS --}}
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {{-- CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
-  {{-- JS --}}
-  <script src="{{ asset('js/backOffice.js') }}"></script>
+    {{-- JS --}}
+    <script src="{{ asset('js/backOffice.js') }}"></script>
 
-  @yield('head')
+    @yield('head')
 
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <title>{{ $title ?? 'Boover Project' }}</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>{{ $title ?? 'Boover Project' }}</title>
 </head>
 
 
@@ -80,7 +80,7 @@
                 </a>
 
                 <a id="Sponsorship"
-                     class="
+                    class="
              @if (Route::currentRouteName() == 'dashboard.sponsor') bg-gray-100 @endif
              flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                     href="{{ route('dashboard.sponsor') }}">
@@ -120,6 +120,7 @@
 
     <script>
         let sidebar = document.getElementById('sidebar');
+
         function toggleSidebar() {
             if (sidebar.classList.contains('-left-48')) {
                 sidebar.classList.remove('-left-48');
