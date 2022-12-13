@@ -5,7 +5,7 @@
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div>
             <div class="text-xs font-medium text-gray-400 uppercase">
-              Getting Started
+              Categorie
             </div>
 
             <a
@@ -23,7 +23,7 @@
                 hover:underline
               "
             >
-              Installation
+              Grafica e Design
             </a>
             <a
               href="#"
@@ -40,7 +40,7 @@
                 hover:underline
               "
             >
-              Release Notes
+              Marketing
             </a>
             <a
               href="#"
@@ -57,7 +57,7 @@
                 hover:underline
               "
             >
-              Upgrade Guide
+              Scrittura e Traduzione
             </a>
             <a
               href="#"
@@ -74,7 +74,7 @@
                 hover:underline
               "
             >
-              Using with Preprocessors
+              Musica e Audio
             </a>
             <a
               href="#"
@@ -91,7 +91,7 @@
                 hover:underline
               "
             >
-              Optimizing for Production
+              Programmazione e Tecnologia
             </a>
             <a
               href="#"
@@ -108,7 +108,7 @@
                 hover:underline
               "
             >
-              Browser Support
+              Lifestyle
             </a>
             <a
               href="#"
@@ -125,7 +125,41 @@
                 hover:underline
               "
             >
-              IntelliSense
+              Medicina e Salute
+            </a>
+            <a
+              href="#"
+              class="
+                block
+                mt-3
+                text-sm
+                font-medium
+                text-gray-500
+                duration-700
+                dark:text-gray-300
+                hover:text-gray-400
+                dark:hover:text-gray-200
+                hover:underline
+              "
+            >
+              Sport e Hobby
+            </a>
+            <a
+              href="#"
+              class="
+                block
+                mt-3
+                text-sm
+                font-medium
+                text-gray-500
+                duration-700
+                dark:text-gray-300
+                hover:text-gray-400
+                dark:hover:text-gray-200
+                hover:underline
+              "
+            >
+              Altro
             </a>
           </div>
 
