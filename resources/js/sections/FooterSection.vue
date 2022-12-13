@@ -165,7 +165,7 @@
 
           <div>
             <div class="text-xs font-medium text-gray-400 uppercase">
-              Getting Started
+              Elenco 2 Da Capire
             </div>
 
             <a
@@ -291,133 +291,7 @@
 
           <div>
             <div class="text-xs font-medium text-gray-400 uppercase">
-              Getting Started
-            </div>
-
-            <a
-              href="#"
-              class="
-                block
-                mt-5
-                text-sm
-                font-medium
-                text-gray-500
-                duration-700
-                dark:text-gray-300
-                hover:text-gray-400
-                dark:hover:text-gray-200
-                hover:underline
-              "
-            >
-              Installation
-            </a>
-            <a
-              href="#"
-              class="
-                block
-                mt-3
-                text-sm
-                font-medium
-                text-gray-500
-                duration-700
-                dark:text-gray-300
-                hover:text-gray-400
-                dark:hover:text-gray-200
-                hover:underline
-              "
-            >
-              Release Notes
-            </a>
-            <a
-              href="#"
-              class="
-                block
-                mt-3
-                text-sm
-                font-medium
-                text-gray-500
-                duration-700
-                dark:text-gray-300
-                hover:text-gray-400
-                dark:hover:text-gray-200
-                hover:underline
-              "
-            >
-              Upgrade Guide
-            </a>
-            <a
-              href="#"
-              class="
-                block
-                mt-3
-                text-sm
-                font-medium
-                text-gray-500
-                duration-700
-                dark:text-gray-300
-                hover:text-gray-400
-                dark:hover:text-gray-200
-                hover:underline
-              "
-            >
-              Using with Preprocessors
-            </a>
-            <a
-              href="#"
-              class="
-                block
-                mt-3
-                text-sm
-                font-medium
-                text-gray-500
-                duration-700
-                dark:text-gray-300
-                hover:text-gray-400
-                dark:hover:text-gray-200
-                hover:underline
-              "
-            >
-              Optimizing for Production
-            </a>
-            <a
-              href="#"
-              class="
-                block
-                mt-3
-                text-sm
-                font-medium
-                text-gray-500
-                duration-700
-                dark:text-gray-300
-                hover:text-gray-400
-                dark:hover:text-gray-200
-                hover:underline
-              "
-            >
-              Browser Support
-            </a>
-            <a
-              href="#"
-              class="
-                block
-                mt-3
-                text-sm
-                font-medium
-                text-gray-500
-                duration-700
-                dark:text-gray-300
-                hover:text-gray-400
-                dark:hover:text-gray-200
-                hover:underline
-              "
-            >
-              IntelliSense
-            </a>
-          </div>
-
-          <div>
-            <div class="text-xs font-medium text-gray-400 uppercase">
-              Getting Started
+              Elenco 3 Da Capire
             </div>
 
             <a
@@ -546,7 +420,7 @@
 
         <div class="sm:flex sm:items-center sm:justify-between">
           <p class="text-sm text-gray-400">
-            © Copyright 2021. All Rights Reserved.
+            © Copyright Boover 2022. All Rights Reserved.
           </p>
 
           <div class="flex mt-3 -mx-2 sm:mt-0">
