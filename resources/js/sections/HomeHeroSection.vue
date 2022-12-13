@@ -1,8 +1,8 @@
 <template>
-  <div id="hero-component" class="py-7">
-    <div class="container">
-      <div>LEFT SIDE</div>
-      <div>RIGHT SIDE</div>
+  <div id="hero-component" class="py-10">
+    <div class="container flex flex-row">
+      <div class="w-2/4">LEFT SIDE</div>
+      <div class="w-2/4">RIGHT SIDE</div>
     </div>
   </div>
 </template>
@@ -14,7 +14,6 @@ export default {};
 <style lang="scss" scoped>
 .container {
   margin: 0 auto;
-  max-width: 1200px;
 }
 
 // debug
