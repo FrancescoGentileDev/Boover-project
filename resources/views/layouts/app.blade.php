@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="en">
+<html data-theme="dark" lang="en">
 
 <head>
     @include('layouts.partials.meta-head')
