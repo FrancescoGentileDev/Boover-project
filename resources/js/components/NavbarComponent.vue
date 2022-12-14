@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed w-full bg-base-200 shadow-sm">
+    <div class="fixed w-full bg-base-200 shadow-sm" ref="inside">
         <!-- Require css -->
 
         <nav
@@ -26,9 +26,12 @@
                         type="text"
                         class="input w-full h-10 border-base-content border-opacity-50 bg-base-200 rounded-md focus:outline-none focus:border-primary"
                         placeholder="Search"
+                        v-model="searchInput"
+
                     />
                     <button
                         class="bg-primary bg-opacity-80 h-10 px-4 absolute right-0 rounded-r-md hover:bg-opacity-100 hidden md:inline-block"
+                        @click="search"
                     >
                         <em
                             class="fa-solid fa-magnifying-glass text-xl text-base-100"
@@ -120,6 +123,7 @@ export default {
     data: () => ({
         categories: [],
         ShowSidebar: false,
+        searchInput: '',
     }),
     created() {
         axios.get("/api/category").then((response) => {
@@ -131,6 +135,10 @@ export default {
     methods: {
         toggleSidebar() {
             this.ShowSidebar = !this.ShowSidebar;
+        },
+        search() {
+            this.$router.push({ path: '/search', query:{search:  this.searchInput }});
+
         },
     },
 };
