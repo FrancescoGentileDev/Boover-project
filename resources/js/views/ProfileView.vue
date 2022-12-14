@@ -1,17 +1,20 @@
 <template>
-  <section id="profile-details" class="p-3">
+  <section id="profile-details" class="p-3 flow">
     <div class="flex flex-col-reverse">
-      <article id="profile-info" class="text-center mx-auto">
+      <article id="profile-info" class="text-center mx-auto flow mt-4">
         <h1 class="text-2xl">Hi, I'm <span class="text-violet-500">{{ activeProfile.name }} {{ activeProfile.lastname }}</span></h1>
         <p>{{ displaySkills }}</p>
 
         <p>{{ activeProfile.presentation }}</p>
 
-        <p v-if="activeProfile.is_available">Hire Me!</p>
-        <p v-else>Currently Unavailable</p>
+        <button v-if="activeProfile.is_available" class="btn btn-primary">Hire Me!</button>
+        <button v-else class="btn btn-disabled">Currently Unavailable</button>
 
-        <p>{{ activeProfile.email }}</p>
-        <p>{{ activeProfile.phone }}</p>
+        <section>
+          <h2>Contacts</h2>
+          <p>{{ activeProfile.email }}</p>
+          <p>{{ activeProfile.phone }}</p>
+        </section>
       </article>
 
       <div id="profile-picture" class="overflow-hidden rounded-full aspect-square mx-auto w-1/4">
@@ -21,7 +24,7 @@
       </div>
     </div>
 
-    <article class="text-center mx-auto">
+    <article class="text-center mx-auto flow bg-violet-600 text-white rounded-md p-6 w-max">
       <h2>Description</h2>
       <p class="mx-auto">{{ activeProfile.detailed_description }}</p>
     </article>
@@ -62,5 +65,9 @@
 <style lang="scss" scoped>
 p {
   max-width: 60ch;
+}
+
+.flow > * + * {
+  margin-top: 1em;
 }
 </style>
