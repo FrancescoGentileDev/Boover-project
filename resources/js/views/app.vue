@@ -16,6 +16,9 @@ export default {
     setTimeout(() => {
       this.$refs.content.$el.style.paddingTop = this.$refs.navbar.$el.offsetHeight + 'px';
     }, 1000)
+    window.onload(() => {
+      this.$refs.content.$el.style.paddingTop = this.$refs.navbar.$el.offsetHeight + 'px';
+    })
     window.addEventListener('resize', () => {
       this.$refs.content.$el.style.paddingTop = this.$refs.navbar.$el.offsetHeight + 'px';
     })
