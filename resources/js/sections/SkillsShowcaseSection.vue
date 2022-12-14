@@ -1,75 +1,116 @@
 <template>
     <div class="wrapper pt-24 pb-24">
+        <div class="w-11/12 m-auto p-6">
+            <h1 class="text-5xl">Popular professional services</h1>
+        </div>
         <!--  // -->
 
-        <div class="flex bg-slate-400 m-auto gap-7 w-4/5">
-            <div
-                class="w-full h-96 bg-slate-400 rounded-md bg-[url('https://placeimg.com/800/400/people')] bg-cover"
-                v-for="card in numberOfCards"
-                :key="card"
-            >
-                <div id="text-container">
-                    <h3>go global</h3>
-                    <h1>Design</h1>
-                </div>
+        <div v-if="isError" class="alert alert-error shadow-lg">
+            <div>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="stroke-current flex-shrink-0 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                </svg>
+                <span>Error! something went wrong</span>
             </div>
         </div>
 
+        <carousel
+            v-else
+            class="w-11/12 m-auto"
+            :navigation-enabled="true"
+            navigationNextLabel='  <div class="btn btn-circle">❯</div>'
+            navigationPrevLabel='  <div class="btn btn-circle">❮</div>'
+            :per-page="1"
+            :perPageCustom="[
+                [640, 2],
+                [768, 3],
+                [1024, 4],
+                [1280, 5],
+            ]"
+        >
+            <!-- slide-->
+            <slide
+                v-for="(skill, index) in skills.slice(0, 20)"
+                :key="skill + index"
+                class="relative p-6"
+            >
+                <div
+                    class="h-96 rounded-md bg-[url('https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png')] bg-cover"
+                ></div>
+
+                <div class="absolute top-0 right-0 w-full h-full p-6">
+                    <div
+                        id="text-container"
+                        class="p-4 opacity-[100%!important]"
+                    >
+                        <h3 class="text-white text-sm">POPULAR</h3>
+                        <h1 class="text-xl text-white">
+                            {{ skill.name }}
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- overlay -->
+                <!--   <div
+                    class="absolute top-0 right-0 bg-slate-900 opacity-20 w-full h-full rounded-md"
+                ></div> -->
+                <!-- overlay -->
+            </slide>
+        </carousel>
         <!--  // -->
     </div>
 </template>
 
 <script>
+import axios from "axios";
+import { Carousel, Slide } from "vue-carousel";
+
 export default {
     name: "SkillsShowcaseSection",
     data() {
         return {
             viewportWidth: 0,
             numberOfCards: "",
+            skills: [],
+            isError: false,
         };
+    },
+    components: {
+        Carousel,
+        Slide,
     },
     //
     methods: {
-        //
-        resizeHandler(e) {
-            this.viewportWidth = window.innerWidth;
-            console.log(this.viewportWidth);
+        getSkillsData() {
+            axios
+                .get("/api/skills")
+                .then((response) => {
+                    console.log(response.data);
 
-            this.setNumberOfCards();
-        },
-        //
-        setNumberOfCards() {
-            if (this.viewportWidth < 640) {
-                this.numberOfCards = 1;
-                return this.numberOfCards;
-                //
-            } else if (this.viewportWidth < 768) {
-                this.numberOfCards = 2;
-                return this.numberOfCards;
-                //
-            } else if (this.viewportWidth < 1024) {
-                this.numberOfCards = 3;
-                return this.numberOfCards;
-                //
-            } else if (this.viewportWidth < 1280) {
-                this.numberOfCards = 4;
-                return this.numberOfCards;
-                //
-            } else {
-                this.numberOfCards = 5;
-                return this.numberOfCards;
-            }
+                    this.skills.push(...response.data);
+                })
+                .catch((error) => {
+                    if (error) {
+                        console.log(error);
+                        this.isError = true;
+                    }
+                });
         },
     },
-    //
     mounted() {
-        this.resizeHandler(); //setta il numero di card iniziali
-        window.addEventListener("resize", this.resizeHandler);
-    },
-    destroyed() {
-        window.removeEventListener("resize", this.resizeHandler);
+        this.getSkillsData();
     },
 };
 </script>
 
-<style></style>
+<style scoped lang="scss"></style>
