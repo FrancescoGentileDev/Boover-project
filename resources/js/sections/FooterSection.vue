@@ -1,6 +1,6 @@
 !<template>
   <div>
-    <footer class="bg-white dark:bg-gray-900">
+    <footer class="bg-base-200 dark:bg-gray-900">
       <div class="container px-6 py-8 mx-auto">
         <div
           class="

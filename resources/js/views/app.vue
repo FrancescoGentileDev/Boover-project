@@ -1,5 +1,5 @@
 <template>
-  <div data-theme="dark">
+  <div data-theme="light">
     <NavbarComponent />
     <router-view class="pt-[8.75rem]"></router-view>
     <footer-section />
