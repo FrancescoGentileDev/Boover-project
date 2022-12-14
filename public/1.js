@@ -22,6 +22,12 @@ __webpack_require__.r(__webpack_exports__);
         _this.activeProfile = response.data;
         console.log('Debug - Current Active Profile', _this.activeProfile);
       });
+    },
+    displaySkills: function displaySkills(skillList) {
+      var skills = skillList.map(function (skill) {
+        return skill.name;
+      });
+      return skills.join(', ');
     }
   },
   mounted: function mounted() {
@@ -47,19 +53,27 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("section", {
+    staticClass: "p-3",
     attrs: {
       id: "profile-details"
     }
   }, [_c("div", {
+    staticClass: "overflow-hidden rounded-full aspect-square mx-auto w-1/4",
     attrs: {
       id: "profile-picture"
     }
   }, [_c("img", {
+    staticClass: "w-full object-cover",
     attrs: {
       src: _vm.activeProfile.avatar,
       alt: "Picture of " + _vm.activeProfile.name
     }
-  })])]);
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "text-center",
+    attrs: {
+      id: "profile-info"
+    }
+  }, [_c("h1", [_vm._v(_vm._s(_vm.activeProfile.name) + " " + _vm._s(_vm.activeProfile.lastname))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.displaySkills(_vm.activeProfile.skills)))])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

@@ -1,7 +1,14 @@
 <template>
-  <section id="profile-details">
-    <div id="profile-picture">
-      <img :src="activeProfile.avatar" :alt="'Picture of ' + activeProfile.name" />
+  <section id="profile-details" class="p-3">
+    <div id="profile-picture" class="overflow-hidden rounded-full aspect-square mx-auto w-1/4">
+      <img :src="activeProfile.avatar" :alt="'Picture of ' + activeProfile.name"
+        class="w-full object-cover"
+      />
+    </div>
+
+    <div id="profile-info" class="text-center">
+      <h1>{{ activeProfile.name }} {{ activeProfile.lastname }}</h1>
+      <p>{{ displaySkills(activeProfile.skills) }}</p>
     </div>
   </section>
 </template>
@@ -22,6 +29,11 @@
             console.log('Debug - Current Active Profile', this.activeProfile);
           })
       },
+
+      displaySkills(skillList) {
+        const skills = skillList.map(skill => skill.name);
+        return skills.join(', ');
+      }
     },
 
     mounted() {
