@@ -82,16 +82,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
 
         $user = User::find($id);
-        // if (is_numeric($id)) {
-        //   $user = User::find($id);
-        // }
-        // else {
-        //   $user = User::where($id, 'slug')->first();
-        // }
 
         $user->reviews_rating =  $user->reviews()->avg('vote');
         $user->reviews_count =  $user->reviews()->count();

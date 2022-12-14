@@ -55,14 +55,14 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("section", {
-    staticClass: "p-3",
+    staticClass: "p-3 flow",
     attrs: {
       id: "profile-details"
     }
   }, [_c("div", {
     staticClass: "flex flex-col-reverse"
   }, [_c("article", {
-    staticClass: "text-center mx-auto",
+    staticClass: "text-center mx-auto flow mt-4",
     attrs: {
       id: "profile-info"
     }
@@ -70,7 +70,11 @@ var render = function render() {
     staticClass: "text-2xl"
   }, [_vm._v("Hi, I'm "), _c("span", {
     staticClass: "text-violet-500"
-  }, [_vm._v(_vm._s(_vm.activeProfile.name) + " " + _vm._s(_vm.activeProfile.lastname))])]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.displaySkills))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.presentation))]), _vm._v(" "), _vm.activeProfile.is_available ? _c("p", [_vm._v("Hire Me!")]) : _c("p", [_vm._v("Currently Unavailable")]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.email))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.phone))])]), _vm._v(" "), _c("div", {
+  }, [_vm._v(_vm._s(_vm.activeProfile.name) + " " + _vm._s(_vm.activeProfile.lastname))])]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.displaySkills))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.presentation))]), _vm._v(" "), _vm.activeProfile.is_available ? _c("button", {
+    staticClass: "btn btn-primary"
+  }, [_vm._v("Hire Me!")]) : _c("button", {
+    staticClass: "btn btn-disabled"
+  }, [_vm._v("Currently Unavailable")]), _vm._v(" "), _c("section", [_c("h2", [_vm._v("Contacts")]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.email))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.phone))])])]), _vm._v(" "), _c("div", {
     staticClass: "overflow-hidden rounded-full aspect-square mx-auto w-1/4",
     attrs: {
       id: "profile-picture"
@@ -82,7 +86,7 @@ var render = function render() {
       alt: "Picture of " + _vm.activeProfile.name
     }
   })])]), _vm._v(" "), _c("article", {
-    staticClass: "text-center mx-auto"
+    staticClass: "text-center mx-auto flow bg-violet-600 text-white rounded-md p-6 w-max"
   }, [_c("h2", [_vm._v("Description")]), _vm._v(" "), _c("p", {
     staticClass: "mx-auto"
   }, [_vm._v(_vm._s(_vm.activeProfile.detailed_description))])])]);
@@ -105,7 +109,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "p[data-v-2f0c96c2] {\n  max-width: 60ch;\n}", ""]);
+exports.push([module.i, "p[data-v-2f0c96c2] {\n  max-width: 60ch;\n}\n.flow > * + *[data-v-2f0c96c2] {\n  margin-top: 1em;\n}", ""]);
 
 // exports
 
