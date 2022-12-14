@@ -1,20 +1,19 @@
 <template>
-  <div>
-        <NavbarComponent />
-        <router-view class="pt-[8.75rem]"></router-view>
-        <footer-section />
+  <div data-theme="dark">
+    <NavbarComponent />
+    <router-view class="pt-[8.75rem]"></router-view>
+    <footer-section />
+    test
   </div>
 </template>
 
 <script>
 import NavbarComponent from "../components/NavbarComponent.vue";
-import FooterSection from '../sections/FooterSection.vue';
+import FooterSection from "../sections/FooterSection.vue";
 export default {
-    components: { NavbarComponent, FooterSection },
+  components: { NavbarComponent, FooterSection },
 };
 </script>
 
-<style
-        FooterSectionscoped>
-
+<style>
 </style>
