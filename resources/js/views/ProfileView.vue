@@ -7,8 +7,8 @@
     </div>
 
     <div id="profile-info" class="text-center">
-      <h1>{{ activeProfile.name }} {{ activeProfile.lastname }}</h1>
-      <p>{{ displaySkills(activeProfile.skills) }}</p>
+      <h1 class="text-2xl">{{ activeProfile.name }} {{ activeProfile.lastname }}</h1>
+      <p>{{ displaySkills }}</p>
     </div>
   </section>
 </template>
@@ -21,6 +21,13 @@
       }
     },
 
+    computed: {
+      displaySkills() {
+        if(!('skills' in this.activeProfile)) return '';
+        return this.activeProfile.skills.map(skill => skill.name).join(', ');
+      }
+    },
+
     methods: {
       getUserProfile(id) {
         axios.get('/api/users/' + id)
@@ -29,15 +36,9 @@
             console.log('Debug - Current Active Profile', this.activeProfile);
           })
       },
-
-      displaySkills(skillList) {
-        const skills = skillList.map(skill => skill.name);
-        return skills.join(', ');
-      }
     },
 
-    mounted() {
-      console.log(this.$route.params);
+    created() {
       this.getUserProfile(this.$route.params.slug);
     }
   }

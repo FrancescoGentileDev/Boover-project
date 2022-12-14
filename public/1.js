@@ -15,6 +15,14 @@ __webpack_require__.r(__webpack_exports__);
       activeProfile: {}
     };
   },
+  computed: {
+    displaySkills: function displaySkills() {
+      if (!('skills' in this.activeProfile)) return '';
+      return this.activeProfile.skills.map(function (skill) {
+        return skill.name;
+      }).join(', ');
+    }
+  },
   methods: {
     getUserProfile: function getUserProfile(id) {
       var _this = this;
@@ -22,16 +30,9 @@ __webpack_require__.r(__webpack_exports__);
         _this.activeProfile = response.data;
         console.log('Debug - Current Active Profile', _this.activeProfile);
       });
-    },
-    displaySkills: function displaySkills(skillList) {
-      var skills = skillList.map(function (skill) {
-        return skill.name;
-      });
-      return skills.join(', ');
     }
   },
-  mounted: function mounted() {
-    console.log(this.$route.params);
+  created: function created() {
     this.getUserProfile(this.$route.params.slug);
   }
 });
@@ -73,7 +74,9 @@ var render = function render() {
     attrs: {
       id: "profile-info"
     }
-  }, [_c("h1", [_vm._v(_vm._s(_vm.activeProfile.name) + " " + _vm._s(_vm.activeProfile.lastname))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.displaySkills(_vm.activeProfile.skills)))])])]);
+  }, [_c("h1", {
+    staticClass: "text-2xl"
+  }, [_vm._v(_vm._s(_vm.activeProfile.name) + " " + _vm._s(_vm.activeProfile.lastname))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.displaySkills))])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
