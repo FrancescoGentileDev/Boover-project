@@ -84,8 +84,14 @@ class UserController extends Controller
      */
     public function show($id, Request $request)
     {
-
-        $user = User::find($id);
+        $user = 0;
+        if($request->has('slug')) {
+            $user = User::where('slug', $id)->first();
+        }
+        else
+        {
+            $user = User::find($id);
+        }
 
         $user->reviews_rating =  $user->reviews()->avg('vote');
         $user->reviews_count =  $user->reviews()->count();
