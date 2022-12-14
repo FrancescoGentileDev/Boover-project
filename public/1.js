@@ -77,7 +77,7 @@ var render = function render() {
     }
   }, [_c("h1", {
     staticClass: "text-2xl"
-  }, [_vm._v(_vm._s(_vm.activeProfile.name) + " " + _vm._s(_vm.activeProfile.lastname))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.displaySkills))]), _vm._v(" "), _vm.activeProfile.is_available ? _c("p", [_vm._v("Hire Me!")]) : _c("p", [_vm._v("Currently Unavailable")])]), _vm._v(" "), _c("article", {
+  }, [_vm._v(_vm._s(_vm.activeProfile.name) + " " + _vm._s(_vm.activeProfile.lastname))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.displaySkills))]), _vm._v(" "), _vm.activeProfile.is_available ? _c("p", [_vm._v("Hire Me!")]) : _c("p", [_vm._v("Currently Unavailable")]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.email))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.phone))])]), _vm._v(" "), _c("article", {
     staticClass: "text-center"
   }, [_c("h2", [_vm._v("Description")]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.detailed_description))])])]);
 };

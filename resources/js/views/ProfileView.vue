@@ -12,6 +12,9 @@
 
       <p v-if="activeProfile.is_available">Hire Me!</p>
       <p v-else>Currently Unavailable</p>
+
+      <p>{{ activeProfile.email }}</p>
+      <p>{{ activeProfile.phone }}</p>
     </article>
 
     <article class="text-center">
