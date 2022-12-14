@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper pt-24 pb-24">
+    <div class="wrapper pt-24 pb-24 z-10">
         <div class="w-11/12 m-auto p-6">
             <h1 class="text-5xl primary">Popular professional services</h1>
         </div>
@@ -49,10 +49,7 @@
                 ></div>
 
                 <div class="absolute top-0 right-0 w-full h-full p-6">
-                    <div
-                        id="text-container"
-                        class="p-4 opacity-[100%!important]"
-                    >
+                    <div class="p-4">
                         <h3 class="text-white text-sm">POPULAR</h3>
                         <h1 class="text-xl text-white">
                             {{ skill.name }}
