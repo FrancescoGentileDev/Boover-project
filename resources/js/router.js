@@ -13,7 +13,7 @@ const router = new VueRouter({
             component: () => import("./views/homeView.vue"),
         },
         {
-          path: "/profile",
+          path: "/profile/:slug",
           name: "profile",
           component: () => import('./views/ProfileView.vue'),
         },
