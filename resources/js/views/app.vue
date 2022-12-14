@@ -1,8 +1,8 @@
 <template>
-    <div>
+  <div>
         <NavbarComponent />
         <router-view class="pt-[8.75rem]"></router-view>
-    </div>
+  </div>
 </template>
 
 <script>
