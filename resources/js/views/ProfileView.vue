@@ -1,21 +1,23 @@
 <template>
   <section id="profile-details" class="p-3">
-    <div id="profile-picture" class="overflow-hidden rounded-full aspect-square mx-auto w-1/4">
-      <img :src="activeProfile.avatar" :alt="'Picture of ' + activeProfile.name"
-        class="w-full object-cover"
-      />
+    <div class="flex flex-col-reverse">
+      <article id="profile-info" class="text-center">
+        <h1 class="text-2xl">{{ activeProfile.name }} {{ activeProfile.lastname }}</h1>
+        <p>{{ displaySkills }}</p>
+
+        <p v-if="activeProfile.is_available">Hire Me!</p>
+        <p v-else>Currently Unavailable</p>
+
+        <p>{{ activeProfile.email }}</p>
+        <p>{{ activeProfile.phone }}</p>
+      </article>
+
+      <div id="profile-picture" class="overflow-hidden rounded-full aspect-square mx-auto w-1/4">
+        <img :src="activeProfile.avatar" :alt="'Picture of ' + activeProfile.name"
+          class="w-full object-cover"
+        />
+      </div>
     </div>
-
-    <article id="profile-info" class="text-center">
-      <h1 class="text-2xl">{{ activeProfile.name }} {{ activeProfile.lastname }}</h1>
-      <p>{{ displaySkills }}</p>
-
-      <p v-if="activeProfile.is_available">Hire Me!</p>
-      <p v-else>Currently Unavailable</p>
-
-      <p>{{ activeProfile.email }}</p>
-      <p>{{ activeProfile.phone }}</p>
-    </article>
 
     <article class="text-center">
       <h2>Description</h2>
