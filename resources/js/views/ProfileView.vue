@@ -2,8 +2,10 @@
   <section id="profile-details" class="p-3">
     <div class="flex flex-col-reverse">
       <article id="profile-info" class="text-center">
-        <h1 class="text-2xl">{{ activeProfile.name }} {{ activeProfile.lastname }}</h1>
+        <h1 class="text-2xl">Hi, I'm {{ activeProfile.name }} {{ activeProfile.lastname }}</h1>
         <p>{{ displaySkills }}</p>
+
+        <p>{{ activeProfile.presentation }}</p>
 
         <p v-if="activeProfile.is_available">Hire Me!</p>
         <p v-else>Currently Unavailable</p>
