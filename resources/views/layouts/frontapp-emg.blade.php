@@ -16,16 +16,6 @@
   <title>{{ $title ?? 'Boover Project' }}</title>
 </head>
 <body>
-  <x-app-header
-    :pageTitle="$pageTitle ?? 'Boover'"
-  />
-
-  <div id="app">
-    <main>
-      @yield('content')
-    </main>
-
-    {{-- Footer --}}
-  </div>
+  @yield('content')
 </body>
 </html>

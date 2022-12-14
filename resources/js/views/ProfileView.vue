@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <p>{{ activeProfile.name }}</p>
-  </div>
+  <section id="profile-details">
+    <div id="profile-picture">
+      <img :src="activeProfile.avatar" :alt="'Picture of ' + activeProfile.name" />
+    </div>
+  </section>
 </template>
 
 <script>
@@ -24,7 +26,6 @@
 
     mounted() {
       console.log(this.$route.params);
-
       this.getUserProfile(this.$route.params.slug);
     }
   }
