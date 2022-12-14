@@ -16,6 +16,11 @@ const router = new VueRouter({
           path: "/profile",
           name: "profile",
           component: () => import('./views/ProfileView.vue'),
+        },
+        {
+          path: "/allusers",
+          name: "allusers",
+          component: () => import('./views/AllUsersView.vue'),
         }
     ],
 });
