@@ -67,8 +67,8 @@
                        {{ category.name }}
                     </div>
                     <div class="collapse-content">
-                        <ul>
-                            <li v-for="(skill, index) in category.skills" :key="index">{{ skill.name }}</li>
+                        <ul class="">
+                            <li class="py-2 hover:bg-base-300 rounded-md " v-for="(skill, index) in category.skills" :key="index"><router-link :to="'/skill/' + skill.slug">{{ skill.name }}</router-link></li>
                         </ul>
                     </div>
                 </div>
@@ -104,9 +104,9 @@
                             v-for="(skill, index) in category.skills"
                             :key="index"
                         >
-                            <a :href="'/skill/' + skill.slug">{{
+                            <router-link :to="'/skill/' + skill.slug">{{
                                 skill.name
-                            }}</a>
+                            }}</router-link>
                         </li>
                     </ul>
                 </div>
