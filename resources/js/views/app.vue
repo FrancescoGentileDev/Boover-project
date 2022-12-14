@@ -2,16 +2,19 @@
   <div>
         <NavbarComponent />
         <router-view class="pt-[8.75rem]"></router-view>
+        <footer-section />
   </div>
 </template>
 
 <script>
 import NavbarComponent from "../components/NavbarComponent.vue";
+import FooterSection from '../sections/FooterSection.vue';
 export default {
-    components: { NavbarComponent },
+    components: { NavbarComponent, FooterSection },
 };
 </script>
 
-<style scoped>
+<style
+        FooterSectionscoped>
 
 </style>
