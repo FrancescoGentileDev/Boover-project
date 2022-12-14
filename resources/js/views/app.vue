@@ -14,7 +14,6 @@ export default {
 };
 </script>
 
-<style
-        FooterSectionscoped>
+<style>
 
 </style>
