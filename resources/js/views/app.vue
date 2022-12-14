@@ -2,7 +2,7 @@
   <div data-theme="light" class="relative">
     <NavbarComponent ref="navbar"/>
     <div ref="content" class="min-h-[100vh]" style="padding-top: 0px">
-    <router-view></router-view>
+    <router-view @search="search"></router-view>
     </div>
     <footer-section class="bottom-0"/>
   </div>
@@ -23,6 +23,11 @@ export default {
     this.$refs.content.style.paddingTop = this.$refs.navbar.$el.offsetHeight + "px";
    });
 
+},
+methods: {
+  search(search) {
+    this.$refs.navbar.searchInput = search;
+  },
 },
 
 };

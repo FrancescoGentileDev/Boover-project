@@ -36,6 +36,9 @@ export default {
                 this.users = response.data;
             });
     },
+    mounted() {
+        this.$emit('search', this.$route.query.search)
+    },
 };
 </script>
 

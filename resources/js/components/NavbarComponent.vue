@@ -23,6 +23,7 @@
                 </div>
                 <div class="search w-full relative">
                     <input
+                        @keyup.enter="search"
                         type="text"
                         class="input w-full h-10 border-base-content border-opacity-50 bg-base-200 rounded-md focus:outline-none focus:border-primary"
                         placeholder="Search"
@@ -116,7 +117,7 @@
             </div>
         </div>
     </div>
-</template>h
+</template>
 
 <script>
 export default {
@@ -131,7 +132,8 @@ export default {
             this.categories = response.data;
         });
     },
-    mounted() {},
+    mounted() {
+    },
     methods: {
         toggleSidebar() {
             this.ShowSidebar = !this.ShowSidebar;
