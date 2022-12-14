@@ -1,8 +1,8 @@
 <template>
   <section id="profile-details" class="p-3">
     <div class="flex flex-col-reverse">
-      <article id="profile-info" class="text-center">
-        <h1 class="text-2xl">Hi, I'm {{ activeProfile.name }} {{ activeProfile.lastname }}</h1>
+      <article id="profile-info" class="text-center mx-auto">
+        <h1 class="text-2xl">Hi, I'm <span class="text-violet-500">{{ activeProfile.name }} {{ activeProfile.lastname }}</span></h1>
         <p>{{ displaySkills }}</p>
 
         <p>{{ activeProfile.presentation }}</p>
@@ -21,9 +21,9 @@
       </div>
     </div>
 
-    <article class="text-center">
+    <article class="text-center mx-auto">
       <h2>Description</h2>
-      <p>{{ activeProfile.detailed_description }}</p>
+      <p class="mx-auto">{{ activeProfile.detailed_description }}</p>
     </article>
   </section>
 </template>
@@ -60,5 +60,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+p {
+  max-width: 60ch;
+}
 </style>

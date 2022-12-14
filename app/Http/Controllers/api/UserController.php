@@ -84,8 +84,15 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
         $user = User::find($id);
+        // if (is_numeric($id)) {
+        //   $user = User::find($id);
+        // }
+        // else {
+        //   $user = User::where($id, 'slug')->first();
+        // }
+
         $user->reviews_rating =  $user->reviews()->avg('vote');
         $user->reviews_count =  $user->reviews()->count();
         $user->with('sponsors');
