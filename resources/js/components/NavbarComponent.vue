@@ -13,11 +13,12 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="logo md:pb-0">
-                        <p
+                        <router-link to="/"
                             class="font-extrabold text-4xl text-center md:text-left"
+
                         >
                             BOOVER!
-                        </p>
+                        </router-link>
                     </div>
                     <button class="sm:hidden text-xl">Iscriviti</button>
                 </div>

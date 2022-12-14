@@ -1,7 +1,5 @@
 <template>
     <div>
-        <div class="">HOME</div>
-
         <skills-showcase-section></skills-showcase-section>
     </div>
 </template>

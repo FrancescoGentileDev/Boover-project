@@ -21,6 +21,11 @@ const router = new VueRouter({
           path: "/search",
           name: "search",
           component: () => import('./views/searchView.vue'),
+      },
+      {
+        path: "/skill/:id",
+        name: 'skill',
+        component: () => import('./views/skillView.vue')
         },
         {
           path: "/allusers",

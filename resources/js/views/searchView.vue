@@ -29,6 +29,9 @@ export default {
 
 } ,
     created() {
+        if(!this.$route.query.search){
+            this.$router.push({name: 'home'})
+        }
         axios
             .get(`/api/users?search=${this.$route.query.search}`)
             .then((response) => {
