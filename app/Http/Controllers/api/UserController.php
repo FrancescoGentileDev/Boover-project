@@ -51,10 +51,7 @@ class UserController extends Controller
 
         //TODO PRIMA I PROFILI SPONSOR
 
-        $users->with(['skills' => function ($query) {
-            $query->select('skills.id', 'skills.name', 'skills.slug', 'skills.category_id', 'skills.description', 'skills.image', 'categories.name as category_name', 'categories.slug as category_slug', 'categories.id as category_id')
-                ->leftJoin('categories', 'skills.category_id', '=', 'categories.id');
-        }]);
+        $users->with('skills');
 
         $users = $users->paginate(10); // hide useless params
 

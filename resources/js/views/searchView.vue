@@ -1,16 +1,18 @@
 <template>
-    <div>
-        <div class="">SEARCH</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="container mx-auto py-10">
+        <div class="flex flex-col sm:flex-row flex-wrap gap-8 justify-center">
             <div v-for="(user, index) in users.data" :key="index">
-                <p>{{ user.name }} {{ user.lastname }}</p>
+                <user-card-component :user="user" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import UserCardComponent from '../components/UserCardComponent.vue';
 export default {
+  components: { UserCardComponent },
+
     data: () => ({
         users: [],
     }),
@@ -23,7 +25,8 @@ export default {
                 console.log(response.data);
                 this.users = response.data;
             });
-    }
+    },
+
 } ,
     created() {
         axios
