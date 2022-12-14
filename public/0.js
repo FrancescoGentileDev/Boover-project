@@ -9,7 +9,17 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    user: Object
+  },
+  methods: {
+    viewProfile: function viewProfile(id) {
+      console.log(id);
+      this.$emit('view-profile', id);
+    }
+  }
+});
 
 /***/ }),
 
@@ -82,7 +92,13 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_vm._v("\n  User 1\n")]);
+  return _c("div", [_c("p", [_vm._v(_vm._s(_vm.user.name) + " " + _vm._s(_vm.user.lastname))]), _vm._v(" "), _c("button", {
+    on: {
+      click: function click($event) {
+        return _vm.viewProfile(_vm.user.user_id);
+      }
+    }
+  }, [_vm._v("See Profile")])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -106,20 +122,24 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", [_c("ul", _vm._l(_vm.users, function (user) {
-    return _c("li", [_c(_setup.UserDisplayCardComponent)], 1);
-  }), 0), _vm._v(" "), _c("button", {
-    on: {
-      click: function click($event) {
-        return _vm.nextPage();
+    return _c("li", [_c(_setup.UserDisplayCardComponent, {
+      attrs: {
+        user: user
       }
-    }
-  }, [_vm._v("Next Page")]), _vm._v(" "), _c("button", {
+    })], 1);
+  }), 0), _vm._v(" "), _c("button", {
     on: {
       click: function click($event) {
         return _vm.prevPage();
       }
     }
-  }, [_vm._v("Previous Page")]), _vm._v(" "), _c("p", [_vm._v("Current Page " + _vm._s(_vm.currentPage))])]);
+  }, [_vm._v("Previous Page")]), _vm._v(" "), _c("button", {
+    on: {
+      click: function click($event) {
+        return _vm.nextPage();
+      }
+    }
+  }, [_vm._v("Next Page")]), _vm._v(" "), _c("p", [_vm._v("Current Page " + _vm._s(_vm.currentPage))])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

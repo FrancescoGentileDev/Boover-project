@@ -6,12 +6,12 @@ import UserDisplayCardComponent from '@/components/UserDisplayCardComponent.vue'
   <div>
     <ul>
       <li v-for="user in users">
-        <UserDisplayCardComponent />
+        <UserDisplayCardComponent :user="user" />
       </li>
     </ul>
 
-    <button @click="nextPage()">Next Page</button>
     <button @click="prevPage()">Previous Page</button>
+    <button @click="nextPage()">Next Page</button>
 
     <p>Current Page {{ currentPage }}</p>
   </div>
