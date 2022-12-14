@@ -6,10 +6,18 @@
       />
     </div>
 
-    <div id="profile-info" class="text-center">
+    <article id="profile-info" class="text-center">
       <h1 class="text-2xl">{{ activeProfile.name }} {{ activeProfile.lastname }}</h1>
       <p>{{ displaySkills }}</p>
-    </div>
+
+      <p v-if="activeProfile.is_available">Hire Me!</p>
+      <p v-else>Currently Unavailable</p>
+    </article>
+
+    <article class="text-center">
+      <h2>Description</h2>
+      <p>{{ activeProfile.detailed_description }}</p>
+    </article>
   </section>
 </template>
 
@@ -23,8 +31,8 @@
 
     computed: {
       displaySkills() {
-        if(!('skills' in this.activeProfile)) return '';
-        return this.activeProfile.skills.map(skill => skill.name).join(', ');
+        if(!('skills' in this.activeProfile)) return ''; // Guard Statemente
+        return this.activeProfile.skills.map(skill => skill.name).join(', '); // Map a new array and join to string
       }
     },
 

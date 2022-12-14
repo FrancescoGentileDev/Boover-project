@@ -17,12 +17,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     displaySkills: function displaySkills() {
-      if (!('skills' in this.activeProfile)) return '';
+      if (!('skills' in this.activeProfile)) return ''; // Guard Statemente
       return this.activeProfile.skills.map(function (skill) {
         return skill.name;
-      }).join(', ');
+      }).join(', '); // Map a new array and join to string
     }
   },
+
   methods: {
     getUserProfile: function getUserProfile(id) {
       var _this = this;
@@ -69,14 +70,16 @@ var render = function render() {
       src: _vm.activeProfile.avatar,
       alt: "Picture of " + _vm.activeProfile.name
     }
-  })]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _c("article", {
     staticClass: "text-center",
     attrs: {
       id: "profile-info"
     }
   }, [_c("h1", {
     staticClass: "text-2xl"
-  }, [_vm._v(_vm._s(_vm.activeProfile.name) + " " + _vm._s(_vm.activeProfile.lastname))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.displaySkills))])])]);
+  }, [_vm._v(_vm._s(_vm.activeProfile.name) + " " + _vm._s(_vm.activeProfile.lastname))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.displaySkills))]), _vm._v(" "), _vm.activeProfile.is_available ? _c("p", [_vm._v("Hire Me!")]) : _c("p", [_vm._v("Currently Unavailable")])]), _vm._v(" "), _c("article", {
+    staticClass: "text-center"
+  }, [_c("h2", [_vm._v("Description")]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.activeProfile.detailed_description))])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
