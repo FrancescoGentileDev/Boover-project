@@ -113,13 +113,13 @@
             </div>
         </div>
     </div>
-</template>
+</template>h
 
 <script>
 export default {
     data: () => ({
         categories: [],
-        ShowSidebar: true,
+        ShowSidebar: false,
     }),
     created() {
         axios.get("/api/category").then((response) => {
