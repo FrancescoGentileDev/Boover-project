@@ -1,13 +1,17 @@
 <template>
     <div>
-    <router-view></router-view>
+        <NavbarComponent />
+        <router-view class="pt-[8.75rem]"></router-view>
     </div>
 </template>
 
 <script>
-import homeView from './homeView.vue';
+import NavbarComponent from "../components/NavbarComponent.vue";
 export default {
-  components: { homeView },};
+    components: { NavbarComponent },
+};
 </script>
 
-<style></style>
+<style scoped>
+
+</style>
