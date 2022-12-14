@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed w-full bg-base-200 shadow-sm" ref="inside">
+    <div class="fixed w-full bg-base-200 shadow-sm z-50" ref="inside">
         <!-- Require css -->
 
         <nav
@@ -27,7 +27,6 @@
                         class="input w-full h-10 border-base-content border-opacity-50 bg-base-200 rounded-md focus:outline-none focus:border-primary"
                         placeholder="Search"
                         v-model="searchInput"
-
                     />
                     <button
                         class="bg-primary bg-opacity-80 h-10 px-4 absolute right-0 rounded-r-md hover:bg-opacity-100 hidden md:inline-block"
@@ -62,16 +61,26 @@
                     </div>
                 </div>
 
-                <div v-for="(category, index) in categories" :key="index"
+                <div
+                    v-for="(category, index) in categories"
+                    :key="index"
                     tabindex="0"
                     class="collapse collapse-arrow"
                 >
                     <div class="collapse-title text-xl font-medium">
-                       {{ category.name }}
+                        {{ category.name }}
                     </div>
                     <div class="collapse-content">
                         <ul class="">
-                            <li class="py-2 hover:bg-base-300 rounded-md " v-for="(skill, index) in category.skills" :key="index"><router-link :to="'/skill/' + skill.slug">{{ skill.name }}</router-link></li>
+                            <li
+                                class="py-2 hover:bg-base-300 rounded-md"
+                                v-for="(skill, index) in category.skills"
+                                :key="index"
+                            >
+                                <router-link :to="'/skill/' + skill.slug">{{
+                                    skill.name
+                                }}</router-link>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -116,14 +125,15 @@
             </div>
         </div>
     </div>
-</template>h
+</template>
+h
 
 <script>
 export default {
     data: () => ({
         categories: [],
         ShowSidebar: false,
-        searchInput: '',
+        searchInput: "",
     }),
     created() {
         axios.get("/api/category").then((response) => {
@@ -137,8 +147,10 @@ export default {
             this.ShowSidebar = !this.ShowSidebar;
         },
         search() {
-            this.$router.push({ path: '/search', query:{search:  this.searchInput }});
-
+            this.$router.push({
+                path: "/search",
+                query: { search: this.searchInput },
+            });
         },
     },
 };
