@@ -21,20 +21,26 @@
             </slide>
         </carousel>
         <div class="absolute left-24 top-1/2 -translate-y-1/2 w-1/2">
+            <h1 class="text-4xl text-base-100 pb-3 font-bold">
+                Cerca il Professionista o il Servizio
+            </h1>
+            <h1 class="text-4xl text-base-100 pb-5 font-bold">
+                che fa per te
+            </h1>
             <div
                 class="searchMain relative flex rounded-lg bg-base-100 border border-base-200 shadow-md md:p-2"
             >
                 <input
                     placeholder="Cerca un servizio o un professionista"
-                    class="inputHero w-full p-4 rounded-lg"
+                    class="inputHero input input-ghost w-full p-4 rounded-lg"
                     type="text"
                     v-model="searchInput"
                     @keyup.enter="search"
                 />
                 <button
                     type="button"
-                    title="Start buying"
-                    class="ml-auto py-3 px-6 rounded-lg text-center text-white transition bg-primary hover:bg-primary-focus"
+                    title="start search"
+                    class="ml-auto py-3 px-6 rounded-lg text-center text-base-100 transition bg-primary hover:bg-primary-focus"
                 >
                     Cerca
                     <svg
@@ -205,7 +211,7 @@ export default {
                 category.skills.forEach((skill) => {
                     skill.name = skill.name.toLowerCase();
                     if (skill.name.includes(searchInput)) {
-                        console.log(skill.name);
+
                         results.push(skill);
                     }
                 });
