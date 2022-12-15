@@ -1,17 +1,21 @@
 <template>
-    <div class="wrapper pt-24 pb-24">
-        <carousel :per-page="1" :loop="true">
+    <div class="wrapper pt-24 pb-24 bg-base-100">
+        <carousel :per-page="1" :loop="true" class="w-11/12 m-auto p-6">
             <slide v-for="(review, index) in reviews.slice(0, 3)" :key="index">
                 <!--  // -->
-                <div class="flex w-4/5 m-auto gap-9 flex-col md:flex-row">
+                <div
+                    class="flex m-auto gap-9 flex-col md:flex-row justify-between"
+                >
+                    <!-- // -->
                     <div
                         class="aspect-[4/2] md:w-2/4 w-full bg-slate-400 rounded-md"
                     >
                         <img
-                            class="w-full h-full object-cover rounded-lg shadow-2xl"
+                            class="w-full h-full object-cover rounded-lg"
                             :src="pics[index]"
                         />
                     </div>
+                    <!--  // -->
                     <div
                         class="md:w-2/4 w-full flex flex-col justify-center gap-2"
                     >
@@ -26,6 +30,7 @@
                             {{ review.description }}
                         </q>
                     </div>
+                    <!--  // -->
                 </div>
                 <!--  // -->
             </slide>
