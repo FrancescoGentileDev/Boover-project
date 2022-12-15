@@ -22,11 +22,11 @@
         </carousel>
         <div class="absolute left-24 top-1/2 -translate-y-1/2 w-1/2">
             <div
-                class="relative flex rounded-lg bg-base-100 border border-base-200 shadow-md md:p-2"
+                class="searchMain relative flex rounded-lg bg-base-100 border border-base-200 shadow-md md:p-2"
             >
                 <input
                     placeholder="Cerca un servizio o un professionista"
-                    class="w-full p-4 rounded-lg"
+                    class="inputHero w-full p-4 rounded-lg"
                     type="text"
                     v-model="searchInput"
                     @keyup.enter="search"
@@ -49,7 +49,7 @@
                     </svg>
                 </button>
                 <div
-                    v-if="searchInput.length > 0"
+                    v-if="searchInput.length > 0 && inputFocus"
                     class="searchPanel absolute bottom-0 translate-y-full left-0 w-full bg-base-100 border rounded-lg border-base-300 shadow-md md:px-8 md:py-2"
                 >
                     <div v-if="searchResultsServices.length" class="services">
@@ -101,7 +101,6 @@
 
 <script>
 import { Carousel, Slide } from "vue-carousel";
-import AsyncComputed from "vue-async-computed";
 export default {
     components: { Carousel, Slide },
     props: {
@@ -109,6 +108,7 @@ export default {
     },
     data() {
         return {
+            inputFocus: false,
             searchInput: "",
             searchResults: [],
             slides: [
@@ -135,7 +135,16 @@ export default {
             ],
         };
     },
-    watch: {},
+    mounted() {
+        window.addEventListener("click", (e)  => {
+            if (document.querySelector(".searchMain") == e.target.parentNode ) {
+                this.inputFocus = true;
+
+            } else {
+                this.inputFocus = false;
+            }
+        });
+    },
     methods: {
         search() {
             this.$router.push({
