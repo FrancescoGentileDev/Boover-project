@@ -75,18 +75,6 @@ export default {
                     }
                 });
         },
-        //
-        cover(url) {
-            if (url !== "") {
-                // You can check any matching expression.
-                try {
-                    url = require("@/assets/img/" + url);
-                } catch (e) {
-                    url = require("@/assets/img/default.jpg"); // I used a default image.
-                }
-            } else url = require("@/assets/img/default.jpg"); // Default image.
-            return url;
-        },
     },
     //
     mounted() {
