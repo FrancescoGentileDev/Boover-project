@@ -50,30 +50,33 @@
                 </button>
                 <div
                     v-if="searchInput.length > 0"
-                    class="absolute bottom-0 translate-y-full left-0 w-full bg-base-100 border rounded-lg border-base-300 shadow-md md:px-8 md:py-2"
+                    class="searchPanel absolute bottom-0 translate-y-full left-0 w-full bg-base-100 border rounded-lg border-base-300 shadow-md md:px-8 md:py-2"
                 >
-                   <div v-if="searchResultsServices.length" class="services">
-                       <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <div v-if="searchResultsServices.length" class="services">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
                         <span>Servizi</span>
                         <ul class="">
                             <li
-                                class="p-1 pl-5 hover:bg-base-300 rounded-xl"
+                                class="p-1 hover:bg-base-300 rounded-xl"
                                 v-for="(skill, index) in searchResultsServices"
                                 :key="index"
                             >
-                                <router-link :to="'/skill/' + skill.slug"
+                                <router-link
+                                    class="ml-5"
+                                    :to="'/skill/' + skill.slug"
                                     >{{ skill.name }}</router-link
                                 >
                             </li>
                         </ul>
                     </div>
 
-
-
                     <div class="users pt-3">
                         <em class="fas fa-user"></em>
                         <span>Utenti</span>
-                        <router-link :to="'/search?search='+ searchInput" class="block p-1 pl-5 bg-base-200 my-2 rounded-lg">
+                        <router-link
+                            :to="'/search?search=' + searchInput"
+                            class="block p-1 pl-5 bg-base-200 my-2 rounded-lg"
+                        >
                             <em class="fa-solid fa-magnifying-glass"></em> Cerca
                             altri utenti contenenti "{{ searchInput }}"
                         </router-link>
@@ -132,6 +135,7 @@ export default {
             ],
         };
     },
+    watch: {},
     methods: {
         search() {
             this.$router.push({
@@ -140,24 +144,52 @@ export default {
                 query: { search: this.searchInput },
             });
         },
+        boldInput() {
+            document.querySelectorAll(".searchPanel ul li a").forEach((el) => {
+                let searchInput = this.searchInput.toLowerCase();
+                let strong = el.getElementsByTagName("strong")[0];
+                if (strong) {
+                    strong.outerHTML = strong.innerHTML;
+                }
+                let text = el.innerHTML;
+                let bolded = text.replace(
+                    new RegExp(searchInput, "gi"),
+                    (match) => `<strong>${match}</strong>`
+                );
+                el.innerHTML = bolded;
+            });
+        },
+    },
+    watch: {
+        searchInput() {
+            this.boldInput();
+        },
+        searchResultsUsers() {
+            setTimeout(() => {
+                this.boldInput();
+            }, 100);
+        },
+        searchResultsServices() {
+            this.boldInput();
+        },
     },
     asyncComputed: {
         async searchResultsUsers() {
-            if (this.searchInput.length < 3) {
+            if (this.searchInput.length < 2) {
                 return [];
             }
             const response = await axios.get(
-                `/api/users?search=${this.searchInput}&max=2`
+                `/api/users?search=${this.searchInput}&max=3`
             );
+
             return response.data.data;
         },
     },
     computed: {
         searchResultsServices() {
-
             let results = [];
             let searchInput = this.searchInput.toLowerCase();
-            if(searchInput.length < 2) {
+            if (searchInput.length < 2) {
                 return [];
             }
             this.categories.forEach((category) => {
@@ -167,8 +199,8 @@ export default {
                         console.log(skill.name);
                         results.push(skill);
                     }
-                })
-            })
+                });
+            });
             return results;
         },
     },
