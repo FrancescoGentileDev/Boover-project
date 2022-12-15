@@ -22,3 +22,17 @@
     @apply bg-base-200 !important;
     @apply text-base-content !important;
 }
+
+
+    .nav0-sfondo {
+         @apply bg-base-200 ;
+    }
+    .nav0.nav0-sfondo{
+        @apply bg-transparent ;
+    }
+    .nav0.nav0-text{
+        @apply text-base-100 ;
+    }
+    .nav0-text{
+          @apply text-base-content ;
+    }
