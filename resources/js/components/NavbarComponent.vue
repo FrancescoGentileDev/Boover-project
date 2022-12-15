@@ -13,16 +13,16 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="logo md:pb-0">
-                        <router-link to="/"
+                        <router-link
+                            to="/"
                             class="font-extrabold text-4xl text-center md:text-left"
-
                         >
                             BOOVER!
                         </router-link>
                     </div>
                     <button class="sm:hidden text-xl">Iscriviti</button>
                 </div>
-                <div class="search w-full relative">
+                <div class="searchNav w-full relative">
                     <input
                         @keyup.enter="search"
                         type="text"
@@ -38,6 +38,33 @@
                             class="fa-solid fa-magnifying-glass text-xl text-base-100"
                         ></em>
                     </button>
+
+                    <div
+                        v-if="searchInput.length > 0 && inputFocus=== true"
+                        class="searchPanel absolute z-50 bottom-0 translate-y-full left-0 w-full bg-base-100 border rounded-lg border-base-300 shadow-md md:px-8 md:py-2"
+                    >
+                        <div class="users pt-3">
+                            <ul class="">
+                                <li
+                                    class="p-1 pl-5 hover:bg-base-300 rounded-lg"
+                                    v-for="(user, index) in searchResultsUsers"
+                                    :key="index"
+                                >
+                                    <router-link :to="'/profile/' + user.slug"
+                                        >{{ user.name }}
+                                        {{ user.lastname }}</router-link
+                                    >
+                                </li>
+                            </ul>
+                            <router-link
+                                :to="'/search?search=' + searchInput"
+                                class="block p-1 bg-base-200 my-2 rounded-lg"
+                            >
+                                <em class="fa-solid fa-magnifying-glass"></em>
+                                Cerca "{{ searchInput }}"
+                            </router-link>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -135,14 +162,23 @@ export default {
         categories: [],
         ShowSidebar: false,
         searchInput: "",
+        inputFocus: true,
     }),
     created() {
         axios.get("/api/category").then((response) => {
-            console.log(response.data);
+
             this.categories = response.data;
         });
     },
     mounted() {
+        window.addEventListener("click", (e)  => {
+            if (document.querySelector(".searchNav") == e.target.parentNode ) {
+                this.inputFocus = true;
+
+            } else {
+                this.inputFocus = false;
+            }
+        });
     },
     methods: {
         toggleSidebar() {
@@ -153,6 +189,40 @@ export default {
                 path: "/search",
                 query: { search: this.searchInput },
             });
+        },
+        boldInput() {
+            document.querySelectorAll(".searchPanel ul li a").forEach((el) => {
+                let searchInput = this.searchInput.toLowerCase();
+                let strong = el.getElementsByTagName("strong")[0];
+                if (strong) {
+                    strong.outerHTML = strong.innerHTML;
+                }
+                let text = el.innerHTML;
+                let bolded = text.replace(
+                    new RegExp(searchInput, "gi"),
+                    (match) => `<strong>${match}</strong>`
+                );
+                el.innerHTML = bolded;
+            });
+        },
+    },
+    asyncComputed: {
+        async searchResultsUsers() {
+            const response = await axios.get(
+                `/api/users?search=${this.searchInput}&max=6`
+            );
+
+            return response.data.data;
+        },
+    },
+    watch: {
+        searchInput() {
+            this.boldInput();
+        },
+        searchResultsUsers() {
+            setTimeout(() => {
+                this.boldInput();
+            }, 100);
         },
     },
 };
