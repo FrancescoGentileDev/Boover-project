@@ -76,8 +76,6 @@ export default {
     name: "SkillsShowcaseSection",
     data() {
         return {
-            viewportWidth: 0,
-            numberOfCards: "",
             skills: [],
             isError: false,
         };
