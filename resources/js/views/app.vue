@@ -25,13 +25,14 @@ export default {
         });
   },
   mounted() {
-   this.$refs.content.style.paddingTop = this.$refs.navbar.$el.offsetHeight + "px";
-   setTimeout(() => {
-    this.$refs.content.style.paddingTop= this.$refs.navbar.$el.offsetHeight + "px";
-   }, 1000);
-   window.addEventListener("resize", () => {
-    this.$refs.content.style.paddingTop = this.$refs.navbar.$el.offsetHeight + "px";
-   });
+//    this.$refs.content.style.paddingTop = this.$refs.navbar.$el.offsetHeight + "px";
+//    setTimeout(() => {
+//     this.$refs.content.style.paddingTop= this.$refs.navbar.$el.offsetHeight + "px";
+//    }, 1000);
+//    window.addEventListener("resize", () => {
+//     this.$refs.content.style.paddingTop = this.$refs.navbar.$el.offsetHeight + "px";
+//    }
+//    );
 
 },
 methods: {

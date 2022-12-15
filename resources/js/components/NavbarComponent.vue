@@ -1,34 +1,41 @@
 <template>
-    <div class="fixed w-full bg-base-200 shadow-sm z-50" ref="inside">
+    <div class="fixed w-full nav0 nav0-sfondo shadow-sm z-50" ref="inside">
         <!-- Require css -->
 
         <nav
+            ref="nav"
             class="container mx-auto sm:py-5 flex flex-col sm:flex-row items-center justify-between"
         >
             <div
-                class="sinistra w-full md:w-1/2 gap-3 flex flex-col sm:flex-row md:gap-12 p-3 md:justify-center md:items-center"
+                class="sinistra w-full md:w-1/2 gap-3 flex flex-col sm:flex-row md:gap-12 p-3 md:justify-start md:items-center" :class="scrollY > 0 ? 'md:justify-center' : 'md:justify-start'"
             >
                 <div class="flex justify-between items-center pb-3">
-                    <button @click="toggleSidebar" class="sm:hidden text-3xl">
+                    <button
+                        @click="toggleSidebar"
+                        class="sm:hidden text-3xl nav0 nav0-text"
+                    >
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="logo md:pb-0">
                         <router-link
                             to="/"
-                            class="font-extrabold text-4xl text-center md:text-left"
+                            class="font-extrabold text-4xl text-center md:text-left nav0 nav0-text"
                         >
                             BOOVER!
                         </router-link>
                     </div>
-                    <button class="sm:hidden text-xl">Iscriviti</button>
+                    <button class="sm:hidden text-xl nav0 nav0-text">
+                        Iscriviti
+                    </button>
                 </div>
-                <div class="searchNav w-full relative">
+                <div class="searchNav w-full relative"   :class="{'sm:hidden': scrollY <= 0}">
                     <input
                         @keyup.enter="search"
                         type="text"
-                        class="input w-full h-10 border-base-content border-opacity-50 bg-base-200 rounded-md focus:outline-none focus:border-primary"
+                        class="nav0-sfondo nav0-text nav0 input w-full h-10 border-base-content border-opacity-50 bg-base-200 rounded-md focus:outline-none focus:border-primary"
                         placeholder="Search"
                         v-model="searchInput"
+
                     />
                     <button
                         class="bg-primary bg-opacity-80 h-10 px-4 absolute right-0 rounded-r-md hover:bg-opacity-100 hidden md:inline-block"
@@ -40,7 +47,7 @@
                     </button>
 
                     <div
-                        v-if="searchInput.length > 0 && inputFocus=== true"
+                        v-if="searchInput.length > 0 && inputFocus === true"
                         class="searchPanel absolute z-50 bottom-0 translate-y-full left-0 w-full bg-base-100 border rounded-lg border-base-300 shadow-md md:px-8 md:py-2"
                     >
                         <div class="users pt-3">
@@ -71,9 +78,13 @@
             <div
                 class="destra font-semibold text-xl text-base-content items-center uppercase hidden sm:flex"
             >
-                <a href="#" class="hidden md:inline">il team</a>
-                <a class="btn btn-primary m-3" href="/login"> Accedi </a>
-                <a class="btn btn-outline m-3" href="/register"> Registrati </a>
+                <a href="#" class="hidden md:inline nav0 nav0-text">il team</a>
+                <a class="btn btn-primary m-3" href="/login">
+                    Accedi
+                </a>
+                <a class="btn btn-outline m-3 nav0 nav0-text" href="/register">
+                    Registrati
+                </a>
             </div>
             <div
                 class="sidebar absolute h-screen w-56 bg-base-200 top-0 left-0 z-30 p-3"
@@ -116,8 +127,11 @@
             </div>
         </nav>
 
-        <div class="border-t-2"></div>
-        <div class="py-2 container mx-auto hidden sm:block relative">
+        <div class="border-t-2" :hidden="scrollY <= 0"></div>
+        <div
+            ref="categoryLine"
+            class="py-2 categoryLine container mx-auto hidden sm:hidden relative"
+        >
             <div
                 id="drops"
                 ref="drops"
@@ -160,23 +174,45 @@
 export default {
     data: () => ({
         categories: [],
+
         ShowSidebar: false,
         searchInput: "",
+        scrollY: 0,
         inputFocus: true,
     }),
     created() {
         axios.get("/api/category").then((response) => {
-
             this.categories = response.data;
         });
     },
     mounted() {
-        window.addEventListener("click", (e)  => {
-            if (document.querySelector(".searchNav") == e.target.parentNode ) {
+        let navs = document.querySelectorAll(".nav0");
+        window.addEventListener("click", (e) => {
+            if (document.querySelector(".searchNav") == e.target.parentNode) {
                 this.inputFocus = true;
-
             } else {
                 this.inputFocus = false;
+            }
+        });
+        window.addEventListener("scroll", (event) => {
+            this.scrollY = window.scrollY;
+            console.log(window.scrollY);
+            console.log(this.$refs.categoryLine.classList);
+            if (window.scrollY > 10) {
+                navs.forEach((el) => {
+                    el.classList.remove("nav0");
+                });
+            } else {
+                navs.forEach((el) => {
+                    el.classList.add("nav0");
+                });
+            }
+            if (window.scrollY > 400) {
+                this.$refs.categoryLine.classList.remove("sm:hidden");
+                this.$refs.categoryLine.classList.add("sm:block");
+            } else {
+                this.$refs.categoryLine.classList.remove("sm:block");
+                this.$refs.categoryLine.classList.add("sm:hidden");
             }
         });
     },
@@ -228,11 +264,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-label {
-    &.category {
-        text-decoration-color: hsl(var(--p) / var(--tw-bg-opacity));
-        text-decoration-thickness: 0.225em;
-    }
+<style scoped>
+label.category {
+    text-decoration-color: hsl(var(--p) / var(--tw-bg-opacity));
+    text-decoration-thickness: 0.225em;
 }
 </style>

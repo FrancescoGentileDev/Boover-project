@@ -1,5 +1,5 @@
 <template>
-    <div class="background h-[70vh] relative">
+    <div class="background h-[85vh] relative">
         <carousel
             class="w-full h-full"
             :perPage="1"
@@ -11,7 +11,7 @@
         >
             <slide v-for="(image, index) in slides" :key="index">
                 <div
-                    class="h-[70vh] w-full"
+                    class="h-[85vh] w-full"
                     :style="{
                         backgroundImage: `url(${image.image})`,
                         backgroundSize: 'cover',
@@ -28,7 +28,7 @@
                 che fa per te
             </h1>
             <div
-                class="searchMain relative flex rounded-lg bg-base-100 border border-base-200 shadow-md md:p-2"
+                class="searchMain relative  rounded-lg bg-base-100 border border-base-200 shadow-md md:p-2 hidden sm:flex"
             >
                 <input
                     placeholder="Cerca un servizio o un professionista"
