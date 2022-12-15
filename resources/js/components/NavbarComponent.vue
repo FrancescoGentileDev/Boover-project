@@ -132,17 +132,14 @@
 <script>
 export default {
     data: () => ({
-        categories: [],
         ShowSidebar: false,
         searchInput: "",
     }),
-    created() {
-        axios.get("/api/category").then((response) => {
-            console.log(response.data);
-            this.categories = response.data;
-        });
-    },
-    mounted() {
+    props: {
+        categories: {
+            type: Array,
+            required: true,
+        },
     },
     methods: {
         toggleSidebar() {

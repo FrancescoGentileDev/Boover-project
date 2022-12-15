@@ -46,6 +46,10 @@ class UserController extends Controller
                 $query->where('id', $request->skill);
             });
         }
+        $paginate = 10;
+        if ($request->has('max')) {
+            $paginate = $request->max;
+        }
 
         $users->withCount('reviews');
 
@@ -53,7 +57,7 @@ class UserController extends Controller
 
         $users->with('skills');
 
-        $users = $users->paginate(10); // hide useless params
+        $users = $users->paginate($paginate); // hide useless params
 
         foreach ($users as $user) {
             $user->reviews_rating =  $user->reviews()->avg('vote');
