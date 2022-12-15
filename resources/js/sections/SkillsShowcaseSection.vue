@@ -92,13 +92,13 @@ export default {
             axios
                 .get("/api/skills")
                 .then((response) => {
-                    console.log(response.data);
+                    /*  console.log(response.data); */
 
                     this.skills.push(...response.data);
                 })
                 .catch((error) => {
                     if (error) {
-                        console.log(error);
+                        /* console.log(error); */
                         this.isError = true;
                     }
                 });
