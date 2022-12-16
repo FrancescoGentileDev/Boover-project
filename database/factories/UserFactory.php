@@ -36,7 +36,7 @@ $factory->define(User::class, function (Faker $faker) {
         'birthday_date' => $faker->dateTimeThisCentury(),
         'presentation' => $faker->realText(250),
         'detailed_description' => $faker->realText(500),
-        'is_available' => $faker->boolean(),
+        'is_available' => 1,
         'business_days' => implode($faker->randomElements($days, $faker->numberBetween(0, count($days)))),
     ];
 });
