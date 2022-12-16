@@ -10,6 +10,7 @@
         </div>
     </div>
 
+    <!-- component -->
     <div class="mb-5">
         {{ $inboxes->links() }}
     </div>
