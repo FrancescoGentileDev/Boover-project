@@ -3,7 +3,7 @@ import UserDisplayCardComponent from '@/components/UserDisplayCardComponent.vue'
 </script>
 
 <template>
-  <div>
+  <div class="">
     <div v-if="!isProfileViewActive">
       <ul>
         <li v-for="user in users">
@@ -78,7 +78,13 @@ import UserDisplayCardComponent from '@/components/UserDisplayCardComponent.vue'
       console.log('Page Mounted');
 
       this.getAllUsers();
-    }
+        this.$parent.paddingHandling(true);
+    },
+    beforeDestroy() {
+        // this.$parent.$refs.navbar.toggleShowOnZero(true);
+        // this.$parent.$refs.navbar.toggleCategoriesOnZero(true);
+        // this.$parent.paddingHandling(true);
+    },
   }
 </script>
 
