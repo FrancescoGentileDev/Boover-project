@@ -16,7 +16,7 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function SendReview(Request $request)
     {
         $request->validate([
             'user_id' => ['required', 'exists:users,id'],
@@ -40,6 +40,7 @@ class ReviewController extends Controller
             $review->image = asset('storage/' . $path);
         }
         $review->save();
+        dd($review);
         return response($review);
 
     }
@@ -50,7 +51,7 @@ class ReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function getReview($id)
     {
         //
         $reviews = Review::where('user_id', $id)->paginate(10, ['id', 'nickname', 'title', 'description', 'image', 'vote', 'created_at']);

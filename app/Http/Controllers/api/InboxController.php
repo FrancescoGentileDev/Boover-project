@@ -18,19 +18,12 @@ class InboxController extends Controller
             'email' => ['required', 'email', 'max:255'],
             'phone' => ['max:15', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'nullable'],
         ]);
-
         //
-        $review = new Inbox();
-        $review->make([
-            'user_id' => $request->user_id,
-            'nickname' => $request->nickname,
-            'title' => $request->title,
-            'content' => $request->content,
-            'email' => $request->email,
-            'phone' => $request->phone,
-        ]);
-        $review->save();
-        return response($review, 200);
+
+        $inbox = new Inbox();
+        $inbox->fill($request->all());
+        $inbox->save();
+        return response($inbox, 200);
 
     }
 }
