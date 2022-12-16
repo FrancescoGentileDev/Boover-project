@@ -21,9 +21,8 @@
                 </div>
 
                 <div class="mt-2">
-                    <a href="#"
-                        class="text-2xl font-bold text-base-content hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
-                        tabindex="0" role="link">{{ $review->title }}</a>
+                    <div class="text-2xl font-bold text-base-content" tabindex="0" role="link">
+                        {{ $review->title }}</div>
                     <p class="mt-2 text-base-content">
                         {{ $review->description }}</p>
                 </div>
