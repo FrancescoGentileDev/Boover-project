@@ -3,7 +3,7 @@
 ])
 
 @section('content')
-    <article class="w-3/4 mx-auto my-7">
+    <article style="padding-top: 10%" class="w-3/4 mx-auto my-7">
         <div class="flex items-center justify-between">
             <span class="text-sm font-light text-gray-600">{{ $inbox->created_at }}</span>
         </div>
