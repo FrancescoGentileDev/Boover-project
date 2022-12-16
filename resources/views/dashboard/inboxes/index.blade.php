@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-  'title' => 'Boover | My Inbox'
+    'title' => 'Boover | My Inbox',
 ])
 
 @section('content')
@@ -22,6 +22,4 @@
             </li>
         @endforeach
     </ul>
-
-    {{-- @dump($inboxes) --}}
 @endsection
