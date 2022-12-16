@@ -24,7 +24,9 @@
                 <p>Email: {{ $inbox->email }}</p>
             </div>
         </div>
-        <x-delete-form :destroyRoute="route('dashboard.inboxes.destroy', $inbox->id)" />
+        <div class="pt-7">
+            <x-delete-form :destroyRoute="route('dashboard.inboxes.destroy', $inbox->id)" />
+        </div>
     </article>
 
     {{-- @dump($inbox) --}}
