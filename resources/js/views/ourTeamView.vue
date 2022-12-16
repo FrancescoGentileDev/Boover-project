@@ -5,10 +5,15 @@
     <section class="description"></section>
     <section class="information"></section>
     <section class="review"></section>
-    <section class="q&a"></section>
+    <section class="q&a">
+        <div>Q&A</div>
+
+    </section>
     <section class="register">
-        <h1 class="pt-10"><strong>Registrati e inizia oggi a ricevere clienti</strong></h1>
+      <div class="text-center">
+        <h1 class=" pt-10"><strong>Registrati e inizia oggi a ricevere clienti</strong></h1>
         <button class="btn btn-primary m-3">Sign up</button>
+     </div>
 
     </section>
   </main>
