@@ -1,6 +1,7 @@
 <template>
     <div>
         <main-hero-section :categories="categories" />
+        <mark-section></mark-section>
         <skills-showcase-section></skills-showcase-section>
         <testimonials-section></testimonials-section>
         <JumbotronSection></JumbotronSection>
@@ -11,6 +12,7 @@
 import HomeHeroSection from "../sections/HomeHeroSection.vue";
 import JumbotronSection from "../sections/jumbotronSection.vue";
 import MainHeroSection from "../sections/mainHeroSection.vue";
+import MarkSection from "../sections/MarkSection.vue";
 import SkillsShowcaseSection from "../sections/SkillsShowcaseSection.vue";
 import TestimonialsSection from "../sections/TestimonialsSection.vue";
 export default {
@@ -22,6 +24,7 @@ export default {
         MainHeroSection,
         TestimonialsSection,
         JumbotronSection,
+        MarkSection,
     },
     props: {
         categories: {
@@ -30,11 +33,10 @@ export default {
         },
     },
     mounted() {
-        console.log(this.$parent.$refs.navbar)
+        console.log(this.$parent.$refs.navbar);
         this.$parent.$refs.navbar.toggleShowOnZero(false);
         this.$parent.$refs.navbar.toggleCategoriesOnZero(false);
         this.$parent.paddingHandling(false);
-
     },
     beforeDestroy() {
         this.$parent.$refs.navbar.toggleShowOnZero(true);
