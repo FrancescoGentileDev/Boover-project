@@ -56,9 +56,7 @@
                     <div class="flex justify-center -mt-16">
                         <div class="avatar online">
                             <div class="w-36 rounded-full">
-                                <img
-                                    src="https://thispersondoesnotexist.com/image"
-                                />
+                                <img :src="user.avatar" />
                             </div>
                         </div>
                     </div>
