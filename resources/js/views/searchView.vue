@@ -1,9 +1,9 @@
 <template>
     <div class="container mx-auto py-10">
         <div class="flex flex-col sm:flex-row flex-wrap gap-8 justify-center">
-            <div v-for="(user, index) in users.data" :key="index">
+            <router-link :to="'/profile/'+ user.slug" v-for="(user, index) in users.data" :key="index">
                 <user-card-component :user="user" />
-            </div>
+            </router-link>
         </div>
     </div>
 </template>

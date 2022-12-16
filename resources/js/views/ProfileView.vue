@@ -34,7 +34,7 @@
                     class="w-1/2 px-8 py-10 mx-auto overflow-hidden bg-base-300 rounded-lg shadow-2xl shadow-gray-300/50">
                     <h1 class="text-lg font-medium text-base-content">Invia un messaggio</h1>
 
-                    <form class="mt-6">
+                    <form ref="formMessage" class="mt-6" @submit="submitMessage">
                         <div class="flex-1">
                             <label class="block mb-2 text-sm text-base-content">Full Name</label>
                             <input type="text" required placeholder="John Doe" name="nickname" class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md" />
@@ -47,24 +47,56 @@
 
                         <div class="flex-1 mt-6">
                             <label class="block mb-2 text-sm text-base-content">Phone</label>
-                            <input type="tel" placeholder="1234567890" class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md" />
+                            <input type="tel" required placeholder="1234567890" name="phone" class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md" />
                         </div>
 
                         <div class="flex-1 mt-14">
                             <label class="block mb-2 text-sm text-base-content">Title</label>
-                            <input type="tel" placeholder="1234567890" class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md" />
+                            <input type="text" required placeholder="Hi, i'm john doe" name="title" class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md" />
                         </div>
 
                         <div class="w-full mt-6">
                             <label class="block mb-2 text-sm text-base-content">Message</label>
-                            <textarea class="block w-full h-32 px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48" placeholder="Message"></textarea>
+                            <textarea name="content" required class="block w-full h-32 px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48" placeholder="Message"></textarea>
                         </div>
 
                         <button class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                            get in touch
+                            Send
                         </button>
                     </form>
-                </div>\
+                </div>
+            </div>
+
+    <div class="mt-8 lg:w-full lg:mx-6 flex justify-center">
+                <div
+                    class="w-1/2 px-8 py-10 mx-auto overflow-hidden bg-base-300 rounded-lg shadow-2xl shadow-gray-300/50">
+                    <h1 class="text-lg font-medium text-base-content">Invia una Recensione</h1>
+
+                    <form ref="formReview" class="mt-6" @submit="submitReview">
+                        <div class="flex-1">
+                            <label class="block mb-2 text-sm text-base-content">Full Name</label>
+                            <input type="text" required placeholder="John Doe" name="nickname" class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md" />
+                        </div>
+
+                        <div class="flex-1 mt-14">
+                            <label class="block mb-2 text-sm text-base-content">Title</label>
+                            <input type="text" placeholder="Hi, i'm john doe" name="title" class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md" />
+                        </div>
+                        <div class="flex-1 mt-14">
+                            <label class="block mb-2 text-sm text-base-content">Vote</label>
+                            <input type="number" min="1" max="5" placeholder="Hi, i'm john doe" name="vote" class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md" />
+                        </div>
+
+                        <div class="w-full mt-6">
+                            <label class="block mb-2 text-sm text-base-content">Message</label>
+                            <textarea name="description" class="block w-full h-32 px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48" placeholder="Message"></textarea>
+                        </div>
+
+                        <button class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                            Send
+                        </button>
+                    </form>
+                </div>
             </div>
 
   </section>
@@ -86,11 +118,51 @@
     },
 
     methods: {
+        submitMessage(event) {
+            event.preventDefault();
+            const form = this.$refs.formMessage;
+            const formData = new FormData(form)
+            let submitMessage = {
+                user_id: this.activeProfile.user_id,
+                nickname: formData.get('nickname'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                title: formData.get('title'),
+                content: formData.get('content'),
+            }
+
+            axios.post('/api/sendMessage', submitMessage)
+                .then((response) => {
+                    console.log('Debug - Message Sent', response);
+                    form.reset();
+                })
+
+        },
+        submitReview(event) {
+            event.preventDefault();
+            const form = this.$refs.formReview;
+            const formData = new FormData(form)
+            let submitMessage = {
+                user_id: this.activeProfile.user_id,
+                nickname: formData.get('nickname'),
+                title: formData.get('title'),
+                vote: formData.get('vote'),
+                description: formData.get('description'),
+            }
+
+            axios.post('/api/review/send', submitMessage)
+                .then((response) => {
+                    console.log('Debug - Message Sent', response);
+                    form.reset();
+                })
+
+        },
+
       getUserProfile(id) {
         axios.get('/api/users/'+ id + '?slug=true')
           .then((response) => {
               this.activeProfile = response.data;
-              console.log('Debug - Current Active Profile', response);
+              console.log('Debug - Current Active Profile', response.data);
           })
       },
     },
