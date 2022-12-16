@@ -9,28 +9,30 @@
 </template>
 
 <script>
-import UserCardComponent from '../components/UserCardComponent.vue';
+import UserCardComponent from "../components/UserCardComponent.vue";
 export default {
-  components: { UserCardComponent },
+    components: { UserCardComponent },
 
     data: () => ({
         users: [],
     }),
-    watch:{
-    $route (to, from){
-        console.log(to.query.search)
-         axios
-            .get(`/api/users?search=${to.query.search}`)
-            .then((response) => {
-                console.log(response.data);
-                this.users = response.data;
-            });
+    watch: {
+        $route(to, from) {
+            if (!this.$route.query.search || this.$route.query.search == "") {
+            this.$router.push({ name: "home" });
+        }
+            console.log(to.query.search);
+            axios
+                .get(`/api/users?search=${to.query.search}`)
+                .then((response) => {
+                    console.log(response.data);
+                    this.users = response.data;
+                });
+        },
     },
-
-} ,
     created() {
-        if(!this.$route.query.search){
-            this.$router.push({name: 'home'})
+        if (!this.$route.query.search || this.$route.query.search == "") {
+            this.$router.push({ name: "home" });
         }
         axios
             .get(`/api/users?search=${this.$route.query.search}`)
@@ -40,7 +42,10 @@ export default {
             });
     },
     mounted() {
-        this.$emit('search', this.$route.query.search)
+        this.$parent.paddingHandling(true,1000);
+    },
+    beforeDestroy() {
+        this.$parent.paddingHandling(false);
     },
 };
 </script>
