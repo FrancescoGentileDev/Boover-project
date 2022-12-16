@@ -6,7 +6,10 @@
     <section class="information"></section>
     <section class="review"></section>
     <section class="q&a"></section>
-    <section class="registrer"></section>
+    <section class="register">
+        <h1 class="pt-10"><strong>Registrati e inizia oggi a ricevere clienti</strong></h1>
+
+    </section>
   </main>
 </template>  
 
@@ -26,5 +29,6 @@ mounted() {
 </script>
 
 <style lang="scss" scoped>
+
 
 </style>
