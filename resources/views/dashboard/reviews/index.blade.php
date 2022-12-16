@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="text-3xl text-red-500 py-5 pl-5">
-        Reviews List:
+    <div class="flex flex-row justify-center">
+        <div
+            class="basis-2/4 text-center my-7 px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg">
+            Your Reviews List
+        </div>
     </div>
+
 
     <div class="mb-5">
         {{ $reviews->links() }}
@@ -11,31 +15,26 @@
 
     <div class="px-5">
         @foreach ($reviews as $review)
-            <div class="mb-4 p-5 border-2">
-                <div class="mb-1">
-                    <div class="text-green-800 text-xl">
-                        Review Title:
-                    </div>
-                    <a href="{{ route('dashboard.reviews', $review->id) }}">{{ $review->title }}</a>
+            <div class="my-7 px-8 py-4 bg-base-200 rounded-lg shadow-md dark:bg-gray-800">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-light text-base-content">{{ $review->created_at }}</span>
                 </div>
-                <div class="mb-1">
-                    <div class="text-green-800">
-                        Author:
-                    </div>
-                    <a href="#">
-                        {{ $review->nickname }}
-                    </a>
+
+                <div class="mt-2">
+                    <div class="text-2xl font-bold text-base-content" tabindex="0" role="link">
+                        {{ $review->title }}</div>
+                    <p class="mt-2 text-base-content">
+                        {{ $review->description }}</p>
                 </div>
-                <div class="mb-1">
-                    <div class="text-green-800">
-                        Review:
+
+                <div class="flex items-center justify-between mt-4">
+                    <div class="flex items-center">
+                        <div class="font-bold text-base-content" tabindex="0" role="link">
+                            Valutation: {{ $review->vote }}</div>
                     </div>
-                    <div>
-                        <span>Vote: </span> <span>{{ $review->vote }}</span><span> | rilasciata il:
-                        </span><span>{{ $review->created_at }}</span>
-                    </div>
-                    <div class="w-auto">
-                        {{ $review->description }}
+                    <div class="flex items-center">
+                        <div class="font-bold text-base-content" tabindex="0" role="link">
+                            {{ $review->nickname }}</div>
                     </div>
                 </div>
             </div>
