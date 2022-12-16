@@ -1,7 +1,56 @@
 <template>
   <main>
     <section class="jumbo"></section>
+
     <section class="team"></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <section class="description"></section>
     <section class="information"></section>
     <section class="review"></section>
@@ -11,65 +60,40 @@
         <div class="text-center">
          <h1 class="">Q&A</h1>    
         </div>
-     <div class="container mx-auto">
-        <div class="flex flex-row flex-wrap space-x-4">
-            <div class="basis-1/4">            
-                <div>
-                  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+        <!--Q&A CONTAINER-->
+     <div class="container mx-auto md:h-80"> 
+
+        <!--Q&A BOX-->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-full ">
+
+
+             <div v-for="(faq,index) in faqs" :key="index">                
+                  <div   tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
                    <div class="collapse-title text-xl font-medium">
-                          Question?
+                          {{faq.question}}
                     </div>
                     <div class="collapse-content"> 
-                      <p>Hidden answer showed at click</p>
+                      <p>{{faq.answer}}</p>
                     </div>
                  </div>
-                 </div>
              </div>
+                
+             
 
-          <div>
-            <div class="basis-1/4">
-                <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
-                 <div class="collapse-title text-xl font-medium">
-                        Question?2
-                  </div>
-                  <div class="collapse-content"> 
-                    <p>Hidden answer showed at click</p>
-                  </div>
-                </div>
-            </div>
-          </div> 
-
-          <div>
-            <div class="basis-1/4">
-                <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
-                 <div class="collapse-title text-xl font-medium">
-                        Question?3
-                  </div>
-                  <div class="collapse-content"> 
-                    <p>Hidden answer showed at click</p>
-                  </div>
-                </div>
-            </div>
-          </div> 
-
-          <div>
-            <div class="basis-1/4">
-                <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
-                 <div class="collapse-title text-xl font-medium">
-                        Question?4
-                  </div>
-                  <div class="collapse-content"> 
-                    <p>Hidden answer showed at click</p>
-                  </div>
-                </div>
-            </div>
-          </div> 
+             <!--Q&A BOX-->     
           
             
         </div>
      </div>
 
     </section>
+
+
+
+
+
+
+    
 
     <!--REGISTER-->
     <section class="register">
@@ -84,6 +108,32 @@
 <script>
 export default {
     data: () => ({
+        faqs:[
+            {
+                question:"Question1",
+                answer:"Answer1"
+            },
+            {
+                question:"Question2",
+                answer:"Answer2"
+            },
+            {
+                question:"Question3",
+                answer:"Answer3"
+            },
+            {
+                question:"Question4",
+                answer:"Answer4"
+            },
+            {
+                question:"Question5",
+                answer:"Answer5"
+            },
+            {
+                question:"Question6",
+                answer:"Answer6"
+            },
+        ]
 
     }),
 
