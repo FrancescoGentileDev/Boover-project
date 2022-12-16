@@ -8,6 +8,7 @@
     <section class="q&a"></section>
     <section class="register">
         <h1 class="pt-10"><strong>Registrati e inizia oggi a ricevere clienti</strong></h1>
+        <button class="btn btn-primary m-3">Sign up</button>
 
     </section>
   </main>
