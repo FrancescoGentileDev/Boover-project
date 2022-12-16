@@ -76,7 +76,7 @@
             <div
                 class="destra font-semibold text-xl text-base-content items-center uppercase hidden sm:flex"
             >
-                <a href="#" class="hidden md:inline nav0 nav0-text">il team</a>
+                <router-link to='/ourteam' class="hidden md:inline nav0 nav0-text">il team</router-link>
                 <a class="btn btn-primary m-3" href="/login"> Accedi </a>
                 <a class="btn btn-outline m-3 nav0 nav0-text" href="/register">
                     Registrati
@@ -247,7 +247,7 @@ export default {
         toggleCategoriesOnZero(bool) {
             this.categoriesOnZero = bool;
         },
-        
+
         toggleSidebar() {
             this.ShowSidebar = !this.ShowSidebar;
         },
