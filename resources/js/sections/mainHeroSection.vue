@@ -24,11 +24,9 @@
             <h1 class="text-4xl text-base-100 pb-3 font-bold">
                 Cerca il Professionista o il Servizio
             </h1>
-            <h1 class="text-4xl text-base-100 pb-5 font-bold">
-                che fa per te
-            </h1>
+            <h1 class="text-4xl text-base-100 pb-5 font-bold">che fa per te</h1>
             <div
-                class="searchMain relative  rounded-lg bg-base-100 border border-base-200 shadow-md md:p-2 hidden sm:flex"
+                class="searchMain relative rounded-lg bg-base-100 border border-base-200 shadow-md md:p-2 hidden sm:flex"
             >
                 <input
                     placeholder="Cerca un servizio o un professionista"
@@ -37,9 +35,10 @@
                     v-model="searchInput"
                     @keyup.enter="search"
                 />
-                <button
+                <router-link
                     type="button"
                     title="start search"
+                    :to="'/search?search=' + searchInput"
                     class="ml-auto py-3 px-6 rounded-lg text-center text-base-100 transition bg-primary hover:bg-primary-focus"
                 >
                     Cerca
@@ -53,7 +52,7 @@
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
                         />
                     </svg>
-                </button>
+                </router-link>
                 <div
                     v-if="searchInput.length > 0 && inputFocus"
                     class="searchPanel absolute bottom-0 translate-y-full left-0 w-full bg-base-100 border rounded-lg border-base-300 shadow-md md:px-8 md:py-2"
@@ -61,19 +60,15 @@
                     <div v-if="searchResultsServices.length" class="services">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
                         <span>Servizi</span>
-                        <ul class="">
-                            <li
-                                class="p-1 hover:bg-base-300 rounded-xl"
+                        <div class="flex flex-col">
+                            <router-link
+                                class="p-1 hover:bg-base-300 rounded-xl ml-5 w-full"
                                 v-for="(skill, index) in searchResultsServices"
                                 :key="index"
+                                :to="'/skill/' + skill.slug"
+                                >{{ skill.name }}</router-link
                             >
-                                <router-link
-                                    class="ml-5"
-                                    :to="'/skill/' + skill.slug"
-                                    >{{ skill.name }}</router-link
-                                >
-                            </li>
-                        </ul>
+                        </div>
                     </div>
 
                     <div class="users pt-3">
@@ -86,18 +81,16 @@
                             <em class="fa-solid fa-magnifying-glass"></em> Cerca
                             altri utenti contenenti "{{ searchInput }}"
                         </router-link>
-                        <ul class="">
-                            <li
-                                class="p-1 pl-5 hover:bg-base-300 rounded-xl"
+                        <div class="flex flex-col">
+                            <router-link
+                                :to="'/profile/' + user.slug"
+                                class="p-1 pl-5 hover:bg-base-300 rounded-xl w-full"
                                 v-for="(user, index) in searchResultsUsers"
                                 :key="index"
+                                >{{ user.name }}
+                                {{ user.lastname }}</router-link
                             >
-                                <router-link :to="'/profile/' + user.slug"
-                                    >{{ user.name }}
-                                    {{ user.lastname }}</router-link
-                                >
-                            </li>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -142,10 +135,9 @@ export default {
         };
     },
     mounted() {
-        window.addEventListener("click", (e)  => {
-            if (document.querySelector(".searchMain") == e.target.parentNode ) {
+        window.addEventListener("click", (e) => {
+            if (document.querySelector(".searchMain") == e.target.parentNode) {
                 this.inputFocus = true;
-
             } else {
                 this.inputFocus = false;
             }
@@ -211,7 +203,6 @@ export default {
                 category.skills.forEach((skill) => {
                     skill.name = skill.name.toLowerCase();
                     if (skill.name.includes(searchInput)) {
-
                         results.push(skill);
                     }
                 });

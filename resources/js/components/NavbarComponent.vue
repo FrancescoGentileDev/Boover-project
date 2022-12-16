@@ -7,7 +7,8 @@
             class="container mx-auto sm:py-5 flex flex-col sm:flex-row items-center justify-between"
         >
             <div
-                class="sinistra w-full md:w-1/2 gap-3 flex flex-col sm:flex-row md:gap-12 p-3 md:justify-start md:items-center" :class="scrollY > 0 ? 'md:justify-center' : 'md:justify-start'"
+                class="sinistra w-full md:w-1/2 gap-3 flex flex-col sm:flex-row md:gap-12 p-3 md:justify-start md:items-center"
+                :class="scrollY > 0 ? 'md:justify-center' : 'md:justify-start'"
             >
                 <div class="flex justify-between items-center pb-3">
                     <button
@@ -28,14 +29,16 @@
                         Iscriviti
                     </button>
                 </div>
-                <div class="searchNav w-full relative"   :class="{'sm:hidden': scrollY <= 0}">
+                <div
+                    class="searchNav w-full relative"
+                    :class="{ 'sm:hidden': scrollY <= 0 && !showOnZero }"
+                >
                     <input
                         @keyup.enter="search"
                         type="text"
                         class="nav0-sfondo nav0-text nav0 input w-full h-10 border-base-content border-opacity-50 bg-base-200 rounded-md focus:outline-none focus:border-primary"
                         placeholder="Search"
                         v-model="searchInput"
-
                     />
                     <button
                         class="bg-primary bg-opacity-80 h-10 px-4 absolute right-0 rounded-r-md hover:bg-opacity-100 hidden md:inline-block"
@@ -50,19 +53,14 @@
                         v-if="searchInput.length > 0 && inputFocus === true"
                         class="searchPanel absolute z-50 bottom-0 translate-y-full left-0 w-full bg-base-100 border rounded-lg border-base-300 shadow-md md:px-8 md:py-2"
                     >
-                        <div class="users pt-3">
-                            <ul class="">
-                                <li
-                                    class="p-1 pl-5 hover:bg-base-300 rounded-lg"
-                                    v-for="(user, index) in searchResultsUsers"
-                                    :key="index"
-                                >
-                                    <router-link :to="'/profile/' + user.slug"
+                        <div class="users pt-3 flex flex-col">
+
+                                    <router-link :to="'/profile/' + user.slug" class="p-1 pl-5 hover:bg-base-300 rounded-lg w-full"
+                                    v-for="(user, index) in searchResultsUsers" :key="index"
                                         >{{ user.name }}
                                         {{ user.lastname }}</router-link
                                     >
-                                </li>
-                            </ul>
+
                             <router-link
                                 :to="'/search?search=' + searchInput"
                                 class="block p-1 bg-base-200 my-2 rounded-lg"
@@ -79,9 +77,7 @@
                 class="destra font-semibold text-xl text-base-content items-center uppercase hidden sm:flex"
             >
                 <a href="#" class="hidden md:inline nav0 nav0-text">il team</a>
-                <a class="btn btn-primary m-3" href="/login">
-                    Accedi
-                </a>
+                <a class="btn btn-primary m-3" href="/login"> Accedi </a>
                 <a class="btn btn-outline m-3 nav0 nav0-text" href="/register">
                     Registrati
                 </a>
@@ -127,10 +123,13 @@
             </div>
         </nav>
 
-        <div class="border-t-2" :hidden="scrollY <= 0"></div>
+        <div class="border-t-2" :hidden="scrollY <= 0 && !showOnZero"></div>
         <div
             ref="categoryLine"
-            class="py-2 categoryLine container mx-auto hidden sm:hidden relative"
+            class="py-2 categoryLine container mx-auto hidden relative"
+            :class="
+                scrollY > 400 || categoriesOnZero ? 'sm:block' : 'sm:hidden'
+            "
         >
             <div
                 id="drops"
@@ -178,7 +177,10 @@ export default {
         ShowSidebar: false,
         searchInput: "",
         scrollY: 0,
+        navs: undefined,
         inputFocus: true,
+        showOnZero: true,
+        categoriesOnZero: true,
     }),
     created() {
         axios.get("/api/category").then((response) => {
@@ -187,36 +189,65 @@ export default {
     },
     mounted() {
         let navs = document.querySelectorAll(".nav0");
-        window.addEventListener("click", (e) => {
-            if (document.querySelector(".searchNav") == e.target.parentNode) {
-                this.inputFocus = true;
-            } else {
-                this.inputFocus = false;
-            }
-        });
-        window.addEventListener("scroll", (event) => {
-            this.scrollY = window.scrollY;
-            console.log(window.scrollY);
-            console.log(this.$refs.categoryLine.classList);
-            if (window.scrollY > 10) {
-                navs.forEach((el) => {
+        this.navs = navs;
+        this.inputFocusHandler();
+        this.actionInScrollHandler();
+    },
+    methods: {
+        inputFocusHandler() {
+            // GESTIONE FOCUS INPUT
+            window.addEventListener("click", (e) => {
+                if (
+                    document.querySelector(".searchNav") == e.target.parentNode
+                ) {
+                    this.inputFocus = true;
+                } else {
+                    this.inputFocus = false;
+                }
+            });
+        },
+
+        actionInScrollHandler() {
+            if(this.showOnZero) {
+                this.navs.forEach((el) => {
                     el.classList.remove("nav0");
                 });
-            } else {
-                navs.forEach((el) => {
+            }
+            else {
+                this.navs.forEach((el) => {
                     el.classList.add("nav0");
                 });
             }
-            if (window.scrollY > 400) {
-                this.$refs.categoryLine.classList.remove("sm:hidden");
-                this.$refs.categoryLine.classList.add("sm:block");
-            } else {
-                this.$refs.categoryLine.classList.remove("sm:block");
-                this.$refs.categoryLine.classList.add("sm:hidden");
+            window.addEventListener("scroll", (event) => {
+                this.scrollY = window.scrollY;
+                this.showOnZeroHandler();
+            });
+        },
+        showOnZeroHandler() {
+            if (!this.showOnZero) {
+                if (window.scrollY > 10) {
+                    this.navs.forEach((el) => {
+                        el.classList.remove("nav0");
+                    });
+                } else {
+                    this.navs.forEach((el) => {
+                        el.classList.add("nav0");
+                    });
+                }
             }
-        });
-    },
-    methods: {
+        },
+        toggleShowOnZero(bool) {
+
+            this.showOnZero = bool;
+            this.actionInScrollHandler();
+
+
+
+        },
+        toggleCategoriesOnZero(bool) {
+            this.categoriesOnZero = bool;
+        },
+        
         toggleSidebar() {
             this.ShowSidebar = !this.ShowSidebar;
         },
