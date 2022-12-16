@@ -9,46 +9,28 @@ use Illuminate\Support\Facades\Auth;
 
 class InboxController extends Controller
 {
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index()
+  {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-      return view('dashboard.inboxes.index', [
-        'inboxes' => Inbox::where('user_id', Auth::id())->get(),
-      ]);
-    }
+    return view('dashboard.inboxes.index', [
+      'inboxes' => Inbox::where('user_id', Auth::id())->paginate(10),
+    ]);
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\models\Inbox  $inbox
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Inbox $inbox)
-    {
-      if (Auth::id() === $inbox->user_id) {
-        return view('dashboard.inboxes.show', compact('inbox'));
-      }
-      else {
-        return view('dashboard.inboxes.index');
-      }
-    }
-
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    //
+  }
 
   /**
    * Store a newly created resource in storage.
@@ -61,6 +43,21 @@ class InboxController extends Controller
     //
   }
 
+  /**
+   * Display the specified resource.
+   *
+   * @param  \App\models\Inbox  $inbox
+   * @return \Illuminate\Http\Response
+   */
+  public function show(Inbox $inbox)
+  {
+    if(Auth::id() === $inbox->user_id) {
+      return view('dashboard.inboxes.show', compact('inbox'));
+    }
+    else {
+      return redirect()->route('dashboard.inboxes.index');
+    }
+  }
 
   /**
    * Show the form for editing the specified resource.

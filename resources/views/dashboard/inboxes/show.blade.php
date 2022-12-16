@@ -1,9 +1,6 @@
-@extends('layouts.app',
-  [
-    'title' => 'Boover | My Inbox',
-    'pageTitle' => 'My Inbox',
-  ]
-)
+@extends('layouts.app', [
+  'title' => 'Boover | Inbox'
+])
 
 @section('content')
     <article class="w-3/4 mx-auto my-7">

@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="en">
+<html data-theme="dark" lang="en">
 
 <head>
-  @include('layouts.partials.meta-head')
+    @include('layouts.partials.meta-head')
 
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-  <script src="{{ asset('js/backOffice.js') }}"></script>
-  @yield('head')
+    {{-- CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
-  <title>{{ $title ?? 'Boover Project' }}</title>
+    {{-- JS --}}
+    <script src="{{ asset('js/backOffice.js') }}"></script>
+
+    @yield('head')
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>{{ $title ?? 'Boover Project' }}</title>
 </head>
 
 
 <body>
+
     <div id="sidebar"
         class="flex flex-col w-48 md:w-64 px-4 py-8 bg-white border-r dark:bg-gray-900 dark:border-gray-700 fixed h-screen z-50 transition-all -left-48 duration-200 md:left-0">
         <button id="button-sidebar " class=" md:hidden absolute top-0 left-48" onclick="toggleSidebar()">
@@ -74,7 +80,7 @@
                 </a>
 
                 <a id="Sponsorship"
-                     class="
+                    class="
              @if (Route::currentRouteName() == 'dashboard.sponsor') bg-gray-100 @endif
              flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                     href="{{ route('dashboard.sponsor') }}">
@@ -114,6 +120,7 @@
 
     <script>
         let sidebar = document.getElementById('sidebar');
+
         function toggleSidebar() {
             if (sidebar.classList.contains('-left-48')) {
                 sidebar.classList.remove('-left-48');
