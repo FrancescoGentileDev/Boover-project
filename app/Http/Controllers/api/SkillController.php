@@ -30,10 +30,11 @@ class SkillController extends Controller
     public function show($id, Request $request)
     {
         //
-
+        if($request->has('slug')) {
+            $skill = Skill::where('slug', $id)->first(['id', 'name', 'description', 'image', 'created_at', 'slug']);
+            return response($skill);
+        }
         $skill = Skill::find($id, ['id', 'name', 'description', 'image', 'created_at', 'slug']);
-
-
 
         return response($skill);
     }

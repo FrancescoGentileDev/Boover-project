@@ -12,14 +12,9 @@ class UserSeeder extends Seeder
    */
   public function run()
   {
-    $admin = new User();
-    $admin->name = 'admin';
-    $admin->password = bcrypt('IAmAnAdmin');
-    $admin->email = 'admin@admin.it';
-    $admin->save();
 
 
-    $numUsers = 30;
+    $numUsers = 300;
     $users = factory(App\User::class, $numUsers)->create();
 
     foreach ($users as $user) {
@@ -29,6 +24,9 @@ class UserSeeder extends Seeder
   }
 
   private function getAvatar($id) {
+    if($id > 99) {
+      $id = $id % 100;
+    }
     $gender = ['men', 'women'];
     $baseUrl = 'https://randomuser.me/api/portraits/';
 

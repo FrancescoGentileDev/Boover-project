@@ -29,14 +29,14 @@ $factory->define(User::class, function (Faker $faker) {
         'lastname' => $lastname,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        'password' => bcrypt($faker->word()),
+        'password' => bcrypt('password'),
         'remember_token' => Str::random(10),
         'slug' => getSlug($name . ' ' . $lastname),
         'phone' => $faker->e164PhoneNumber(),
         'birthday_date' => $faker->dateTimeThisCentury(),
         'presentation' => $faker->realText(250),
         'detailed_description' => $faker->realText(500),
-        'is_available' => $faker->boolean(),
+        'is_available' => 1,
         'business_days' => implode($faker->randomElements($days, $faker->numberBetween(0, count($days)))),
     ];
 });

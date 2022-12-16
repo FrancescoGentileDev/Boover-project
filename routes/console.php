@@ -4,7 +4,9 @@ use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use App\User;
 use App\models\Skill;
+use Illuminate\Support\Collection;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 /*
@@ -23,7 +25,7 @@ Artisan::command('inspire', function () {
 })->describe('Display an inspiring quote');
 
 Artisan::command('test', function (Faker $faker) {
-   $user = User::find(3);
-
-   dd($user->reviews->toArray());
+    $response = Http::get('https://api.unsplash.com/photos/random?client_id=TbKwMVqRg3nJ2vtMTzCyKY03mouvjmVj1YRvOf3U2Tw&query=random-person');
+    $randomPhoto = $response->json();
+    $this->comment($randomPhoto['urls']['small']);
 });
