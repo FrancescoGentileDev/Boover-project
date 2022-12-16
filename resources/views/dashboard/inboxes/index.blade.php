@@ -19,7 +19,7 @@
             <li class="px-5 py-2 bg-base-200 rounded-lg shadow-md dark:bg-gray-800
         hover:bg-base-300">
                 <a href="{{ route('dashboard.inboxes.show', $inbox->id) }}">
-                    <p>{{ $inbox->title }}</p>
+                    <p class="font-semibold text-xl">{{ $inbox->title }}</p>
                     <p><em class="text-base-content text-sm">From: {{ $inbox->nickname }}</em></p>
                 </a>
             </li>
