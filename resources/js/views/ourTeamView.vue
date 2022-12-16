@@ -7,21 +7,64 @@
     <section class="review"></section>
 
     <!--Q&A-->
-    <section class="qa bg-blue-700">
+    <section class="qa bg-info-content py-5">
         <div class="text-center">
-         <h1>Q&A</h1>    
+         <h1 class="">Q&A</h1>    
         </div>
-        <div>
-            <div>
-                <div class="bg-primary-content"><strong>Text</strong></div>
-                <div class="bg-primary-content"><strong>Text</strong></div>
-                <div class="bg-primary-content"><strong>Text</strong></div>
+        <div class="flex flex-row flex-wrap space-x-4">
+            <div class="basis-1/4">            
+                <div>
+                  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                   <div class="collapse-title text-xl font-medium">
+                          Question?
+                    </div>
+                    <div class="collapse-content"> 
+                      <p>Hidden answer showed at click</p>
+                    </div>
+                 </div>
+                 </div>
+             </div>
+
+          <div>
+            <div class="basis-1/4">
+                <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                 <div class="collapse-title text-xl font-medium">
+                        Question?2
+                  </div>
+                  <div class="collapse-content"> 
+                    <p>Hidden answer showed at click</p>
+                  </div>
+                </div>
             </div>
-            <div>
-                <div class="bg-primary-content"><strong>Text</strong></div>
-                <div class="bg-primary-content"><strong>Text</strong></div>
-                <div class="bg-primary-content"><strong>Text</strong></div>
+          </div> 
+
+          <div>
+            <div class="basis-1/4">
+                <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                 <div class="collapse-title text-xl font-medium">
+                        Question?3
+                  </div>
+                  <div class="collapse-content"> 
+                    <p>Hidden answer showed at click</p>
+                  </div>
+                </div>
             </div>
+          </div> 
+
+          <div>
+            <div class="basis-1/4">
+                <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                 <div class="collapse-title text-xl font-medium">
+                        Question?4
+                  </div>
+                  <div class="collapse-content"> 
+                    <p>Hidden answer showed at click</p>
+                  </div>
+                </div>
+            </div>
+          </div> 
+          
+            
         </div>
 
     </section>
@@ -52,4 +95,6 @@ mounted() {
 </script>
 
 <style lang="scss" scoped>
+
+
 </style>
