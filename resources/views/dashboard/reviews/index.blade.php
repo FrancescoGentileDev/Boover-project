@@ -11,7 +11,7 @@
 
     <div class="px-5">
         @foreach ($reviews as $review)
-            <div class="max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
+            <div class="max-w-2xl my-5 px-8 py-4 bg-base-200 rounded-lg shadow-md dark:bg-gray-800">
                 <div class="flex items-center justify-between">
                     <span class="text-sm font-light text-gray-600 dark:text-gray-400">{{ $review->created_at }}</span>
                 </div>
@@ -26,8 +26,12 @@
 
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center">
-                        <a class="font-bold text-gray-700 cursor-pointer dark:text-gray-200" tabindex="0"
-                            role="link">{{ $review->nickname }}</a>
+                        <div class="font-bold text-gray-700 dark:text-gray-200" tabindex="0" role="link">
+                            Valutation: {{ $review->vote }}</div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="font-bold text-gray-700 dark:text-gray-200" tabindex="0" role="link">
+                            {{ $review->nickname }}</div>
                     </div>
                 </div>
             </div>
