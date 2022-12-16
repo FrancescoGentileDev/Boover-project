@@ -7,10 +7,11 @@
     <section class="review"></section>
 
     <!--Q&A-->
-    <section class="qa bg-info-content py-5">
+    <section class="qa bg-info-content py-5 ">
         <div class="text-center">
          <h1 class="">Q&A</h1>    
         </div>
+     <div class="container mx-auto">
         <div class="flex flex-row flex-wrap space-x-4">
             <div class="basis-1/4">            
                 <div>
@@ -66,6 +67,7 @@
           
             
         </div>
+     </div>
 
     </section>
 
