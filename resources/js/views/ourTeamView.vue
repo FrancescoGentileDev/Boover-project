@@ -92,7 +92,7 @@
             alias, adipisci rem similique, at omnis eligendi optio eos harum.
         </p>
        <div class="grid grid-cols-1 gap-8 mx-auto mt-8 lg:grid-cols-2 xl:mt-10 max-w-7xl">
-           <div v-for="(reviews,index) in reviews" :key="index" class="h-full" >
+           <div v-for="(reviews,index) in reviews" :key="index" class="" >
                <div class="p-6 bg-gray-100 rounded-lg dark:bg-gray-800 md:p-8 h-full">
                    <p class="leading-loose text-gray-500 dark:text-gray-300">
                        “{{reviews.review}}”.
