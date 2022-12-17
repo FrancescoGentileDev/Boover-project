@@ -13,7 +13,10 @@ class DashboardController extends Controller
     //
     public function index()
     {
-        $logged = Auth::user();
-        return view('dashboard.index', compact('logged'));
+        $logged = Auth::user()->id;
+        $user = User::find($logged);
+        $totalReviews = $user->reviews()->count();
+        $totalInboxes = $user->inboxes()->count();
+        return view('dashboard.index', compact('user', 'totalReviews', 'totalInboxes'));
     }
 }
