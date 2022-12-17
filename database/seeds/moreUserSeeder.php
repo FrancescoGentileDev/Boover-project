@@ -7,20 +7,36 @@ use Illuminate\Support\Facades\Http;
 
 class moreUserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
-        $numUsers = 50;
+        $numUsers = 1000;
+/**
+ * 1. SEEDER PER UTENTI MASSIVI CON FOTO IN HIGH RESOLUTION PER POTERLO USARE FAI QUANTO SCRITTO QUI:
+ * https://stackoverflow.com/questions/29822686/curl-error-60-ssl-certificate-unable-to-get-local-issuer-certificate
+ */
+
     $users = factory(App\User::class, $numUsers)->create();
-
+    $counter = 0;
+    $response = Http::get('https://api.unsplash.com/collections/bgUOqY7aKYc/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30');
+    $response->json();
+    $photos = json_decode($response->body());
+    $page = 1;
     foreach ($users as $user) {
+    if($counter == 30) {
+        $response = Http::get('https://api.unsplash.com/collections/bgUOqY7aKYc/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30&page=' . $page);
+        $response->json();
+        $photos = json_decode($response->body());
+        $page++;
+        $counter = 0;
+    }
 
-        $user->avatar = $this->getAvatar();
-        $user->save();
+
+
+    $user->avatar = $photos[$counter]->urls->regular;
+    $user->save();
+    $counter++;
+
     }
 
     foreach($users as $user) {
@@ -32,7 +48,7 @@ class moreUserSeeder extends Seeder
     }
 
     foreach($users as $user) {
-        $skill = Skill::all()->random(5);
+        $skill = Skill::all()->random(rand(1, 5));
         $user->skills()->attach($skill);
      }
 

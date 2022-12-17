@@ -25,7 +25,13 @@ Artisan::command('inspire', function () {
 })->describe('Display an inspiring quote');
 
 Artisan::command('test', function (Faker $faker) {
-    $response = Http::get('https://api.unsplash.com/photos/random?client_id=TbKwMVqRg3nJ2vtMTzCyKY03mouvjmVj1YRvOf3U2Tw&query=random-person');
-    $randomPhoto = $response->json();
-    $this->comment($randomPhoto['urls']['small']);
+    $response = Http::get('https://api.unsplash.com/photos/random?client_id=TbKwMVqRg3nJ2vtMTzCyKY03mouvjmVj1YRvOf3U2Tw&query=random-person&count=30');
+    $response->json();
+
+    $photos = json_decode($response->body());
+    $counter = 0;
+    $photos[0]->urls->regular;
+
+
+
 });
