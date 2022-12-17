@@ -15,9 +15,17 @@ class DashboardController extends Controller
     {
         $logged = Auth::user()->id;
         $user = User::find($logged);
+
+        // reviews and inboxes
         $totalReviews = $user->reviews()->count();
         $totalInboxes = $user->inboxes()->count();
+
+        // if is sponsorised
         $isSponsor = $user->sponsors()->find('user_id');
+
+        // vote avarage
+
+
         return view('dashboard.index', compact('user', 'totalReviews', 'totalInboxes', 'isSponsor'));
     }
 }
