@@ -253,7 +253,7 @@
            <div v-for="(reviews,index) in reviews" :key="index" >
                <div class="p-6 bg-gray-100 rounded-lg dark:bg-gray-800 md:p-8">
                    <p class="leading-loose text-gray-500 dark:text-gray-300">
-                       “{{reviews.review}}.”.
+                       “{{reviews.review}}”.
                    </p>
 
                    <div class="flex items-center mt-6">
@@ -278,9 +278,9 @@
 
 
     <!--Q&A-->
-    <section class="qa bg-info-content py-5 ">
+    <section class="qa bg-base-200 py-5 ">
         <div class="text-center">
-         <h1 class="">Q&A</h1>    
+         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl py-10">Q&A</h1>    
         </div>
         <!--Q&A CONTAINER-->
      <div class="container mx-auto md:h-80">         
@@ -300,10 +300,10 @@
      </div>
     </section>
     <!--REGISTER-->
-    <section class="register">
+    <section class="register py-20">
       <div class="text-center">
-        <h1 class=" pt-10"><strong>Registrati e inizia oggi a ricevere clienti</strong></h1>
-        <button class="btn btn-primary m-3">Sign up</button>
+        <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl pt-10">Registrati e inizia oggi a ricevere clienti</h1>
+        <button class="btn btn-primary m-3 mt-20">Sign up</button>
      </div>
     </section>
   </main>
