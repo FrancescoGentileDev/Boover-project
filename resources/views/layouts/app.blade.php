@@ -61,9 +61,9 @@
 
                 <a id='reviews'
                     class="
-            @if (Route::currentRouteName() == 'dashboard.reviews') bg-gray-100 @endif
+            @if (Route::currentRouteName() == 'dashboard.reviews.index') bg-gray-100 @endif
             flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-                    href="{{ route('dashboard.reviews') }}">
+                    href="{{ route('dashboard.reviews.index') }}">
                     <i class="fa-solid fa-star"></i>
 
                     <span class="mx-4 font-medium">Reviews</span>
