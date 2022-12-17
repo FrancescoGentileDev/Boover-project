@@ -25,7 +25,19 @@ Artisan::command('inspire', function () {
 })->describe('Display an inspiring quote');
 
 Artisan::command('test', function (Faker $faker) {
-    $response = Http::get('https://api.unsplash.com/photos/random?client_id=TbKwMVqRg3nJ2vtMTzCyKY03mouvjmVj1YRvOf3U2Tw&query=random-person');
-    $randomPhoto = $response->json();
-    $this->comment($randomPhoto['urls']['small']);
+
+    $fakeDate = $faker->dateTimeBetween('-100 days', 'now');
+    $modified = $fakeDate;
+    $modified = date_sub($modified, DateInterval::createFromDateString('1 year'));
+
+    dump($fakeDate, $modified);
+
+});
+Artisan::command('test2', function (Faker $faker) {
+    $user = User::find(100);
+
+    $user->inboxes()->count();
+
+    dump($user->reviews()->count());
+
 });

@@ -34,7 +34,7 @@ $factory->define(User::class, function (Faker $faker) {
         'slug' => getSlug($name . ' ' . $lastname),
         'phone' => $faker->e164PhoneNumber(),
         'birthday_date' => $faker->dateTimeThisCentury(),
-        'presentation' => $faker->realText(250),
+        'presentation' => $faker->realText(60),
         'detailed_description' => $faker->realText(500),
         'is_available' => 1,
         'business_days' => implode($faker->randomElements($days, $faker->numberBetween(0, count($days)))),

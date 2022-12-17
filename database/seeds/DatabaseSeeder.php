@@ -18,16 +18,16 @@ class DatabaseSeeder extends Seeder
 
 
 
-        $this->call(UserSeeder::class);
-        $this->call(InboxSeeder::class);
+        // $this->call(UserSeeder::class);
+        // $this->call(InboxSeeder::class);
 
 
         $this->call(CategoryTableSeeder::class);
         $this->call(SkillSeeder::class);
-        $this->call(SkillUserSeeder::class);
+        // $this->call(SkillUserSeeder::class);
         $this->call(SponsorSeeder::class);
-        $this->call(SponsorUserSeeder::class);
-        $this->call(ReviewSeeder::class);
+        // $this->call(SponsorUserSeeder::class);
+        // $this->call(ReviewSeeder::class);
 
 
     }
