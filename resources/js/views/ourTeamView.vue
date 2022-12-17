@@ -114,7 +114,7 @@
             <div v-for="(freelancers,index) in freelancers" :key="index" class="flex flex-col items-center">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
-                <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">{{freelancers.freelancer}}</h1>
+                <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">{{freelancers.freelancer}}</h1>
 
                 <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">{{freelancers.profession}}</p>
 
