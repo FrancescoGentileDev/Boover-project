@@ -157,7 +157,8 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                                 </div>
                             </td>
                             <th>
-                                <button class="btn btn-ghost btn-xs">details</button>
+                                <a href="{{ route('dashboard.reviews.show', $review->id) }}"
+                                    class="btn btn-ghost btn-xs">details</a>
                             </th>
                         </tr>
                     @endforeach
