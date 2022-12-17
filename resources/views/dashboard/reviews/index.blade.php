@@ -21,8 +21,9 @@
                 </div>
 
                 <div class="mt-2">
-                    <div class="text-2xl font-bold text-base-content" tabindex="0" role="link">
-                        {{ $review->title }}</div>
+                    <div class="text-2xl font-bold text-base-content hover:underline" tabindex="0" role="link">
+                        <a href="{{ route('dashboard.reviews.show', $review->id) }}">{{ $review->title }}</a>
+                    </div>
                     <p class="mt-2 text-base-content">
                         {{ $review->description }}</p>
                 </div>
