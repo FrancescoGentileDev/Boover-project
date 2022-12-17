@@ -131,4 +131,38 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
 
         const statsChart = new Chart(canvasChart, config);
     </script>
+
+    {{-- bottom page statistics --}}
+    <div class="mt-10 py-10 w-2/4">
+        <div class="overflow-x-auto w-full">
+            <table class="table w-full">
+                <!-- head -->
+                <thead>
+                    <tr>
+                        <th>Last Reviews</th>
+                        <th>Open</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- row 1 -->
+                    @foreach ($reviews as $review)
+                        <tr>
+
+                            <td>
+                                <div class="flex items-center space-x-3">
+                                    <div>
+                                        <div class="font-bold">{{ $review->nickname }}</div>
+                                        <div class="text-sm opacity-50">United States</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <th>
+                                <button class="btn btn-ghost btn-xs">details</button>
+                            </th>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection
