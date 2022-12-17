@@ -104,9 +104,9 @@
                                                 
         <div class="flex items-center justify-center">
             <div class="flex items-center p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
-                <button class="px-4 py-2 text-sm font-medium text-white capitalize bg-blue-600 md:py-3 rounded-xl md:px-12">design</button>
-                <button class="px-4 py-2 mx-4 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-3 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white rounded-xl md:mx-8 md:px-12">development</button>
-                <button class="px-4 py-2 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-3 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white rounded-xl md:px-12">marketing</button>
+                <button class="px-4 py-2 text-sm font-medium text-white capitalize bg-primary md:py-3 rounded-xl md:px-12">design</button>
+                <button class="px-4 py-2 mx-4 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-3 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-primary hover:text-white rounded-xl md:mx-8 md:px-12">development</button>
+                <button class="px-4 py-2 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-3 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-primary hover:text-white rounded-xl md:px-12">marketing</button>
             </div>
         </div>
                                                                            <!--TEAM GRID-->
