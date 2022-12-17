@@ -152,7 +152,7 @@
             <div class="flex flex-col items-center hover:transition-none">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
-                <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">Il prossimo potresti essere <span >tu!</span> </h1>
+                <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">Il prossimo potresti essere <span class="text-secondary">tu!</span> </h1>
 
                 <p class="mt-2 text-secondary capitalize ">{{freelancers.profession}}</p>
 
