@@ -157,7 +157,7 @@
                 <p class="mt-2 text-secondary capitalize ">{{freelancers.profession}}</p>
 
                 <div class="flex mt-3 -mx-2">
-                    <button class="btn btn-primary m-3 mt-20">Registrati</button>
+                    <button class="btn btn-primary  ">Registrati Subito</button>
                 </div>
             </div>
         </div>
