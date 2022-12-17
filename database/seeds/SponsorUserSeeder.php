@@ -13,7 +13,7 @@ class SponsorUserSeeder extends Seeder
     public function run()
     {
         //
-        $users = User::all()->random(10);
+        $users = User::all()->random(300);
 
         foreach($users as $user) {
             $sponsor = Sponsor::inRandomOrder()->first();
