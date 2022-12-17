@@ -148,8 +148,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                     <tbody>
                         @foreach ($reviews as $review)
                             <tr>
-
-                                <td>
+                                <td class="hover:bg-base-300">
                                     <div class="flex items-center space-x-3">
                                         <div>
                                             <div class="font-bold">Title: {{ $review->title }}</div>
@@ -181,7 +180,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                     <tbody>
                         @foreach ($inboxes as $inbox)
                             <tr>
-                                <td>
+                                <td class="hover:bg-base-300">
                                     <div class="flex items-center space-x-3">
                                         <div>
                                             <div class="font-bold">Title: {{ $inbox->title }}</div>
