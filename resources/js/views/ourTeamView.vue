@@ -99,7 +99,7 @@
                    </p>
 
                    <div class="flex items-center mt-6">
-                       <img class="object-cover rounded-full w-14 h-14" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
+                       
                     
                        <div class="mx-4">
                            <h1 class="font-semibold text-secondary">{{reviews.userName}}</h1>
