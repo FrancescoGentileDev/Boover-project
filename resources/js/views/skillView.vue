@@ -3,8 +3,10 @@
         <h1 class="text-4xl font-bold">{{ skill.name }}</h1>
         <p class="mt-3 font-semibold text-neutral">{{ skill.description }}</p>
         <div class="skill mt-12">
-            <div class="totals flex justify-between">
+            <div class="totals flex flex-col justify-between">
+            <filter-component />
                 <p>Professionisti totali: {{ users.total }}</p>
+
             </div>
         </div>
         <div class="user mt-5">
@@ -26,13 +28,20 @@
 </template>
 
 <script>
+import FilterComponent from '../components/filterComponent.vue';
 import UserCardComponent from "../components/UserCardComponent.vue";
 export default {
-    components: { UserCardComponent },
+    components: { UserCardComponent, FilterComponent },
     data: () => ({
         skill: [],
         users: [],
         currentPage: 1,
+        filtersActive:{
+            onlySponsor: false,
+            mostReviewed: false,
+            rating_min: 1,
+            rating_max: 5,
+        }
     }),
     watch: {
         $route(to, from) {
