@@ -28,6 +28,4 @@
             <x-delete-form :destroyRoute="route('dashboard.inboxes.destroy', $inbox->id)" />
         </div>
     </article>
-
-    {{-- @dump($inbox) --}}
 @endsection
