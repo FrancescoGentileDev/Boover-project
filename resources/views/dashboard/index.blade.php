@@ -9,7 +9,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
     {{-- top bar statistics --}}
     <div class="flex flex-row justify-center py-10">
         <div class="stats shadow mt-10 bg-base-200 w-screen">
-            <div class="stat w-max">
+            <div class="stat w-max lg:w-1/3">
                 <div class="stat-figure text-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         class="inline-block w-8 h-8 stroke-current">
@@ -22,7 +22,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                 <div class="stat-value text-primary">{{ $totalReviews }}</div>
                 <div class="stat-desc">You have a total of {{ $totalReviews }} reviews.</div>
             </div>
-            <div class="stat w-max">
+            <div class="stat w-max lg:w-1/3">
                 <div class="stat-figure text-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         class="inline-block w-8 h-8 stroke-current">
@@ -35,7 +35,20 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                 <div class="stat-value text-secondary">{{ $totalInboxes }}</div>
                 <div class="stat-desc">You have a total of {{ $totalInboxes }} messages.</div>
             </div>
-            <div class="stat w-max">
+            <div class="stat w-max lg:w-1/3">
+                <div class="stat-figure text-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        class="inline-block w-8 h-8 stroke-current">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                        </path>
+                    </svg>
+                </div>
+                <div class="stat-title">Avarage Evaluation</div>
+                <div class="stat-value" style="color: orange">5</div>
+                <div class="stat-desc">Avarage evaluation is based on your reviews.</div>
+            </div>
+            <div class="stat w-max lg:w-1/3">
                 <div class="stat-figure text-secondary">
                     <div class="avatar online">
                         <div class="w-16 rounded-full">
