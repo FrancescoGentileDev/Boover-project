@@ -45,7 +45,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                     </svg>
                 </div>
                 <div class="stat-title">Average Evaluation</div>
-                <div class="stat-value" style="color: orange">{{ $average }}</div>
+                <div class="stat-value" style="color: orange">{{ number_format($average, 2, '.', '') }}</div>
                 <div class="stat-desc">Average evaluation is based on your reviews.</div>
             </div>
             <div class="stat w-max lg:w-1/3">
