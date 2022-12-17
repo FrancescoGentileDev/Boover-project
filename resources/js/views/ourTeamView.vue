@@ -103,7 +103,7 @@
                     
                        <div class="mx-4">
                            <h1 class="font-semibold text-secondary">{{reviews.userName}}</h1>
-                           <span class="text-sm text-gray-500 dark:text-gray-300">{{reviews.profession}}</span>
+                           
                        </div>
                    </div>
                </div>            
