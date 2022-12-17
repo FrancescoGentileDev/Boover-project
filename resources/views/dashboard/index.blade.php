@@ -19,7 +19,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                 </svg>
             </div>
             <div class="stat-title">Total Reviews</div>
-            <div class="stat-value text-primary">25.6K</div>
+            <div class="stat-value text-primary">{{ $totalReviews }}</div>
             <div class="stat-desc">21% more than last month</div>
         </div>
         <div class="stat">
@@ -31,14 +31,14 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                 </svg>
             </div>
             <div class="stat-title">Total Messages</div>
-            <div class="stat-value text-secondary">2.6M</div>
+            <div class="stat-value text-secondary">{{ $totalInboxes }}</div>
             <div class="stat-desc">21% more than last month</div>
         </div>
         <div class="stat">
             <div class="stat-figure text-secondary">
                 <div class="avatar online">
                     <div class="w-16 rounded-full">
-                        <img src="{{ $logged->avatar }}" />
+                        <img src="{{ $user->avatar }}" />
                     </div>
                 </div>
             </div>
