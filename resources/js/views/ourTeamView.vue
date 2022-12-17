@@ -39,7 +39,7 @@
 
 
 
-    <section class="team"></section>
+    
 
 
 
@@ -110,10 +110,7 @@
             </div>
         </div>
                                                                            <!--TEAM GRID-->
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3"> 
-                                                 <!--TEAM 3-->
-            
-                                                       <!--TEAM 1-->
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">                                                    
             <div v-for="(freelancers,index) in freelancers" :key="index" class="flex flex-col items-center">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
