@@ -42,7 +42,7 @@
                         ></em>
                     </div>
                     <span class="text-base-content">
-                        {{ Math.round(user.reviews_rating) }}
+                        {{ Math.ceil(user.reviews_rating) }}
                     </span>
                 </div>
             </div>
