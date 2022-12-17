@@ -36,8 +36,8 @@
             :perPageCustom="[
                 [640, 2],
                 [768, 3],
-                [1024, 3],
-                [1280, 4],
+                [1024, 4],
+                [1280, 5],
             ]"
         >
             <!--   <div class="avatar online">
@@ -61,10 +61,7 @@
                     <h1 class="text-center py-3 font-semibold text-lg">
                         {{ user.name }}
                     </h1>
-                    <h1 class="text-center py-6">
-                        <!--  Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. -->
-                    </h1>
+                    <h1 class="text-center py-6"></h1>
 
                     <div class="flex flex-wrap gap-2 justify-center">
                         <div class="badge badge-primary">musicista</div>

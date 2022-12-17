@@ -11,7 +11,7 @@ class moreUserSeeder extends Seeder
 
     public function run(Faker $faker)
     {
-        $numUsers = 30;
+        $numUsers = 100;
 /**
  * 1. SEEDER PER UTENTI MASSIVI CON FOTO IN HIGH RESOLUTION PER POTERLO USARE FAI QUANTO SCRITTO QUI:
  * https://stackoverflow.com/questions/29822686/curl-error-60-ssl-certificate-unable-to-get-local-issuer-certificate
@@ -19,18 +19,19 @@ class moreUserSeeder extends Seeder
 
     $users = factory(App\User::class, $numUsers)->create();
     $counter = 0;
-    $response = Http::get('https://api.unsplash.com/collections/8721905/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30');
+    $response = Http::get('https://api.unsplash.com/collections/8721905/photos?client_id=Lc13yY6BSLCYOXpUV0p74VS22RzfoAy6I28Ay8lAua4&per_page=30');
     $response->json();
     $photos = json_decode($response->body());
     $page = 1;
     foreach ($users as $user) {
     if($counter == 30) {
-        $response = Http::get('https://api.unsplash.com/collections/8721905/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30&page=' . $page);
+        $response = Http::get('https://api.unsplash.com/collections/8721905/photos?client_id=Lc13yY6BSLCYOXpUV0p74VS22RzfoAy6I28Ay8lAua4&per_page=30&page=' . $page);
         $response->json();
         $photos = json_decode($response->body());
         $page++;
         $counter = 0;
     }
+
 
 
 
