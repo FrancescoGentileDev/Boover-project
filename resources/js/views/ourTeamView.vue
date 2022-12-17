@@ -390,23 +390,23 @@ export default {
         ],
         freelancers:[
             {
-                userName:"Eli Golam",
+                freelancer:"Eli Golam",
                 profession:"Full-Stack Developer"
             },
             {
-                userName:"Hugo",
+                freelancer:"Hugo",
                 profession:"Back-End Developer"
             },
             {
-                userName:"Francesco Gentile",
+                freelancer:"Francesco Gentile",
                 profession:"Full-Stack Developer"
             },
             {
-                userName:"Valerio",
+                freelancer:"Valerio",
                 profession:"Full-Stack Developer"
             },
             {
-                userName:"Carmelo",
+                freelancer:"Carmelo",
                 profession:"Front-End Developer"
             },
         ]
