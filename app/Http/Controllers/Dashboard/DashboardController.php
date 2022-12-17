@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\models\Review;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -24,8 +25,8 @@ class DashboardController extends Controller
         $isSponsor = $user->sponsors()->find('user_id');
 
         // vote average
+        $average = $user->reviews()->avg('vote');
 
-
-        return view('dashboard.index', compact('user', 'totalReviews', 'totalInboxes', 'isSponsor'));
+        return view('dashboard.index', compact('user', 'totalReviews', 'totalInboxes', 'isSponsor', 'average'));
     }
 }
