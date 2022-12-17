@@ -15,9 +15,9 @@ class ReviewSeeder extends Seeder
     {
         //
         $users = User::all();
-        foreach($users as $user) {
-            $reviews = factory(App\models\Review::class, rand(0, 10))->make();
-            foreach($reviews as $review) {
+        foreach ($users as $user) {
+            $reviews = factory(App\models\Review::class, rand(10, 25))->make();
+            foreach ($reviews as $review) {
                 $review->user_id = $user->id;
                 $review->save();
             }

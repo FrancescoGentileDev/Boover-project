@@ -19,7 +19,7 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 
     Route::get('/', 'DashboardController@index')->name('home');
 
-    Route::get('reviews', 'ReviewController@index')->name('reviews');
+    Route::resource('reviews', 'ReviewController')->except(['create', 'update', 'store', 'edit', 'delete']);
 
     Route::resource('inboxes', 'InboxController')->except(['update', 'edit', 'create', 'store']);
 
@@ -34,10 +34,8 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
     Route::any('{catchall}', function () {
         return redirect()->back();
     })->where('catchall', '.*');
-
 });
 
 Route::get('{any?}', function () {
     return view('guest.home');
 })->where('any', '.*');
-
