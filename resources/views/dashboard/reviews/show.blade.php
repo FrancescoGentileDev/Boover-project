@@ -26,4 +26,12 @@
             </div>
         </div>
     </div>
+    <div class="flex flex-row justify-center gap-x-10">
+        <button class="bg-base-200 px-8 py-4 rounded-lg shadow-md hover:bg-base-300 font-semibold text-base-content">
+            <a href="{{ route('dashboard.home') }}">HOMEPAGE</a>
+        </button>
+        <button class="bg-base-200 px-8 py-4 rounded-lg shadow-md hover:bg-base-300 font-semibold text-base-content">
+            <a href="{{ route('dashboard.reviews.index') }}">REVIEWS LIST</a>
+        </button>
+    </div>
 @endsection
