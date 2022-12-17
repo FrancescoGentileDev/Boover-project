@@ -42,6 +42,9 @@ export default {
             if(this.$route.query.page){
                 this.currentPage = this.$route.query.page;
             }
+            else {
+                this.currentPage = 1;
+            }
             axios
                 .get(`/api/skills/${this.$route.params.slug}?slug=true`)
                 .then((response) => {
