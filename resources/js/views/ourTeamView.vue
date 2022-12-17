@@ -116,10 +116,10 @@
 
                 <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">{{freelancers.freelancer}}</h1>
 
-                <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">{{freelancers.profession}}</p>
+                <p class="mt-2 text-secondary capitalize ">{{freelancers.profession}}</p>
 
                 <div class="flex mt-3 -mx-2">
-                    <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Reddit">
+                    <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-primary" aria-label="Reddit">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -128,7 +128,7 @@
                         </svg>
                     </a>
 
-                    <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Facebook">
+                    <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-primary" aria-label="Facebook">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -137,7 +137,7 @@
                         </svg>
                     </a>
 
-                    <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Github">
+                    <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-primary" aria-label="Github">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
