@@ -102,44 +102,7 @@
 
 
 
-<section class="bg-white dark:bg-gray-900">
-    <div class="container px-6 py-10 mx-auto">
-        <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-            Cosa dicono i nostri clienti
-        </h1>
 
-        
-
-        <div class="flex items-start max-w-6xl mx-auto mt-16">
-            <button title="left arrow" class="hidden p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:block hover:bg-gray-100">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-            </button>
-
-            <div v-for="(reviews,index) in reviews" :key="index">
-                <p class="flex items-center text-center text-gray-500 lg:mx-8">
-                    {{reviews.review}}
-                </p>
-
-                <div class="flex flex-col items-center justify-center mt-8">
-                    <img class="object-cover rounded-full w-14 h-14" src="https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
-
-                    <div class="mt-4 text-center">
-                        <h1 class="font-semibold text-gray-800 dark:text-white">{{reviews.userName}}</h1>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">{{reviews.profession}}</span>
-                    </div>
-                </div>
-            </div>
-
-            <button title="right arrow" class="hidden p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:block hover:bg-gray-100">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-            </button>
-        </div>
-    </div>
-</section>
 
 
 
