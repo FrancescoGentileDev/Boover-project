@@ -1,8 +1,8 @@
 <template>
-    <div class="wrapper pt-24 pb-24 z-10">
+    <div class="wrapper pt-24 pb-24 z-10 bg-primary">
         <div class="w-11/12 m-auto p-6">
-            <h1 class="text-5xl primary">
-                Get inspired with projects made by our freelancers
+            <h1 class="text-5xl primary text-center text-white">
+                Get inspired with our top freelancers
             </h1>
         </div>
         <!--  // -->
@@ -36,8 +36,8 @@
             :perPageCustom="[
                 [640, 2],
                 [768, 3],
-                [1024, 4],
-                [1280, 5],
+                [1024, 3],
+                [1280, 4],
             ]"
         >
             <!--   <div class="avatar online">
@@ -52,39 +52,31 @@
                 :key="user + index"
                 class="relative p-6"
             >
-                <div class="w-full max-w-md px-8 py-4 mt-16 rounded-lg">
-                    <div class="flex justify-center -mt-16">
-                        <div class="avatar online">
-                            <div class="w-36 rounded-full">
-                                <img :src="user.avatar" />
-                            </div>
+                <div class="flex flex-col bg-base-200 p-10 rounded-xl">
+                    <div class="avatar online m-auto">
+                        <div class="w-24 mask mask-squircle">
+                            <img :src="user.avatar" />
                         </div>
                     </div>
-
-                    <h2
-                        class="mt-2 text-lg font-semibold text-gray-800 dark:text-white text-center"
-                    >
+                    <h1 class="text-center py-3 font-semibold text-lg">
                         {{ user.name }}
-                    </h2>
+                    </h1>
+                    <h1 class="text-center py-6">
+                        <!--  Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. -->
+                    </h1>
 
-                    <p
-                        class="mt-2 text-gray-600 dark:text-gray-200 text-ellipsis text-center"
-                    >
-                        {{ user.presentation }}
-                    </p>
-
-                    <div class="flex justify-end mt-4">
-                        <a
-                            href="#"
-                            class="text-xl font-medium text-blue-600 dark:text-blue-300"
-                            tabindex="0"
-                            role="link"
-                            >John Doe</a
-                        >
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div class="badge badge-primary">musicista</div>
+                        <div class="badge badge-primary">web designer</div>
+                        <div class="badge badge-primary">neutral designer</div>
+                        <div class="badge badge-primary">web designer</div>
+                        <div class="badge badge-primary">neutral designer</div>
                     </div>
                 </div>
             </slide>
         </carousel>
+
         <!--  // -->
     </div>
 </template>
@@ -109,8 +101,14 @@ export default {
     methods: {
         getUsersData() {
             axios
-                .get("/api/users")
+                .get("/api/users/?page=3")
                 .then((response) => {
+                    /* console.log(response.data.data); */
+
+                    response.data.data.forEach((element) => {
+                        console.log(element);
+                    });
+
                     console.log(response.data.data);
 
                     this.users.push(...response.data.data);
