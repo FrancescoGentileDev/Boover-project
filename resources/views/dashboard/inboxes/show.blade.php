@@ -34,7 +34,7 @@
                 <a href="{{ route('dashboard.home') }}">HOMEPAGE</a>
             </button>
             <button class="bg-base-200 px-8 py-4 rounded-lg shadow-md hover:bg-base-300 font-semibold text-base-content">
-                <a href="{{ route('dashboard.reviews.index') }}">REVIEWS LIST</a>
+                <a href="{{ route('dashboard.inboxes.index') }}">INBOXES LIST</a>
             </button>
         </div>
     </div>
