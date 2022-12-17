@@ -24,9 +24,9 @@
             </div>
         </div>
                                                                            <!--TEAM GRID-->
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3 items-center justify-center ">      
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3 items-center justify-center">      
                                                                            <!--TEAM V-FOR-->                                              
-            <div v-for="(freelancers,index) in freelancers" :key="index" class="flex flex-col items-center transition opacity hover:opacity-50 hover:duration-1000">
+            <div v-for="(freelancers,index) in freelancers" :key="index" class="flex flex-col items-center opacity-50 hover:opacity-100 hover:duration-1000">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
                 <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">{{freelancers.freelancer}}</h1>
@@ -66,12 +66,12 @@
             <div class="flex flex-col items-center transition-none">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
-                <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">Il prossimo potresti essere <span class="text-secondary">tu!</span> </h1>
+                <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">Il prossimo potresti essere  <span class="text-secondary">tu!</span> </h1>
 
                 <p class="mt-2 text-secondary capitalize ">{{freelancers.profession}}</p>
 
                 <div class="flex mt-3 -mx-2">
-                    <button class="btn btn-primary  ">Registrati Subito</button>
+                    <button class="btn btn-primary ">Registrati Subito</button>
                 </div>
             </div>
         </div>
@@ -92,8 +92,8 @@
             alias, adipisci rem similique, at omnis eligendi optio eos harum.
         </p>
        <div class="grid grid-cols-1 gap-8 mx-auto mt-8 lg:grid-cols-2 xl:mt-10 max-w-7xl">
-           <div v-for="(reviews,index) in reviews" :key="index" >
-               <div class="p-6 bg-gray-100 rounded-lg dark:bg-gray-800 md:p-8">
+           <div v-for="(reviews,index) in reviews" :key="index" class="h-full" >
+               <div class="p-6 bg-gray-100 rounded-lg dark:bg-gray-800 md:p-8 h-full">
                    <p class="leading-loose text-gray-500 dark:text-gray-300">
                        “{{reviews.review}}”.
                    </p>
