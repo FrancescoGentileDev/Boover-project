@@ -85,8 +85,8 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                     'October', 'November', 'December'
                 ],
                 datasets: [{
-                    label: 'Votes per month',
-                    data: [2, 3, 12, 6, 5, 5, 5, 6, 6, 6, 7, 7],
+                    label: 'Average votes per month',
+                    data: [2, 3, 1, 3, 1, 4, 3, 5, 2, 1, 3, 4],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(255, 159, 64, 0.2)',
