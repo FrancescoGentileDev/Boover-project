@@ -20,7 +20,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
             </div>
             <div class="stat-title">Total Reviews</div>
             <div class="stat-value text-primary">{{ $totalReviews }}</div>
-            <div class="stat-desc">21% more than last month</div>
+            <div class="stat-desc">You have a total of {{ $totalReviews }} reviews.</div>
         </div>
         <div class="stat">
             <div class="stat-figure text-secondary">
@@ -32,7 +32,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
             </div>
             <div class="stat-title">Total Messages</div>
             <div class="stat-value text-secondary">{{ $totalInboxes }}</div>
-            <div class="stat-desc">21% more than last month</div>
+            <div class="stat-desc">You have a total of {{ $totalInboxes }} messages.</div>
         </div>
         <div class="stat">
             <div class="stat-figure text-secondary">
@@ -43,8 +43,15 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                 </div>
             </div>
             <div class="stat-value">Sponsorship</div>
-            <div class="stat-title">Tasks done</div>
-            <div class="stat-desc text-secondary">31 tasks remaining</div>
+            <div class="stat-title mt-3">
+                @if ($isSponsor)
+                    <span style="color: green">Active</span>
+                @else
+                    <span style="color: red">Inactive</span>
+                    <span style="color: green" class="ml-5"><a href="{{ route('dashboard.sponsor') }}">GET A
+                            SPONSOR!</a></span>
+                @endif
+            </div>
         </div>
 
         {{-- bar chart --}}
