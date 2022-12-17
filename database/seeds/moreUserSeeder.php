@@ -19,13 +19,13 @@ class moreUserSeeder extends Seeder
 
     $users = factory(App\User::class, $numUsers)->create();
     $counter = 0;
-    $response = Http::get('https://api.unsplash.com/collections/bgUOqY7aKYc/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30');
+    $response = Http::get('https://api.unsplash.com/collections/8721905/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30');
     $response->json();
     $photos = json_decode($response->body());
     $page = 1;
     foreach ($users as $user) {
     if($counter == 30) {
-        $response = Http::get('https://api.unsplash.com/collections/bgUOqY7aKYc/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30&page=' . $page);
+        $response = Http::get('https://api.unsplash.com/collections/8721905/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30&page=' . $page);
         $response->json();
         $photos = json_decode($response->body());
         $page++;
