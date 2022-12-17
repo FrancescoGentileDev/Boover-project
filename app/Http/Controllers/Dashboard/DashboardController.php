@@ -16,6 +16,7 @@ class DashboardController extends Controller
     {
         $logged = Auth::user()->id;
         $user = User::find($logged);
+        $reviews = Review::all();
 
         // reviews and inboxes
         $totalReviews = $user->reviews()->count();
@@ -27,6 +28,6 @@ class DashboardController extends Controller
         // vote average
         $average = $user->reviews()->avg('vote');
 
-        return view('dashboard.index', compact('user', 'totalReviews', 'totalInboxes', 'isSponsor', 'average'));
+        return view('dashboard.index', compact('user', 'totalReviews', 'totalInboxes', 'isSponsor', 'average', 'reviews'));
     }
 }
