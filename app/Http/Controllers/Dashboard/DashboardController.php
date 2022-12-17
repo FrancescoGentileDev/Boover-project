@@ -23,7 +23,7 @@ class DashboardController extends Controller
         // if is sponsorised
         $isSponsor = $user->sponsors()->find('user_id');
 
-        // vote avarage
+        // vote average
 
 
         return view('dashboard.index', compact('user', 'totalReviews', 'totalInboxes', 'isSponsor'));

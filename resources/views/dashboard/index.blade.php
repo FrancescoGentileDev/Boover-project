@@ -44,9 +44,9 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                         </path>
                     </svg>
                 </div>
-                <div class="stat-title">Avarage Evaluation</div>
+                <div class="stat-title">Average Evaluation</div>
                 <div class="stat-value" style="color: orange">5</div>
-                <div class="stat-desc">Avarage evaluation is based on your reviews.</div>
+                <div class="stat-desc">Average evaluation is based on your reviews.</div>
             </div>
             <div class="stat w-max lg:w-1/3">
                 <div class="stat-figure text-secondary">
