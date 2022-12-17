@@ -92,7 +92,7 @@
     <section class="information"></section>
 
 
-
+                                                  <!--TEAM-->
 
     <section class="bg-white dark:bg-gray-900">
     <div class="container px-6 py-10 mx-auto">
@@ -101,7 +101,7 @@
         <p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias, adipisci rem similique, at omnis eligendi optio eos harum.
         </p>
-
+                                                
         <div class="flex items-center justify-center">
             <div class="flex items-center p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
                 <button class="px-4 py-2 text-sm font-medium text-white capitalize bg-blue-600 md:py-3 rounded-xl md:px-12">design</button>
@@ -109,8 +109,9 @@
                 <button class="px-4 py-2 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-3 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white rounded-xl md:px-12">marketing</button>
             </div>
         </div>
-
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
+                                                                           <!--TEAM GRID-->
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3"> 
+                                                 <!--TEAM 3-->
             <div class="flex flex-col items-center">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
@@ -147,14 +148,15 @@
                     </a>
                 </div>
             </div>
-
+                                                    <!--TEAM 2-->
             <div class="flex flex-col items-center">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="">
 
                 <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">Pamela Anderson</h1>
 
                 <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">Lead Developer</p>
-
+                         
+                                                
                 <div class="flex mt-3 -mx-2">
                     <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Reddit">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
@@ -184,7 +186,7 @@
                     </a>
                 </div>
             </div>
-
+                                                       <!--TEAM 1-->
             <div class="flex flex-col items-center">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
@@ -385,6 +387,28 @@ export default {
                 userName:"Mario Rossi",
                 profession:"Student",
             },            
+        ],
+        freelancers:[
+            {
+                userName:"Eli Golam",
+                profession:"Full-Stack Developer"
+            },
+            {
+                userName:"Hugo",
+                profession:"Back-End Developer"
+            },
+            {
+                userName:"Francesco Gentile",
+                profession:"Full-Stack Developer"
+            },
+            {
+                userName:"Valerio",
+                profession:"Full-Stack Developer"
+            },
+            {
+                userName:"Carmelo",
+                profession:"Front-End Developer"
+            },
         ]
     }),
 
