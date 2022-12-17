@@ -153,7 +153,7 @@
     
                                  
                                          
-                                         <!--REVIEW-->
+                                                                      <!--REVIEW-->
 <section class="bg-base-200 dark:bg-gray-900"> 
     <div class="container px-6 py-10 mx-auto">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
@@ -192,7 +192,7 @@
 
 
 
-    <!--Q&A-->
+                                                                       <!--Q&A-->
     <section class="qa bg-base-200 py-5 ">
         <div class="text-center">
          <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl py-10">Q&A</h1>    
@@ -214,11 +214,11 @@
         </div>
      </div>
     </section>
-    <!--REGISTER-->
+                                                                    <!--REGISTER-->
     <section class="register py-20">
       <div class="text-center">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl pt-10">Registrati e inizia oggi a ricevere clienti</h1>
-        <button class="btn btn-primary m-3 mt-20">Sign up</button>
+        <button class="btn btn-primary m-3 mt-20">Registrati</button>
      </div>
     </section>
   </main>
