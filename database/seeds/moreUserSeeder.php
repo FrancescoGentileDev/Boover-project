@@ -4,27 +4,44 @@ use App\models\Skill;
 use App\models\Sponsor;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
+use Faker\{Generator as Faker, Factory} ;
 
 class moreUserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
+
+    public function run(Faker $faker)
     {
-        $numUsers = 50;
+        $numUsers = 30;
+/**
+ * 1. SEEDER PER UTENTI MASSIVI CON FOTO IN HIGH RESOLUTION PER POTERLO USARE FAI QUANTO SCRITTO QUI:
+ * https://stackoverflow.com/questions/29822686/curl-error-60-ssl-certificate-unable-to-get-local-issuer-certificate
+ */
+
     $users = factory(App\User::class, $numUsers)->create();
-
+    $counter = 0;
+    $response = Http::get('https://api.unsplash.com/collections/bgUOqY7aKYc/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30');
+    $response->json();
+    $photos = json_decode($response->body());
+    $page = 1;
     foreach ($users as $user) {
+    if($counter == 30) {
+        $response = Http::get('https://api.unsplash.com/collections/bgUOqY7aKYc/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30&page=' . $page);
+        $response->json();
+        $photos = json_decode($response->body());
+        $page++;
+        $counter = 0;
+    }
 
-        $user->avatar = $this->getAvatar();
-        $user->save();
+
+
+    $user->avatar = $photos[$counter]->urls->regular;
+    $user->save();
+    $counter++;
+
     }
 
     foreach($users as $user) {
-        $inboxes = factory(App\models\Inbox::class, rand(10, 25))->make();
+        $inboxes = factory(App\models\Inbox::class, rand(15, 25))->make();
         foreach($inboxes as $inbox) {
             $inbox->user_id = $user->id;
             $inbox->save();
@@ -32,18 +49,12 @@ class moreUserSeeder extends Seeder
     }
 
     foreach($users as $user) {
-        $skill = Skill::all()->random(5);
+        $skill = Skill::all()->random(rand(1, 5));
         $user->skills()->attach($skill);
      }
 
-     foreach($users as $user) {
-        $sponsor = Sponsor::inRandomOrder()->first();
-        $newDate = date("Y-m-d H:i:s", strtotime("+{$sponsor->duration} hours"));
-        $user->sponsors()->attach($sponsor->id, ['expire_date' => $newDate, 'created_at' => date('Y-m-d H:i:s')]);
-    }
-
     foreach($users as $user) {
-        $reviews = factory(App\models\Review::class, rand(0, 10))->make();
+        $reviews = factory(App\models\Review::class, rand(15, 25))->make();
         foreach($reviews as $review) {
             $review->user_id = $user->id;
             $review->save();
