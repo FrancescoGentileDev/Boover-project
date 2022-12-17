@@ -97,15 +97,7 @@
                    <p class="leading-loose text-gray-500 dark:text-gray-300">
                        “{{reviews.review}}”.
                    </p>
-
-                   <div class="flex items-center mt-6">
-                       
-                    
-                       <div class="mx-4">
-                           <h1 class="font-semibold text-secondary">{{reviews.userName}}</h1>
-                           
-                       </div>
-                   </div>
+                   <h1 class="font-semibold text-secondary">{{reviews.userName}}</h1>                  
                </div>            
            </div>
        </div>
