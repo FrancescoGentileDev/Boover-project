@@ -140,7 +140,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                 <thead>
                     <tr>
                         <th>Last Reviews</th>
-                        <th>Open</th>
+                        <th>Open Details</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -151,8 +151,8 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                             <td>
                                 <div class="flex items-center space-x-3">
                                     <div>
-                                        <div class="font-bold">{{ $review->nickname }}</div>
-                                        <div class="text-sm opacity-50">United States</div>
+                                        <div class="font-bold">Title: {{ $review->title }}</div>
+                                        <div class="text-sm opacity-50">From: {{ $review->nickname }}</div>
                                     </div>
                                 </div>
                             </td>

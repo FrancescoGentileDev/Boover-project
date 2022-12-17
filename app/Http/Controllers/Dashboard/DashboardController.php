@@ -16,7 +16,7 @@ class DashboardController extends Controller
     {
         $logged = Auth::user()->id;
         $user = User::find($logged);
-        $reviews = Review::all();
+        $reviews = Review::where('user_id', $logged)->orderBy('created_at', 'desc')->paginate(5);
 
         // reviews and inboxes
         $totalReviews = $user->reviews()->count();
