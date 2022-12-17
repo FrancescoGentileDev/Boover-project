@@ -132,38 +132,72 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
         const statsChart = new Chart(canvasChart, config);
     </script>
 
-    {{-- bottom page statistics --}}
-    <div class="mt-10 py-10 w-2/4">
-        <div class="overflow-x-auto w-full">
-            <table class="table w-full">
-                <!-- head -->
-                <thead>
-                    <tr>
-                        <th>Last Reviews</th>
-                        <th>Open Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- row 1 -->
-                    @foreach ($reviews as $review)
-                        <tr>
 
-                            <td>
-                                <div class="flex items-center space-x-3">
-                                    <div>
-                                        <div class="font-bold">Title: {{ $review->title }}</div>
-                                        <div class="text-sm opacity-50">From: {{ $review->nickname }}</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <th>
-                                <a href="{{ route('dashboard.reviews.show', $review->id) }}"
-                                    class="btn btn-ghost btn-xs">details</a>
-                            </th>
+    {{-- bottom page statistics --}}
+    <div class="flex flex-row gap-x-8">
+        {{-- last reviews table --}}
+        <div class="mt-10 py-10 w-2/4">
+            <div class="overflow-x-auto w-full">
+                <table class="table w-full">
+                    <thead>
+                        <tr>
+                            <th>Last Reviews</th>
+                            <th>Open Details</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($reviews as $review)
+                            <tr>
+
+                                <td>
+                                    <div class="flex items-center space-x-3">
+                                        <div>
+                                            <div class="font-bold">Title: {{ $review->title }}</div>
+                                            <div class="text-sm opacity-50">From: {{ $review->nickname }}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>
+                                    <a href="{{ route('dashboard.reviews.show', $review->id) }}"
+                                        class="btn btn-ghost btn-xs">details</a>
+                                </th>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        {{-- last messages table --}}
+        <div class="mt-10 py-10 w-2/4">
+            <div class="overflow-x-auto w-full">
+                <table class="table w-full">
+                    <thead>
+                        <tr>
+                            <th>Last Messages</th>
+                            <th>Open Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($inboxes as $inbox)
+                            <tr>
+                                <td>
+                                    <div class="flex items-center space-x-3">
+                                        <div>
+                                            <div class="font-bold">Title: {{ $inbox->title }}</div>
+                                            <div class="text-sm opacity-50">From: {{ $inbox->nickname }}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>
+                                    <a href="{{ route('dashboard.inboxes.show', $inbox->id) }}"
+                                        class="btn btn-ghost btn-xs">details</a>
+                                </th>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 @endsection
