@@ -37,12 +37,13 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
             </div>
             <div class="stat hover:bg-base-300">
                 <div class="stat-figure text-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    {{-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         class="inline-block w-8 h-8 stroke-current">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
                         </path>
-                    </svg>
+                    </svg> --}}
+                    <i class="fa-regular fa-star fa-2x"></i>
                 </div>
                 <div class="stat-title">Average Evaluation</div>
                 <div class="stat-value" style="color: orange">{{ number_format($average, 2, '.', '') }}</div>
