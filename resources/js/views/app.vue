@@ -58,4 +58,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+html,body {
+    overflow-x: hidden;
+}
+</style>
