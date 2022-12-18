@@ -176,8 +176,18 @@ export default {
                         console.log("skill", response.data);
                         this.skill = response.data;
                     });
-        }
-    },
+            }
+            axios
+                .get(
+                    `/api/users?skill=${this.skill.id}&max=24` +
+                        this.filter(false, lazyMode)
+                )
+                .then(({ data }) => {
+                    console.log("users", data);
+                    if (!newPage) this.users = data;
+                    else this.users.data = [...this.users.data, ...data.data];
+                });
+        },
     movePage(page) {
         this.$router.push({path: this.$route.path, query: {page: page, ...this.$route.query}});
     }
