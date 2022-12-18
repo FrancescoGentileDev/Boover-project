@@ -26,9 +26,7 @@ class UserController extends Controller
             ->select('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote')
             ->addSelect(DB::raw('IF(sponsor_user.expire_date > NOW(), 1, 0) as is_sponsorized'))
             ->groupBy('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote', 'is_sponsorized')
-            ->orderBy('is_sponsorized', 'desc')
-            ->orderBy('rv1.avg_vote', 'desc');
-
+            ->orderBy('is_sponsorized', 'desc');
         if ($request->has('rating_min')) {
             $users->whereHas('reviews', function ($query) use ($request) {
 
@@ -43,21 +41,13 @@ class UserController extends Controller
                     ->having('avg_vote', '<=', $request->rating_max);
             });
         }
-
-
-        if ($request->has('most_reviewed')) {
-            $users->withCount('reviews');
-            $users->orderByDesc('reviews_count');
-        }
-
-
         $search = explode('-', $request->search);
         if ($request->has('search')) {
             foreach ($search as $param) {
                 $users->whereRaw("concat(name, ' ', lastname) like '%" . $param . "%' ");
             }
         }
-        if ($request->has('only_sponsor')) {
+        if ($request->has('only_sponsor') && $request->only_sponsor == 'true') {
             $users->where('sponsor_user.expire_date', '>', now());
         }
         if ($request->has('category')) {
@@ -77,10 +67,16 @@ class UserController extends Controller
         }
 
         $users->leftJoin(DB::raw('(SELECT user_id, AVG(vote) as avg_vote FROM reviews GROUP BY user_id) as rv'), 'users.id', '=', 'rv.user_id');
-        $users->orderBy('rv.avg_vote', 'desc');
+
+
 
 
         $users->withCount('reviews');
+        if ($request->has('most_reviewed') && $request->most_reviewed == 'true') {
+            $users->orderByDesc('reviews_count');
+        } else {
+            $users->orderBy('rv1.avg_vote', 'desc');
+        }
 
         //TODO PRIMA I PROFILI SPONSOR
 
