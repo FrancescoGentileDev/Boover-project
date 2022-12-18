@@ -18,6 +18,7 @@ export default {
     }),
     watch: {
         $route(to, from) {
+            this.users = [];
             if (!this.$route.query.search || this.$route.query.search == "") {
             this.$router.push({ name: "home" });
         }

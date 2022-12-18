@@ -46,10 +46,12 @@ export default {
     }),
     watch: {
         $route(to, from) {
+            console.log('route changed');
             // Torna alla home se non è presente lo slug
             if (!this.$route.params.slug) {
                 this.$router.push({ path: "/" });
             }
+            this.users = [];
             this.activeQuery = this.filter(true);
             this.currentPage = this.$route.query.page || 1;
             axios
