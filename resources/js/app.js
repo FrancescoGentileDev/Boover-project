@@ -9,7 +9,9 @@ const Vue = require('vue')
 import AsyncComputed from "vue-async-computed";
 import App from './views/app.vue'
 import router from './router'
+import VueObserveVisibility from 'vue-observe-visibility'
 
+Vue.use(VueObserveVisibility)
 Vue.use(AsyncComputed)
 const app = new Vue({
     el: '#app',
