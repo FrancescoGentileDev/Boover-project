@@ -29,6 +29,29 @@ export default {
             disabled: false,
         };
     },
+    props: {
+        prating: {
+            type: Number,
+            default: 0,
+        },
+        pdisabled: {
+            type: Boolean,
+            default: false,
+        },
+        pminRating: {
+            type: Number,
+            default: 1,
+        },
+        pmaxRating: {
+            type: Number,
+            default: 5,
+        },
+        pselectedStar: {
+            type: Number,
+            default: 0,
+        },
+
+    },
     methods: {
         startSelection(event) {
             if (this.disabled) return;
