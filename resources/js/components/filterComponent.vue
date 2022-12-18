@@ -32,7 +32,7 @@
           <div class="flex flex-col items-center gap-2">
             <label for="rating-min">Range media recensioni</label>
             <div class="flex ">
-              <star-system-component @ratingRange="ratingEvent"/>
+              <star-system-component @ratingRange="ratingEvent" :pminRating="rating_min" :pmaxRating="rating_max"/>
             </div>
           </div>
 
@@ -60,6 +60,29 @@ export default {
       rating_min: 1,
       rating_max: 5,
     };
+  },
+  props: {
+    pisCollapsed: {
+      type: Boolean,
+      default: false,
+    },
+    ponlySponsor: {
+      type: Boolean,
+      default: false,
+    },
+    pmostReviewed: {
+      type: Boolean,
+      default: false,
+    },
+    prating_min: {
+      type: Number,
+      default: 1,
+    },
+    prating_max: {
+      type: Number,
+      default: 5,
+    },
+
   },
   methods: {
     applyFilters(event) {
