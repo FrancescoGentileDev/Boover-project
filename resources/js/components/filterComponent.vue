@@ -90,12 +90,25 @@ export default {
       const form = this.$refs.formMessage;
       const formData = new FormData(form);
       let filterToApply = {
-        rating_min: parseInt(document.querySelector('input[name="rating-min"]:checked').value),
-        rating_max: 5,
-        only_sponsorized: formData.get('only_sponsorized'),
-        most_reviewed: formData.get('most_reviewed'),
+        rating_min: this.rating_min != 1 ? this.rating_min : null,
+        rating_max: this.rating_max != 5 ? this.rating_max : null,
+        only_sponsorized: this.onlySponsor ? true : null,
+        most_reviewed: this.mostReviewed ? true : null,
       };
+        for (const key in filterToApply) {
+          if (filterToApply[key] === null) {
+            delete filterToApply[key];
+          }
+        }
+
+        if(this.$route.query.search) {
+          filterToApply.search = this.$route.query.search;
+        }
+
+
+
       console.log(filterToApply);
+      this.$router.push({query: filterToApply})
     },
     ratingEvent() {
 
