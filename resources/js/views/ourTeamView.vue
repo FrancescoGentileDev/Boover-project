@@ -2,8 +2,7 @@
   <main>
     <section class="jumbo"> 
     </section>    
-    <section class="description"></section>
-    <section class="information"></section>
+    
 
 
                                                   <!--TEAM-->
