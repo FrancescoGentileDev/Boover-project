@@ -116,7 +116,29 @@ export default {
     }
   },
 
-  mounted() {},
+  created() {
+    console.log(this.$route.query);
+
+    if(this.$route.query.rating_min) {
+      this.rating_min =parseInt(this.$route.query.rating_min) ;
+      this.isCollapsed = true;
+    }
+    if(this.$route.query.rating_max) {
+      this.rating_max =parseInt(this.$route.query.rating_max) ;
+        this.isCollapsed = true;
+    }
+    if(this.$route.query.only_sponsorized) {
+      this.onlySponsor = this.$route.query.only_sponsorized;
+      this.isCollapsed = true;
+    }
+    if(this.$route.query.most_reviewed) {
+      this.mostReviewed = this.$route.query.most_reviewed;
+        this.isCollapsed = true;
+    }
+
+
+
+  },
 };
 </script>
 
