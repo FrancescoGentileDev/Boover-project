@@ -22,11 +22,11 @@
 export default {
     data() {
         return {
-            rating: 0,
-            minRating: 1,
-            maxRating: 5,
-            selectedStar: 0,
-            disabled: false,
+            rating: this.$props.prating,
+            minRating: this.$props.pminRating,
+            maxRating: this.$props.pmaxRating,
+            selectedStar: this.$props.pselectedStar,
+            disabled: this.$props.pdisabled,
         };
     },
     props: {
