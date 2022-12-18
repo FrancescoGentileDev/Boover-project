@@ -20,7 +20,7 @@
 
 <body>
 
-    <div id="sidebar"
+    <aside id="sidebar"
         class="flex flex-col w-48 md:w-64 px-4 py-8 bg-white border-r dark:bg-gray-900 dark:border-gray-700 fixed h-screen z-50 transition-all -left-48 duration-200 md:left-0">
         <button id="button-sidebar " class=" md:hidden absolute top-0 left-48" onclick="toggleSidebar()">
             <i class="fa-solid fa-bars text-3xl m-4"></i>
@@ -111,11 +111,11 @@
                 </form>
             </nav>
         </div>
-    </div>
+    </aside>
 
-    <div class="px-8 md:px-0 container mx-auto md:pl-64">
+    <main class="px-8 md:px-0 container mx-auto md:pl-64">
         @yield('content')
-    </div>
+    </main>
 
 
     <script>
