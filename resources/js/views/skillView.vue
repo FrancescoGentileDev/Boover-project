@@ -103,6 +103,59 @@ export default {
     beforeDestroy() {
         this.$parent.paddingHandling(false);
     },
+    methods: {
+        filter(notPage=false) {
+            let queryBuilder = '';
+            //controlla se nella query è presente la pagina
+            if(this.$route.query.page && !notPage){
+                this.currentPage = this.$route.query.page;
+                queryBuilder += `&page=${this.currentPage}`;
+            }
+            else if(!this.$route.query.page && !notPage) {
+                this.currentPage = 1;
+            }
+            //controlla se nella query sono prenseti i filtri
+
+            //controlla se nella query è presente solo sponsor
+
+            if(this.$route.query.only_sponsorized && this.$route.query.only_sponsorized == 'true'){
+                this.filtersActive.onlySponsor = true;
+                queryBuilder += `&only_sponsor=${this.filtersActive.onlySponsor}`;
+            }
+            else {
+                this.filtersActive.onlySponsor = false;
+            }
+            //controlla se nella query è presente solo sponsor
+            if(this.$route.query.most_reviewed && this.$route.query.most_reviewed == 'true'){
+                this.filtersActive.mostReviewed = true;
+                queryBuilder += `&most_reviewed=${this.filtersActive.mostReviewed}`;
+            }
+            else {
+                this.filtersActive.mostReviewed = false;
+            }
+            //controlla se nella query è presente il rating minimo
+            if(this.$route.query.rating_min && this.$route.query.rating_min != 1){
+                this.filtersActive.rating_min = this.$route.query.rating_min;
+                queryBuilder += `&rating_min=${this.filtersActive.rating_min}`;
+            }
+            else {
+                this.filtersActive.rating_min = 1;
+            }
+            //controlla se nella query è presente il rating massimo
+            if(this.$route.query.rating_max && this.$route.query.rating_max != 5){
+                this.filtersActive.rating_max = this.$route.query.rating_max;
+                queryBuilder += `&rating_max=${this.filtersActive.rating_max}`;
+            }
+            else {
+                this.filtersActive.rating_max = 5;
+            }
+            console.log(this.$route.query, queryBuilder);
+            return queryBuilder;
+        }
+    },
+    movePage(page) {
+        this.$router.push({path: this.$route.path, query: {page: page, ...this.$route.query}});
+    }
 };
 </script>
 
