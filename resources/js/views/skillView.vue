@@ -188,10 +188,24 @@ export default {
                     else this.users.data = [...this.users.data, ...data.data];
                 });
         },
-    movePage(page) {
-        this.$router.push({path: this.$route.path, query: {page: page, ...this.$route.query}});
-    }
+        loadMoreProfile(isVisible, entry, customArgument) {
+            console.log("entryy", entry)
+            console.log("isVisible", isVisible)
+            if (isVisible && this.currentPage < this.users.last_page) {
+                this.getProfiles(false, true, true);
+            }
+        },
+    },
 };
 </script>
 
-<style></style>
+<style>
+
+.hiddenevent {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 115rem;
+
+}
+</style>
