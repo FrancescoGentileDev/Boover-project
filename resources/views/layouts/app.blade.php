@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
     {{-- JS --}}
-    <script src="{{ asset('js/backOffice.js') }}"></script>
+    <script src="{{ asset('js/backOffice.js') }}" defer></script>
 
     @yield('head')
 
