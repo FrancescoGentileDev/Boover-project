@@ -21,9 +21,17 @@
             </div>
         </div>
 
-        <div class="btn-group mt-5 flex justify-center">
-            <router-link :to="`?page=`+ page + activeQuery" v-for="page in users.last_page" :key="page" class="btn btn-lg" :class="{'btn-active': page == currentPage}">{{ page }}</router-link>
-        </div>
+        <div class="hiddenevent" v-observe-visibility="loadMoreProfile"></div>
+        <!-- <div class="btn-group mt-5 flex justify-center">
+            <router-link
+                :to="`?page=` + page + activeQuery"
+                v-for="page in users.last_page"
+                :key="page"
+                class="btn btn-lg"
+                :class="{ 'btn-active': page == currentPage }"
+                >{{ page }}</router-link
+            >
+        </div> -->
     </div>
 </template>
 
