@@ -3,7 +3,9 @@
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "dev-legacy": "cross-env NODE_ENV=development NODE_OPTIONS='--openssl-legacy-provider' node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "concurrently \"npm run development -- --watch \"  \" npx tailwindcss -i ./resources/sass/app.scss  -o ./public/css/app.css --watch\" ",
+        "watcher": "concurrently \"npm run dev-legacy -- --watch \"  \" npx tailwindcss -i ./resources/sass/app.scss  -o ./public/css/app.css --watch\" ",
         "mix": "npm run development -- --watch",
         "tailwind": "npx tailwindcss -i ./resources/sass/app.scss  -o ./public/css/app.css --watch",
         "watch-poll": "npm run watch -- --watch-poll",
