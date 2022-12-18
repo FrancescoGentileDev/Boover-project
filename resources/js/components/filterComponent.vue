@@ -88,7 +88,6 @@ export default {
     applyFilters(event) {
       event.preventDefault();
       const form = this.$refs.formMessage;
-      const formData = new FormData(form);
       let filterToApply = {
         rating_min: this.rating_min != 1 ? this.rating_min : null,
         rating_max: this.rating_max != 5 ? this.rating_max : null,
@@ -110,7 +109,9 @@ export default {
       console.log(filterToApply);
       this.$router.push({query: filterToApply})
     },
-    ratingEvent() {
+    ratingEvent(event) {
+        this.rating_min = event.minRating;
+        this.rating_max = event.maxRating;
 
     }
   },
