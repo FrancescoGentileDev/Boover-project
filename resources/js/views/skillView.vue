@@ -4,7 +4,7 @@
         <p class="mt-3 font-semibold text-neutral">{{ skill.description }}</p>
         <div class="skill mt-12">
             <div class="totals flex flex-col justify-between">
-            <filter-component />
+            <filter-component/>
                 <p>Professionisti totali: {{ users.total }}</p>
 
             </div>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="btn-group mt-5 flex justify-center">
-            <router-link replace :to="'?page='+ page" v-for="page in users.last_page" :key="page" class="btn btn-lg" :class="{'btn-active': page == currentPage}">{{ page }}</router-link>
+            <router-link :to="`?page=`+ page + activeQuery" v-for="page in users.last_page" :key="page" class="btn btn-lg" :class="{'btn-active': page == currentPage}">{{ page }}</router-link>
         </div>
     </div>
 </template>
@@ -36,6 +36,7 @@ export default {
         skill: [],
         users: [],
         currentPage: 1,
+        activeQuery: {},
         filtersActive:{
             onlySponsor: false,
             mostReviewed: false,
@@ -45,22 +46,19 @@ export default {
     }),
     watch: {
         $route(to, from) {
+            // Torna alla home se non è presente lo slug
             if (!this.$route.params.slug) {
                 this.$router.push({ path: "/" });
             }
-            if(this.$route.query.page){
-                this.currentPage = this.$route.query.page;
-            }
-            else {
-                this.currentPage = 1;
-            }
+            this.activeQuery = this.filter(true);
+            this.currentPage = this.$route.query.page || 1;
             axios
                 .get(`/api/skills/${this.$route.params.slug}?slug=true`)
                 .then((response) => {
                     console.log("skill", response.data);
                     this.skill = response.data;
                     axios
-                        .get(`/api/users?page=${this.currentPage}&skill=${this.skill.id}&max=24`)
+                        .get(`/api/users?skill=${this.skill.id}&max=24`+ this.filter())
                         .then((response) => {
                             console.log("users", response.data);
                             this.users = response.data;
@@ -72,30 +70,27 @@ export default {
         },
     },
     created() {
+        // Torna alla home se non è presente lo slug
         console.log(this.$route.params.slug);
         if (!this.$route.params.slug) {
             this.$router.push({ path: "/" });
         }
+
     },
     mounted() {
-        if(this.$route.query.page){
-            this.currentPage = this.$route.query.page;
-        }
-
-
         this.$parent.paddingHandling(true, 1000);
+
+        this.activeQuery = this.filter(true);
+
         axios
             .get(`/api/skills/${this.$route.params.slug}?slug=true`)
             .then((response) => {
                 console.log("skill", response.data);
                 this.skill = response.data;
                 axios
-                    .get(`/api/users?skill=${this.skill.id}&page=${this.$route.query.page}&max=24`)
+                    .get(`/api/users?skill=${this.skill.id}&max=24`+ this.filter())
                     .then((response) => {
                         console.log("users", response.data);
-                        if(this.$route.query.page&& this.$route.query.page > response.data.last_page){
-                            this.$router.push({path: this.$route.path, query: {page: response.data.last_page}});
-                        }
                         this.users = response.data;
                     });
             });
