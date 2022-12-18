@@ -156,6 +156,26 @@ export default {
             }
             console.log(this.$route.query, queryBuilder);
             return queryBuilder;
+        },
+        movePage(page) {
+            this.$router.push({
+                path: this.$route.path,
+                query: { page: page, ...this.$route.query },
+            });
+        },
+        async getProfiles(notSkills = false,newPage = false,lazyMode = false) {
+            if (
+                (this.skill == undefined || this.skill.length == 0) &&
+                !notSkills
+            ) {
+                console.log("PASSED");
+
+                await axios
+                    .get(`/api/skills/${this.$route.params.slug}?slug=true`)
+                    .then((response) => {
+                        console.log("skill", response.data);
+                        this.skill = response.data;
+                    });
         }
     },
     movePage(page) {
