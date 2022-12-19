@@ -78,7 +78,8 @@ class BraintreeController extends Controller
                 $newDate = date("Y-m-d H:i:s", strtotime("+{$sponsor->duration} hours"));
                 $user->sponsors()->attach($sponsor->id, ['expire_date' => $newDate, 'created_at' => date('Y-m-d H:i:s')]);
 
-                // return redirect()->route('dashboard.profile.sponsor.store')->with('success','Sponsorizzazione aggiunta con successo!');
+                return redirect()->route('dashboard.profile.sponsor.store')->with('success','Sponsorizzazione aggiunta con successo!');
+
                 //
             } elseif ( $sponsorRecord->expire_date > date('Y-m-d H:i:s') ) {
             //
@@ -96,7 +97,7 @@ class BraintreeController extends Controller
     }
 
     public function transactionDetails() {
-
+        //
     }
 }
 
