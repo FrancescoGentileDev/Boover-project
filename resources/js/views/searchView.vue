@@ -5,6 +5,9 @@
                 <user-card-component :user="user" />
             </router-link>
         </div>
+
+        <div class="hiddenevent" v-observe-visibility="loadMoreProfile"></div>
+
     </div>
 </template>
 
