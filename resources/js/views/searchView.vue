@@ -157,6 +157,7 @@ export default {
             this.search = this.$route.query.search;
             this.currentPage = this.$route.query.page || 1;
             this.displayUsers = false;
+            window.scrollTo(0, 0);
             this.getProfiles();
         },
     },
@@ -170,7 +171,7 @@ export default {
 
         this.activeQuery = this.filter(true);
         this.search = this.$route.query.search;
-
+        window.scrollTo(0, 0);
         this.getProfiles();
     },
     beforeDestroy() {

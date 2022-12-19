@@ -17,6 +17,7 @@ export default {
     },
      mounted() {
         this.$parent.paddingHandling(true,1000);
+        window.scrollTo(0, 0);
     },
     beforeDestroy() {
         this.$parent.paddingHandling(false);

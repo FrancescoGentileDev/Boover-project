@@ -157,6 +157,7 @@ export default {
             if (!this.$route.params.slug) {
                 this.$router.push({ path: "/" });
             }
+            window.scrollTo(0, 0);
              this.displayUsers = false;
             this.users = [];
             this.activeQuery = this.filter(true);
@@ -177,7 +178,7 @@ export default {
         this.$parent.paddingHandling(true, 1000);
 
         this.activeQuery = this.filter(true);
-
+        window.scrollTo(0, 0);
         this.getProfiles();
     },
     beforeDestroy() {
