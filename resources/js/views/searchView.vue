@@ -4,10 +4,39 @@
             Risultati ricerca:
             {{ this.$route.query.search.split("-").join(" ") }}
         </h1>
-        <div class="mt-12">
+        <div class="my-12">
             <div class="totals flex flex-col justify-between">
-                <filter-component />
-                <p>Professionisti totali: {{ users.total }}</p>
+                <filter-component
+
+                />
+                <div
+                    v-if="displayUsers && users.data.length === 0"
+                    class="my-8 flex flex-col justify-center items-center"
+                >
+                    <p class="text-xl my-2 font-semibold text-base-content">
+                        Nessun risultato trovato
+                    </p>
+                    <lottie-animation
+                        class="lottie container mx-auto h-[50vh]"
+                        ref="anim"
+                        :animationData="require('../../assets/sad-dog.json')"
+                        :loop="true"
+                    />
+                </div>
+                <p v-else-if="displayUsers">
+                    Professionisti totali: {{ users.total }}
+                </p>
+                <div v-else class="flex items-baseline">
+                    <p>professionisti totali:</p>
+                    <div
+                        class="ph-item"
+                        style="border: none; padding: 0px; width: 50px"
+                    >
+                        <div class="ph-row">
+                            <div class="ph-col-12"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div
@@ -91,15 +120,15 @@
         </div>
 
         <div class="hiddenevent" v-observe-visibility="loadMoreProfile"></div>
-
     </div>
 </template>
 
 <script>
 import FilterComponent from "../components/filterComponent.vue";
 import UserCardComponent from "../components/UserCardComponent.vue";
+import LottieAnimation from 'lottie-web-vue'
 export default {
-    components: { UserCardComponent, FilterComponent },
+    components: { UserCardComponent, FilterComponent, LottieAnimation },
 
     data: () => ({
         search: "",
@@ -127,6 +156,7 @@ export default {
             this.activeQuery = this.filter(true);
             this.search = this.$route.query.search;
             this.currentPage = this.$route.query.page || 1;
+            this.displayUsers = false;
             this.getProfiles();
         },
     },
@@ -142,8 +172,6 @@ export default {
         this.search = this.$route.query.search;
 
         this.getProfiles();
-
-
     },
     beforeDestroy() {
         this.$parent.paddingHandling(false);
@@ -240,13 +268,10 @@ export default {
 </script>
 
 <style>
-
 .hiddenevent {
     position: absolute;
     height: 3px;
     width: 100%;
     bottom: 115rem;
-
 }
-
 </style>
