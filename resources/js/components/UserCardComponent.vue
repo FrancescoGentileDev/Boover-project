@@ -3,11 +3,14 @@
         <div
             class="user-card sm:min-h-[440px] sm:min-w-[300px] sm:max-w-[400px] overflow-hidden bg-base-200 rounded-lg shadow-lg"
         >
-            <img
-                class="object-cover object-center w-full sm:h-[100px] md:h-[250px]"
-                :src="user.avatar"
-                alt="avatar"
-            />
+            <div class="img relative">
+                <img
+                    class="object-cover object-center w-full sm:h-[100px] md:h-[250px]"
+                    :src="user.avatar"
+                    alt="avatar"
+                />
+                <div v-if="user.is_sponsorized" class="absolute badge badge-primary bottom-3 right-3 ">Boover Choice!</div>
+            </div>
 
             <div
                 class="px-6 py-2 min-h-[128px] bg-base-300 flex justify-center gap-2 flex-wrap items-center"
@@ -29,21 +32,26 @@
                     {{ user.presentation }}
                 </p>
 
-                <div class="rating">
+                <div class="rating relative">
                     <div class="stars">
                         <em
                             class="fa-solid fa-star"
                             v-for="star in 5"
                             :key="star"
                             :class="{
-                                'text-yellow-400': star <= user.reviews_rating,
-                                'text-gray-300': star > user.reviews_rating,
+                                'text-yellow-400':
+                                    star <= Math.ceil(user.reviews_rating),
+                                'text-gray-300':
+                                    star > Math.ceil(user.reviews_rating),
                             }"
                         ></em>
                     </div>
                     <span class="text-base-content">
                         {{ Math.ceil(user.reviews_rating) }}
                     </span>
+                    <div class="absolute right-0">
+                        Recensioni: {{ user.reviews_count }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,7 +60,6 @@
 
 <script>
 export default {
-
     props: {
         user: Object,
         height: {
@@ -60,10 +67,7 @@ export default {
             default: "100px",
         },
     },
-    mounted() {
-
-    },
-
+    mounted() {},
 };
 </script>
 

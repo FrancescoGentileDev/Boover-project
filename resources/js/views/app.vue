@@ -1,13 +1,23 @@
 <template>
-    <div data-theme="light" class="relative">
-        <NavbarComponent ref="navbar" :categories="categories" />
-        <div ref="content" class="min-h-[100vh]" style="padding-top: 0px">
-            <router-view
-                @search="search"
-                :categories="categories"
-            ></router-view>
+    <div>
+        <div class="loading" v-if="loading">
+            <img
+
+                src="/assets/loadingAnimation.svg"
+                class="w-full h-[100vh]"
+                alt=""
+            />
         </div>
-        <footer-section class="bottom-0" />
+        <div v-else data-theme="light" class="relative">
+            <NavbarComponent ref="navbar" :categories="categories" />
+            <div ref="content" class="min-h-[100vh]" style="padding-top: 0px">
+                <router-view
+                    @search="search"
+                    :categories="categories"
+                ></router-view>
+            </div>
+            <footer-section class="bottom-0" />
+        </div>
     </div>
 </template>
 
@@ -20,6 +30,7 @@ export default {
     data() {
         return {
             categories: [],
+            loading: true,
         };
     },
     created() {
@@ -27,7 +38,11 @@ export default {
             this.categories = response.data;
         });
     },
-    mounted() {
+    async mounted() {
+
+       await setTimeout(() => {
+            this.loading = false;
+        }, 2400);
     },
 
     methods: {
@@ -58,4 +73,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+html,
+body {
+    overflow-x: hidden;
+}
+</style>

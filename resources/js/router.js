@@ -37,6 +37,12 @@ const router = new VueRouter({
           path: "/allusers",
           name: "allusers",
           component: () => import('./views/AllUsersView.vue'),
+        },
+        {
+            path: "/*",
+            name: 'notFound',
+            component: () => import('./views/notFoundView.vue')
+
         }
     ],
 });
