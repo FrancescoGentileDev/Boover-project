@@ -49,15 +49,15 @@ export default {
         $route(to, from) {
             this.users = [];
             if (!this.$route.query.search || this.$route.query.search == "") {
-            this.$router.push({ name: "home" });
-        }
-            console.log(to.query.search);
-            axios
-                .get(`/api/users?search=${to.query.search}`)
-                .then((response) => {
-                    console.log(response.data);
-                    this.users = response.data;
-                });
+                this.$router.push({ name: "home" });
+            }
+             console.log("route changed");
+            // Torna alla home se non è presente lo slug
+            this.users = [];
+            this.activeQuery = this.filter(true);
+            this.search = this.$route.query.search;
+            this.currentPage = this.$route.query.page || 1;
+            this.getProfiles();
         },
     },
     created() {
