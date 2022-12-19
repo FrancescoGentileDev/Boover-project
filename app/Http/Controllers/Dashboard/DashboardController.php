@@ -24,6 +24,14 @@ class DashboardController extends Controller
         $totalReviews = $user->reviews()->count();
         $totalInboxes = $user->inboxes()->count();
 
+        // average vote per month
+        $averages_per_month = [];
+        for ($i = 1; $i <= 12; $i++) {
+            $average_month = $user->reviews()->whereMonth('created_at', $i)->avg('vote');
+            $averages_per_month[] = $average_month;
+        };
+        dd($averages_per_month);
+
         // if is sponsorised
         $isSponsor = $user->sponsors()->find('user_id');
 
