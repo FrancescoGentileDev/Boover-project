@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html data-theme="dark" lang="en">
+<html data-theme="dark" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 
 <head>
     @include('layouts.partials.meta-head')
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
     {{-- JS --}}
-    <script src="{{ asset('js/backOffice.js') }}"></script>
+    <script src="{{ asset('js/backOffice.js') }}" defer></script>
 
     @yield('head')
 
@@ -124,11 +125,11 @@
                 </form>
             </nav>
         </div>
-    </div>
+    </aside>
 
-    <div class="px-8 md:px-0 container mx-auto md:pl-64">
+    <main class="px-8 md:px-0 container mx-auto md:pl-64">
         @yield('content')
-    </div>
+    </main>
 
 
     <script>
