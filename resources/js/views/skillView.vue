@@ -54,7 +54,7 @@ export default {
         },
     }),
     watch: {
-        $route(to, from) {
+       async $route(to, from) {
             console.log("route changed");
             // Torna alla home se non è presente lo slug
             if (!this.$route.params.slug) {
@@ -62,8 +62,10 @@ export default {
             }
             this.users = [];
             this.activeQuery = this.filter(true);
+            this.skill= []
             this.currentPage = this.$route.query.page || 1;
-            this.getProfiles(true);
+            this.getProfiles();
+            console.log("getprofile", this.users)
         },
     },
     created() {
@@ -169,7 +171,8 @@ export default {
                         this.filter(false, lazyMode)
                 )
                 .then(({ data }) => {
-                    console.log("users", data);
+                    console.log("newPage", newPage, lazyMode)
+                    console.log('filters', this.filtersActive)
                     if (!newPage) this.users = data;
                     else this.users.data = [...this.users.data, ...data.data];
                 });
