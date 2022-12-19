@@ -30,7 +30,7 @@ class DashboardController extends Controller
             $average_month = $user->reviews()->whereMonth('created_at', $i)->avg('vote');
             $averages_per_month[] = $average_month;
         };
-        dd($averages_per_month);
+        // dd($averages_per_month);
 
         // if is sponsorised
         $isSponsor = $user->sponsors()->find('user_id');
@@ -38,6 +38,6 @@ class DashboardController extends Controller
         // vote average
         $average = $user->reviews()->avg('vote');
 
-        return view('dashboard.index', compact('user', 'totalReviews', 'totalInboxes', 'isSponsor', 'average', 'reviews', 'inboxes'));
+        return view('dashboard.index', compact('user', 'totalReviews', 'totalInboxes', 'isSponsor', 'average', 'reviews', 'inboxes', 'averages_per_month'));
     }
 }
