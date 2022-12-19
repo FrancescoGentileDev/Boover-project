@@ -12,6 +12,7 @@
         </div>
         <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            v-if="displayUsers"
         >
             <router-link
                 :to="'/profile/' + user.slug"
@@ -102,6 +103,8 @@ export default {
 
     data: () => ({
         search: "",
+        displayUsers: false,
+        placeHolderNewUser: false,
         users: [],
         currentPage: 1,
         activeQuery: {},
@@ -118,7 +121,7 @@ export default {
             if (!this.$route.query.search || this.$route.query.search == "") {
                 this.$router.push({ name: "home" });
             }
-             console.log("route changed");
+            console.log("route changed");
             // Torna alla home se non è presente lo slug
             this.users = [];
             this.activeQuery = this.filter(true);
@@ -220,12 +223,15 @@ export default {
                     console.log("users", data);
                     if (!newPage) this.users = data;
                     else this.users.data = [...this.users.data, ...data.data];
+                    this.displayUsers = true;
+                    this.placeHolderNewUser = false;
                 });
         },
         loadMoreProfile(isVisible, entry, customArgument) {
             console.log("entryy", entry);
             console.log("isVisible", isVisible);
             if (isVisible && this.currentPage < this.users.last_page) {
+                this.placeHolderNewUser = true;
                 this.getProfiles(true, true);
             }
         },
