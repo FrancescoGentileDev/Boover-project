@@ -39,12 +39,19 @@ class BraintreeController extends Controller
             'privateKey' => env('BRAINTREE_PRIVATE_KEY')
         ]);
 
-        // Get amout and nonce
-        $amount = $request->amount;
-        $nonce = $request->payment_method_nonce;
-
         // Find current user who is making the transaction
         $user = User::find(Auth::id());
+
+        // Sponsor
+        $sponsor = Sponsor::find($request->sponsor);
+
+        // Get amout and nonce
+        $amount = $sponsor->price;
+        $nonce = $request->payment_method_nonce;
+
+        dump($sponsor);
+        dump($nonce);
+        dd($amount);
 
         // Create the transaction
         $result = $gateway->transaction()->sale([

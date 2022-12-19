@@ -7,13 +7,16 @@
 
 @section('content')
 
-<form method="post" id="payment-form" action="{{ route('dashboard.sponsor.checkout') }}">
+<form method="POST" id="payment-form" action="{{ route('dashboard.sponsor.checkout') }}">
     @csrf
     <section>
         <label for="amount">
             <span class="input-label">{{ $sponsor->type }}</span>
             <div class="input-wrapper amount-wrapper">
-                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{ $sponsor->price }}" hidden />
+                {{-- <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{ $sponsor->price }}" hidden /> --}}
+                <h3>{{ $sponsor->type }}</h3>
+                <p><strong>{{ $sponsor->price }}</strong></p>
+                <input type="hidden" name="sponsor" value="{{ $sponsor->id }}" />
             </div>
         </label>
 
@@ -22,7 +25,7 @@
         </div>
     </section>
 
-    <input id="nonce" name="payment_method_nonce" type="hidden" />
+    <input id="nonce" name="payment_method_nonce" type="hidden" value="" />
     <button class="button" type="submit"><span>Test Transaction</span></button>
 </form>
 
