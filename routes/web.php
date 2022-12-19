@@ -33,6 +33,7 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 
     Route::any('/payment', 'BraintreeController@token')->name('sponsor.payment');
     Route::any('/checkout', 'BraintreeController@checkout')->name('sponsor.checkout');
+    Route::get('/transaction', 'BraintreeController@transactionDetails')->name('sponsor.transaction');
 
     Route::any('{catchall}', function () {
         return redirect()->back();
