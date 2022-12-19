@@ -77,6 +77,91 @@ export default {
     beforeDestroy() {
         this.$parent.paddingHandling(false);
     },
+    methods: {
+        filter(notPage = false, lazyMode = false) {
+            let queryBuilder = "";
+            //controlla se nella query è presente la pagina
+            if (lazyMode) {
+                this.currentPage = this.currentPage + 1;
+                queryBuilder += `&page=${this.currentPage}`;
+                console.log("lazy", this.currentPage);
+            } else if (this.$route.query.page && !notPage) {
+                this.currentPage = this.$route.query.page;
+                queryBuilder += `&page=${this.currentPage}`;
+            } else if (!this.$route.query.page && !notPage) {
+                this.currentPage = 1;
+            }
+
+            //controlla se nella query sono prenseti i filtri
+
+            //controlla se nella query è presente solo sponsor
+
+            if (
+                this.$route.query.only_sponsorized &&
+                this.$route.query.only_sponsorized == "true"
+            ) {
+                this.filtersActive.onlySponsor = true;
+                queryBuilder += `&only_sponsor=${this.filtersActive.onlySponsor}`;
+            } else {
+                this.filtersActive.onlySponsor = false;
+            }
+            //controlla se nella query è presente solo sponsor
+            if (
+                this.$route.query.most_reviewed &&
+                this.$route.query.most_reviewed == "true"
+            ) {
+                this.filtersActive.mostReviewed = true;
+                queryBuilder += `&most_reviewed=${this.filtersActive.mostReviewed}`;
+            } else {
+                this.filtersActive.mostReviewed = false;
+            }
+            //controlla se nella query è presente il rating minimo
+            if (
+                this.$route.query.rating_min &&
+                this.$route.query.rating_min != 1
+            ) {
+                this.filtersActive.rating_min = this.$route.query.rating_min;
+                queryBuilder += `&rating_min=${this.filtersActive.rating_min}`;
+            } else {
+                this.filtersActive.rating_min = 1;
+            }
+            //controlla se nella query è presente il rating massimo
+            if (
+                this.$route.query.rating_max &&
+                this.$route.query.rating_max != 5
+            ) {
+                this.filtersActive.rating_max = this.$route.query.rating_max;
+                queryBuilder += `&rating_max=${this.filtersActive.rating_max}`;
+            } else {
+                this.filtersActive.rating_max = 5;
+            }
+            console.log(
+                "query from builder: ",
+                this.$route.query,
+                queryBuilder
+            );
+            return queryBuilder;
+        },
+        async getProfiles(newPage = false, lazyMode = false) {
+            axios
+                .get(
+                    `/api/users?search=${this.search}&max=24` +
+                        this.filter(false, lazyMode)
+                )
+                .then(({ data }) => {
+                    console.log("users", data);
+                    if (!newPage) this.users = data;
+                    else this.users.data = [...this.users.data, ...data.data];
+                });
+        },
+        loadMoreProfile(isVisible, entry, customArgument) {
+            console.log("entryy", entry);
+            console.log("isVisible", isVisible);
+            if (isVisible && this.currentPage < this.users.last_page) {
+                this.getProfiles(true, true);
+            }
+        },
+    },
 };
 </script>
 
