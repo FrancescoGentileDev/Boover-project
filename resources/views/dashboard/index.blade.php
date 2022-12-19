@@ -87,7 +87,7 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                 ],
                 datasets: [{
                     label: 'Average votes per month',
-                    data: [2, 3, 1, 3, 1, 4, 3, 5, 2, 1, 3, 4],
+                    data: getChartData(),
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(255, 159, 64, 0.2)',
@@ -131,6 +131,15 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
         };
 
         const statsChart = new Chart(canvasChart, config);
+
+        function getChartData() {
+            let array = {!! json_encode($averages_per_month) !!};
+            let datas = [];
+            array.forEach(element => {
+                datas.push(element);
+            });
+            return datas;
+        }
     </script>
 
 

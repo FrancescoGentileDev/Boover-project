@@ -30,7 +30,7 @@ class DashboardController extends Controller
             $average_month = $user->reviews()->whereMonth('created_at', $i)->avg('vote');
             $averages_per_month[] = $average_month;
         };
-        // dd($averages_per_month);
+        //dd($averages_per_month);
 
         // if is sponsorised
         $isSponsor = $user->sponsors()->find('user_id');
