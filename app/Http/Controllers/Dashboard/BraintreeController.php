@@ -25,7 +25,6 @@ class BraintreeController extends Controller
         $clientToken = $gateway->clientToken()->generate();
         $sponsor = Sponsor::find($request->sponsor);
 
-        // dd($sponsor);
 
         // Return view containing form for payment
         return view('dashboard.profile.braintree', compact('clientToken', 'gateway', 'sponsor'));

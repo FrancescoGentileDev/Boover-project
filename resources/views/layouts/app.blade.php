@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="en">
+<html data-theme="light" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     @include('layouts.partials.meta-head')

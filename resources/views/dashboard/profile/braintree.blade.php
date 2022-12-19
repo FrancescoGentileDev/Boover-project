@@ -7,27 +7,57 @@
 
 @section('content')
 
-<form method="POST" id="payment-form" action="{{ route('dashboard.sponsor.checkout') }}">
-    @csrf
-    <section>
-        <label for="amount">
-            <span class="input-label">{{ $sponsor->type }}</span>
-            <div class="input-wrapper amount-wrapper">
-                <h3>{{ $sponsor->type }}</h3>
-                <p><strong>{{ $sponsor->price }}</strong></p>
+<section class="
+    flex
+    flex-col
+    justify-center
+    items-center
+    min-h-screen">
+
+    {{-- Info --}}
+    <article class="max-w-prose">
+        <h2>Sponsorship:</h2>
+        <p>By becoming one of our {{ $sponsor->type }} members you will be pushed to our front pages more frequently giving hiring agents the possibility to checkout your profile more often and for more job opportunities to come your way.</p>
+    </article>
+
+    {{-- FORM --}}
+    <form method="POST" id="payment-form" action="{{ route('dashboard.sponsor.checkout') }}"
+        class="
+            container
+            flex
+            flex-col
+            items-center
+            p-4
+            lg:p-8
+        "
+    >
+        @csrf
+        <section class="
+            max-w-prose
+            min-w-full
+            md:min-w-[50%]
+        ">
+            <label for="amount" class="input-wrapper amount-wrapper">
+                <div class="flex justify-between">
+                    <h3 class="
+                        text-xl
+                        font-bold
+                        text-violet-500
+                    ">{{ $sponsor->type }} Sponsorship</h3>
+                    <p class="text-2xl"><strong>$ {{ $sponsor->price }}</strong></p>
+                </div>
                 <input type="hidden" name="sponsor" value="{{ $sponsor->id }}" />
+            </label>
+
+            <div class="bt-drop-in-wrapper mt-3">
+                <div id="bt-dropin"></div>
             </div>
-        </label>
+        </section>
 
-        <div class="bt-drop-in-wrapper">
-            <div id="bt-dropin"></div>
-        </div>
-    </section>
-
-    <input id="nonce" name="payment_method_nonce" type="hidden" value="" />
-    <button class="button" type="submit"><span>Test Transaction</span></button>
-</form>
-
+        <input id="nonce" name="payment_method_nonce" type="hidden" value="" />
+        <button class="button btn btn-primary mt-4" type="submit">Purchase Sponsorship</button>
+    </form>
+</section>
 
 <script>
     var form = document.querySelector('#payment-form');
@@ -38,7 +68,7 @@
       selector: '#bt-dropin',
       paypal: {
         flow: 'vault'
-      }
+      },
     }, function (createErr, instance) {
       if (createErr) {
         console.log('Create Error', createErr);
