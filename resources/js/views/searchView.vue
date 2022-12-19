@@ -34,7 +34,16 @@ export default {
     components: { UserCardComponent, FilterComponent },
 
     data: () => ({
+        search: "",
         users: [],
+        currentPage: 1,
+        activeQuery: {},
+        filtersActive: {
+            onlySponsor: false,
+            mostReviewed: false,
+            rating_min: 1,
+            rating_max: 5,
+        },
     }),
     watch: {
         $route(to, from) {
