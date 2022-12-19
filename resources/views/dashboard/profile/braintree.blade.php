@@ -7,22 +7,13 @@
 
 @section('content')
 
-{{-- <form action="/payment/process" id="payment-form" method="POST">
-    @csrf
-    <input type="hidden" name="clientToken" id="clientToken" value="{{ $clientToken }}">
-    <input type="hidden" id="nonce" name="payment_method_nonce" />
-
-    <div id="dropin-container"></div>
-    <button id="submit-button">Request payment method</button>
-</form> --}}
-
-<form method="post" id="payment-form" action="{{ route('dashboard.braintree.checkout') }}">
+<form method="post" id="payment-form" action="{{ route('dashboard.sponsor.checkout') }}">
     @csrf
     <section>
         <label for="amount">
-            <span class="input-label">Amount</span>
+            <span class="input-label">{{ $sponsor->type }}</span>
             <div class="input-wrapper amount-wrapper">
-                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{ $sponsor->price }}" hidden />
             </div>
         </label>
 
@@ -35,9 +26,6 @@
     <button class="button" type="submit"><span>Test Transaction</span></button>
 </form>
 
-{{-- @dump('Auth Debug')
-@dump($clientToken)
-@dump($gateway) --}}
 
 <script>
     var form = document.querySelector('#payment-form');

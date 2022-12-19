@@ -31,10 +31,8 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 
     Route::get('stats', 'StatisticsController@index')->name('stats');
 
-    Route::any('/payment', 'BraintreeController@token')->name('braintree');
-    Route::any('/payment/process', 'BraintreeController@process')->name('braintree.process');
-    // Route::post('/payment/process', 'BraintreeController@payment')->name('braintree.payment');
-    Route::any('/checkout', 'BraintreeController@checkout')->name('braintree.checkout');
+    Route::any('/payment', 'BraintreeController@token')->name('sponsor.payment');
+    Route::any('/checkout', 'BraintreeController@checkout')->name('sponsor.checkout');
 
     Route::any('{catchall}', function () {
         return redirect()->back();
