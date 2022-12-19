@@ -22,6 +22,73 @@
             </router-link>
         </div>
 
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            v-else
+        >
+            <div
+                v-for="i in 23"
+                :key="i"
+                class="ph-item sm:min-h-[440px] sm:min-w-[300px] sm:max-w-[400px] relative"
+                style="padding: 0px"
+            >
+                <div class="ph-col-12" style="padding: 0px">
+                    <div class="ph-picture" style="height: 200px"></div>
+                    <div class="ph-row">
+                        <div
+                            class="ph-col-12 big h-[80px]"
+                            style="height: 80px"
+                        ></div>
+                    </div>
+                    <div class="ph-row">
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                    </div>
+                    <div class="ph-row absolute bottom-0 h-5 w-full">
+                        <div class="ph-col-4"></div>
+                        <div class="ph-col-4 empty"></div>
+                        <div class="ph-col-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            v-if="placeHolderNewUser"
+        >
+            <div
+                v-for="i in 23"
+                :key="i"
+                class="ph-item sm:min-h-[440px] sm:min-w-[300px] sm:max-w-[400px] relative"
+                style="padding: 0px"
+            >
+                <div class="ph-col-12" style="padding: 0px">
+                    <div class="ph-picture" style="height: 200px"></div>
+                    <div class="ph-row">
+                        <div
+                            class="ph-col-12 big h-[80px]"
+                            style="height: 80px"
+                        ></div>
+                    </div>
+                    <div class="ph-row">
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                    </div>
+                    <div class="ph-row absolute bottom-0 h-5 w-full">
+                        <div class="ph-col-4"></div>
+                        <div class="ph-col-4 empty"></div>
+                        <div class="ph-col-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="hiddenevent" v-observe-visibility="loadMoreProfile"></div>
 
     </div>
