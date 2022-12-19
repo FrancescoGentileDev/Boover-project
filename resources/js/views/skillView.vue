@@ -5,12 +5,40 @@
         <div class="skill mt-12">
             <div class="totals flex flex-col justify-between">
                 <filter-component />
-                <p>Professionisti totali: {{ users.total }}</p>
+                <div
+                    v-if="displayUsers && users.data.length === 0"
+                    class="my-8 flex flex-col justify-center items-center"
+                >
+                    <p class="text-xl my-2 font-semibold text-base-content">
+                        Nessun risultato trovato
+                    </p>
+                    <lottie-animation
+                        class="lottie container mx-auto h-[50vh]"
+                        ref="anim"
+                        :animationData="require('../../assets/sad-dog.json')"
+                        :loop="true"
+                    />
+                </div>
+                <p v-else-if="displayUsers">
+                    Professionisti totali: {{ users.total }}
+                </p>
+                <div v-else class="flex items-baseline">
+                    <p>professionisti totali:</p>
+                    <div
+                        class="ph-item"
+                        style="border: none; padding: 0px; width: 50px"
+                    >
+                        <div class="ph-row">
+                            <div class="ph-col-12"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="user mt-5">
             <div
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+                v-if="displayUsers"
             >
                 <router-link
                     :to="'/profile/' + user.slug"
@@ -105,8 +133,9 @@
 <script>
 import FilterComponent from "../components/filterComponent.vue";
 import UserCardComponent from "../components/UserCardComponent.vue";
+import LottieAnimation from 'lottie-web-vue'
 export default {
-    components: { UserCardComponent, FilterComponent },
+    components: { UserCardComponent, FilterComponent,LottieAnimation },
     data: () => ({
         skill: [],
         users: [],
@@ -122,7 +151,7 @@ export default {
         },
     }),
     watch: {
-       async $route(to, from) {
+        async $route(to, from) {
             console.log("route changed");
             // Torna alla home se non è presente lo slug
             if (!this.$route.params.slug) {
@@ -131,10 +160,10 @@ export default {
              this.displayUsers = false;
             this.users = [];
             this.activeQuery = this.filter(true);
-            this.skill= []
+            this.skill = [];
             this.currentPage = this.$route.query.page || 1;
             this.getProfiles();
-            console.log("getprofile", this.users)
+            console.log("getprofile", this.users);
         },
     },
     created() {
@@ -220,7 +249,11 @@ export default {
                 query: { page: page, ...this.$route.query },
             });
         },
-        async getProfiles(notSkills = false,newPage = false,lazyMode = false) {
+        async getProfiles(
+            notSkills = false,
+            newPage = false,
+            lazyMode = false
+        ) {
             if (
                 (this.skill == undefined || this.skill.length == 0) &&
                 !notSkills
@@ -240,15 +273,17 @@ export default {
                         this.filter(false, lazyMode)
                 )
                 .then(({ data }) => {
-                    console.log("newPage", newPage, lazyMode)
-                    console.log('filters', this.filtersActive)
+                    console.log("newPage", newPage, lazyMode);
+                    console.log("filters", this.filtersActive);
                     if (!newPage) this.users = data;
                     else this.users.data = [...this.users.data, ...data.data];
+                    this.displayUsers = true;
+                    this.placeHolderNewUser = false;
                 });
         },
         loadMoreProfile(isVisible, entry, customArgument) {
-            console.log("entryy", entry)
-            console.log("isVisible", isVisible)
+            console.log("entryy", entry);
+            console.log("isVisible", isVisible);
             if (isVisible && this.currentPage < this.users.last_page) {
                 this.placeHolderNewUser = true;
                 this.getProfiles(false, true, true);
@@ -259,12 +294,10 @@ export default {
 </script>
 
 <style>
-
 .hiddenevent {
     position: absolute;
     height: 3px;
     width: 100%;
     bottom: 115rem;
-
 }
 </style>
