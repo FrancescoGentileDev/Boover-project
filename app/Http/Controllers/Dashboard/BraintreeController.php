@@ -8,6 +8,7 @@ use App\models\Sponsor;
 use Illuminate\Http\Request;
 use Braintree_Transaction;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BraintreeController extends Controller
 {
@@ -49,10 +50,6 @@ class BraintreeController extends Controller
         $amount = $sponsor->price;
         $nonce = $request->payment_method_nonce;
 
-        dump($sponsor);
-        dump($nonce);
-        dd($amount);
-
         // Create the transaction
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
@@ -70,7 +67,24 @@ class BraintreeController extends Controller
 
 
         if ($result->success) {
-            return 'Transaction Successful' . $result->transaction->id;
+            // return 'Transaction Successful' . $result->transaction->id;
+            $sponsorRecord = DB::table('sponsor_user')->where( 'user_id','=', $user->id )->orderByDesc('created_at')->first();
+            if ( $sponsorRecord == null ||  $sponsorRecord->expire_date < date('Y-m-d H:i:s') ) {
+                //
+                $request->validate([
+                    'sponsor' => ['required', 'exists:sponsors,id']
+                ]);
+
+                $sponsor = Sponsor::find($request->sponsor);
+                $newDate = date("Y-m-d H:i:s", strtotime("+{$sponsor->duration} hours"));
+                $user->sponsors()->attach($sponsor->id, ['expire_date' => $newDate, 'created_at' => date('Y-m-d H:i:s')]);
+
+                return redirect()->route('dashboard.profile.sponsor.store')->with('success','Sponsorizzazione aggiunta con successo!');
+                //
+            } elseif ( $sponsorRecord->expire_date > date('Y-m-d H:i:s') ) {
+            //
+                return redirect()->route('dashboard.profile.sponsor.store')->with('error','Sponsorizzazione ');
+            }
         }
         else {
             $errorString = "";

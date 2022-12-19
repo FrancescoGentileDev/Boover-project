@@ -13,7 +13,6 @@
         <label for="amount">
             <span class="input-label">{{ $sponsor->type }}</span>
             <div class="input-wrapper amount-wrapper">
-                {{-- <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{ $sponsor->price }}" hidden /> --}}
                 <h3>{{ $sponsor->type }}</h3>
                 <p><strong>{{ $sponsor->price }}</strong></p>
                 <input type="hidden" name="sponsor" value="{{ $sponsor->id }}" />
@@ -33,6 +32,7 @@
 <script>
     var form = document.querySelector('#payment-form');
     var client_token = "{{ $clientToken }}";
+
     braintree.dropin.create({
       authorization: client_token,
       selector: '#bt-dropin',
