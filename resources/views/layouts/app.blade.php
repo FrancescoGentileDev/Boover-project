@@ -25,7 +25,9 @@
         <button id="button-sidebar " class=" md:hidden absolute top-0 left-48" onclick="toggleSidebar()">
             <i class="fa-solid fa-bars text-3xl m-4"></i>
         </button>
-        <h2 class="text-3xl font-semibold text-center text-gray-800 dark:text-white">Boover!</h2>
+        <h2 class="text-3xl font-semibold text-center text-gray-800 dark:text-white">
+            <a href="/">Boover!</a>
+        </h2>
 
         <div class="flex flex-col items-center mt-6 -mx-2">
             @if (Auth::user()->avatar)
@@ -44,9 +46,9 @@
             hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700
             "
                     href="{{ route('dashboard.home') }}">
-                    <i class="fa-solid fa-home"></i>
+                    <i class="fa-solid fa-chart-simple"></i>
 
-                    <span class="mx-4 font-medium">Home</span>
+                    <span class="mx-4 font-medium">Dashboard</span>
                 </a>
 
                 <a id='Profile'
@@ -99,6 +101,18 @@
                     <span class="mx-4 font-medium">Settings</span>
                 </a>
 
+                <div class="absolute bottom-8">
+                    <a id="Homepage"
+                        class="flex items-center mb-5 px-4 py-2 text-gray-700 rounded-lg dark:bg-gray-800 dark:text-gray-200
+        hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700
+        "
+                        href="/">
+                        <i class="fa-solid fa-home"></i>
+
+                        <span class="mx-4 font-medium">Homepage</span>
+                    </a>
+                </div>
+
                 <button
                     class="absolute bottom-0 left-0 flex items-center self-end px-4 py-2 mt-5 w-full text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                     onclick="event.preventDefault();
@@ -106,6 +120,7 @@
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span class="mx-4 font-medium">Logout</span>
                 </button>
+
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
