@@ -39,10 +39,14 @@
 }
 
 .nav0.nav0-text {
+    @apply fill-base-100;
     @apply text-base-100;
+
+
 }
 
 .nav0-text {
+    fill: #424145;
     @apply text-base-content;
 }
 
