@@ -64,15 +64,16 @@ export default {
         if (!this.$route.query.search || this.$route.query.search == "") {
             this.$router.push({ name: "home" });
         }
-        axios
-            .get(`/api/users?search=${this.$route.query.search}`)
-            .then((response) => {
-                console.log(response.data);
-                this.users = response.data;
-            });
     },
     mounted() {
-        this.$parent.paddingHandling(true,1000);
+        this.$parent.paddingHandling(true, 1000);
+
+        this.activeQuery = this.filter(true);
+        this.search = this.$route.query.search;
+
+        this.getProfiles();
+
+
     },
     beforeDestroy() {
         this.$parent.paddingHandling(false);
@@ -165,4 +166,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+.hiddenevent {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 115rem;
+
+}
+
+</style>
