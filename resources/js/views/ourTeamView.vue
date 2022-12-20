@@ -19,7 +19,7 @@
         <div class="flex items-center justify-center w-full h-full bg-gray-900/40">
             <div class="text-center">
                 <h1 class="text-3xl font-semibold text-white lg:text-4xl"> I <span class="text-secondary">Migliori</span>  a portata di click!</h1>
-                <button class="w-full px-4 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Unisciti a loro</button>
+                <button class="btn btn-primary">Unisciti a loro</button>
             </div>
         </div>
     </div>
