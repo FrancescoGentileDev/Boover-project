@@ -7,9 +7,9 @@
        
                                       <!--INFORMATION-->
         <div class=""> 
-           <div></div>
-           <div></div>
-           <div></div>
+           <div v-for="(information,index) in information" :key="index"></div>
+           
+           
         </div>
     </div>
     <header>
