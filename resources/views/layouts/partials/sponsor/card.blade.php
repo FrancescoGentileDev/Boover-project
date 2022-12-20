@@ -34,7 +34,7 @@
         </span>{{ $sponsor_card->duration . ' ore' }} di boost
         </p>
 
-        <form action='{{ route('dashboard.profile.sponsor.store') }}' method="POST" >
+        <form action='{{ route('dashboard.sponsor.payment') }}' method="POST" >
 
             @csrf
 
