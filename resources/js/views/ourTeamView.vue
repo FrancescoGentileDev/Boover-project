@@ -24,9 +24,9 @@
             </div>
         </div>
         <div class="flex items-center justify-center absolute bottom-0 left-10 right-10"> 
-           <div v-for="(information,index) in information" :key="index" class="bg-black opacity-10">
-            <p class="px-10 text-white text-4xl py-5">{{ information.info }}</p>
-            <p class="px-10 text-white text-8xl">{{ information.numericInfo }}</p>
+           <div v-for="(information,index) in information" :key="index" class="bg-black opacity-10 ">
+            <p class="px-10 text-white text-4xl pt-2">{{ information.info }}</p>
+            <p class="px-10 text-white text-8xl pb-5">{{ information.numericInfo }}</p>
            </div>           
         </div>
     </div>
@@ -179,6 +179,20 @@
 
 export default {
     data: () => ({
+        information:[
+            {
+                info:"Informazione1",
+                numericInfo:"8888k",
+            },
+            {
+                info:"Informazione2",
+                numericInfo:"9999k",
+            },
+            {
+                info:"Informazione3",
+                numericInfo:"7777k",
+            },
+        ],
         faqs:[
             {
                 question:"Question1",
@@ -252,21 +266,7 @@ export default {
                 freelancer:"Carmelo",
                 profession:"Front-End Developer",
             },
-        ],
-        information:[
-            {
-                info:"Informazione1",
-                numericInfo:"8888k",
-            },
-            {
-                info:"Informazione2",
-                numericInfo:"9999k",
-            },
-            {
-                info:"Informazione3",
-                numericInfo:"7777k",
-            },
-        ]
+        ],       
     }),
 
 mounted() {
