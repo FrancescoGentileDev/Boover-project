@@ -25,6 +25,7 @@
         <div class=""> 
            <div v-for="(information,index) in information" :key="index">
            <p>{{ information.info }}</p>
+           <p>{{ information.numericInfo }}</p>
         </div>
            
         </div>
