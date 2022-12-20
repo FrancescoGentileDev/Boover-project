@@ -7,6 +7,7 @@ use App\User;
 use App\models\Review;
 use App\models\Inbox;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -33,7 +34,17 @@ class DashboardController extends Controller
         //dd($averages_per_month);
 
         // if is sponsorised
-        $isSponsor = $user->sponsors()->find('user_id');
+        $sponsorRecord = DB::table('sponsor_user')->where('user_id', '=', $user->id)->orderByDesc('created_at')->first();
+
+        if ($sponsorRecord == null ||  $sponsorRecord->expire_date < date('Y-m-d H:i:s')) {
+            //
+            $isSponsor = false;
+            //
+        } elseif ($sponsorRecord->expire_date > date('Y-m-d H:i:s')) {
+            //
+            $isSponsor = true;
+            //
+        }
 
         // vote average
         $average = $user->reviews()->avg('vote');
