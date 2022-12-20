@@ -10,8 +10,10 @@ import AsyncComputed from "vue-async-computed";
 import App from './views/app.vue'
 import router from './router'
 import VueObserveVisibility from 'vue-observe-visibility'
+import LottieAnimation from 'lottie-web-vue'
 
 Vue.use(VueObserveVisibility)
+Vue.use(LottieAnimation); // add lottie-animation to your global scope
 Vue.use(AsyncComputed)
 const app = new Vue({
     el: '#app',

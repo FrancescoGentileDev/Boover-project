@@ -4,14 +4,44 @@
             Risultati ricerca:
             {{ this.$route.query.search.split("-").join(" ") }}
         </h1>
-        <div class="mt-12">
+        <div class="my-12">
             <div class="totals flex flex-col justify-between">
-                <filter-component />
-                <p>Professionisti totali: {{ users.total }}</p>
+                <filter-component
+
+                />
+                <div
+                    v-if="displayUsers && users.data.length === 0"
+                    class="my-8 flex flex-col justify-center items-center"
+                >
+                    <p class="text-xl my-2 font-semibold text-base-content">
+                        Nessun risultato trovato
+                    </p>
+                    <lottie-animation
+                        class="lottie container mx-auto h-[50vh]"
+                        ref="anim"
+                        :animationData="require('../../assets/sad-dog.json')"
+                        :loop="true"
+                    />
+                </div>
+                <p v-else-if="displayUsers">
+                    Professionisti totali: {{ users.total }}
+                </p>
+                <div v-else class="flex items-baseline">
+                    <p>professionisti totali:</p>
+                    <div
+                        class="ph-item"
+                        style="border: none; padding: 0px; width: 50px"
+                    >
+                        <div class="ph-row">
+                            <div class="ph-col-12"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            v-if="displayUsers"
         >
             <router-link
                 :to="'/profile/' + user.slug"
@@ -22,19 +52,88 @@
             </router-link>
         </div>
 
-        <div class="hiddenevent" v-observe-visibility="loadMoreProfile"></div>
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            v-else
+        >
+            <div
+                v-for="i in 23"
+                :key="i"
+                class="ph-item sm:min-h-[440px] sm:min-w-[300px] sm:max-w-[400px] relative"
+                style="padding: 0px"
+            >
+                <div class="ph-col-12" style="padding: 0px">
+                    <div class="ph-picture" style="height: 200px"></div>
+                    <div class="ph-row">
+                        <div
+                            class="ph-col-12 big h-[80px]"
+                            style="height: 80px"
+                        ></div>
+                    </div>
+                    <div class="ph-row">
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                    </div>
+                    <div class="ph-row absolute bottom-0 h-5 w-full">
+                        <div class="ph-col-4"></div>
+                        <div class="ph-col-4 empty"></div>
+                        <div class="ph-col-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            v-if="placeHolderNewUser"
+        >
+            <div
+                v-for="i in 23"
+                :key="i"
+                class="ph-item sm:min-h-[440px] sm:min-w-[300px] sm:max-w-[400px] relative"
+                style="padding: 0px"
+            >
+                <div class="ph-col-12" style="padding: 0px">
+                    <div class="ph-picture" style="height: 200px"></div>
+                    <div class="ph-row">
+                        <div
+                            class="ph-col-12 big h-[80px]"
+                            style="height: 80px"
+                        ></div>
+                    </div>
+                    <div class="ph-row">
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                    </div>
+                    <div class="ph-row absolute bottom-0 h-5 w-full">
+                        <div class="ph-col-4"></div>
+                        <div class="ph-col-4 empty"></div>
+                        <div class="ph-col-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="hiddenevent" v-observe-visibility="loadMoreProfile"></div>
     </div>
 </template>
 
 <script>
 import FilterComponent from "../components/filterComponent.vue";
 import UserCardComponent from "../components/UserCardComponent.vue";
+import LottieAnimation from 'lottie-web-vue'
 export default {
-    components: { UserCardComponent, FilterComponent },
+    components: { UserCardComponent, FilterComponent, LottieAnimation },
 
     data: () => ({
         search: "",
+        displayUsers: false,
+        placeHolderNewUser: false,
         users: [],
         currentPage: 1,
         activeQuery: {},
@@ -51,12 +150,14 @@ export default {
             if (!this.$route.query.search || this.$route.query.search == "") {
                 this.$router.push({ name: "home" });
             }
-             console.log("route changed");
+            console.log("route changed");
             // Torna alla home se non è presente lo slug
             this.users = [];
             this.activeQuery = this.filter(true);
             this.search = this.$route.query.search;
             this.currentPage = this.$route.query.page || 1;
+            this.displayUsers = false;
+            window.scrollTo(0, 0);
             this.getProfiles();
         },
     },
@@ -70,10 +171,8 @@ export default {
 
         this.activeQuery = this.filter(true);
         this.search = this.$route.query.search;
-
+        window.scrollTo(0, 0);
         this.getProfiles();
-
-
     },
     beforeDestroy() {
         this.$parent.paddingHandling(false);
@@ -153,12 +252,15 @@ export default {
                     console.log("users", data);
                     if (!newPage) this.users = data;
                     else this.users.data = [...this.users.data, ...data.data];
+                    this.displayUsers = true;
+                    this.placeHolderNewUser = false;
                 });
         },
         loadMoreProfile(isVisible, entry, customArgument) {
             console.log("entryy", entry);
             console.log("isVisible", isVisible);
             if (isVisible && this.currentPage < this.users.last_page) {
+                this.placeHolderNewUser = true;
                 this.getProfiles(true, true);
             }
         },
@@ -167,13 +269,10 @@ export default {
 </script>
 
 <style>
-
 .hiddenevent {
     position: absolute;
     height: 3px;
     width: 100%;
     bottom: 115rem;
-
 }
-
 </style>
