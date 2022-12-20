@@ -22,6 +22,11 @@
                 <button class="btn btn-primary mt-5">Unisciti a loro</button>
             </div>
         </div>
+        <div class=""> 
+           <div></div>
+           <div></div>
+           <div></div>
+        </div>
     </div>
 </header>
     </section>    
