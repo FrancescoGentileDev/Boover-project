@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="dark" lang="en">
+<html data-theme="{{ Auth::user()->theme_preference }}" lang="en">
 
 <head>
     @include('layouts.partials.meta-head')
@@ -95,7 +95,7 @@
                     class="
             @if (Route::currentRouteName() == 'dashboard.settings') active-item base-100 @endif
             flex items-center px-4 py-2 mt-5 transition-colors duration-300 transform rounded-lg base-content dashboard-item base-100 hover:bg-base-100 hover:base-100"
-                    href="#">
+                    href="{{ route('dashboard.settings') }}">
                     <i class="fa-solid fa-gear"></i>
 
                     <span class="mx-4 font-medium">Settings</span>
