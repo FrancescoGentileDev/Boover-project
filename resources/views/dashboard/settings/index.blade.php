@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container pt-7">
         <div
-            class="basis-2/4 text-center my-7 px-6 py-2 font-medium tracking-wide base-100 capitalize transition-colors duration-300 transform bg-base-300 rounded-lg">
+            class="basis-2/4 text-center px-6 py-2 font-medium tracking-wide base-100 capitalize transition-colors duration-300 transform bg-base-300 rounded-lg">
             Impostazioni
         </div>
         <div class="form-control">
