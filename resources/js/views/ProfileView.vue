@@ -24,7 +24,7 @@
                     </router-link>
                 </li>
                 <li>
-                    <a>
+                    <router-link to="/">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -41,7 +41,7 @@
                         </svg>
 
                         <h2 class="pl-1">Search</h2>
-                    </a>
+                    </router-link>
                 </li>
                 <li>
                     <svg
@@ -94,7 +94,7 @@
                         </h1>
 
                         <!-- contact -->
-                        <div class="flex gap-6 py-4">
+                        <div class="flex gap-6 py-4 flex-wrap">
                             <div class="flex justify-center items-center gap-1">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -253,7 +253,7 @@
                         <!-- swap form button -->
                         <div class="flex items-center justify-center mt-6">
                             <h3
-                                class="w-1/3 pb-4 font-medium text-center capitalize border-b-2 opacity-40 cursor-pointer"
+                                class="w-full lg:w-1/3 pb-4 font-medium text-center capitalize border-b-2 opacity-40 cursor-pointer"
                                 :class="{
                                     'border-blue-500 text-indigo-500  opacity-100':
                                         !isMessageActive,
@@ -264,7 +264,7 @@
                             </h3>
 
                             <h3
-                                class="w-1/3 pb-4 font-medium text-center capitalize border-b-2 opacity-40 cursor-pointer"
+                                class="w-full lg:w-1/3 pb-4 font-medium text-center capitalize border-b-2 opacity-40 cursor-pointer"
                                 :class="{
                                     'border-blue-500  text-indigo-500 opacity-100':
                                         isMessageActive,
@@ -408,7 +408,7 @@
                                     type="number"
                                     min="1"
                                     max="5"
-                                    placeholder="Hi, i'm john doe"
+                                    placeholder="Rate"
                                     name="vote"
                                     class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md"
                                 />
