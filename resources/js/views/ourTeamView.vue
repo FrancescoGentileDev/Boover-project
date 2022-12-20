@@ -4,7 +4,7 @@
                         
      <div>
                                     <!--BG IMAGE-->
-        <div class="h-[85vh] w-full" style="background-image: url(&quot;https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png&quot;); background-size: cover; background-position: center center;"></div>
+       
                                       <!--INFORMATION-->
         <div class=""> 
            <div></div>
