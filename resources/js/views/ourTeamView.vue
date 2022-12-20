@@ -250,6 +250,12 @@ export default {
                 freelancer:"Carmelo",
                 profession:"Front-End Developer",
             },
+        ],
+        information:[
+            {
+                info:"Informazione",
+                numericInfo:"9999k",
+            }
         ]
     }),
 
