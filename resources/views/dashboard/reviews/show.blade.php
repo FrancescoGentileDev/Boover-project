@@ -17,7 +17,7 @@
             <div class="flex items-center justify-between mt-4">
                 <div class="flex items-center">
                     <div class="font-bold base-100" tabindex="0" role="link">
-                        Valutation: {{ $review->vote }}</div>
+                        Voto: {{ $review->vote }}</div>
                 </div>
                 <div class="flex items-center">
                     <div class="font-bold base-100" tabindex="0" role="link">
@@ -31,7 +31,7 @@
             <a href="{{ route('dashboard.home') }}">HOMEPAGE</a>
         </button>
         <button class="bg-base-200 px-8 py-4 rounded-lg shadow-md hover:bg-base-300 font-bold base-100">
-            <a href="{{ route('dashboard.reviews.index') }}">REVIEWS LIST</a>
+            <a href="{{ route('dashboard.reviews.index') }}">ELENCO RECENSIONI</a>
         </button>
     </div>
 @endsection

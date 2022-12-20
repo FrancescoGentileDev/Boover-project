@@ -10,18 +10,19 @@
             </div>
 
             <div class="mt-2">
-                <div class="text-2xl font-bold base-100" tabindex="0" role="link">Message Title: {{ $inbox->title }}
+                <div class="text-2xl font-bold base-100" tabindex="0" role="link">Titolo del Messaggio:
+                    {{ $inbox->title }}
                 </div>
-                <p><span class="base-100 font-bold">From: </span> {{ $inbox->nickname }}</p>
-                <p class="mt-2"><span class="base-100 font-bold">Message: </span>
+                <p><span class="base-100 font-bold">Da: </span> {{ $inbox->nickname }}</p>
+                <p class="mt-2"><span class="base-100 font-bold">Messaggio: </span>
                     {{ $inbox->content }}</p>
             </div>
 
             <div class="flex items-center mt-4">
                 <div class="text-sm my-4">
-                    <h4 class="base-100 font-bold">Contacts:</h4>
+                    <h4 class="base-100 font-bold">Contatti:</h4>
 
-                    <p>Phone: {{ $inbox->phone }}</p>
+                    <p>Telefono: {{ $inbox->phone }}</p>
                     <p>Email: {{ $inbox->email }}</p>
                 </div>
                 <div class="pt-7 ml-10">
@@ -34,7 +35,7 @@
                 <a href="{{ route('dashboard.home') }}">HOMEPAGE</a>
             </button>
             <button class="bg-base-200 px-8 py-4 rounded-lg shadow-md hover:bg-base-300 font-bold base-content">
-                <a href="{{ route('dashboard.inboxes.index') }}">INBOXES LIST</a>
+                <a href="{{ route('dashboard.inboxes.index') }}">ELENCO MESSAGGI</a>
             </button>
         </div>
     </div>

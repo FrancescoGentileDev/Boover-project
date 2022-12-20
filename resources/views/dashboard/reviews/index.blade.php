@@ -4,7 +4,7 @@
     <div class="flex flex-row justify-center">
         <div
             class="basis-2/4 text-center my-7 px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg">
-            Your Reviews List
+            Elenco delle tue Recensioni
         </div>
     </div>
 
@@ -31,7 +31,7 @@
                 <div class="flex items-center justify-between mt-4">
                     <div class="flex items-center">
                         <div class="font-bold text-base-content" tabindex="0" role="link">
-                            Valutation: {{ $review->vote }}</div>
+                            Voto: {{ $review->vote }}</div>
                     </div>
                     <div class="flex items-center">
                         <div class="font-bold text-base-content" tabindex="0" role="link">

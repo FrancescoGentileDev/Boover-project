@@ -1,10 +1,5 @@
 @extends('layouts.app')
 
-{{-- (RF8) Permettere ai medici di vedere le proprie statistiche
-Descrizione: Un medico ha la possibilità di vedere le seguenti statistiche:
-numero di messaggi e recensioni ricevute per mese/anno
-grafico a barre fasce di voto ricevuti per mese/anno --}}
-
 @section('content')
     {{-- top bar statistics --}}
     <div style="user-select: none" class="flex flex-row justify-center py-10">
@@ -21,9 +16,9 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                             </path>
                         </svg>
                     </div>
-                    <div class="stat-title">Total Reviews</div>
+                    <div class="stat-title">Recensioni Totali</div>
                     <div class="stat-value text-primary">{{ $totalReviews }}</div>
-                    <div class="stat-desc">You have a total of {{ $totalReviews }} reviews.</div>
+                    <div class="stat-desc">Hai un totale di {{ $totalReviews }} recensioni.</div>
                 </div>
             </a>
 
@@ -38,9 +33,9 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                             </path>
                         </svg>
                     </div>
-                    <div class="stat-title">Total Messages</div>
+                    <div class="stat-title">Messaggi Totali</div>
                     <div class="stat-value text-secondary">{{ $totalInboxes }}</div>
-                    <div class="stat-desc">You have a total of {{ $totalInboxes }} messages.</div>
+                    <div class="stat-desc">Hai un totale di {{ $totalInboxes }} messaggi.</div>
                 </div>
             </a>
 
@@ -56,9 +51,9 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                     </svg> --}}
                         <i class="fa-regular fa-star fa-2x"></i>
                     </div>
-                    <div class="stat-title">Average Evaluation</div>
+                    <div class="stat-title">Media Voti</div>
                     <div class="stat-value" style="color: orange">{{ number_format($average, 2, '.', '') }}</div>
-                    <div class="stat-desc">Average evaluation is based on your reviews.</div>
+                    <div class="stat-desc">La media voti è basata sulle tue recensioni.</div>
                 </div>
             </a>
 
@@ -71,15 +66,14 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                         </div>
                     </div>
                 </div>
-                <div class="stat-value">Sponsorship</div>
+                <div class="stat-value">Sponsor</div>
                 <div class="stat-title mt-3">
                     @if ($isSponsor)
-                        <span style="color: green">Active</span>
+                        <span style="color: green">Attivo!</span>
                     @else
-                        <span style="color: red">Inactive</span>
+                        <span style="color: red">Non attiva!</span>
                         <span style="color: green" class="ml-5 hover:underline"><a
-                                href="{{ route('dashboard.sponsor') }}">GET A
-                                SPONSOR!</a></span>
+                                href="{{ route('dashboard.sponsor') }}">SPONSORIZZATI!</a></span>
                     @endif
                 </div>
             </div>
@@ -97,11 +91,11 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
         const config = {
             type: 'bar',
             data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
-                    'October', 'November', 'December'
+                labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre',
+                    'Ottobre', 'Novembre', 'Dicembre'
                 ],
                 datasets: [{
-                    label: 'Average votes per month',
+                    label: 'Media voti per mese',
                     data: getChartData(),
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -166,8 +160,8 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                 <table class="table w-full">
                     <thead>
                         <tr>
-                            <th>Last Reviews</th>
-                            <th>Open Details</th>
+                            <th>Ultime Recensioni</th>
+                            <th>Vedi Dettagli</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -176,14 +170,14 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                                 <td class="hover:bg-base-300">
                                     <div class="flex items-center space-x-3">
                                         <div>
-                                            <div class="font-bold">Title: {{ $review->title }}</div>
-                                            <div class="text-sm opacity-50">From: {{ $review->nickname }}</div>
+                                            <div class="font-bold">Titolo: {{ $review->title }}</div>
+                                            <div class="text-sm opacity-50">Da: {{ $review->nickname }}</div>
                                         </div>
                                     </div>
                                 </td>
                                 <th>
                                     <a href="{{ route('dashboard.reviews.show', $review->id) }}"
-                                        class="btn btn-ghost btn-xs">details</a>
+                                        class="btn btn-ghost btn-xs">dettagli</a>
                                 </th>
                             </tr>
                         @endforeach
@@ -198,8 +192,8 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                 <table class="table w-full">
                     <thead>
                         <tr>
-                            <th>Last Messages</th>
-                            <th>Open Details</th>
+                            <th>Ultimi Messaggi</th>
+                            <th>Vedi Dettagli</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -208,14 +202,14 @@ grafico a barre fasce di voto ricevuti per mese/anno --}}
                                 <td class="hover:bg-base-300">
                                     <div class="flex items-center space-x-3">
                                         <div>
-                                            <div class="font-bold">Title: {{ $inbox->title }}</div>
-                                            <div class="text-sm opacity-50">From: {{ $inbox->nickname }}</div>
+                                            <div class="font-bold">Titolo: {{ $inbox->title }}</div>
+                                            <div class="text-sm opacity-50">Da: {{ $inbox->nickname }}</div>
                                         </div>
                                     </div>
                                 </td>
                                 <th>
                                     <a href="{{ route('dashboard.inboxes.show', $inbox->id) }}"
-                                        class="btn btn-ghost btn-xs">details</a>
+                                        class="btn btn-ghost btn-xs">dettagli</a>
                                 </th>
                             </tr>
                         @endforeach

@@ -46,8 +46,8 @@
             <input type="hidden" name="sponsor" value="{{ $sponsor_card->id }}" />
 
             <button onclick="toggleModal()"
-                class="flex items-center mt-auto text-white bg-base-300 border-0 py-2 px-4 w-full focus:outline-none hover:bg-base-200 rounded @if ($sponsor_card->type == 'Silver') bg-indigo-500 hover:bg-indigo-600 @endif">
-                Buy
+                class="flex items-center mt-auto base-100 bg-base-300 border-0 py-2 px-4 w-full focus:outline-none hover:bg-base-200 rounded @if ($sponsor_card->type == 'Silver') bg-indigo-500 hover:bg-indigo-600 @endif">
+                Acquista
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                     stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>

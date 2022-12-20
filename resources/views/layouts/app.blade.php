@@ -79,7 +79,7 @@
                     href="{{ route('dashboard.profile') }}">
                     <i class="fa-solid fa-user"></i>
 
-                    <span class="mx-4 font-medium">Profile</span>
+                    <span class="mx-4 font-medium">Profilo</span>
                 </a>
 
                 <a id='reviews'
@@ -90,7 +90,7 @@
                     href="{{ route('dashboard.reviews.index') }}">
                     <i class="fa-solid fa-star"></i>
 
-                    <span class="mx-4 font-medium">Reviews</span>
+                    <span class="mx-4 font-medium">Recensioni</span>
                 </a>
 
                 <a id="Inboxes"
@@ -101,7 +101,7 @@
                     href="{{ route('dashboard.inboxes.index') }}">
                     <i class="fa-solid fa-inbox"></i>
 
-                    <span class="mx-4 font-medium">Inboxes</span>
+                    <span class="mx-4 font-medium">Messaggi</span>
                 </a>
 
                 <a id="Sponsorship"
@@ -111,7 +111,7 @@
                     href="{{ route('dashboard.sponsor') }}">
                     <i class="fa-solid fa-medal"></i>
 
-                    <span class="mx-4 font-medium">Sponsorship</span>
+                    <span class="mx-4 font-medium">Sponsorizzazioni</span>
                 </a>
 
                 <a id="Settings"
@@ -121,7 +121,7 @@
                     href="{{ route('dashboard.settings') }}">
                     <i class="fa-solid fa-gear"></i>
 
-                    <span class="mx-4 font-medium">Settings</span>
+                    <span class="mx-4 font-medium">Impostazioni</span>
                 </a>
 
                 <div class="absolute bottom-8">
