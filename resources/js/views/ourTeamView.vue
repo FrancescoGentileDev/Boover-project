@@ -24,7 +24,7 @@
         </div>
         <div class="flex items-center justify-center"> 
            <div v-for="(information,index) in information" :key="index" class="bg-black opacity-50">
-            <p class="px-10 text-white">{{ information.info }}</p>
+            <p class="px-10 text-white text-4xl">{{ information.info }}</p>
             <p class="px-10 text-white">{{ information.numericInfo }}</p>
            </div>           
         </div>
