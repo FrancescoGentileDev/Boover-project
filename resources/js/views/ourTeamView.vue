@@ -15,15 +15,16 @@
     <header>
                                        <!--TEMPLATE-->
 
-    <div class="w-full bg-center bg-cover h-[38rem]" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');">
+    <div class="w-full bg-center bg-cover h-[38rem] relative " style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');">
+        
         <div class="flex items-center justify-center w-full h-full bg-gray-900/40">
             <div class="text-center">
                 <h1 class="text-3xl font-semibold text-white lg:text-4xl"> I <span class="text-secondary">Migliori</span>  a portata di click!</h1>
                 <button class="btn btn-primary mt-5">Unisciti a loro</button>
             </div>
         </div>
-        <div class="flex items-center justify-center"> 
-           <div v-for="(information,index) in information" :key="index" class="bg-black opacity-50">
+        <div class="flex items-center justify-center absolute bottom-0 left-0"> 
+           <div v-for="(information,index) in information" :key="index" class="bg-black opacity-10">
             <p class="px-10 text-white text-4xl">{{ information.info }}</p>
             <p class="px-10 text-white text-8xl">{{ information.numericInfo }}</p>
            </div>           
