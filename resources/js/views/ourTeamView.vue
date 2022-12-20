@@ -255,9 +255,17 @@ export default {
         ],
         information:[
             {
-                info:"Informazione",
+                info:"Informazione1",
+                numericInfo:"8888k",
+            },
+            {
+                info:"Informazione2",
                 numericInfo:"9999k",
-            }
+            },
+            {
+                info:"Informazione3",
+                numericInfo:"7777k",
+            },
         ]
     }),
 
