@@ -8,7 +8,7 @@
                                       <!--INFORMATION-->
         <div class=""> 
            <div v-for="(information,index) in information" :key="index"></div>
-           
+           <p>{{ information.info }}</p>
            
         </div>
     </div>
@@ -23,9 +23,10 @@
             </div>
         </div>
         <div class=""> 
-           <div></div>
-           <div></div>
-           <div></div>
+           <div v-for="(information,index) in information" :key="index">
+           <p>{{ information.info }}</p>
+        </div>
+           
         </div>
     </div>
 </header>
