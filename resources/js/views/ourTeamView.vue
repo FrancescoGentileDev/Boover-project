@@ -22,7 +22,7 @@
                 <button class="btn btn-primary mt-5">Unisciti a loro</button>
             </div>
         </div>
-        <div class=""> 
+        <div class="flex"> 
            <div v-for="(information,index) in information" :key="index">
             <p>{{ information.info }}</p>
             <p>{{ information.numericInfo }}</p>
