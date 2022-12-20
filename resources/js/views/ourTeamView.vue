@@ -24,10 +24,9 @@
         </div>
         <div class=""> 
            <div v-for="(information,index) in information" :key="index">
-           <p>{{ information.info }}</p>
-           <p>{{ information.numericInfo }}</p>
-        </div>
-           
+            <p>{{ information.info }}</p>
+            <p>{{ information.numericInfo }}</p>
+           </div>           
         </div>
     </div>
 </header>
@@ -37,7 +36,7 @@
 
                                                   <!--TEAM-->
 
-    <section class="bg-white">
+    <section class="bg-white mt-60">
     <div class="container px-6 py-10 mx-auto">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">Conosci i nostri migliori <span class="text-secondary">Professionisti</span></h1>
 
