@@ -5,7 +5,7 @@
         <div class="flex items-center justify-center w-full h-full bg-gray-900/40">
             <div class="text-center">
                 <h1 class="text-3xl font-semibold text-white lg:text-4xl"> I <span class="text-secondary">Migliori</span>  a portata di click!</h1>
-                <button class="btn btn-primary mt-5">Unisciti a loro</button>
+                <button class="btn btn-primary mt-14">Unisciti a loro</button>
             </div>
         </div>
         <div class="flex items-center justify-center absolute bottom-0 left-10 right-10 opacity-30"> 
