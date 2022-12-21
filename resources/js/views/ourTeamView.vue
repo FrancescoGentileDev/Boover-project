@@ -216,32 +216,6 @@ export default {
                 profession:"Front-End Developer",
             },
         ],  
-        faqs:[
-            {
-                question:"Question1",
-                answer:"Hidden answer showed at click."
-            },
-            {
-                question:"Question2",
-                answer:"Hidden answer showed at click."
-            },
-            {
-                question:"Question3",
-                answer:"Hidden answer showed at click."
-            },
-            {
-                question:"Question4",
-                answer:"Hidden answer showed at click."
-            },
-            {
-                question:"Question5",
-                answer:"Hidden answer showed at click."
-            },
-            {
-                question:"Question6",
-                answer:"Hidden answer showed at click."
-            },
-        ],
         reviews:[
             {
                 review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, quam. Odio voluptatem officiis eos illo! Pariatur, totam alias. Beatae accusamus earum quos obcaecati minima molestias. Possimus minima dolores itaque! Esse! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates fugiat corrupti laudantium dolores reiciendis pariatur esse quod nihil quia cupiditate debitis quisquam nemo, accusamus animi explicabo? Architecto, unde laboriosam?",
@@ -269,6 +243,33 @@ export default {
             },            
         ],
             
+        faqs:[
+            {
+                question:"Question1",
+                answer:"Hidden answer showed at click."
+            },
+            {
+                question:"Question2",
+                answer:"Hidden answer showed at click."
+            },
+            {
+                question:"Question3",
+                answer:"Hidden answer showed at click."
+            },
+            {
+                question:"Question4",
+                answer:"Hidden answer showed at click."
+            },
+            {
+                question:"Question5",
+                answer:"Hidden answer showed at click."
+            },
+            {
+                question:"Question6",
+                answer:"Hidden answer showed at click."
+            },
+        ],
+       
     }),
 
 mounted() {
