@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class="flex items-center justify-center absolute bottom-0 left-10 right-10 opacity-30"> 
-           <div v-for="(information,index) in information" :key="index" class="bg-black rounded-md">
-            <p class="px-10 text-white text-4xl pt-2 hover:opacity-100">{{ information.info }}</p>
+           <div v-for="(information,index) in information" :key="index" class="bg-black rounded-md flex flex-col items-center justify-center">
+            <p class="px-10 text-white text-4xl pt-2">{{ information.info }}</p>
             <p class="px-10 text-white text-8xl pb-5">{{ information.numericInfo }}</p>
            </div>           
         </div>
@@ -45,13 +45,7 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias, adipisci rem similique, at omnis eligendi optio eos harum.
         </p>
                                                 
-        <div class="flex items-center justify-center">
-            <div class="flex items-center p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
-                <button class="px-4 py-2 text-sm font-medium text-white capitalize bg-primary md:py-3 rounded-xl md:px-12">design</button>
-                <button class="px-4 py-2 mx-4 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-3 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-primary hover:text-white rounded-xl md:mx-8 md:px-12">development</button>
-                <button class="px-4 py-2 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-3 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-primary hover:text-white rounded-xl md:px-12">marketing</button>
-            </div>
-        </div>
+      
                                                                            <!--TEAM GRID-->
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3 items-center justify-center">      
                                                                            <!--TEAM V-FOR-->                                              
