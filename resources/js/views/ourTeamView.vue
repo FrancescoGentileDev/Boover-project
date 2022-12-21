@@ -28,8 +28,7 @@
                                                 
       
                                                                            <!--TEAM GRID-->
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3 items-center justify-center">      
-                                                                           <!--TEAM V-FOR-->                                              
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3 items-center justify-center">                                                                                                                
             <div v-for="(freelancers,index) in freelancers" :key="index" class="flex flex-col items-center opacity-50 hover:opacity-100 hover:duration-1000">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
@@ -125,8 +124,11 @@
                       <p>{{faq.answer}}</p>
                     </div>
                  </div>
-             </div>      
+             </div>    
+             <button class="btn btn-primary justify-center">La tua domanda non è in elenco?</button>  
+             
         </div>
+        
      </div>
     </section>
                                                                     <!--REGISTER-->
@@ -135,8 +137,7 @@
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl pt-10">Registrati e inizia oggi a ricevere clienti</h1>
         <button class="btn btn-primary m-3 mt-20">Registrati</button>
      </div>
-    </section>
-    
+    </section>    
   </main>
 </template>  
 
@@ -204,8 +205,7 @@ export default {
                 userName:"Mario Rossi",
                 profession:"Student",
             },            
-        ],
-            
+        ],            
         faqs:[
             {
                 question:"Question1",
@@ -231,8 +231,7 @@ export default {
                 question:"Question6",
                 answer:"Hidden answer showed at click."
             },
-        ],
-       
+        ],       
     }),
 
 mounted() {
