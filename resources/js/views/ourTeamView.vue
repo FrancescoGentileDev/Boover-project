@@ -23,7 +23,7 @@
                 <button class="btn btn-primary mt-5">Unisciti a loro</button>
             </div>
         </div>
-        <div class="flex items-center justify-center absolute bottom-0 left-10 right-10 opacity-40"> 
+        <div class="flex items-center justify-center absolute bottom-0 left-10 right-10 opacity-30"> 
            <div v-for="(information,index) in information" :key="index" class="bg-black rounded-md">
             <p class="px-10 text-white text-4xl pt-2 hover:opacity-100">{{ information.info }}</p>
             <p class="px-10 text-white text-8xl pb-5">{{ information.numericInfo }}</p>
