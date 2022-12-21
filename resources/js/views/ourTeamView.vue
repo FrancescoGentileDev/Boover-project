@@ -128,15 +128,22 @@
              <button class="btn btn-primary">Contattaci</button>             
         </div>        
      </div>
+     
     </section>
                                                                     <!--REGISTER-->
-    <section class="register py-20">
-      <div class="text-center">
+   <section class="mb-40">
+    <div class="max-w-3xl px-6 py-16 mx-auto text-center">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl pt-10">Registrati e inizia <span class="text-secondary">oggi</span> a ricevere clienti</h1>
-        <button class="btn btn-primary m-3 mt-20">Registrati</button>
-     </div>
-    </section>    
-  </main>
+        <div class="flex flex-col mt-8 space-y-3 sm:space-y-0 sm:flex-row sm:justify-center sm:-mx-2">
+            <input id="email" type="text" class="px-4 py-2 text-black bg-white border rounded-md sm:mx-2 dark:text-black dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" placeholder="Email Address">
+
+            <button class="px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-700 rounded-md sm:mx-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                Get Started
+            </button>
+        </div>
+    </div>
+  </section>  
+ </main>
 </template>  
 
 <script>
