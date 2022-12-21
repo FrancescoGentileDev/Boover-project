@@ -2,10 +2,7 @@
   <main>
     <section class="jumbo"> 
                         
-     <div>
-                                    <!--BG IMAGE-->
-       
-                                      <!--INFORMATION-->
+     <div>                                    
         <div class=""> 
            <div v-for="(information,index) in information" :key="index"></div>
            <p>{{ information.info }}</p>
@@ -24,7 +21,7 @@
             </div>
         </div>
         <div class="flex items-center justify-center absolute bottom-0 left-10 right-10 opacity-30"> 
-           <div v-for="(information,index) in information" :key="index" class="bg-black rounded-md flex flex-col items-center justify-center">
+           <div v-for="(information,index) in information" :key="index" class="bg-black rounded-md flex flex-col items-center justify-center w-full">
             <p class="px-10 text-white text-4xl pt-2">{{ information.info }}</p>
             <p class="px-10 text-white text-8xl pb-5">{{ information.numericInfo }}</p>
            </div>           
@@ -32,6 +29,7 @@
     </div>
 </header>
     </section>    
+   
     
 
 
