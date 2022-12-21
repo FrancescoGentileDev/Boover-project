@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
   {
 
 
-    $numUsers = 300;
+    $numUsers = 50;
     $users = factory(App\User::class, $numUsers)->create();
 
     foreach ($users as $user) {

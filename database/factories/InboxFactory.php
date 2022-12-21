@@ -16,6 +16,6 @@ $factory->define(Inbox::class, function (Faker $faker) {
         'email' => $faker->safeEmail(),
         'phone' => $faker->e164PhoneNumber(),
         'user_id' => $faker->numberBetween(1, $numUsers),
-        'created_at' => $faker->dateTimeBetween('-1 years', 'now'),
+        'created_at' => date('Y-m-d H:i:s', $faker->dateTimeBetween('-100 days', 'now')->getTimestamp()),
     ];
 });

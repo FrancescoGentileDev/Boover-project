@@ -34,10 +34,59 @@ Artisan::command('test', function (Faker $faker) {
 
 });
 Artisan::command('test2', function (Faker $faker) {
-    $user = User::find(100);
+    $json = file_get_contents(base_path('public\user2.json'));
+    $array = json_decode($json, true);
+    $users = collect($array['users']);
 
-    $user->inboxes()->count();
+    $users = $users->map(function ($user) use ($faker) {
 
-    dump($user->reviews()->count());
+        $user['email'] = $faker->unique()->safeEmail;
+        $user['email_verified_at'] = $faker->dateTimeBetween('-100 days', 'now');
+        $user['password'] = '$2y$10$pZQQkjW4qrRtrO.aloJnlu/shlQXJIkeIanFJxKiYMO8ULn.4S5uS';
+        $user['remember_token'] = Str::random(10);
+        $user['slug'] = getSlugs($user['name'] . ' ' . $user['lastname']);
+        $user['phone'] = $faker->e164PhoneNumber();
+        $user['birthday_date'] = $faker->dateTimeBetween('-50 years', '-18 years');
+        $user['detailed_description'] = $faker->realText(500);
+        $user['is_available'] = 1;
+        $user['business_days'] = implode($faker->randomElements(['M', 'T', 'W', 'Th', 'F', 'S', 'Su'], $faker->numberBetween(0, 7)));
+
+        return $user;
+    });
+
+    $users = $users->map(function ($user) use ($faker) {
+        $user['avatar'] = $faker->realText(20);
+        return $user;
+    });
+
+
+    dump($users->toArray()[114]);
+});
+function getSlugs($fullname)
+{
+    $slug = Str::slug($fullname, '-');
+    $slugBase = $slug;
+    $userWithSlug = User::where('slug', $slug)->first();
+    $counter = 1;
+    while ($userWithSlug) {
+        $slug = $slugBase . '-' . $counter;
+        $counter++;
+        $userWithSlug = User::where('slug', $slug)->first();
+    }
+    return $slug;
+}
+Artisan::command('test3', function (Faker $faker) {
+
+    $users =  User::where('avatar', null)->get();
+
+    foreach($users as $user) {
+        $user->inboxes()->delete();
+        $user->reviews()->delete();
+        $user->skills()->sync([]);
+
+        $user->delete();
+
+    }
+
 
 });

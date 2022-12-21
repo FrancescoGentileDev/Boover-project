@@ -1,0 +1,2234 @@
+{
+    "users": [
+        {
+            "name": "Mario",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Esperto di sicurezza informatica",
+            "skills": [19]
+        },
+        {
+            "name": "Laura",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Life coach e esperta di benessere",
+            "skills": [21, 22]
+        },
+        {
+            "name": "Francesco",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Scrittore creativo e traduttore",
+            "skills": [10, 11]
+        },
+        {
+            "name": "Sara",
+            "lastname": "Esposito",
+            "gender": "F",
+            "presentation": "Grafica e designer di moda e accessori",
+            "skills": [3, 4]
+        },
+        {
+            "name": "Matteo",
+            "lastname": "Gentile",
+            "gender": "M",
+            "presentation": "E-commerce e web analyst",
+            "skills": [7, 6]
+        },
+        {
+            "name": "Chiara",
+            "lastname": "Rizzo",
+            "gender": "F",
+            "presentation": "Produttrice e compositrice di musica",
+            "skills": [13]
+        },
+        {
+            "name": "Giorgio",
+            "lastname": "Ferrari",
+            "gender": "M",
+            "presentation": "Sviluppatore di videogiochi",
+            "skills": [18]
+        },
+        {
+            "name": "Emma",
+            "lastname": "Colombo",
+            "gender": "F",
+            "presentation": "Psicologa e psicoterapeuta",
+            "skills": [26]
+        },
+        {
+            "name": "Alessandro",
+            "lastname": "Moretti",
+            "gender": "M",
+            "presentation": "Istruttore di calcio e altri sport di squadra",
+            "skills": [29]
+        },
+        {
+            "name": "Luca",
+            "lastname": " Rossi",
+            "gender": "M",
+            "presentation": "Sviluppatore di videogiochi",
+            "skills": [1, 18]
+        },
+        {
+            "name": "Francesca",
+            "lastname": " Bianchi",
+            "gender": "F",
+            "presentation": "Specialista in social media",
+            "skills": [3]
+        },
+        {
+            "name": "Roberto",
+            "lastname": " Neri",
+            "gender": "M",
+            "presentation": "Esperto di marketing online",
+            "skills": [7, 6, 8]
+        },
+        {
+            "name": "Sara",
+            "lastname": " Verdi",
+            "gender": "F",
+            "presentation": "Traduttrice professionista",
+            "skills": [10]
+        },
+        {
+            "name": "Giorgio",
+            "lastname": " Conti",
+            "gender": "M",
+            "presentation": "Produttore musicale",
+            "skills": [13, 15]
+        },
+        {
+            "name": "Chiara",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Sviluppatrice di siti web",
+            "skills": [17]
+        },
+        {
+            "name": "Alessandro",
+            "lastname": " Gialli",
+            "gender": "M",
+            "presentation": "Life coach",
+            "skills": [21]
+        },
+        {
+            "name": "Martina",
+            "lastname": " Rizzo",
+            "gender": "F",
+            "presentation": "Fisioterapista",
+            "skills": [25]
+        },
+        {
+            "name": "Mario",
+            "lastname": " Marino",
+            "gender": "M",
+            "presentation": "Allenatore di calcio",
+            "skills": [29]
+        },
+        {
+            "name": "Laura",
+            "lastname": " Moretti",
+            "gender": "F",
+            "presentation": "Insegnante di yoga",
+            "skills": [22]
+        },
+        {
+            "name": "Mario",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Esperto di sicurezza informatica con anni di esperienza",
+            "skills": [19]
+        },
+        {
+            "name": "Anna",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Grafica e designer con un occhio per i dettagli",
+            "skills": [3, 2]
+        },
+        {
+            "name": "Luca",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Specializzato in marketing e pubbliche relazioni",
+            "skills": [5, 6]
+        },
+        {
+            "name": "Sara",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Traduttrice professionista con anni di esperienza",
+            "skills": [10]
+        },
+        {
+            "name": "Giorgio",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Compositore e produttore di musica elettronica",
+            "skills": [13, 15]
+        },
+        {
+            "name": "Chiara",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Sviluppatrice di siti web con esperienza nell'e-commerce",
+            "skills": [17, 7]
+        },
+        {
+            "name": "Paolo",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Life coach e personal trainer con anni di esperienza",
+            "skills": [21, 22]
+        },
+        {
+            "name": "Eleonora",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Fisioterapista con una grande passione per la salute e il benessere",
+            "skills": [25, 24]
+        },
+        {
+            "name": "Andrea",
+            "lastname": " Esposito",
+            "gender": "M",
+            "presentation": "Psicologo",
+            "skills": [26]
+        },
+        {
+            "name": "Elena",
+            "lastname": " Greco",
+            "gender": "F",
+            "presentation": "Fotografa professionista",
+            "skills": [24]
+        },
+        {
+            "name": "Giovanni",
+            "lastname": " Morelli",
+            "gender": "M",
+            "presentation": "Cantante",
+            "skills": [14]
+        },
+        {
+            "name": "Paola",
+            "lastname": " De Luca",
+            "gender": "F",
+            "presentation": "Specialista in brand identity",
+            "skills": [2]
+        },
+        {
+            "name": "Antonio",
+            "lastname": " Mancini",
+            "gender": "M",
+            "presentation": "Scrittore creativo",
+            "skills": [11]
+        },
+        {
+            "name": "Donatella",
+            "lastname": " Moretti",
+            "gender": "F",
+            "presentation": "Designer di moda",
+            "skills": [4, 3]
+        },
+        {
+            "name": "Vittorio",
+            "lastname": " Ferrari",
+            "gender": "M",
+            "presentation": "Specialista in pubbliche relazioni",
+            "skills": [5]
+        },
+        {
+            "name": "Cristina",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Dietista",
+            "skills": [27]
+        },
+        {
+            "name": "Marco",
+            "lastname": " Bianchi",
+            "gender": "M",
+            "presentation": "Medico generico",
+            "skills": [28]
+        },
+        {
+            "name": "Grazia",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Insegnante di cucina",
+            "skills": [23]
+        },
+        {
+            "name": "Martina",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Fotografa professionista con un occhio per i dettagli",
+            "skills": [24]
+        },
+        {
+            "name": "Giovanni",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Giocatore professionista di scacchi con anni di esperienza",
+            "skills": [31]
+        },
+        {
+            "name": "Francesca",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Insegnante di cucina con una passione per la sperimentazione",
+            "skills": [23]
+        },
+        {
+            "name": "Alessio",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Psicologo e psicoterapeuta con anni di esperienza",
+            "skills": [26]
+        },
+        {
+            "name": "Laura",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Dietologa con una grande passione per la nutrizione",
+            "skills": [27]
+        },
+        {
+            "name": "Roberto",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Medico generale con anni di esperienza",
+            "skills": [28]
+        },
+        {
+            "name": "Isabella",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Scrittrice creativa con una passione per i racconti e le storie",
+            "skills": [11]
+        },
+        {
+            "name": "Massimo",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Sviluppatore di videogiochi con anni di esperienza",
+            "skills": [18]
+        },
+        {
+            "name": "Silvia",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Cantante professionista con una grande passione per la musica",
+            "skills": [14]
+        },
+        {
+            "name": "Vittorio",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Specializzato nella produzione di audiolibri con anni di esperienza",
+            "skills": [16]
+        },
+        {
+            "name": "Stefano",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Scrittore di case study",
+            "skills": [12]
+        },
+        {
+            "name": "Silvia",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Producer di audiolibri",
+            "skills": [16]
+        },
+        {
+            "name": "Raffaele",
+            "lastname": " Gallo",
+            "gender": "M",
+            "presentation": "Sviluppatore di software",
+            "skills": [17, 18]
+        },
+        {
+            "name": "Irene",
+            "lastname": " Rizzo",
+            "gender": "F",
+            "presentation": "Specialista in sicurezza informatica",
+            "skills": [19]
+        },
+        {
+            "name": "Mario",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Esperto di blockchain e criptovalute",
+            "skills": [20]
+        },
+        {
+            "name": "Veronica",
+            "lastname": " Ferrari",
+            "gender": "F",
+            "presentation": "Insegnante di fitness",
+            "skills": [22]
+        },
+        {
+            "name": "Maurizio",
+            "lastname": " Bianchi",
+            "gender": "M",
+            "presentation": "Psicologo clinico",
+            "skills": [26]
+        },
+        {
+            "name": "Bianca",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Fisioterapista",
+            "skills": [25]
+        },
+        {
+            "name": "Alessio",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro",
+            "skills": [29]
+        },
+        {
+            "name": "Carla",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di social media con un occhio per i trend del momento",
+            "skills": [3]
+        },
+        {
+            "name": "Federico",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Giocatore professionista di videogiochi con una grande passione per il gaming",
+            "skills": [1]
+        },
+        {
+            "name": "Beatrice",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di moda e accessori con un occhio per le ultime tendenze",
+            "skills": [4]
+        },
+        {
+            "name": "Umberto",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Esperto di web analytics e display advertising",
+            "skills": [6, 8]
+        },
+        {
+            "name": "Valentina",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Blogger e scrittrice di case study",
+            "skills": [9, 12]
+        },
+        {
+            "name": "Enrico",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di blockchain e criptovalute",
+            "skills": [20]
+        },
+        {
+            "name": "Grazia",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Insegnante di fitness con una grande passione per il benessere",
+            "skills": [22]
+        },
+        {
+            "name": "Alessandro",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Allenatore di sci con anni di esperienza",
+            "skills": [32]
+        },
+        {
+            "name": "Monica",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di discipline olimpiche",
+            "skills": [30]
+        },
+        {
+            "name": "Riccardo",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Esperto di diverse discipline",
+            "skills": [33]
+        },
+        {
+            "name": "Carlo",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Serena",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Dario",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Emanuela",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Gianluca",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Roberta",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Riccardo",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Sofia",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Vincenzo",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Anna",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Serena",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Scrittrice di articoli di lifestyle",
+            "skills": [9, 12]
+          },
+          {
+            "name": "Andrea",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Insegnante di calcio con anni di esperienza",
+            "skills": [29]
+          },
+          {
+            "name": "Mirella",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Insegnante di yoga e meditazione con una grande passione per il benessere",
+            "skills": [22]
+          },
+          {
+            "name": "Emanuele",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Esperto di sviluppo di siti web e e-commerce",
+            "skills": [17, 7]
+          },
+          {
+            "name": "Roberta",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Traduttrice professionista con una grande passione per la lingua inglese",
+            "skills": [10]
+          },
+          {
+            "name": "Edoardo",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di marketing e pubbliche relazioni",
+            "skills": [6, 5]
+          },
+          {
+            "name": "Marta",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di grafica e design con una grande passione per il branding",
+            "skills": [3, 2]
+          },
+          {
+            "name": "Francesco",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Produttore di musica elettronica con anni di esperienza",
+            "skills": [13]
+          },
+          {
+            "name": "Elena",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Cantante professionista con una grande passione per la musica",
+            "skills": [14]
+          },
+          {
+            "name": "Alberto",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "DJ professionista con anni di esperienza nella produzione musicale",
+            "skills": [15]
+          },
+          {
+            "name": "Gloria",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di sicurezza informatica con una grande passione per la tecnologia",
+            "skills": [19]
+          },
+          {
+            "name": "Davide",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Sviluppatore di videogiochi con anni di esperienza",
+            "skills": [18]
+          },
+          {
+            "name": "Emanuela",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di blockchain e criptovalute",
+            "skills": [20]
+          },
+          {
+            "name": "Federico",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Marta",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Lorenzo",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Beatrice",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Mario",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Laura",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Giorgio",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Alessandro",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Chiara",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Massimo",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Francesca",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Tommaso",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Isabella",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Matteo",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Maria",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Gianmarco",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Daniela",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Lucia",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Fisioterapista con anni di esperienza",
+            "skills": [25]
+          },
+          {
+            "name": "Mario",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Life coach con una grande passione per il supporto psicologico",
+            "skills": [21]
+          },
+          {
+            "name": "Chiara",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di grafica e design con un occhio per i dettagli",
+            "skills": [3]
+          },
+          {
+            "name": "Giorgio",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Sviluppatore di siti web con anni di esperienza",
+            "skills": [17]
+          },
+          {
+            "name": "Angela",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di marketing e pubbliche relazioni",
+            "skills": [6, 5]
+          },
+          {
+            "name": "Pietro",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Esperto di e-commerce e web analytics",
+            "skills": [7, 6]
+          },
+          {
+            "name": "Anna",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Scrittrice creativa con una grande passione per la scrittura",
+            "skills": [11]
+          },
+          {
+            "name": "Giancarlo",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di fotografia con un occhio per i dettagli",
+            "skills": [24]
+          },
+          {
+            "name": "Donatella",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Insegnante di cucina con una grande passione per la sperimentazione",
+            "skills": [23]
+          },
+          {
+            "name": "Mario",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Gamer esperto con grande passione per il gaming",
+            "skills": [1]
+          },
+          {
+            "name": "Luisa",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di brand identity e social media",
+            "skills": [2, 3]
+          },
+          {
+            "name": "Andrea",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Designer e appassionato di moda",
+            "skills": [3, 4]
+          },
+          {
+            "name": "Chiara",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Specializzata in pubbliche relazioni e e-commerce",
+            "skills": [5, 7]
+          },
+          {
+            "name": "Giovanni",
+            "lastname": "Marrone",
+            "gender": "M",
+            "presentation": "Esperto di web analytics e display advertising",
+            "skills": [6, 8]
+          },
+          {
+            "name": "Sara",
+            "lastname": "Bianco",
+            "gender": "F",
+            "presentation": "Scrittrice creativa e traduttrice professionista",
+            "skills": [9, 10, 11]
+          },
+          {
+            "name": "Alessio",
+            "lastname": "Azzurro",
+            "gender": "M",
+            "presentation": "Produttore musicale e DJ",
+            "skills": [13, 15]
+          },
+          {
+            "name": "Martina",
+            "lastname": "Viola",
+            "gender": "F",
+            "presentation": "Cantante e produttrice di audiolibri",
+            "skills": [14, 16]
+          },
+          {
+            "name": "Riccardo",
+            "lastname": "Grigio",
+            "gender": "M",
+            "presentation": "Sviluppatore web e appassionato di sicurezza informatica",
+            "skills": [17, 19]
+          },
+          {
+            "name": "Pietro",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 10 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Giulia",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi con il titolo di maestro internazionale",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Andrea",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista con una medaglia d'oro alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Alice",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga certificata con 5 anni di esperienza",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Antonio",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico con una specializzazione in terapia cognitivo-comportamentale",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Francesca",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista con una specializzazione in riabilitazione sportiva",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Giorgio",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 10 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Elena",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi con il titolo di maestro internazionale",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Roberto",
+            "lastname": "Rosa",
+            "gender": "M",
+            "presentation": "Coach di vita e appassionato di fitness",
+            "skills": [21, 22]
+          },
+          {
+            "name": "Francesca",
+            "lastname": "Giallo",
+            "gender": "F",
+            "presentation": "Maestra di cucina e appassionata di fotografia",
+            "skills": [23, 24]
+          },
+          {
+            "name": "Federico",
+            "lastname": "Turchese",
+            "gender": "M",
+            "presentation": "Fisioterapista e psicologo",
+            "skills": [25, 26]
+          },
+          {
+            "name": "Veronica",
+            "lastname": "Verde",
+            "gender": "F",
+            "presentation": "Dietologa e medico generale",
+            "skills": [27, 28]
+          },
+          {
+            "name": "Alberto",
+            "lastname": "Blu",
+            "gender": "M",
+            "presentation": "Allenatore di calcio e appassionato di discipline olimpiche",
+            "skills": [29, 30]
+          },
+          {
+            "name": "Isabella",
+            "lastname": "Indaco",
+            "gender": "F",
+            "presentation": "Maestra di scacchi e appassionata di sport invernali",
+            "skills": [31, 32]
+          },
+          {
+            "name": "Emanuele",
+            "lastname": "Violetto",
+            "gender": "M",
+            "presentation": "Appassionato di vari hobby",
+            "skills": [33]
+          },
+          {
+            "name": "Giulia",
+            "lastname": "Marrone chiaro",
+            "gender": "F",
+            "presentation": "Esperta di sviluppo videogiochi e blockchain",
+            "skills": [18, 20]
+          },
+          {
+            "name": "Matteo",
+            "lastname": "Grigio chiaro",
+            "gender": "M",
+            "presentation": "Sviluppatore web e appassionato di videogiochi",
+            "skills": [17, 1]
+          },
+          {
+            "name": "Marco",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Esperto di medicina generale con anni di esperienza",
+            "skills": [28]
+          },
+          {
+            "name": "Linda",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Psicologa e psicoterapeuta con una grande passione per il supporto emotivo",
+            "skills": [26]
+          },
+          {
+            "name": "Giovanni",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Esperto di dietologia con una grande passione per la nutrizione",
+            "skills": [27]
+          },
+          {
+            "name": "Roberta",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di grafica e design con una grande passione per il branding",
+            "skills": [3, 2]
+          },
+          {
+            "name": "Stefano",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di social media e web analytics",
+            "skills": [3, 6]
+          },
+          {
+            "name": "Laura",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di moda e accessori con un occhio per le ultime tendenze",
+            "skills": [4]
+          },
+          {
+            "name": "Alessio",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Giocatore professionista di videogiochi con una grande passione per il gaming",
+            "skills": [1]
+          },
+          {
+            "name": "Irene",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di produzione audiolibri con anni di esperienza",
+            "skills": [16]
+          },
+          {
+            "name": "Massimo",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Esperto di sicurezza informatica con una grande passione per la tecnologia",
+            "skills": [19]
+          },
+          {
+            "name": "Pietro",
+            "lastname": "Verde chiaro",
+            "gender": "M",
+            "presentation": "Specializzato in pubbliche relazioni e marketing",
+            "skills": [5, 6]
+          },
+          {
+            "name": "Silvia",
+            "lastname": "Bianco sporco",
+            "gender": "F",
+            "presentation": "Scrittrice creativa e traduttrice",
+            "skills": [11, 10]
+          },
+          {
+            "name": "Giorgio",
+            "lastname": "Grigio scuro",
+            "gender": "M",
+            "presentation": "Compositore e produttore musicale",
+            "skills": [13, 14]
+          },
+          {
+            "name": "Paola",
+            "lastname": "Nero",
+            "gender": "F",
+            "presentation": "Cantante e produttrice di audiolibri",
+            "skills": [14, 16]
+          },
+          {
+            "name": "Antonio",
+            "lastname": "Marrone scuro",
+            "gender": "M",
+            "presentation": "Sviluppatore web e appassionato di sicurezza informatica",
+            "skills": [17, 19]
+          },
+          {
+            "name": "Daniela",
+            "lastname": "Arancione scuro",
+            "gender": "F",
+            "presentation": "Coach di vita e appassionata di fitness",
+            "skills": [21, 22]
+          },
+          {
+            "name": "Lorenzo",
+            "lastname": "Giallo scuro",
+            "gender": "M",
+            "presentation": "Maestro di cucina e appassionato di fotografia",
+            "skills": [23, 24]
+          },
+          {
+            "name": "Melissa",
+            "lastname": "Verde scuro",
+            "gender": "F",
+            "presentation": "Fisioterapista e psicologa",
+            "skills": [25, 26]
+          },
+          {
+            "name": "Marco",
+            "lastname": "Blu scuro",
+            "gender": "M",
+            "presentation": "Dietologo e medico generale",
+            "skills": [27, 28]
+          },
+          {
+            "name": "Paolo",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista con una medaglia d'oro alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Martina",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga certificata con 5 anni di esperienza",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Umberto",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico con una specializzazione in terapia cognitivo-comportamentale",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Simona",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista con una specializzazione in riabilitazione sportiva",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Lorenzo",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 10 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Roberta",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi con il titolo di maestro internazionale",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Matteo",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista con una medaglia d'oro alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Stefania",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga certificata con 5 anni di esperienza",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Giorgia",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di fotografia con un occhio per i dettagli",
+            "skills": [24]
+          },
+          {
+            "name": "Umberto",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di sviluppo di videogiochi con anni di esperienza",
+            "skills": [18]
+          },
+          {
+            "name": "Silvia",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di marketing e pubbliche relazioni",
+            "skills": [6, 5]
+          },
+          {
+            "name": "Carlo",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Esperto di blockchain e criptovalute",
+            "skills": [20]
+          },
+          {
+            "name": "Daniela",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di sviluppo di siti web con anni di esperienza",
+            "skills": [17]
+          },
+          {
+            "name": "Piero",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Esperto di sicurezza informatica con una grande passione per la tecnologia",
+            "skills": [19]
+          },
+          {
+            "name": "Sara",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di moda e accessori con un occhio per le ultime tendenze",
+            "skills": [4]
+          },
+          {
+            "name": "Enrico",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Giocatore professionista di videogiochi con una grande passione per il gaming",
+            "skills": [1]
+          },
+          {
+            "name": "Francesca",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di produzione audiolibri con anni di esperienza",
+            "skills": [16]
+          },
+          {
+            "name": "Tiziano",
+            "lastname": "Indaco scuro",
+            "gender": "M",
+            "presentation": "Allenatore di calcio e appassionato di discipline olimpiche",
+            "skills": [29, 30]
+          },
+          {
+            "name": "Serena",
+            "lastname": "Violetto scuro",
+            "gender": "F",
+            "presentation": "Maestra di scacchi e appassionata di sport invernali",
+            "skills": [31, 32]
+          },
+          {
+            "name": "Gianluca",
+            "lastname": "Marrone",
+            "gender": "M",
+            "presentation": "Appassionato di vari hobby",
+            "skills": [33]
+          },
+          {
+            "name": "Roberta",
+            "lastname": "Rosa",
+            "gender": "F",
+            "presentation": "Esperta di sviluppo videogiochi e blockchain",
+            "skills": [18, 20]
+          },
+          {
+            "name": "Giacomo",
+            "lastname": "Verde",
+            "gender": "M",
+            "presentation": "Sviluppatore web e appassionato di videogiochi",
+            "skills": [17, 1]
+          },
+          {
+            "name": "Annalisa",
+            "lastname": "Blu",
+            "gender": "F",
+            "presentation": "Specializzata in pubbliche relazioni e marketing",
+            "skills": [5, 8]
+          },
+          {
+            "name": "Thomas",
+            "lastname": "Grigio",
+            "gender": "M",
+            "presentation": "Scrittore creativo e traduttore",
+            "skills": [11, 10]
+          },
+          {
+            "name": "Marta",
+            "lastname": "Nero",
+            "gender": "F",
+            "presentation": "Compositrice e produttrice musicale",
+            "skills": [13, 14]
+          },
+          {
+            "name": "Alessandro",
+            "lastname": "Marrone scuro",
+            "gender": "M",
+            "presentation": "Cantante e produttore di audiolibri",
+            "skills": [14, 16]
+          },
+          {
+            "name": "Grazia",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista con una specializzazione in riabilitazione sportiva",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Carlo",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 10 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Monica",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi con il titolo di maestro internazionale",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Alessio",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista con una medaglia d'oro alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Sara",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga certificata con 5 anni di esperienza",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Giovanni",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico con una specializzazione in terapia cognitivo-comportamentale",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Irene",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista con una specializzazione in riabilitazione sportiva",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Vittorio",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 10 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Alessandra",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di psicologia e psicoterapia con una grande passione per il supporto emotivo",
+            "skills": [26]
+          },
+          {
+            "name": "Antonio",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di dietologia con una grande passione per la nutrizione",
+            "skills": [27]
+          },
+          {
+            "name": "Elena",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di grafica e design con una grande passione per il branding",
+            "skills": [3, 2]
+          },
+          {
+            "name": "Giorgio",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Esperto di social media e web analytics",
+            "skills": [3, 6]
+          },
+          {
+            "name": "Isabella",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di moda e accessori con un occhio per le ultime tendenze",
+            "skills": [4]
+          },
+          {
+            "name": "Luigi",
+            "lastname": "Rossi",
+            "gender": "M",
+            "presentation": "Giocatore professionista di videogiochi con una grande passione per il gaming",
+            "skills": [1]
+          },
+          {
+            "name": "Martina",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di produzione audiolibri con anni di esperienza",
+            "skills": [16]
+          },
+          {
+            "name": "Nicola",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di sicurezza informatica con una grande passione per la tecnologia",
+            "skills": [19]
+          },
+          {
+            "name": "Paola",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di marketing e pubbliche relazioni",
+            "skills": [8, 5]
+          },
+          {
+            "name": "Vittorio",
+            "lastname": "Grigio chiaro",
+            "gender": "M",
+            "presentation": "Sviluppatore web e appassionato di sicurezza informatica",
+            "skills": [17, 19]
+          },
+          {
+            "name": "Federica",
+            "lastname": "Arancione",
+            "gender": "F",
+            "presentation": "Coach di vita e appassionata di fitness",
+            "skills": [21, 22]
+          },
+          {
+            "name": "Carlo",
+            "lastname": "Giallo",
+            "gender": "M",
+            "presentation": "Maestro di cucina e appassionato di fotografia",
+            "skills": [23, 24]
+          },
+          {
+            "name": "Valentina",
+            "lastname": "Verde chiaro",
+            "gender": "F",
+            "presentation": "Fisioterapista e psicologa",
+            "skills": [25, 26]
+          },
+          {
+            "name": "Graziano",
+            "lastname": "Blu chiaro",
+            "gender": "M",
+            "presentation": "Dietologo e medico generale",
+            "skills": [27, 28]
+          },
+          {
+            "name": "Elisabetta",
+            "lastname": "Indaco chiaro",
+            "gender": "F",
+            "presentation": "Allenatrice di calcio e appassionata di discipline olimpiche",
+            "skills": [29, 30]
+          },
+          {
+            "name": "Silvia",
+            "lastname": " Giordano",
+            "gender": "F",
+            "presentation": "Sciatrice professionista con una medaglia d'argento alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Giorgio",
+            "lastname": " Marino",
+            "gender": "M",
+            "presentation": "Insegnante di yoga certificato con 3 anni di esperienza",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Mario",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico con una specializzazione in terapia della famiglia",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Lara",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista con una specializzazione in riabilitazione post-operatoria",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Enrico",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 8 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Serena",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi con il titolo di maestro nazionale",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Roberto",
+            "lastname": "Bianchi",
+            "gender": "M",
+            "presentation": "Esperto di blockchain e criptovalute",
+            "skills": [20]
+          },
+          {
+            "name": "Sandra",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di sviluppo di siti web con anni di esperienza",
+            "skills": [17]
+          },
+          {
+            "name": "Tiziano",
+            "lastname": "Neri",
+            "gender": "M",
+            "presentation": "Esperto di sicurezza informatica con una grande passione per la tecnologia",
+            "skills": [19]
+          },
+          {
+            "name": "Valentina",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di moda e accessori con un occhio per le ultime tendenze",
+            "skills": [4]
+          },
+          {
+            "name": "Walter",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Giocatore professionista di videogiochi con una grande passione per il gaming",
+            "skills": [1]
+          },
+          {
+            "name": "Xena",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di produzione audiolibri con anni di esperienza",
+            "skills": [16]
+          },
+          {
+            "name": "Sofia",
+            "lastname": "Marrone chiaro",
+            "gender": "F",
+            "presentation": "Appassionata di vari hobby",
+            "skills": [33]
+          },
+          {
+            "name": "Leonardo",
+            "lastname": "Rosa chiaro",
+            "gender": "M",
+            "presentation": "Esperto di sviluppo videogiochi e blockchain",
+            "skills": [18, 20]
+          },
+          {
+            "name": "Chiara",
+            "lastname": "Grigio scuro",
+            "gender": "F",
+            "presentation": "Sviluppatrice web e appassionata di videogiochi",
+            "skills": [17, 1]
+          },
+          {
+            "name": "Stefano",
+            "lastname": "Nero",
+            "gender": "M",
+            "presentation": "Specializzato in pubbliche relazioni e marketing",
+            "skills": [5, 8]
+          },
+          {
+            "name": "Caterina",
+            "lastname": "Bianco",
+            "gender": "F",
+            "presentation": "Scrittrice creativa e traduttrice",
+            "skills": [11, 10]
+          },
+          {
+            "name": "Maurizio",
+            "lastname": "Arancione",
+            "gender": "M",
+            "presentation": "Compositore e produttore musicale",
+            "skills": [13, 14]
+          },
+          {
+            "name": "Erika",
+            "lastname": "Giallo",
+            "gender": "F",
+            "presentation": "Cantante e produttrice di audiolibri",
+            "skills": [14, 16]
+          },
+          {
+            "name": "Mario",
+            "lastname": "Verde",
+            "gender": "M",
+            "presentation": "Sviluppatore web e appassionato di sicurezza informatica",
+            "skills": [17, 19]
+          },
+          {
+            "name": "Angela",
+            "lastname": "Blu",
+            "gender": "F",
+            "presentation": "Coach di vita e appassionata di fitness",
+            "skills": [21, 22]
+          },
+          {
+            "name": "Zara",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di psicologia e psicoterapia con una grande passione per il supporto emotivo",
+            "skills": [26]
+          },
+          {
+            "name": "Alessio",
+            "lastname": "Neri",
+            "gender": "M",
+            "presentation": "Esperto di dietologia con una grande passione per la nutrizione",
+            "skills": [27]
+          },
+          {
+            "name": "Bianca",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di grafica e design con una grande passione per il branding",
+            "skills": [3, 2]
+          },
+          {
+            "name": "Carlotta",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di social media e web analytics",
+            "skills": [3, 6]
+          },
+          {
+            "name": "Daniele",
+            "lastname": "Neri",
+            "gender": "M",
+            "presentation": "Esperto di moda e accessori con un occhio per le ultime tendenze",
+            "skills": [4]
+          },
+          {
+            "name": "Eleonora",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Giocatrice professionista di videogiochi con una grande passione per il gaming",
+            "skills": [1]
+          },
+          {
+            "name": "Francesco",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di produzione audiolibri con anni di esperienza",
+            "skills": [16]
+          },
+          {
+            "name": "Ginevra",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di sicurezza informatica con una grande passione per la tecnologia",
+            "skills": [19]
+          },
+          {
+            "name": "Angela",
+            "lastname": " Giordano",
+            "gender": "F",
+            "presentation": "Sciatrice professionista con una medaglia d'argento alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Roberto",
+            "lastname": " Marino",
+            "gender": "M",
+            "presentation": "Insegnante di yoga certificato con 3 anni di esperienza",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Luca",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico con una specializzazione in terapia della famiglia",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Maria",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista con una specializzazione in riabilitazione post-operatoria",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Gianni",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 8 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Annalisa",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi con il titolo di maestro nazionale",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Marco",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista con una medaglia di bronzo alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Alessandra",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga certificata con 2 anni di esperienza",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Irene",
+            "lastname": "Verde chiaro",
+            "gender": "F",
+            "presentation": "Esperta di grafica e design",
+            "skills": [3]
+          },
+          {
+            "name": "Massimo",
+            "lastname": "Bianco sporco",
+            "gender": "M",
+            "presentation": "Specializzato in e-commerce e web analytics",
+            "skills": [7, 6]
+          },
+          {
+            "name": "Laura",
+            "lastname": "Grigio scuro",
+            "gender": "F",
+            "presentation": "Scrittrice di blog post e case study",
+            "skills": [9, 12]
+          },
+          {
+            "name": "Riccardo",
+            "lastname": "Nero",
+            "gender": "M",
+            "presentation": "DJ e produttore di audiolibri",
+            "skills": [15, 16]
+          },
+          {
+            "name": "Roberto",
+            "lastname": "Marrone scuro",
+            "gender": "M",
+            "presentation": "Sviluppatore di videogiochi e appassionato di criptovalute",
+            "skills": [18, 20]
+          },
+          {
+            "name": "Barbara",
+            "lastname": "Arancione scuro",
+            "gender": "F",
+            "presentation": "Maestra di cucina e appassionata di fotografia",
+            "skills": [23, 24]
+          },
+          {
+            "name": "Alessio",
+            "lastname": "Giallo scuro",
+            "gender": "M",
+            "presentation": "Fisioterapista e psicologo",
+            "skills": [25, 26]
+          },
+          {
+            "name": "Cristina",
+            "lastname": "Verde scuro",
+            "gender": "F",
+            "presentation": "Dietologa e medica generale",
+            "skills": [27, 28]
+          },
+          {
+            "name": "Umberto",
+            "lastname": "Blu scuro",
+            "gender": "M",
+            "presentation": "Allenatore di calcio e appassionato di discipline olimpiche",
+            "skills": [29, 30]
+          },
+          {
+            "name": "Irene",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di blockchain e criptovalute",
+            "skills": [20]
+          },
+          {
+            "name": "Juan",
+            "lastname": "Neri",
+            "gender": "M",
+            "presentation": "Esperto di sviluppo di siti web con anni di esperienza",
+            "skills": [17]
+          },
+          {
+            "name": "Karen",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di sicurezza informatica con una grande passione per la tecnologia",
+            "skills": [19]
+          },
+          {
+            "name": "Laura",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di moda e accessori con un occhio per le ultime tendenze",
+            "skills": [4]
+          },
+          {
+            "name": "Mario",
+            "lastname": "Neri",
+            "gender": "M",
+            "presentation": "Giocatore professionista di videogiochi con una grande passione per il gaming",
+            "skills": [1]
+          },
+          {
+            "name": "Nina",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di produzione audiolibri con anni di esperienza",
+            "skills": [16]
+          },
+          {
+            "name": "Olivia",
+            "lastname": "Verdi",
+            "gender": "F",
+            "presentation": "Esperta di psicologia e psicoterapia con una grande passione per il supporto emotivo",
+            "skills": [26]
+          },
+          {
+            "name": "Pietro",
+            "lastname": "Neri",
+            "gender": "M",
+            "presentation": "Esperto di dietologia con una grande passione per la nutrizione",
+            "skills": [27]
+          },
+          {
+            "name": "Laura",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista con una specializzazione in riabilitazione pediatrica",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Enzo",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 6 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Rita",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi con il titolo di maestro regionale",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Massimo",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista con una medaglia di bronzo alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Sandra",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga certificata con 2 anni di esperienza",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Alessio",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico con una specializzazione in terapia della coppia",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Mirella",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista con una specializzazione in riabilitazione pediatrica",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Pietro",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 6 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Francesco",
+            "lastname": "Marrone chiaro",
+            "gender": "M",
+            "presentation": "Maestro di scacchi e appassionato di sport invernali",
+            "skills": [31, 32]
+          },
+          {
+            "name": "Lorenzo",
+            "lastname": "Grigio chiaro",
+            "gender": "M",
+            "presentation": "Appassionato di vari hobby",
+            "skills": [33]
+          },
+          {
+            "name": "Monica",
+            "lastname": "Rosa chiaro",
+            "gender": "F",
+            "presentation": "Esperta di sviluppo videogiochi e blockchain",
+            "skills": [18, 20]
+          },
+          {
+            "name": "Giorgia",
+            "lastname": "Verde chiaro",
+            "gender": "F",
+            "presentation": "Sviluppatrice web e appassionata di videogiochi",
+            "skills": [17, 1]
+          },
+          {
+            "name": "Pietro",
+            "lastname": "Blu",
+            "gender": "M",
+            "presentation": "Specializzato in pubbliche relazioni e marketing",
+            "skills": [5, 8]
+          },
+          {
+            "name": "Ida",
+            "lastname": "Bianco",
+            "gender": "F",
+            "presentation": "Scrittrice creativa e traduttrice",
+            "skills": [11, 10]
+          },
+          {
+            "name": "Matteo",
+            "lastname": "Arancione",
+            "gender": "M",
+            "presentation": "Compositore e produttore musicale",
+            "skills": [13, 14]
+          },
+          {
+            "name": "Sara",
+            "lastname": "Giallo",
+            "gender": "F",
+            "presentation": "Cantante e produttrice di audiolibri",
+            "skills": [14, 16]
+          },
+          {
+            "name": "Giovanni",
+            "lastname": "Verde",
+            "gender": "M",
+            "presentation": "Sviluppatore web e appassionato di sicurezza informatica",
+            "skills": [17, 19]
+          },
+          {
+            "name": "Chiara",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi con il titolo di maestro regionale",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Antonio",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista con una medaglia di bronzo alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Francesca",
+            "lastname": " Marino",
+            "gender": "F",
+            "presentation": "Insegnante di yoga certificata con 2 anni di esperienza",
+            "skills": [
+              22
+            ]
+          },
+          {
+            "name": "Mario",
+            "lastname": " Moretti",
+            "gender": "M",
+            "presentation": "Psicologo clinico con una specializzazione in terapia della coppia",
+            "skills": [
+              26
+            ]
+          },
+          {
+            "name": "Martina",
+            "lastname": " Gallo",
+            "gender": "F",
+            "presentation": "Fisioterapista con una specializzazione in riabilitazione geriatrica",
+            "skills": [
+              25
+            ]
+          },
+          {
+            "name": "Piero",
+            "lastname": " Ricci",
+            "gender": "M",
+            "presentation": "Allenatore di pallacanestro con 4 anni di esperienza",
+            "skills": [
+              29
+            ]
+          },
+          {
+            "name": "Emanuela",
+            "lastname": " Romano",
+            "gender": "F",
+            "presentation": "Maestra di scacchi con il titolo di maestro regionale",
+            "skills": [
+              31
+            ]
+          },
+          {
+            "name": "Giovanni",
+            "lastname": " Giordano",
+            "gender": "M",
+            "presentation": "Sciatore professionista con una medaglia di bronzo alle Olimpiadi",
+            "skills": [
+              32
+            ]
+          },
+          {
+            "name": "Rocco",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di social media e web analytics",
+            "skills": [3, 6]
+          },
+          {
+            "name": "Sara",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di moda e accessori con un occhio per le ultime tendenze",
+            "skills": [4]
+          },
+          {
+            "name": "Tina",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Giocatrice professionista di videogiochi con una grande passione per il gaming",
+            "skills": [1]
+          },
+          {
+            "name": "Umberto",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di produzione audiolibri con anni di esperienza",
+            "skills": [16]
+          },
+          {
+            "name": "Viola",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di sicurezza informatica con una grande passione per la tecnologia",
+            "skills": [19]
+          },
+          {
+            "name": "Wanda",
+            "lastname": "Bianchi",
+            "gender": "F",
+            "presentation": "Esperta di marketing e pubbliche relazioni",
+            "skills": [8, 5]
+          },
+          {
+            "name": "Xavier",
+            "lastname": "Verdi",
+            "gender": "M",
+            "presentation": "Esperto di blockchain e criptovalute",
+            "skills": [20]
+          },
+          {
+            "name": "Yara",
+            "lastname": "Neri",
+            "gender": "F",
+            "presentation": "Esperta di sviluppo di siti web con anni di esperienza",
+            "skills": [17]
+          }
+
+
+
+    ]
+}
