@@ -23,9 +23,9 @@
                 <button class="btn btn-primary mt-5">Unisciti a loro</button>
             </div>
         </div>
-        <div class="flex items-center justify-center absolute bottom-0 left-10 right-10"> 
-           <div v-for="(information,index) in information" :key="index" class="bg-black opacity-10 ">
-            <p class="px-10 text-white text-4xl pt-2">{{ information.info }}</p>
+        <div class="flex items-center justify-center absolute bottom-0 left-10 right-10 opacity-40"> 
+           <div v-for="(information,index) in information" :key="index" class="bg-black">
+            <p class="px-10 text-white text-4xl pt-2 hover:opacity-100">{{ information.info }}</p>
             <p class="px-10 text-white text-8xl pb-5">{{ information.numericInfo }}</p>
            </div>           
         </div>
@@ -169,6 +169,7 @@
         <button class="btn btn-primary m-3 mt-20">Registrati</button>
      </div>
     </section>
+    
   </main>
 </template>  
 
@@ -193,6 +194,28 @@ export default {
                 numericInfo:"7777k",
             },
         ],
+        freelancers:[
+            {
+                freelancer:"Eli Golam",
+                profession:"Full-Stack Developer",
+            },
+            {
+                freelancer:"Hugo",
+                profession:"Back-End Developer",
+            },
+            {
+                freelancer:"Francesco Gentile",
+                profession:"Full-Stack Developer",
+            },
+            {
+                freelancer:"Valerio",
+                profession:"Full-Stack Developer",
+            },
+            {
+                freelancer:"Carmelo",
+                profession:"Front-End Developer",
+            },
+        ],  
         faqs:[
             {
                 question:"Question1",
@@ -245,28 +268,7 @@ export default {
                 profession:"Student",
             },            
         ],
-        freelancers:[
-            {
-                freelancer:"Eli Golam",
-                profession:"Full-Stack Developer",
-            },
-            {
-                freelancer:"Hugo",
-                profession:"Back-End Developer",
-            },
-            {
-                freelancer:"Francesco Gentile",
-                profession:"Full-Stack Developer",
-            },
-            {
-                freelancer:"Valerio",
-                profession:"Full-Stack Developer",
-            },
-            {
-                freelancer:"Carmelo",
-                profession:"Front-End Developer",
-            },
-        ],       
+            
     }),
 
 mounted() {
