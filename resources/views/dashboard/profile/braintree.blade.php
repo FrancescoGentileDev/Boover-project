@@ -2,7 +2,6 @@
 
 @section('head')
     {{-- Braintree DropIn Gateway JS --}}
-    <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
 @endsection
 
 @section('content')
@@ -20,7 +19,7 @@
                 dando la possibilità ai recruiter di visualizzare il tuo profilo più spesso e quindi ottenere
                 maggiori proposte di lavoro.</p>
         </article>
-
+        {{ $selectedCard = false }}
         {{-- FORM --}}
         <form method="POST" id="payment-form" action="{{ route('dashboard.sponsor.checkout') }}"
             class="
@@ -57,37 +56,65 @@
             </section>
 
             <input id="nonce" name="payment_method_nonce" type="hidden" value="" />
-            <button class="button btn btn-primary mt-4" type="submit">Effettua Sponsorizzazione</button>
+            <div id="selectCard" class="btn btn-primary my-3" style="display:none"> SELEZIONA CARTA </div>
+            <button id="formSubmitButton" class="btn btn-primary my-3 hidden" hidden type="submit">PAGA</button>
+
         </form>
     </section>
 
+
+
+
+    <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
     <script>
         var form = document.querySelector('#payment-form');
         var client_token = "{{ $clientToken }}";
-
+        const button = document.getElementById('formSubmitButton');
+        const selectCard = document.getElementById('selectCard');
+        // import braintree from 'braintree-web-drop-in';
         braintree.dropin.create({
             authorization: client_token,
-            selector: '#bt-dropin',
+            container: '#bt-dropin',
             paypal: {
                 flow: 'vault'
             },
-        }, function(createErr, instance) {
+        }, (createErr, instance) => {
             if (createErr) {
                 console.log('Create Error', createErr);
                 return;
             }
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-                instance.requestPaymentMethod(function(err, payload) {
+
+            instance.on('paymentMethodRequestable', (obj) => {
+
+                if (obj.paymentMethodIsSelected) {
+                    selectCard.style.display = 'none';
+                    button.style.display = 'inline-flex';
+                } else {
+                    selectCard.style.display = 'inline-flex';
+                    button.style.display = 'none';
+                }
+
+            })
+            document.getElementById('selectCard').addEventListener('click', () => {
+                instance.requestPaymentMethod((err, payload) => {
                     if (err) {
                         console.log('Request Payment Method Error', err);
                         return;
                     }
-                    // Add the nonce to the form and submit
-                    document.querySelector('#nonce').value = payload.nonce;
-                    form.submit();
+                    button.style.display = 'inline-flex';
+                    selectCard.style.display = 'none';
+                    console.log('ciao')
+                    form.addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        document.querySelector('#nonce').value = payload.nonce;
+                        form.submit();
+                        button.setAttribute('disabled', "");
+                        button.innerHTML = 'Pagamento in corso...';
+                    });
                 });
-            });
+            })
+
+
         });
     </script>
 @endsection
