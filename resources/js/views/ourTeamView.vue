@@ -1,15 +1,7 @@
 <template>
   <main>
-    <section class="jumbo"> 
-                        
-     <div>                                    
-        <div class=""> 
-           <div v-for="(information,index) in information" :key="index"></div>
-           <p>{{ information.info }}</p>
-           
-        </div>
-    </div>
-    <header>
+    <section>                         
+     
                                        <!--TEMPLATE-->
 
     <div class="w-full bg-center bg-cover h-[38rem] relative " style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');">
@@ -27,7 +19,7 @@
            </div>           
         </div>
     </div>
-</header>
+</div>
     </section>    
    
     
