@@ -107,14 +107,6 @@
        </div>
     </div>
 </section>
-
-
-
-
-
-
-
-
                                                                        <!--Q&A-->
     <section class="qa bg-base-200 py-5 ">
         <div class="text-center">
@@ -149,10 +141,6 @@
 </template>  
 
 <script>
-
-
-
-
 export default {
     data: () => ({
         information:[
