@@ -18,7 +18,7 @@
     </section>    
                                                   <!--TEAM-->
 
-    <section class="bg-white mt-60">
+    <section class="bg-white mt-40">
     <div class="container px-6 py-10 mx-auto">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">Conosci i nostri migliori <span class="text-secondary">Professionisti</span></h1>
 
