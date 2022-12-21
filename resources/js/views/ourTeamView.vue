@@ -16,10 +16,6 @@
         </div>
       </div>
     </section>    
-   
-    
-
-
                                                   <!--TEAM-->
 
     <section class="bg-white mt-60">
@@ -27,8 +23,8 @@
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">Conosci i nostri migliori <span class="text-secondary">Professionisti</span></h1>
 
         <p class="max-w-2xl mx-auto my-6 text-center text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias, adipisci rem similique, at omnis eligendi optio eos harum.
-        </p>
+            Pieni di passione ed energia, i nostri professionisti sanno che ciò che fanno e che il loro lavoro ha un impatto sulla vita quotidiana delle persone.
+            </p>
                                                 
       
                                                                            <!--TEAM GRID-->
