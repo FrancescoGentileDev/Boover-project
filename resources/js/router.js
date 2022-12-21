@@ -8,7 +8,8 @@ const router = new VueRouter({
     routes: [
         {
             path: "/",
-            alias: "/home",
+            alias: ["/home", "/skill"],
+
             name: "home",
             component: () => import("./views/homeView.vue"),
         },
@@ -28,7 +29,7 @@ const router = new VueRouter({
           component: () => import('./views/searchView.vue'),
       },
       {
-        path: "/skill/:id",
+        path: "/skill/:slug",
         name: 'skill',
         component: () => import('./views/skillView.vue')
         },
@@ -36,6 +37,12 @@ const router = new VueRouter({
           path: "/allusers",
           name: "allusers",
           component: () => import('./views/AllUsersView.vue'),
+        },
+        {
+            path: "/*",
+            name: 'notFound',
+            component: () => import('./views/notFoundView.vue')
+
         }
     ],
 });

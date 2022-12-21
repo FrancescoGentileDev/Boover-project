@@ -32,11 +32,17 @@ export default {
             default: () => [],
         },
     },
+    watch: {
+        $route(to, from) {
+            window.scrollTo(0, 0);
+        }
+    },
     mounted() {
         console.log(this.$parent.$refs.navbar);
         this.$parent.$refs.navbar.toggleShowOnZero(false);
         this.$parent.$refs.navbar.toggleCategoriesOnZero(false);
-        this.$parent.paddingHandling(false,1000);
+        this.$parent.paddingHandling(false);
+        window.scrollTo(0, 0);
     },
     beforeDestroy() {
         this.$parent.$refs.navbar.toggleShowOnZero(true);

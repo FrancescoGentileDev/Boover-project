@@ -22,17 +22,33 @@ class UserController extends Controller
     {
         $users = User::query()
             ->leftJoin('sponsor_user', 'users.id', '=', 'sponsor_user.user_id')
-            ->select('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date')
+            ->leftJoin(DB::raw('(SELECT user_id, AVG(vote) as avg_vote FROM reviews GROUP BY user_id) as rv1'), 'users.id', '=', 'rv1.user_id')
+            ->select('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote')
             ->addSelect(DB::raw('IF(sponsor_user.expire_date > NOW(), 1, 0) as is_sponsorized'))
+            ->groupBy('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote', 'is_sponsorized')
             ->orderBy('is_sponsorized', 'desc');
 
+        if ($request->has('rating_min')) {
+            $users->whereHas('reviews', function ($query) use ($request) {
+
+                $query->select(DB::raw('AVG(vote) as avg_vote'))
+                    ->having('avg_vote', '>=', $request->rating_min);
+            });
+        }
+        if ($request->has('rating_max')) {
+            $users->whereHas('reviews', function ($query) use ($request) {
+
+                $query->select(DB::raw('AVG(vote) as avg_vote'))
+                    ->having('avg_vote', '<=', $request->rating_max);
+            });
+        }
         $search = explode('-', $request->search);
         if ($request->has('search')) {
             foreach ($search as $param) {
                 $users->whereRaw("concat(name, ' ', lastname) like '%" . $param . "%' ");
-            };
+            }
         }
-        if ($request->has('only_sponsor')) {
+        if ($request->has('only_sponsor') && $request->only_sponsor == 'true') {
             $users->where('sponsor_user.expire_date', '>', now());
         }
         if ($request->has('category')) {
@@ -51,7 +67,17 @@ class UserController extends Controller
             $paginate = $request->max;
         }
 
+        $users->leftJoin(DB::raw('(SELECT user_id, AVG(vote) as avg_vote FROM reviews GROUP BY user_id) as rv'), 'users.id', '=', 'rv.user_id');
+
+
+
+
         $users->withCount('reviews');
+        if ($request->has('most_reviewed') && $request->most_reviewed == 'true') {
+            $users->orderByDesc('reviews_count');
+        } else {
+            $users->orderBy('rv1.avg_vote', 'desc');
+        }
 
         //TODO PRIMA I PROFILI SPONSOR
 
@@ -74,7 +100,7 @@ class UserController extends Controller
             $user->user_id = $user->id;
         }
 
-        return response($users);
+        return response()->json($users);
     }
 
     /**
@@ -86,11 +112,9 @@ class UserController extends Controller
     public function show($id, Request $request)
     {
         $user = 0;
-        if($request->has('slug')) {
+        if ($request->has('slug')) {
             $user = User::where('slug', $id)->first();
-        }
-        else
-        {
+        } else {
             $user = User::find($id);
         }
 

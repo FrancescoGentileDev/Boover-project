@@ -28,14 +28,14 @@
 
         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-around">
             <div>
-                <p class="text-sm text-gray-700 leading-5">
-                    {!! __('Showing') !!}
+                <p class="text-sm base-100 leading-5">
+                    {!! __('Mostrando da') !!}
                     <span class="font-medium">{{ $paginator->firstItem() }}</span>
-                    {!! __('to') !!}
+                    {!! __('a') !!}
                     <span class="font-medium">{{ $paginator->lastItem() }}</span>
-                    {!! __('of') !!}
+                    {!! __('di') !!}
                     <span class="font-medium">{{ $paginator->total() }}</span>
-                    {!! __('results') !!}
+                    {!! __('risultati') !!}
                 </p>
             </div>
 

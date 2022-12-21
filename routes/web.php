@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\ThemeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -19,7 +20,7 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 
     Route::get('/', 'DashboardController@index')->name('home');
 
-    Route::get('reviews', 'ReviewController@index')->name('reviews');
+    Route::resource('reviews', 'ReviewController')->except(['create', 'update', 'store', 'edit', 'delete']);
 
     Route::resource('inboxes', 'InboxController')->except(['update', 'edit', 'create', 'store']);
 
@@ -31,13 +32,18 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 
     Route::get('stats', 'StatisticsController@index')->name('stats');
 
+    Route::get('settings', 'SettingsController@index')->name('settings');
+
+    Route::any('/payment', 'BraintreeController@token')->name('sponsor.payment');
+    Route::any('/checkout', 'BraintreeController@checkout')->name('sponsor.checkout');
+
+    Route::post('themeSwitch', 'ThemeController@switch')->name('themeSwitch');
+
     Route::any('{catchall}', function () {
         return redirect()->back();
     })->where('catchall', '.*');
-
 });
 
 Route::get('{any?}', function () {
     return view('guest.home');
 })->where('any', '.*');
-

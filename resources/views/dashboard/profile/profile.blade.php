@@ -6,7 +6,6 @@
 @endsection
 
 @section('content')
-
     {{-- MODAL ALLERT --}}
     @if (Request::get('newUser') || Auth::user()->is_available == 0)
         <div class="relative flex justify-center">
@@ -24,11 +23,11 @@
                             </div>
 
                             <div class="mt-2 text-center">
-                                <h3 class="text-lg font-medium leading-6 capitalize text-base-content"
-                                    id="modal-title">Warning</h3>
+                                <h3 class="text-lg font-medium leading-6 capitalize text-base-content" id="modal-title">
+                                    Warning</h3>
                                 <p class="mt-2 text-md text-base-content">
-                                    If you do not complete this form, your account will remain invisible in the search, if
-                                    you want to be found enter all the data and save
+                                    Se non completi questo form, il tuo account resterà non visibile nelle ricerche! Se vuoi
+                                    essere trovato, inserisci tutti i dati e salva!
                                 </p>
                             </div>
                         </div>
@@ -39,7 +38,7 @@
 
                                 <button onclick="document.getElementById('modalNewUser').hidden = true"
                                     class="w-full text-base-content px-4 py-2 mt-2 text-sm font-medium tracking-wide capitalize transition-colors duration-300 transform bg-yellow-600 rounded-md sm:w-auto sm:mt-0 hover:bg-yellow-500 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-40">
-                                    I read and acknowledged
+                                    Ho letto e compreso
                                 </button>
                             </div>
                         </div>
@@ -62,8 +61,8 @@
 
             <div class="px-4 py-2 -mx-3">
                 <div class="mx-3">
-                    <span class="font-semibold text-emerald-500 dark:text-emerald-400">Success</span>
-                    <p class="text-sm text-gray-600 dark:text-gray-200">Your account was updated!</p>
+                    <span class="font-semibold text-emerald-500 dark:text-emerald-400">Ottimo!</span>
+                    <p class="text-sm text-gray-600 dark:text-gray-200">Il tuo account è stato aggiornato!</p>
                 </div>
             </div>
         </div>
@@ -82,7 +81,7 @@
                 <div class="mx-3">
                     <span class="font-semibold text-red-500 dark:text-red-400">Error</span>
                     <p class="text-sm text-gray-600 dark:text-gray-200">
-                        There were some problems with your input.
+                        Ci sono degli errori nei tuoi input.
                     </p>
                 </div>
             </div>
@@ -143,7 +142,7 @@
             <div class="flex flex-col md:flex-row w-full gap-3">
                 <div class="flex w-full flex-col">
                     <span class="uppercase text-sm font-bold text-base-content label label-text">
-                        Name
+                        Nome
                         @error('name')
                             <span class="text-red-500" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -161,7 +160,7 @@
                 {{-- lastname --}}
                 <div class="flex flex-col w-full">
                     <span class="uppercase text-sm font-bold text-base-content label label-text">
-                        Last Name
+                        Cognome
                         @error('lastname')
                             <span class="text-red-500" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -171,15 +170,15 @@
                     <input
                         class="w-full input input-bordered text-base-content bg-base-200
                         @error('lastname') ring-2 ring-red-500 @enderror"
-                        type="text" placeholder="Enter your Name" name='lastname' required min="3"
-                        max="20" value="{{ old('lastname', $user->lastname) }}" />
+                        type="text" placeholder="Enter your Name" name='lastname' required min="3" max="20"
+                        value="{{ old('lastname', $user->lastname) }}" />
                 </div>
             </div>
 
             {{-- bio --}}
             <div class="flex flex-col">
                 <span class="uppercase text-sm font-bold text-base-content label-text">
-                    Bio
+                    Biografia
                     @error('presentation')
                         <div class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
@@ -196,7 +195,7 @@
             {{-- phone --}}
             <div class="">
                 <span class="uppercase text-sm font-bold text-base-content label label-text">
-                    Phone Number
+                    Numero di Telefono
                     @error('phone')
                         <div class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
@@ -213,7 +212,7 @@
             <div>
 
                 <span class="uppercase text-sm font-bold text-base-content label label-text">
-                    Description
+                    Descrizione
                     @error('detailed_description')
                         <div class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
@@ -234,7 +233,8 @@
             </div> --}}
 
             <div class="w-full" style="margin-top: 2rem">
-                <label class="uppercase text-sm font-bold text-base-content label label-text" for="Multiselect">Select your Skills</label>
+                <label class="uppercase text-sm font-bold text-base-content label label-text" for="Multiselect">Seleziona
+                    le tue Skills</label>
                 @error('skills_id')
                     <span class="text-red-500" role="alert">
                         <strong>{{ $message }}</strong>
@@ -244,14 +244,13 @@
 
                     <?php
                     $oldarray = [];
-                    foreach (old('skills_id',[])  as $id){
-                     $oldarray[] = $id;
+                    foreach (old('skills_id', []) as $id) {
+                        $oldarray[] = $id;
                     }
-                    if(empty($oldarray))
-                    {
-                    foreach ($user->skills  as $skill){
-                        $oldarray[] = $skill->id;
-                    }
+                    if (empty($oldarray)) {
+                        foreach ($user->skills as $skill) {
+                            $oldarray[] = $skill->id;
+                        }
                     }
                     ?>
 
@@ -284,8 +283,6 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
     <script>
-
-
         let skills = {!! $skills !!}
         new TomSelect('#skills', {
             plugins: [
@@ -343,7 +340,5 @@
             background-color: #a0aec0;
             cursor: not-allowed;
         }
-
-
     </style>
 @endsection
