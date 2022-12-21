@@ -17,15 +17,9 @@ class moreUserSeeder extends Seeder
          * https://stackoverflow.com/questions/29822686/curl-error-60-ssl-certificate-unable-to-get-local-issuer-certificate
          */
 
-    $users = factory(App\User::class, $numUsers)->create();
-    $counter = 0;
-    $response = Http::get('https://api.unsplash.com/collections/8721905/photos?client_id=Lc13yY6BSLCYOXpUV0p74VS22RzfoAy6I28Ay8lAua4&per_page=30');
-    $response->json();
-    $photos = json_decode($response->body());
-    $page = 1;
-    foreach ($users as $user) {
-    if($counter == 30) {
-        $response = Http::get('https://api.unsplash.com/collections/8721905/photos?client_id=Lc13yY6BSLCYOXpUV0p74VS22RzfoAy6I28Ay8lAua4&per_page=30&page=' . $page);
+        $users = factory(App\User::class, $numUsers)->create();
+        $counter = 0;
+        $response = Http::get('https://api.unsplash.com/collections/8721905/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30');
         $response->json();
         $photos = json_decode($response->body());
         $page = 1;
@@ -40,12 +34,10 @@ class moreUserSeeder extends Seeder
 
 
 
-
-    $user->avatar = $photos[$counter]->urls->regular;
-    $user->save();
-    $counter++;
-
-    }
+            $user->avatar = $photos[$counter]->urls->regular;
+            $user->save();
+            $counter++;
+        }
 
         foreach ($users as $user) {
             $inboxes = factory(App\models\Inbox::class, rand(15, 25))->make();
