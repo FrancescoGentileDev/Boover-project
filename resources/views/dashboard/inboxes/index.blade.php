@@ -17,7 +17,7 @@
 
     <ul id="inbox-list" class="w-full md:w-3/4 flex flex-col gap-3 mx-auto mt-4 mb-8">
         @foreach ($inboxes as $inbox)
-            <li class="px-5 py-2 bg-base-200 rounded-lg shadow-md dark:bg-gray-800
+            <li class="px-5 py-2 bg-base-200 rounded-lg shadow-md
         hover:bg-base-300">
                 <a href="{{ route('dashboard.inboxes.show', $inbox->id) }}">
                     <p class="font-semibold text-xl">{{ $inbox->title }}</p>

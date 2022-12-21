@@ -15,7 +15,7 @@
 
     <div class="px-5">
         @foreach ($reviews as $review)
-            <div class="my-7 px-8 py-4 bg-base-200 rounded-lg shadow-md dark:bg-gray-800 hover:bg-base-300">
+            <div class="my-7 px-8 py-4 bg-base-200 rounded-lg shadow-md hover:bg-base-300">
                 <div class="flex items-center justify-between">
                     <span class="text-sm font-light text-base-content">{{ $review->created_at }}</span>
                 </div>
