@@ -85,7 +85,7 @@
                                  
                                          
                                                                       <!--REVIEW-->
-<section class="bg-base-200 dark:bg-gray-900"> 
+<section class="bg-base-200 dark:bg-gray-900 mt-40"> 
     <div class="container px-6 py-10 mx-auto">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
             Scopri cosa dicono i nostri <span class="text-secondary">clienti</span> 
