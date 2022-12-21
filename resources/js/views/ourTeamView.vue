@@ -132,7 +132,7 @@
                                                                     <!--REGISTER-->
     <section class="register py-20">
       <div class="text-center">
-        <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl pt-10">Registrati e inizia oggi a ricevere clienti</h1>
+        <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl pt-10">Registrati e inizia <span class="text-secondary">oggi</span> a ricevere clienti</h1>
         <button class="btn btn-primary m-3 mt-20">Registrati</button>
      </div>
     </section>    
