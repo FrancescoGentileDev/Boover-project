@@ -27,6 +27,7 @@ class CategoryTableSeeder extends Seeder
             'Altro',
         ];
 
+
         foreach ($categories as $category) {
             $addCategory = new Category();
             $addCategory->name = $category;
