@@ -36,12 +36,12 @@ export default {
         console.log(this.$parent.$refs.navbar);
         this.$parent.$refs.navbar.toggleShowOnZero(false);
         this.$parent.$refs.navbar.toggleCategoriesOnZero(false);
-        this.$parent.paddingHandling(false);
+        this.$parent.paddingHandling(false,1000);
     },
     beforeDestroy() {
         this.$parent.$refs.navbar.toggleShowOnZero(true);
         this.$parent.$refs.navbar.toggleCategoriesOnZero(true);
-        this.$parent.paddingHandling(true);
+        
     },
 };
 </script>
