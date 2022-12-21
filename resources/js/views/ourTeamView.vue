@@ -143,7 +143,7 @@
                                                                        <!--Q&A-->
     <section class="qa bg-base-200 py-5 ">
         <div class="text-center">
-         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl py-10">Q&A</h1>    
+         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl py-10">Domande Frequenti</h1>    
         </div>
         <!--Q&A CONTAINER-->
      <div class="container mx-auto md:h-80">         
