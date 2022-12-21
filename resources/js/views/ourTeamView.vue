@@ -21,10 +21,9 @@
     <section class="bg-white mt-40">
     <div class="container px-6 py-10 mx-auto">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">Conosci i nostri migliori <span class="text-secondary">Professionisti</span></h1>
-
         <p class="max-w-2xl mx-auto my-6 text-center text-gray-500">
             Pieni di passione ed energia, i nostri professionisti sanno che ciò che fanno e che il loro lavoro ha un impatto sulla vita quotidiana delle persone.
-            </p>
+        </p>
                                                 
       
                                                                            <!--TEAM GRID-->
@@ -33,9 +32,7 @@
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
                 <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">{{freelancers.freelancer}}</h1>
-
                 <p class="mt-2 text-secondary capitalize ">{{freelancers.profession}}</p>
-
                 <div class="flex mt-3 -mx-2">
                     <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-primary" aria-label="Reddit">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
@@ -68,11 +65,8 @@
                                                                    <!--JOIN TEAM-->
             <div class="flex flex-col items-center transition-none">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
-
                 <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">Il prossimo potresti essere  <span class="text-secondary">tu!</span> </h1>
-
                 <p class="mt-2 text-secondary capitalize ">{{freelancers.profession}}</p>
-
                 <div class="flex mt-3 -mx-2">
                     <button class="btn btn-primary">Registrati Subito</button>
                 </div>
@@ -127,8 +121,7 @@
              <button class="btn btn-primary">La tua domanda non è in elenco?</button>  
              <button class="btn btn-primary">Contattaci</button>             
         </div>        
-     </div>
-     
+     </div>     
     </section>
                                                                     <!--REGISTER-->
    <section class="mb-40">
@@ -137,9 +130,7 @@
         <div class="flex flex-col mt-8 space-y-3 sm:space-y-0 sm:flex-row sm:justify-center sm:-mx-2">
             <input id="email" type="text" class="px-4 py-2 text-black bg-white border rounded-md sm:mx-2 dark:text-black dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" placeholder="Email Address">
 
-            <button class="btn btn-primary">
-                Inizia Subito!
-            </button>
+            <button class="btn btn-primary">Inizia Subito!</button>
         </div>
     </div>
   </section>  
