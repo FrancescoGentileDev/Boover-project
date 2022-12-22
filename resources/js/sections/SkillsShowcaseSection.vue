@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper pt-24 pb-24 z-10">
     <div class="w-11/12 m-auto p-6">
-      <h1 class="text-5xl primary">Popular professional services</h1>
+      <h1 class="text-5xl primary">I servizi più popolari</h1>
     </div>
     <!--  // -->
 
@@ -26,9 +26,10 @@
 
     <carousel
       v-else
+      :isTouch="true"
       class="w-11/12 m-auto"
       :navigation-enabled="false"
-      navigationNextLabel='  <div class="btn btn-circle">❯</div>'
+      navigationNextLabel=' <div class="btn btn-circle">❯</div>'
       navigationPrevLabel='  <div class="btn btn-circle">❮</div>'
       :per-page="1"
       :perPageCustom="[
@@ -42,12 +43,30 @@
       <slide
         v-for="(skill, index) in skills.slice(0, 20)"
         :key="index"
-        class="relative p-6 cursor-grab"
+        class="relative p-6"
       >
         <div
           :style="{ backgroundImage: 'url(' + skill.thumb + ')' }"
-          class="h-96 rounded-md bg-cover"
-        ></div>
+          class="h-96 rounded-md bg-cover relative"
+        >
+          <!-- overlay -->
+          <div
+            class="
+              absolute
+              top-0
+              right-0
+              w-full
+              h-full
+              rounded-md
+              bg-gradient-to-t
+              from-black
+              via-black
+              to-black
+              opacity-50
+            "
+          ></div>
+          <!-- overlay -->
+        </div>
 
         <div class="absolute top-0 right-0 w-full h-full p-6">
           <div class="p-4">
@@ -57,14 +76,9 @@
             </h1>
           </div>
         </div>
-
-        <!-- overlay -->
-        <!--   <div
-                    class="absolute top-0 right-0 bg-slate-900 opacity-20 w-full h-full rounded-md"
-                ></div> -->
-        <!-- overlay -->
       </slide>
     </carousel>
+
     <!--  // -->
   </div>
 </template>
@@ -81,6 +95,7 @@ export default {
       skills: [],
       isError: false,
       thumbs: categoryThumb,
+      manualNavigation: 1,
     };
   },
   components: {
@@ -118,6 +133,7 @@ export default {
           }
         });
     },
+    //
   },
   mounted() {
     this.getSkillsData();
