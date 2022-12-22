@@ -362,24 +362,24 @@ export default {
     ],
     freelancers: [
       {
-        freelancer: "Eli Golam",
+        freelancer: "Valerio",
         profession: "Full-Stack Developer",
       },
       {
         freelancer: "Hugo",
-        profession: "Back-End Developer",
+        profession: "Full-Stack Developer",
       },
       {
         freelancer: "Francesco Gentile",
         profession: "Full-Stack Developer",
       },
       {
-        freelancer: "Valerio",
-        profession: "Full-Stack Developer",
+        freelancer: "Eli Golam",
+        profession: "Front-End Developer",
       },
       {
         freelancer: "Carmelo",
-        profession: "Front-End Developer",
+        profession: "Back-End Developer",
       },
     ],
     reviews: [
