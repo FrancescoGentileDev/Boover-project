@@ -452,7 +452,7 @@
             <!-- FORMS END /////////////////////////////////////////////////////////////////////////////// -->
         </div>
         <!-- correlatedUser -->
-        <!--   <div class="bg-primary py-8 mt-16">
+        <div class="bg-primary py-8 mt-16">
             <h1 class="font-bold text-2xl px-5 py-16 text-white text-center">
                 Altri profili che potrebbero interessarti
             </h1>
@@ -472,42 +472,34 @@
                         [1280, 5],
                     ]"
                 >
-
-
                     <slide
                         v-for="(user, index) in correlatedUsers"
                         :key="index"
                         class="relative p-6"
                         @click="$router.push(`/`)"
                     >
-                        <router-link :to="`/profile/${user.slug}`">
-                            <div
-                                class="flex flex-col justify-center items-center"
-                            >
+                        <!--  <router-link :to="`/profile/${user.slug}`"> -->
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="avatar hover:scale-105 transition-all">
                                 <div
-                                    class="avatar hover:scale-105 transition-all"
+                                    class="w-32 rounded-full ring ring-white ring-offset-base-100 ring-offset-2"
                                 >
-                                    <div
-                                        class="w-32 rounded-full ring ring-white ring-offset-base-100 ring-offset-2"
-                                    >
-                                        <img
-                                            :src="user.avatar"
-                                            :alt="'Picture of ' + user.name"
-                                        />
-                                    </div>
-                                </div>
-                                <div
-                                    class="text-center py-6 font-bold text-white"
-                                >
-                                    <h1>{{ user.name }}</h1>
-                                    <h1>{{ user.lastname }}</h1>
+                                    <img
+                                        :src="user.avatar"
+                                        :alt="'Picture of ' + user.name"
+                                    />
                                 </div>
                             </div>
-                        </router-link>
+                            <div class="text-center py-6 font-bold text-white">
+                                <h1>{{ user.name }}</h1>
+                                <h1>{{ user.lastname }}</h1>
+                            </div>
+                        </div>
+                        <!--  </router-link> -->
                     </slide>
                 </carousel>
             </div>
-        </div> -->
+        </div>
     </div>
     <!-- // -->
 </template>
