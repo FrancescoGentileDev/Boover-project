@@ -22,7 +22,7 @@ class UserController extends Controller
     {
         $users = User::query()
             ->leftJoin('sponsor_user', 'users.id', '=', 'sponsor_user.user_id')
-            ->leftJoin(DB::raw('(SELECT user_id, AVG(vote) as avg_vote FROM reviews GROUP BY user_id) as rv1'), 'users.id', '=', 'rv1.user_id')
+            ->leftJoin(DB::raw('(SELECT user_id, CEIL(AVG(vote)) as avg_vote FROM reviews GROUP BY user_id) as rv1'), 'users.id', '=', 'rv1.user_id')
             ->select('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote')
             ->addSelect(DB::raw('IF(sponsor_user.expire_date > NOW(), 1, 0) as is_sponsorized'))
             ->groupBy('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote', 'is_sponsorized')
@@ -33,14 +33,14 @@ class UserController extends Controller
         if ($request->has('rating_min')) {
             $users->whereHas('reviews', function ($query) use ($request) {
 
-                $query->select(DB::raw('AVG(vote) as avg_vote'))
+                $query->select(DB::raw('CEIL(AVG(vote)) as avg_vote'))
                     ->having('avg_vote', '>=', $request->rating_min);
             });
         }
         if ($request->has('rating_max')) {
             $users->whereHas('reviews', function ($query) use ($request) {
 
-                $query->select(DB::raw('AVG(vote) as avg_vote'))
+                $query->select(DB::raw('CEIL(AVG(vote)) as avg_vote'))
                     ->having('avg_vote', '<=', $request->rating_max);
             });
         }
@@ -88,7 +88,7 @@ class UserController extends Controller
         $users = $users->paginate($paginate); // hide useless params
 
         foreach ($users as $user) {
-            $user->reviews_rating =  $user->reviews()->avg('vote');
+            $user->reviews_rating = ceil($user->reviews()->avg('vote'));
         }
 
         $users->getCollection()->transform(function ($user) {

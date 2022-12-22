@@ -1,7 +1,7 @@
 <template>
   <div>
     <object
-        v-if="startAnimation"
+
         ref='loader'
         data="/assets/loadingAnimation.svg"
         class="w-full h-[100vh]"
@@ -38,7 +38,7 @@ export default {
         setTimeout(() => {
             this.startAnimation = false;
             console.log('Animation ended')
-            this.$parent.$data.loading = false;
+            this.$parent.$data.animationend = true;
         }, 1500);
     }
   },

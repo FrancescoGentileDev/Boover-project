@@ -7,15 +7,13 @@ use App\User;
 use Faker\Generator as Faker;
 
 $factory->define(Inbox::class, function (Faker $faker) {
-    $numUsers = count(User::all());
-
+    $date = date('Y-m-d H:i:s', $faker->dateTimeBetween('-359 days', 'now')->getTimestamp());
     return [
-        'nickname' => $faker->firstName(),
+        'nickname' => $faker->userName(),
         'title' => $faker->realText(32),
         'content' => $faker->realText(300),
         'email' => $faker->safeEmail(),
         'phone' => $faker->e164PhoneNumber(),
-        'user_id' => $faker->numberBetween(1, $numUsers),
-        'created_at' => date('Y-m-d H:i:s', $faker->dateTimeBetween('-365 days', 'now')->getTimestamp()),
+        'created_at' => $date,
     ];
 });

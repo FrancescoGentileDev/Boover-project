@@ -103,11 +103,11 @@ class RealUserSeeder extends Seeder
             //Attach SKILLS
             $user->skills()->attach($collection['skills']);
             //Attach INBOXES
-            $inboxes = factory(App\models\Inbox::class, rand(15, 25))->make();
-            $user->inboxes()->saveMany($inboxes);
+            // $inboxes = factory(App\models\Inbox::class, rand(15, 25))->make();
+            // $user->inboxes()->saveMany($inboxes);
 
-            $reviews = factory(App\models\Review::class, rand(15, 25))->make();
-            $user->reviews()->saveMany($reviews);
+            // $reviews = factory(App\models\Review::class, rand(15, 25))->make();
+            // $user->reviews()->saveMany($reviews);
         }
 
     }

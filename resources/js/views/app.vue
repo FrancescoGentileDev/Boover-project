@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="loading" v-if="loading">
-      <loader-component />
+    <div class="loading" v-if="!animationend || categories.length ===0">
+      <loader-component @animationEnded='animationend = true'/>
     </div>
     <div v-else data-theme="light" class="relative">
       <NavbarComponent ref="navbar" :categories="categories" />
@@ -24,16 +24,18 @@ export default {
     return {
         categories: [],
       loading: true,
+      animationend: false,
+      callterminated: false,
     };
   },
   created() {
-    axios.get("/api/category").then((response) => {
-      this.categories = response.data;
-    });
+
   },
   async mounted() {
 
-
+    axios.get("/api/category").then((response) => {
+      this.categories = response.data;
+    });
   },
 
   methods: {
