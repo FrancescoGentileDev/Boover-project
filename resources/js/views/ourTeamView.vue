@@ -22,7 +22,7 @@
     <div class="container px-6 py-10 mx-auto ">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">Conosci i nostri migliori <span class="text-secondary">Professionisti</span></h1>
         <p class="max-w-2xl mx-auto my-6 text-center text-gray-500">
-            Pieni di passione ed energia, i nostri professionisti sanno che ciò che fanno e che il loro lavoro ha un impatto sulla vita quotidiana delle persone.
+            Pieni di passione ed energia i nostri professionisti sanno che ciò che fanno e che il loro lavoro ha un impatto sulla vita quotidiana delle persone.
         </p>
                                                 
       
