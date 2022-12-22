@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper pt-24 pb-24 z-10">
         <div class="w-11/12 m-auto p-6">
-            <h1 class="text-5xl primary">Popular professional services</h1>
+            <h1 class="text-5xl primary">I servizi più popolari</h1>
         </div>
         <!--  // -->
 
