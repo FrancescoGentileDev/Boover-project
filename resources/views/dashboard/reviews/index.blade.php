@@ -3,7 +3,7 @@
 @section('content')
     <div class="flex flex-row justify-center">
         <div
-            class="basis-2/4 text-center my-7 px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg">
+            class="basis-full text-center my-7 px-6 py-2 font-medium tracking-wide capitalize transition-colors duration-300 transform bg-base-300 base-100 rounded-lg">
             Elenco delle tue Recensioni
         </div>
     </div>
@@ -13,9 +13,9 @@
         {{ $reviews->links() }}
     </div>
 
-    <div class="px-5">
+    <div>
         @foreach ($reviews as $review)
-            <div class="my-7 px-8 py-4 bg-base-200 rounded-lg shadow-md hover:bg-base-300">
+            <div class="w-full my-7 px-8 py-4 bg-base-200 rounded-lg shadow-md hover:bg-base-300">
                 <div class="flex items-center justify-between">
                     <span class="text-sm font-light text-base-content">{{ $review->created_at }}</span>
                 </div>
