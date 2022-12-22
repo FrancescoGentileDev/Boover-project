@@ -178,7 +178,7 @@
             {{-- bio --}}
             <div class="flex flex-col">
                 <span class="uppercase text-sm font-bold text-base-content label-text">
-                    Biografia
+                    Presentazione
                     @error('presentation')
                         <div class="text-red-500" role="alert">
                             <strong>{{ $message }}</strong>
@@ -186,7 +186,7 @@
                     </span>
                 @enderror
                 <input
-                    class="w-full input input-bordered text-base-content bg-base-200 mt-2
+                    class="w-full font-normal input input-bordered text-base-content bg-base-200 mt-2
                     @error('presentation') input-error @enderror"
                     type="text" placeholder="A short Bio about you" name='presentation' required min="60"
                     max="255" value="{{ old('presentation', $user->presentation) }}" />

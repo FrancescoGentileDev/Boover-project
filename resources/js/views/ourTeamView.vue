@@ -28,7 +28,7 @@
             right-10
           "
         >
-          <div
+          <!-- <div
             v-for="(information, index) in information"
             :key="index"
             class="
@@ -44,7 +44,7 @@
             <p class="px-10 text-white text-8xl pb-5">
               {{ information.numericInfo }}
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -385,30 +385,30 @@ export default {
     reviews: [
       {
         review:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, quam. Odio voluptatem officiis eos illo! Pariatur, totam alias. Beatae accusamus earum quos obcaecati minima molestias. Possimus minima dolores itaque! Esse! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates fugiat corrupti laudantium dolores reiciendis pariatur esse quod nihil quia cupiditate debitis quisquam nemo, accusamus animi explicabo? Architecto, unde laboriosam?",
+          "Ho trovato il sito di freelancers online perfetto per le mie esigenze! La selezione di professionisti è davvero ampia e ho trovato facilmente un freelancer che è stato in grado di soddisfare le mie richieste. La piattaforma è facile da usare e il supporto clienti è sempre stato molto disponibile e attento alle mie necessità. Consiglio vivamente questo sito a chiunque abbia bisogno di servizi di freelancing di alta qualità!",
         propic: "image",
-        userName: "Name Surname",
+        userName: "Piermartina Feliciotta",
         profession: "Professional",
       },
       {
         review:
-          "Lorem ipsum dolor sit amet, consectetur abo? Architecto, unde laboriosam?",
+          "Ho utilizzato questo sito per trovare un freelancer per un progetto importante e sono rimasta davvero soddisfatta del risultato. La selezione di professionisti è davvero ampia e ho trovato facilmente un freelancer che ha soddisfatto le mie aspettative. La piattaforma è facile da usare e il supporto clienti è sempre stato molto disponibile e attento alle mie necessità. Consiglio vivamente questo sito a chiunque abbia bisogno di servizi di freelancing di alta qualità!",
         propic: "image",
-        userName: "Tizio Di Caio",
+        userName: "Carloantonio De Pacis",
         profession: "Researcher",
       },
       {
         review:
-          "Lorem ipsum dolor sit amet,Aperiam, quam. Odio voluptatas. Possimus minima dolores itaque! Esse! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates fugiat corrupti laudantium dolores reiciendis pariatur esse quod nihil quia cupiditate debitis quisquam nemo, accusamus animi explicabo? Architecto, unde laboriosam?",
+          "Io su freelanceboard ho trovato un cliente appena mi sono iscritto, magari sarò stato fortunato, ma onestamente penso che abbia influito molto il fatto che ho potuto parlare con il cliente ancora prima di fargli la mia offerta.",
         propic: "image",
-        userName: "Caio Di Tizio",
+        userName: "Gianfelice Tristino",
         profession: "Developer",
       },
       {
         review:
-          "Lorem ipsum dolor sit amet, voluptatem officiis eos illo! Pariatur, totam alias. Beatae accusamus earum quos obcaecati minima molestias. Possimus minima dolores itaque! Esse! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates fugiat corrupti laudantium dolores reiciendis pariatur esse quod nihil quia cupiditate debitis quisquam nemo, accusamus animi explicabo? Architecto, unde laboriosam?",
+          "Sono iscritta su Boover da un paio di anni, e sono molto soddisfatta della collaborazione. Ovviamente è un secondo lavoro per me, ma mi ha permesso di pagarmi gli studi e affrontare le emergenze economiche. Sono puntuali, meticolosi, e l'impegno che metti ripaga. Consigliato!",
         propic: "image",
-        userName: "Mario Rossi",
+        userName: "Sara Stanca",
         profession: "Student",
       },
     ],
