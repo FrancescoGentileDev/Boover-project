@@ -106,7 +106,10 @@ Artisan::command('natalia', function (Faker $faker) {
 Artisan::command('nataliaRemove', function (Faker $faker) {
     $user = User::query()->where('email', 'nataliabruni@example.it')->first();
 
+    $user->skills()->sync([]);
     $user->inboxes()->delete();
     $user->reviews()->delete();
+    $user->sponsors()->sync([]);
+    $user->delete();
 });
 

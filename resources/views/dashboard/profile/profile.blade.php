@@ -51,7 +51,7 @@
     {{-- ERROR & Success ALLERT --}}
     @if (\Session::has('success'))
         <div
-            class="alert flex w-full fixed right-5 bottom-5 z-20 max-w-sm overflow-hidden bg-white rounded-lg shadow-lg border-2  border-green-500 dark:bg-gray-800">
+            class="alert flex w-full fixed right-5 bottom-5 z-20 max-w-sm overflow-hidden bg-white rounded-lg shadow-lg border-2  border-green-500 ">
             <div class="flex items-center justify-center w-12 bg-green-500">
                 <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -61,15 +61,15 @@
 
             <div class="px-4 py-2 -mx-3">
                 <div class="mx-3">
-                    <span class="font-semibold text-emerald-500 dark:text-emerald-400">Ottimo!</span>
-                    <p class="text-sm text-gray-600 dark:text-gray-200">Il tuo account è stato aggiornato!</p>
+                    <span class="font-semibold text-emerald-500 ">Ottimo!</span>
+                    <p class="text-sm text-gray-600 ">Il tuo account è stato aggiornato!</p>
                 </div>
             </div>
         </div>
     @endif
     @if ($errors->any())
         <div
-            class="alert fixed flex right-5 bottom-5 w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 z-20">
+            class="alert fixed flex right-5 bottom-5 w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md  z-20">
             <div class="flex items-center justify-center w-12 bg-red-500">
                 <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -79,8 +79,8 @@
 
             <div class="px-4 py-2 -mx-3">
                 <div class="mx-3">
-                    <span class="font-semibold text-red-500 dark:text-red-400">Error</span>
-                    <p class="text-sm text-gray-600 dark:text-gray-200">
+                    <span class="font-semibold text-red-500">Error</span>
+                    <p class="text-sm text-gray-600 ">
                         Ci sono degli errori nei tuoi input.
                     </p>
                 </div>
