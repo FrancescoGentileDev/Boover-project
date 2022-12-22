@@ -90,3 +90,23 @@ Artisan::command('test3', function (Faker $faker) {
 
 
 });
+
+
+Artisan::command('natalia', function (Faker $faker) {
+    $user = User::query()->where('email', 'nataliabruni@example.it')->first();
+
+    $reviews = factory(App\models\Review::class, 80)->make();
+    $user->reviews()->saveMany($reviews);
+
+    $inboxes = factory(App\models\Inbox::class, 70)->make();
+    $user->inboxes()->saveMany($inboxes);
+});
+
+
+Artisan::command('nataliaRemove', function (Faker $faker) {
+    $user = User::query()->where('email', 'nataliabruni@example.it')->first();
+
+    $user->inboxes()->delete();
+    $user->reviews()->delete();
+});
+
