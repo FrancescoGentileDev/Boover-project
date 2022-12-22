@@ -43,7 +43,7 @@
       <slide
         v-for="(skill, index) in skills.slice(0, 20)"
         :key="index"
-        class="relative p-6 cursor-grab"
+        class="relative p-6"
       >
         <router-link :to="'' + skill.route">
           <div
