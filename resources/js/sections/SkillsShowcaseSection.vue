@@ -26,9 +26,10 @@
 
         <carousel
             v-else
+            :isTouch="true"
             class="w-11/12 m-auto"
             :navigation-enabled="false"
-            navigationNextLabel='  <div class="btn btn-circle">❯</div>'
+            navigationNextLabel=' <div class="btn btn-circle">❯</div>'
             navigationPrevLabel='  <div class="btn btn-circle">❮</div>'
             :per-page="1"
             :perPageCustom="[
@@ -65,6 +66,7 @@
                 </div>
             </slide>
         </carousel>
+
         <!--  // -->
     </div>
 </template>
@@ -81,6 +83,7 @@ export default {
             skills: [],
             isError: false,
             thumbs: categoryThumb,
+            manualNavigation: 1,
         };
     },
     components: {
@@ -118,6 +121,7 @@ export default {
                     }
                 });
         },
+        //
     },
     mounted() {
         this.getSkillsData();
