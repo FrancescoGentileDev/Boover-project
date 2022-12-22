@@ -8,8 +8,8 @@
                 <button class="btn btn-primary mt-14">Unisciti a loro</button>
             </div>
         </div>
-        <div class="flex items-center justify-center absolute bottom-0 left-10 right-10 opacity-30"> 
-           <div v-for="(information,index) in information" :key="index" class="bg-black rounded-md flex flex-col items-center justify-center w-full">
+        <div class="flex items-center justify-center absolute bottom-0 left-10 right-10 "> 
+           <div v-for="(information,index) in information" :key="index" class="bg-black bg-opacity-30 rounded-md flex flex-col items-center justify-center w-full">
             <p class="px-10 text-white text-4xl pt-2">{{ information.info }}</p>
             <p class="px-10 text-white text-8xl pb-5">{{ information.numericInfo }}</p>
            </div>           
@@ -18,8 +18,8 @@
     </section>    
                                                   <!--TEAM-->
 
-    <section class="bg-white mt-40">
-    <div class="container px-6 py-10 mx-auto">
+    <section class="bg-white mt-40 ">
+    <div class="container px-6 py-10 mx-auto ">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">Conosci i nostri migliori <span class="text-secondary">Professionisti</span></h1>
         <p class="max-w-2xl mx-auto my-6 text-center text-gray-500">
             Pieni di passione ed energia, i nostri professionisti sanno che ciò che fanno e che il loro lavoro ha un impatto sulla vita quotidiana delle persone.
@@ -29,7 +29,7 @@
                                                                            <!--TEAM GRID-->
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3 items-center justify-center">                                                                                                                
             <div v-for="(freelancers,index) in freelancers" :key="index" class="flex flex-col items-center opacity-50 hover:opacity-100 hover:duration-1000">
-                <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
+                <img class=" team object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
                 <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">{{freelancers.freelancer}}</h1>
                 <p class="mt-2 text-secondary capitalize ">{{freelancers.profession}}</p>
@@ -244,4 +244,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+img {
+  max-width: 60%;
+  height: auto;
+}
 </style>
