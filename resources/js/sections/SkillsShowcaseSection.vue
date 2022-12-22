@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper pt-24 pb-24 z-10">
     <div class="w-11/12 m-auto p-6">
-      <h1 class="text-5xl primary">Popular professional services</h1>
+      <h1 class="text-5xl primary">I servizi più popolari</h1>
     </div>
     <!--  // -->
 
@@ -26,9 +26,10 @@
 
     <carousel
       v-else
+      :isTouch="true"
       class="w-11/12 m-auto"
       :navigation-enabled="false"
-      navigationNextLabel='  <div class="btn btn-circle">❯</div>'
+      navigationNextLabel=' <div class="btn btn-circle">❯</div>'
       navigationPrevLabel='  <div class="btn btn-circle">❮</div>'
       :per-page="1"
       :perPageCustom="[
@@ -42,29 +43,44 @@
       <slide
         v-for="(skill, index) in skills.slice(0, 20)"
         :key="index"
-        class="relative p-6"
+        class="relative p-6 cursor-grab"
       >
-        <div
-          :style="{ backgroundImage: 'url(' + skill.thumb + ')' }"
-          class="h-96 rounded-md bg-cover"
-        ></div>
-
-        <div class="absolute top-0 right-0 w-full h-full p-6">
-          <div class="p-4">
-            <h3 class="text-white text-sm">POPULAR</h3>
-            <h1 class="text-xl text-white">
-              {{ skill.name }}
-            </h1>
+        <router-link :to="'' + skill.route">
+          <div
+            :style="{ backgroundImage: 'url(' + skill.thumb + ')' }"
+            class="h-96 rounded-md bg-cover relative"
+          >
+            <!-- overlay -->
+            <div
+              class="
+                absolute
+                top-0
+                right-0
+                w-full
+                h-full
+                rounded-md
+                bg-gradient-to-t
+                from-black
+                via-black
+                to-black
+                opacity-50
+              "
+            ></div>
+            <!-- overlay -->
           </div>
-        </div>
 
-        <!-- overlay -->
-        <!--   <div
-                    class="absolute top-0 right-0 bg-slate-900 opacity-20 w-full h-full rounded-md"
-                ></div> -->
-        <!-- overlay -->
+          <div class="absolute top-0 right-0 w-full h-full p-6">
+            <div class="p-4">
+              <h3 class="text-white text-sm">POPULAR</h3>
+              <h1 class="text-xl text-white">
+                {{ skill.name }}
+              </h1>
+            </div>
+          </div>
+        </router-link>
       </slide>
     </carousel>
+
     <!--  // -->
   </div>
 </template>
@@ -73,6 +89,7 @@
 import axios from "axios";
 import { Carousel, Slide } from "vue-carousel";
 import categoryThumb from "../../assets/categoryThumb.json";
+import skillCarouselLinks from "../../assets/skillCarouselLinks.json";
 
 export default {
   name: "SkillsShowcaseSection",
@@ -81,6 +98,8 @@ export default {
       skills: [],
       isError: false,
       thumbs: categoryThumb,
+      routes: skillCarouselLinks,
+      manualNavigation: 1,
     };
   },
   components: {
@@ -102,12 +121,16 @@ export default {
             let skill = {
               name: "",
               thumb: "",
+              route: "",
             };
             skill.name = element.name;
             this.skills.push(skill);
           });
           this.thumbs.forEach((element, index) => {
             this.skills[index].thumb = element;
+          });
+          this.routes.forEach((element, index) => {
+            this.skills[index].route = element;
           });
           console.log(this.skills);
         })
@@ -118,6 +141,7 @@ export default {
           }
         });
     },
+    //
   },
   mounted() {
     this.getSkillsData();

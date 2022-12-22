@@ -13,6 +13,6 @@ $factory->define(App\models\Review::class, function (Faker $faker) {
         'title' => $faker->realText(20),
         'description' => $faker->realText(250),
         'vote' => $faker->numberBetween(1, 5),
-        'created_at' => date('Y-m-d H:i:s', $faker->dateTimeBetween('-100 days', 'now')->getTimestamp()),
+        'created_at' => date('Y-m-d H:i:s', $faker->dateTimeBetween('-365 days', 'now')->getTimestamp()),
     ];
 });
