@@ -45,37 +45,39 @@
         :key="index"
         class="relative p-6 cursor-grab"
       >
-        <div
-          :style="{ backgroundImage: 'url(' + skill.thumb + ')' }"
-          class="h-96 rounded-md bg-cover relative"
-        >
-          <!-- overlay -->
+        <router-link :to="'' + skill.route">
           <div
-            class="
-              absolute
-              top-0
-              right-0
-              w-full
-              h-full
-              rounded-md
-              bg-gradient-to-t
-              from-black
-              via-black
-              to-black
-              opacity-50
-            "
-          ></div>
-          <!-- overlay -->
-        </div>
-
-        <div class="absolute top-0 right-0 w-full h-full p-6">
-          <div class="p-4">
-            <h3 class="text-white text-sm">POPULAR</h3>
-            <h1 class="text-xl text-white">
-              {{ skill.name }}
-            </h1>
+            :style="{ backgroundImage: 'url(' + skill.thumb + ')' }"
+            class="h-96 rounded-md bg-cover relative"
+          >
+            <!-- overlay -->
+            <div
+              class="
+                absolute
+                top-0
+                right-0
+                w-full
+                h-full
+                rounded-md
+                bg-gradient-to-t
+                from-black
+                via-black
+                to-black
+                opacity-50
+              "
+            ></div>
+            <!-- overlay -->
           </div>
-        </div>
+
+          <div class="absolute top-0 right-0 w-full h-full p-6">
+            <div class="p-4">
+              <h3 class="text-white text-sm">POPULAR</h3>
+              <h1 class="text-xl text-white">
+                {{ skill.name }}
+              </h1>
+            </div>
+          </div>
+        </router-link>
       </slide>
     </carousel>
 
@@ -87,6 +89,7 @@
 import axios from "axios";
 import { Carousel, Slide } from "vue-carousel";
 import categoryThumb from "../../assets/categoryThumb.json";
+import skillCarouselLinks from "../../assets/skillCarouselLinks.json";
 
 export default {
   name: "SkillsShowcaseSection",
@@ -95,6 +98,7 @@ export default {
       skills: [],
       isError: false,
       thumbs: categoryThumb,
+      routes: skillCarouselLinks,
       manualNavigation: 1,
     };
   },
@@ -117,12 +121,16 @@ export default {
             let skill = {
               name: "",
               thumb: "",
+              route: "",
             };
             skill.name = element.name;
             this.skills.push(skill);
           });
           this.thumbs.forEach((element, index) => {
             this.skills[index].thumb = element;
+          });
+          this.routes.forEach((element, index) => {
+            this.skills[index].route = element;
           });
           console.log(this.skills);
         })
