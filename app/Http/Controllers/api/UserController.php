@@ -26,7 +26,9 @@ class UserController extends Controller
             ->select('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote')
             ->addSelect(DB::raw('IF(sponsor_user.expire_date > NOW(), 1, 0) as is_sponsorized'))
             ->groupBy('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote', 'is_sponsorized')
+            ->where('is_available', 1)
             ->orderBy('is_sponsorized', 'desc');
+
 
         if ($request->has('rating_min')) {
             $users->whereHas('reviews', function ($query) use ($request) {
