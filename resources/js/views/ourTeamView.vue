@@ -89,13 +89,13 @@
             class="
               flex flex-col
               items-center
-              opacity-50
+              opacity-75
               hover:opacity-100 hover:duration-1000
             "
           >
             <img
               class="team object-cover w-full rounded-xl aspect-square"
-              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+              :src="freelancers.image"
               alt=""
             />
 
@@ -364,22 +364,27 @@ export default {
       {
         freelancer: "Valerio",
         profession: "Full-Stack Developer",
+        image: "/assets/team-valerio.png",
       },
       {
         freelancer: "Hugo",
         profession: "Full-Stack Developer",
+        image: "/assets/team-hugo.png",
       },
       {
         freelancer: "Francesco Gentile",
         profession: "Full-Stack Developer",
+        image: "/assets/team-franco.png",
       },
       {
         freelancer: "Eli Golam",
         profession: "Front-End Developer",
+        image: "/assets/team-mahfuzul.png",
       },
       {
         freelancer: "Carmelo",
         profession: "Back-End Developer",
+        image: "/assets/team-carmelo.png",
       },
     ],
     reviews: [
