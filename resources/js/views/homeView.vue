@@ -47,7 +47,7 @@ export default {
     beforeDestroy() {
         this.$parent.$refs.navbar.toggleShowOnZero(true);
         this.$parent.$refs.navbar.toggleCategoriesOnZero(true);
-        this.$parent.paddingHandling(true);
+        
     },
 };
 </script>

@@ -1,67 +1,38 @@
 <template>
   <main>
-    <section class="jumbo"> 
-                        
-     <div>
-                                    <!--BG IMAGE-->
-       
-                                      <!--INFORMATION-->
-        <div class=""> 
-           <div v-for="(information,index) in information" :key="index"></div>
-           <p>{{ information.info }}</p>
-           
-        </div>
-    </div>
-    <header>
-                                       <!--TEMPLATE-->
-
-    <div class="w-full bg-center bg-cover h-[38rem] relative " style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');">
-        
+    <section>      
+      <div class="w-full bg-center bg-cover h-[38rem] relative " style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');">
         <div class="flex items-center justify-center w-full h-full bg-gray-900/40">
             <div class="text-center">
                 <h1 class="text-3xl font-semibold text-white lg:text-4xl"> I <span class="text-secondary">Migliori</span>  a portata di click!</h1>
-                <button class="btn btn-primary mt-5">Unisciti a loro</button>
+                <button class="btn btn-primary mt-14">Unisciti a loro</button>
             </div>
         </div>
-        <div class="flex items-center justify-center absolute bottom-0 left-10 right-10"> 
-           <div v-for="(information,index) in information" :key="index" class="bg-black opacity-10 ">
+        <div class="flex items-center justify-center absolute bottom-0 left-10 right-10 "> 
+           <div v-for="(information,index) in information" :key="index" class="bg-black bg-opacity-30 rounded-md flex flex-col items-center justify-center w-full">
             <p class="px-10 text-white text-4xl pt-2">{{ information.info }}</p>
             <p class="px-10 text-white text-8xl pb-5">{{ information.numericInfo }}</p>
            </div>           
         </div>
-    </div>
-</header>
+      </div>
     </section>    
-    
-
-
                                                   <!--TEAM-->
 
-    <section class="bg-white mt-60">
-    <div class="container px-6 py-10 mx-auto">
+    <section class="bg-white mt-40 ">
+    <div class="container px-6 py-10 mx-auto ">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">Conosci i nostri migliori <span class="text-secondary">Professionisti</span></h1>
-
         <p class="max-w-2xl mx-auto my-6 text-center text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias, adipisci rem similique, at omnis eligendi optio eos harum.
+            Pieni di passione ed energia i nostri professionisti sanno che ciò che fanno e che il loro lavoro ha un impatto sulla vita quotidiana delle persone.
         </p>
                                                 
-        <div class="flex items-center justify-center">
-            <div class="flex items-center p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
-                <button class="px-4 py-2 text-sm font-medium text-white capitalize bg-primary md:py-3 rounded-xl md:px-12">design</button>
-                <button class="px-4 py-2 mx-4 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-3 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-primary hover:text-white rounded-xl md:mx-8 md:px-12">development</button>
-                <button class="px-4 py-2 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-3 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-primary hover:text-white rounded-xl md:px-12">marketing</button>
-            </div>
-        </div>
+      
                                                                            <!--TEAM GRID-->
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3 items-center justify-center">      
-                                                                           <!--TEAM V-FOR-->                                              
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3 items-center justify-center">                                                                                                                
             <div v-for="(freelancers,index) in freelancers" :key="index" class="flex flex-col items-center opacity-50 hover:opacity-100 hover:duration-1000">
-                <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
+                <img class=" team object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
                 <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">{{freelancers.freelancer}}</h1>
-
                 <p class="mt-2 text-secondary capitalize ">{{freelancers.profession}}</p>
-
                 <div class="flex mt-3 -mx-2">
                     <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-primary" aria-label="Reddit">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
@@ -94,11 +65,8 @@
                                                                    <!--JOIN TEAM-->
             <div class="flex flex-col items-center transition-none">
                 <img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
-
                 <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">Il prossimo potresti essere  <span class="text-secondary">tu!</span> </h1>
-
                 <p class="mt-2 text-secondary capitalize ">{{freelancers.profession}}</p>
-
                 <div class="flex mt-3 -mx-2">
                     <button class="btn btn-primary">Registrati Subito</button>
                 </div>
@@ -110,15 +78,14 @@
                                  
                                          
                                                                       <!--REVIEW-->
-<section class="bg-base-200 dark:bg-gray-900"> 
+<section class="bg-base-200 dark:bg-gray-900 mt-40"> 
     <div class="container px-6 py-10 mx-auto">
         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-            What our <span class="text-secondary">clients</span> say
+            Scopri cosa dicono i tuoi <span class="text-secondary">clienti</span> 
         </h1>
 
         <p class="max-w-2xl mx-auto mt-6 text-center text-gray-500 dark:text-gray-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error
-            alias, adipisci rem similique, at omnis eligendi optio eos harum.
+            Resta sempre sul pezzo grazie alle recensioni lasciate dagli utenti che ti contattano. Monitora costantemente i loro feedback e migliora di conseguenza il tuo lavoro.
         </p>
        <div class="grid grid-cols-1 gap-8 mx-auto mt-8 lg:grid-cols-2 xl:mt-10 max-w-7xl">
            <div v-for="(reviews,index) in reviews" :key="index" class="h-full" >
@@ -132,22 +99,14 @@
        </div>
     </div>
 </section>
-
-
-
-
-
-
-
-
                                                                        <!--Q&A-->
     <section class="qa bg-base-200 py-5 ">
         <div class="text-center">
-         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl py-10">Q&A</h1>    
+         <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl py-10">Domande Frequenti</h1>    
         </div>
         <!--Q&A CONTAINER-->
      <div class="container mx-auto md:h-80">         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-full ">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-full relative ">
                                    <!--Q&A BOX-->
              <div v-for="(faq,index) in faqs" :key="index">                
                   <div   tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
@@ -158,25 +117,27 @@
                       <p>{{faq.answer}}</p>
                     </div>
                  </div>
-             </div>      
-        </div>
-     </div>
+             </div>    
+             <button class="btn btn-primary">La tua domanda non è in elenco?</button>  
+             <button class="btn btn-primary">Contattaci</button>             
+        </div>        
+     </div>     
     </section>
                                                                     <!--REGISTER-->
-    <section class="register py-20">
-      <div class="text-center">
-        <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl pt-10">Registrati e inizia oggi a ricevere clienti</h1>
-        <button class="btn btn-primary m-3 mt-20">Registrati</button>
-     </div>
-    </section>
-  </main>
+   <section class="mb-40">
+    <div class="max-w-3xl px-6 py-16 mx-auto text-center">
+        <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl pt-10">Registrati e inizia <span class="text-secondary">oggi</span> a ricevere clienti</h1>
+        <div class="flex flex-col mt-8 space-y-3 sm:space-y-0 sm:flex-row sm:justify-center sm:-mx-2">
+            <input id="email" type="text" class="px-4 py-2 text-black bg-white border rounded-md sm:mx-2 dark:text-black dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" placeholder="Email Address">
+
+            <button class="btn btn-primary">Inizia Subito!</button>
+        </div>
+    </div>
+  </section>  
+ </main>
 </template>  
 
 <script>
-
-
-
-
 export default {
     data: () => ({
         information:[
@@ -193,32 +154,28 @@ export default {
                 numericInfo:"7777k",
             },
         ],
-        faqs:[
+        freelancers:[
             {
-                question:"Question1",
-                answer:"Hidden answer showed at click."
+                freelancer:"Eli Golam",
+                profession:"Full-Stack Developer",
             },
             {
-                question:"Question2",
-                answer:"Hidden answer showed at click."
+                freelancer:"Hugo",
+                profession:"Back-End Developer",
             },
             {
-                question:"Question3",
-                answer:"Hidden answer showed at click."
+                freelancer:"Francesco Gentile",
+                profession:"Full-Stack Developer",
             },
             {
-                question:"Question4",
-                answer:"Hidden answer showed at click."
+                freelancer:"Valerio",
+                profession:"Full-Stack Developer",
             },
             {
-                question:"Question5",
-                answer:"Hidden answer showed at click."
+                freelancer:"Carmelo",
+                profession:"Front-End Developer",
             },
-            {
-                question:"Question6",
-                answer:"Hidden answer showed at click."
-            },
-        ],
+        ],  
         reviews:[
             {
                 review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, quam. Odio voluptatem officiis eos illo! Pariatur, totam alias. Beatae accusamus earum quos obcaecati minima molestias. Possimus minima dolores itaque! Esse! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates fugiat corrupti laudantium dolores reiciendis pariatur esse quod nihil quia cupiditate debitis quisquam nemo, accusamus animi explicabo? Architecto, unde laboriosam?",
@@ -244,38 +201,51 @@ export default {
                 userName:"Mario Rossi",
                 profession:"Student",
             },            
-        ],
-        freelancers:[
+        ],            
+        faqs:[
             {
-                freelancer:"Eli Golam",
-                profession:"Full-Stack Developer",
+                question:"Question1",
+                answer:"Hidden answer showed at click."
             },
             {
-                freelancer:"Hugo",
-                profession:"Back-End Developer",
+                question:"Question2",
+                answer:"Hidden answer showed at click."
             },
             {
-                freelancer:"Francesco Gentile",
-                profession:"Full-Stack Developer",
+                question:"Question3",
+                answer:"Hidden answer showed at click."
             },
             {
-                freelancer:"Valerio",
-                profession:"Full-Stack Developer",
+                question:"Question4",
+                answer:"Hidden answer showed at click."
             },
             {
-                freelancer:"Carmelo",
-                profession:"Front-End Developer",
+                question:"Question5",
+                answer:"Hidden answer showed at click."
+            },
+            {
+                question:"Question6",
+                answer:"Hidden answer showed at click."
             },
         ],       
     }),
 
-mounted() {
-        this.$parent.paddingHandling(true,1000);
+    mounted() {
+        console.log(this.$parent.$refs.navbar);
+        this.$parent.$refs.navbar.toggleShowOnZero(false);
+        this.$parent.$refs.navbar.toggleCategoriesOnZero(false);
+        this.$parent.paddingHandling(false,1000);
     },
     beforeDestroy() {
-        this.$parent.paddingHandling(false);
+        this.$parent.$refs.navbar.toggleShowOnZero(true);
+        this.$parent.$refs.navbar.toggleCategoriesOnZero(true);
+        
     },
 }
 </script>
 <style lang="scss" scoped>
+img {
+  max-width: 60%;
+  height: auto;
+}
 </style>
