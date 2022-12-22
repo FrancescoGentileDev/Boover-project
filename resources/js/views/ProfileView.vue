@@ -476,26 +476,27 @@
                         v-for="(user, index) in correlatedUsers"
                         :key="index"
                         class="relative p-6"
-                        @click="$router.push(`/`)"
                     >
-                        <!--  <router-link :to="`/profile/${user.slug}`"> -->
                         <div class="flex flex-col justify-center items-center">
-                            <div class="avatar hover:scale-105 transition-all">
+                            <router-link :to="'/profile/' + user.slug">
                                 <div
-                                    class="w-32 rounded-full ring ring-white ring-offset-base-100 ring-offset-2"
+                                    class="avatar hover:scale-105 transition-all"
                                 >
-                                    <img
-                                        :src="user.avatar"
-                                        :alt="'Picture of ' + user.name"
-                                    />
+                                    <div
+                                        class="w-32 rounded-full ring ring-white ring-offset-base-100 ring-offset-2"
+                                    >
+                                        <img
+                                            :src="user.avatar"
+                                            :alt="'Picture of ' + user.name"
+                                        />
+                                    </div>
                                 </div>
-                            </div>
+                            </router-link>
                             <div class="text-center py-6 font-bold text-white">
                                 <h1>{{ user.name }}</h1>
                                 <h1>{{ user.lastname }}</h1>
                             </div>
                         </div>
-                        <!--  </router-link> -->
                     </slide>
                 </carousel>
             </div>
@@ -541,6 +542,15 @@ export default {
             return this.limitReviews
                 ? this.reviews.slice(0, this.limitReviews)
                 : this.object;
+        },
+    },
+    //
+    watch: {
+        $route(to, from) {
+            this.activeProfile = [];
+            /* console.log(this.$route.params.slug); */
+            this.getUserProfile(this.$route.params.slug);
+            window.scrollTo(0, 0);
         },
     },
 
@@ -589,6 +599,7 @@ export default {
                 this.reviews = response.data.reviews;
                 console.log("Debug - Current Active Profile", response.data);
 
+                this.correlatedUsers = [];
                 this.getUserCorrelated(this.activeProfile.skills[0].id);
             });
         },
@@ -655,16 +666,15 @@ export default {
     },
 
     created() {
-        this.getUserProfile(this.$route.params.slug);
+        /* corregge un bug sul carousel */
+        setTimeout(() => {
+            window.dispatchEvent(new Event("resize"));
+        }, 1000);
     },
     mounted() {
         this.$parent.paddingHandling(true, 1000);
-
-        /* corregge un bug sul carousel */
-        setTimeout(() => {
-            console.log(this.$refs.correlatedUsers);
-            window.dispatchEvent(new Event("resize"));
-        }, 1000);
+        this.getUserProfile(this.$route.params.slug);
+        this.getUserCorrelated(this.activeProfile.skills[0].id);
     },
     beforeDestroy() {
         this.$parent.paddingHandling(false);
@@ -676,8 +686,5 @@ export default {
 <style lang="scss" scoped>
 .flow > * + * {
     margin-top: 1em;
-}
-
-.VueCarousel {
 }
 </style>
