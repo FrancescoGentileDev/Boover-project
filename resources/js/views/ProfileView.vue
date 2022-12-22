@@ -1,6 +1,6 @@
 <template>
     <!-- // -->
-    <div class="bg-base-100 py-8">
+    <div class="bg-base-100 p7-8">
         <div class="text-sm breadcrumbs w-11/12 m-auto px-5">
             <ul>
                 <li>
@@ -91,6 +91,7 @@
                     <div class="p-8">
                         <h1 class="font-bold text-3xl items-center mt-20">
                             {{ activeProfile.name }}
+                            {{ activeProfile.lastname }}
                         </h1>
 
                         <!-- contact -->
@@ -201,9 +202,7 @@
 
                         <h1 class="mt-6 font-bold">{{ review.title }}</h1>
 
-                        <p
-                            class="leading-loose text-gray-500 dark:text-gray-300 text-left"
-                        >
+                        <p class="leading-loose text-gray-500 text-left">
                             {{ review.description }}
                         </p>
 
@@ -289,7 +288,7 @@
                             <div class="flex-1">
                                 <label
                                     class="block mb-2 text-sm text-base-content"
-                                    >Full Name</label
+                                    >Nome</label
                                 >
                                 <input
                                     type="text"
@@ -303,7 +302,7 @@
                             <div class="flex-1 mt-6">
                                 <label
                                     class="block mb-2 text-sm text-base-content"
-                                    >Email address</label
+                                    >Email</label
                                 >
                                 <input
                                     type="email"
@@ -317,7 +316,7 @@
                             <div class="flex-1 mt-6">
                                 <label
                                     class="block mb-2 text-sm text-base-content"
-                                    >Phone</label
+                                    >Telefono</label
                                 >
                                 <input
                                     type="tel"
@@ -331,12 +330,12 @@
                             <div class="flex-1 mt-14">
                                 <label
                                     class="block mb-2 text-sm text-base-content"
-                                    >Title</label
+                                    >Oggetto</label
                                 >
                                 <input
                                     type="text"
                                     required
-                                    placeholder="Hi, i'm john doe"
+                                    placeholder="Oggetto del messaggio"
                                     name="title"
                                     class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md"
                                 />
@@ -345,17 +344,24 @@
                             <div class="w-full mt-6">
                                 <label
                                     class="block mb-2 text-sm text-base-content"
-                                    >Message</label
+                                    >Messaggio</label
                                 >
                                 <textarea
                                     name="content"
                                     required
                                     class="block w-full h-32 px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48"
-                                    placeholder="Message"
+                                    placeholder="Scrivi qualcosa"
                                 ></textarea>
                             </div>
 
+                            <h1
+                                v-if="isMessageSent"
+                                class="text-center text-accent py-4"
+                            >
+                                Messaggio inviato!
+                            </h1>
                             <button
+                                v-else
                                 class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
                             >
                                 Send
@@ -376,7 +382,7 @@
                             <div class="flex-1">
                                 <label
                                     class="block mb-2 text-sm text-base-content"
-                                    >Full Name</label
+                                    >Nome</label
                                 >
                                 <input
                                     type="text"
@@ -390,11 +396,11 @@
                             <div class="flex-1 mt-14">
                                 <label
                                     class="block mb-2 text-sm text-base-content"
-                                    >Title</label
+                                    >Titolo</label
                                 >
                                 <input
                                     type="text"
-                                    placeholder="Hi, i'm john doe"
+                                    placeholder="Titolo della recensione"
                                     name="title"
                                     class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md"
                                 />
@@ -402,13 +408,13 @@
                             <div class="flex-1 mt-14">
                                 <label
                                     class="block mb-2 text-sm text-base-content"
-                                    >Vote</label
+                                    >Voto</label
                                 >
                                 <input
                                     type="number"
                                     min="1"
                                     max="5"
-                                    placeholder="Rate"
+                                    placeholder="Seleziona il numero di stelle"
                                     name="vote"
                                     class="block w-full px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md"
                                 />
@@ -417,16 +423,24 @@
                             <div class="w-full mt-6">
                                 <label
                                     class="block mb-2 text-sm text-base-content"
-                                    >Message</label
+                                    >Recensione</label
                                 >
                                 <textarea
                                     name="description"
                                     class="block w-full h-32 px-5 py-3 mt-2 text-base-content placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48"
-                                    placeholder="Message"
+                                    placeholder="Scrivi la tua recensione"
                                 ></textarea>
                             </div>
 
+                            <h1
+                                v-if="isReviewSent"
+                                class="text-center text-accent py-4"
+                            >
+                                Recensione inviata!
+                            </h1>
+
                             <button
+                                v-else
                                 class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
                             >
                                 Send
@@ -437,15 +451,76 @@
             </div>
             <!-- FORMS END /////////////////////////////////////////////////////////////////////////////// -->
         </div>
+        <!-- correlatedUser -->
+        <!--   <div class="bg-primary py-8 mt-16">
+            <h1 class="font-bold text-2xl px-5 py-16 text-white text-center">
+                Altri profili che potrebbero interessarti
+            </h1>
+
+            <div class="w-full m-auto">
+                <carousel
+                    :isTouch="true"
+                    class="w-full"
+                    :navigation-enabled="false"
+                    navigationNextLabel=' <div class="btn btn-circle">❯</div>'
+                    navigationPrevLabel='  <div class="btn btn-circle">❮</div>'
+                    :per-page="1"
+                    :perPageCustom="[
+                        [640, 2],
+                        [768, 3],
+                        [1024, 4],
+                        [1280, 5],
+                    ]"
+                >
+
+
+                    <slide
+                        v-for="(user, index) in correlatedUsers"
+                        :key="index"
+                        class="relative p-6"
+                        @click="$router.push(`/`)"
+                    >
+                        <router-link :to="`/profile/${user.slug}`">
+                            <div
+                                class="flex flex-col justify-center items-center"
+                            >
+                                <div
+                                    class="avatar hover:scale-105 transition-all"
+                                >
+                                    <div
+                                        class="w-32 rounded-full ring ring-white ring-offset-base-100 ring-offset-2"
+                                    >
+                                        <img
+                                            :src="user.avatar"
+                                            :alt="'Picture of ' + user.name"
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="text-center py-6 font-bold text-white"
+                                >
+                                    <h1>{{ user.name }}</h1>
+                                    <h1>{{ user.lastname }}</h1>
+                                </div>
+                            </div>
+                        </router-link>
+                    </slide>
+                </carousel>
+            </div>
+        </div> -->
     </div>
     <!-- // -->
 </template>
 
 <script>
+import axios from "axios";
+import { Carousel, Slide } from "vue-carousel";
+
 export default {
     data() {
         return {
             activeProfile: {},
+            correlatedUsers: [],
             reviews: {},
             formGenre: "message",
             isMessageActive: true,
@@ -453,7 +528,13 @@ export default {
             starsStatus: [false, false, false, false, false], // determina quali stelle saranno piene e quali no nelle review
             limitReviews: 5,
             allReviewsAreShowed: false,
+            isMessageSent: false,
+            isReviewSent: false,
         };
+    },
+    components: {
+        Carousel,
+        Slide,
     },
 
     computed: {
@@ -487,6 +568,7 @@ export default {
 
             axios.post("/api/sendMessage", submitMessage).then((response) => {
                 console.log("Debug - Message Sent", response);
+                this.isMessageSent = true;
                 form.reset();
             });
         },
@@ -504,6 +586,7 @@ export default {
 
             axios.post("/api/review/send", submitMessage).then((response) => {
                 console.log("Debug - Message Sent", response);
+                this.isReviewSent = true;
                 form.reset();
             });
         },
@@ -513,6 +596,32 @@ export default {
                 this.activeProfile = response.data;
                 this.reviews = response.data.reviews;
                 console.log("Debug - Current Active Profile", response.data);
+
+                this.getUserCorrelated(this.activeProfile.skills[0].id);
+            });
+        },
+        //
+        getUserCorrelated(id) {
+            axios.get(`/api/users/?skill=${id}`).then((response) => {
+                let allCorrelatedUsers = response.data.data;
+
+                allCorrelatedUsers.forEach((correlatedUser) => {
+                    /* toglie il profilo dell'utente stesso dai suggeriti */
+                    if (correlatedUser.user_id == this.activeProfile.user_id) {
+                        console.log(
+                            "doppione",
+                            correlatedUser.user_id,
+                            this.activeProfile.user_id
+                        );
+                    } else {
+                        this.correlatedUsers.push(correlatedUser);
+                    }
+                });
+
+                console.log(
+                    "Debug - Current correlated users",
+                    this.correlatedUsers
+                );
             });
         },
         //
@@ -526,6 +635,9 @@ export default {
             } else {
                 this.isMessageActive = false;
             }
+
+            this.isMessageSent = false;
+            this.isReviewSent = false;
         },
         //
         turnVoteIntoStar(vote) {
@@ -555,6 +667,12 @@ export default {
     },
     mounted() {
         this.$parent.paddingHandling(true, 1000);
+
+        /* corregge un bug sul carousel */
+        setTimeout(() => {
+            console.log(this.$refs.correlatedUsers);
+            window.dispatchEvent(new Event("resize"));
+        }, 1000);
     },
     beforeDestroy() {
         this.$parent.paddingHandling(false);
@@ -568,7 +686,6 @@ export default {
     margin-top: 1em;
 }
 
-.wrapper {
-    /* overflow: unset !important; */
+.VueCarousel {
 }
 </style>
