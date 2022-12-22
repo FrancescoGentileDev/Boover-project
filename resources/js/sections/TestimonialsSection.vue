@@ -1,7 +1,11 @@
 <template>
     <div class="wrapper pt-24 pb-24 bg-base-100">
-        <carousel :per-page="1" :loop="true" class="w-11/12 m-auto p-6">
-            <slide v-for="(review, index) in reviews.slice(0, 3)" :key="index">
+        <carousel :per-page="1" :isTouch="true" class="w-11/12 m-auto p-6">
+            <slide
+                v-for="(review, index) in reviews.slice(0, 3)"
+                :key="index"
+                class="p-6"
+            >
                 <!--  // -->
                 <div
                     class="flex m-auto gap-9 flex-col md:flex-row justify-between"
