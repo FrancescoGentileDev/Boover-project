@@ -6,11 +6,9 @@
             <!-- // -->
             <div class="">
                 <h1 class="text-5xl w-full lg:w-3/4 font-normal text-white">
-                    Cerca il
-                    <span class="font-bold">professionista</span> di cui hai
-                    bisogno per far crescere il tuo<span class="font-extrabold">
-                        business.</span
-                    >
+                    Collabora con i nostri
+                    <span class="font-bold">freelance.</span> Dai una svolta al
+                    tuo<span class="font-extrabold"> business.</span>
                 </h1>
                 <button class="btn btn-secondary mt-4">Get Started</button>
             </div>
