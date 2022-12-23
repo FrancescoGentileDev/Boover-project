@@ -42,5 +42,5 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
     Route::get('{catchall}', 'redirects@redirect')->where('catchall', '.*');
 });
 
-Route::get('{any?}', 'dashboard\guestController@guest')->where('any', '.*');
+Route::get('{any?}', 'guestController@guest')->where('any', '.*');
 

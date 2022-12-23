@@ -103,7 +103,11 @@ Artisan::command('nataliaRemove', function (Faker $faker) {
     echo 'ok';
     $user->delete();
 });
+Artisan::command('removetest', function (Faker $faker) {
+    $user = User::query()->where('email', 'zakary75@example.com')->first();
 
+    $user->sponsors()->sync([]);
+});
 Artisan::command('ping', function (Faker $faker) {
     $startTime = microtime(true);
 
