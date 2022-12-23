@@ -39,11 +39,10 @@ Route::middleware('auth')->namespace('Dashboard')->name('dashboard.')->prefix('d
 
     Route::post('themeSwitch', 'ThemeController@switch')->name('themeSwitch');
 
-    Route::any('{catchall}', function () {
-        return redirect()->back();
-    })->where('catchall', '.*');
+    Route::get('{catchall}', 'redirects@redirect')->where('catchall', '.*');
 });
 
 Route::get('{any?}', function () {
     return view('guest.home');
 })->where('any', '.*');
+

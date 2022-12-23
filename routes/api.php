@@ -17,10 +17,6 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::resource('users', 'api\UserController')->except(['create', 'edit', 'update', 'destroy'])->parameter('id', 'slug');
 Route::get('reviews/{id}', 'api\ReviewController@getReview')->name('reviews.get');
 Route::resource('skills', 'api\SkillController')->except(['create', 'edit', 'update', 'destroy'])->parameter('id', 'slug');
