@@ -21,27 +21,17 @@ class ReviewController extends Controller
         $request->validate([
             'user_id' => ['required', 'exists:users,id'],
             'nickname' => ['required', 'string', 'max:32'],
-            'title' => ['required', 'string', 'max:50'],
+            'title' => [ 'string', 'max:50'],
             'description' => ['required', 'string', 'max:255'],
             'vote' => ['required', 'integer', 'min:1', 'max:5'],
         ]);
-
         //
-        $review = new Review();
-        $review->make([
-            'user_id' => $request->user_id,
-            'nickname' => $request->nickname,
-            'title' => $request->title,
-            'description' => $request->description,
-            'vote' => $request->vote,
-        ]);
-        if($request->hasFile('image')){
-            $path = Storage::putFile('uploads/reviews', $request->file('image'));
-            $review->image = asset('storage/' . $path);
-        }
-        $review->save();
-        dd($review);
-        return response($review);
+
+        $inbox = new Review();
+        $inbox->fill($request->all());
+        $inbox->save();
+        return response($inbox, 200);
+
 
     }
 
