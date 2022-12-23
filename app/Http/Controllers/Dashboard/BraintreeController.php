@@ -15,10 +15,10 @@ class BraintreeController extends Controller
     public function token(Request $request) {
         // Create new Gateway
         $gateway = new \Braintree\Gateway([
-            'environment' => env('BRAINTREE_ENVIRONMENT'),
-            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-            'privateKey' => env('BRAINTREE_PRIVATE_KEY')
+            'environment' => "sandbox",
+            'merchantId' =>"5b7rjcxmb2pdc9fw",
+            'publicKey' => "xbjxy2qggmb5mrr6",
+            'privateKey' => "6c30322db62ebd20aed04b69808e146d",
         ]);
 
         // Create Client Token
@@ -33,12 +33,11 @@ class BraintreeController extends Controller
     public function checkout(Request $request) {
         // Create new Gateway
         $gateway = new \Braintree\Gateway([
-            'environment' => env('BRAINTREE_ENVIRONMENT'),
-            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-            'privateKey' => env('BRAINTREE_PRIVATE_KEY')
+            'environment' => "sandbox",
+            'merchantId' =>"5b7rjcxmb2pdc9fw",
+            'publicKey' => "xbjxy2qggmb5mrr6",
+            'privateKey' => "6c30322db62ebd20aed04b69808e146d",
         ]);
-
         // Find current user who is making the transaction
         $user = User::find(Auth::id());
 
