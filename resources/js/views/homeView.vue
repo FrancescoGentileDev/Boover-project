@@ -3,6 +3,7 @@
         <main-hero-section :categories="categories" />
         <mark-section></mark-section>
         <skills-showcase-section></skills-showcase-section>
+        <users-showcase-section></users-showcase-section>
         <testimonials-section></testimonials-section>
         <JumbotronSection></JumbotronSection>
     </div>
@@ -15,6 +16,7 @@ import MainHeroSection from "../sections/mainHeroSection.vue";
 import MarkSection from "../sections/MarkSection.vue";
 import SkillsShowcaseSection from "../sections/SkillsShowcaseSection.vue";
 import TestimonialsSection from "../sections/TestimonialsSection.vue";
+import UsersShowcaseSection from "../sections/UsersShowcaseSection.vue";
 export default {
     name: "HomeView",
 
@@ -25,6 +27,7 @@ export default {
         TestimonialsSection,
         JumbotronSection,
         MarkSection,
+        UsersShowcaseSection,
     },
     props: {
         categories: {
@@ -35,7 +38,7 @@ export default {
     watch: {
         $route(to, from) {
             window.scrollTo(0, 0);
-        }
+        },
     },
     mounted() {
         console.log(this.$parent.$refs.navbar);
@@ -47,7 +50,6 @@ export default {
     beforeDestroy() {
         this.$parent.$refs.navbar.toggleShowOnZero(true);
         this.$parent.$refs.navbar.toggleCategoriesOnZero(true);
-        
     },
 };
 </script>
