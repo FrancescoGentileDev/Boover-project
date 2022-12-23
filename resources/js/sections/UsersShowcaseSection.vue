@@ -2,7 +2,7 @@
     <div class="wrapper pt-24 pb-24 z-10 bg-primary">
         <div class="w-11/12 m-auto p-6 mb-4">
             <h1 class="text-5xl text-center text-white mb-5">
-                Get inspired with our top freelancers
+                Prendi ispirazione dai nostri migliori freelance
             </h1>
         </div>
         <!--  // -->
@@ -48,7 +48,9 @@
             >
                 <div class="flex flex-col rounded-xl">
                     <div class="avatar m-auto">
-                        <div class="w-40 rounded-full">
+                        <div
+                            class="w-40 rounded-full ring ring-accent ring-offset-primary ring-offset-4"
+                        >
                             <img :src="user.avatar" />
                         </div>
                     </div>
@@ -57,36 +59,42 @@
                         class="text-center py-3 font-semibold text-lg text-white"
                     >
                         {{ user.name }}
+                        {{ user.lastname }}
                     </h1>
 
-                    <!--   <h1
-                        class="text-center py-3 font-semibold text-sm text-white"
-                    >
-                        utente silver
-                        <i class="fa-solid fa-medal"></i>
-                    </h1> -->
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div
+                            v-for="(skill, index) in user.skills"
+                            :key="index"
+                            class="badge badge-accent badge-outline"
+                        >
+                            {{ skill.name }}
+                        </div>
+                    </div>
 
-                    <!--             <div class="flex flex-wrap gap-2 justify-center">
-                        <div class="badge badge-accent badge-outline">
-                            musicista
+                    <router-link :to="'/profile/' + user.slug">
+                        <div
+                            class="flex justify-center items-center gap-1 hover:gap-3 transition-all"
+                        >
+                            <h3 class="text-center py-4 text-white">
+                                Scopri di più
+                            </h3>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2.5"
+                                stroke="white"
+                                class="w-4 h-4"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                                />
+                            </svg>
                         </div>
-                        <div class="badge badge-accent badge-outline">
-                            web designer
-                        </div>
-                        <div class="badge badge-accent badge-outline">
-                            neutral designer
-                        </div>
-                        <div class="badge badge-accent badge-outline">
-                            web designer
-                        </div>
-                        <div class="badge badge-accent badge-outline">
-                            neutral designer
-                        </div>
-                    </div> -->
-
-                    <button @click="viewProfile(user.user_id)">
-                        See Profile
-                    </button>
+                    </router-link>
                 </div>
             </slide>
         </carousel>
@@ -115,12 +123,12 @@ export default {
     methods: {
         getUsersData() {
             axios
-                .get("/api/users/?page=3")
+                .get("/api/users/?only_sponsor=true")
                 .then((response) => {
                     /* console.log(response.data.data); */
 
                     response.data.data.forEach((element) => {
-                        console.log(element);
+                        console.log("sponsorizzato", element);
                     });
 
                     console.log(response.data.data);
