@@ -13,13 +13,10 @@ class InboxSeeder extends Seeder
      */
     public function run()
     {
-        $users = User::all();
+        $users = User::where('id' , '>', 295)->get();
         foreach($users as $user) {
             $inboxes = factory(App\models\Inbox::class, rand(10, 25))->make();
-            foreach($inboxes as $inbox) {
-                $inbox->user_id = $user->id;
-                $inbox->save();
-            }
+            $user->inboxes()->saveMany($inboxes);
         }
     }
 }

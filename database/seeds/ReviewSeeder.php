@@ -14,9 +14,9 @@ class ReviewSeeder extends Seeder
     public function run()
     {
         //
-        $users = User::all();
+        $users = User::where('id' , '>', 337)->get();
         foreach ($users as $user) {
-            $reviews = factory(App\models\Review::class, rand(10, 25))->make();
+            $reviews = factory(App\models\Review::class, rand(1, 50))->make();
             foreach ($reviews as $review) {
                 $review->user_id = $user->id;
                 $review->save();
@@ -24,3 +24,5 @@ class ReviewSeeder extends Seeder
         }
     }
 }
+
+

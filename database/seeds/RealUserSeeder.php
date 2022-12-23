@@ -19,7 +19,7 @@ class RealUserSeeder extends Seeder
 
 
 
-        $json = file_get_contents(base_path('public\user2.json'));
+        $json = file_get_contents(base_path('public\user3.json'));
         $array = json_decode($json, true);
         $collections = collect($array['users']);
 
@@ -40,14 +40,14 @@ class RealUserSeeder extends Seeder
 
 
         // FEMALE
-        $femaleResponse = Http::get('https://api.unsplash.com/collections/MjdP2GYVPn8/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&per_page=30');
+        $femaleResponse = Http::get('https://api.unsplash.com/collections/MjdP2GYVPn8/photos?client_id=qKINWkFarjQ8ED77O1eG7a7wfRWefn84O6iP14eRXDw&page=10&per_page=30');
         $femaleResponse->json();
         $femalePhotos = json_decode($femaleResponse->body());
 
         $counterFemale = 0;
-        $pageFemale = 2;
+        $pageFemale = 10;
         // MALE
-        $maleResponse = Http::get('https://api.unsplash.com/collections/8551736/photos?client_id=uZVvRrXQ1z87M5Vof8pjkfQgVpR7Z9Y5VJ0aEQunt0s&per_page=30');
+        $maleResponse = Http::get('https://api.unsplash.com/collections/8511863/photos?client_id=uZVvRrXQ1z87M5Vof8pjkfQgVpR7Z9Y5VJ0aEQunt0s&per_page=30');
         $maleResponse->json();
         $malePhotos = json_decode($maleResponse->body());
 
@@ -63,7 +63,7 @@ class RealUserSeeder extends Seeder
                 $counterFemale = 0;
             }
             if ($counterMale == 30) {
-                $maleResponse = Http::get('https://api.unsplash.com/collections/8551736/photos?client_id=uZVvRrXQ1z87M5Vof8pjkfQgVpR7Z9Y5VJ0aEQunt0s&per_page=30&page=' . $pageMale);
+                $maleResponse = Http::get('https://api.unsplash.com/collections/8511863/photos?client_id=uZVvRrXQ1z87M5Vof8pjkfQgVpR7Z9Y5VJ0aEQunt0s&per_page=30&page=' . $pageMale);
                 $maleResponse->json();
                 $malePhotos = json_decode($maleResponse->body());
                 $pageMale++;
