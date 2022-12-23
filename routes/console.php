@@ -63,19 +63,7 @@ Artisan::command('test2', function (Faker $faker) {
 
     dump($users->toArray()[114]);
 });
-function getSlugs($fullname)
-{
-    $slug = Str::slug($fullname, '-');
-    $slugBase = $slug;
-    $userWithSlug = User::where('slug', $slug)->first();
-    $counter = 1;
-    while ($userWithSlug) {
-        $slug = $slugBase . '-' . $counter;
-        $counter++;
-        $userWithSlug = User::where('slug', $slug)->first();
-    }
-    return $slug;
-}
+
 Artisan::command('test3', function (Faker $faker) {
 
     $users =  User::where('avatar', null)->get();
