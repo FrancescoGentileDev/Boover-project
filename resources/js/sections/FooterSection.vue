@@ -1,7 +1,7 @@
 !
 <template>
   <div>
-    <footer class="bg-base-200 dark:bg-gray-900">
+    <footer class="bg-base-200 ">
       <div class="container px-6 py-8 mx-auto">
         <div
           class="
@@ -27,9 +27,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -44,9 +44,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -61,9 +61,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -78,9 +78,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -95,9 +95,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -112,9 +112,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -129,9 +129,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -146,9 +146,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -163,9 +163,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -187,9 +187,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
               >Homepage</router-link
@@ -203,9 +203,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
               >Il Nostro Team</router-link
@@ -219,9 +219,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -236,9 +236,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -253,9 +253,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -277,9 +277,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -294,9 +294,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -311,9 +311,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -328,9 +328,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -345,9 +345,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -362,9 +362,9 @@
                 font-medium
                 text-gray-500
                 duration-700
-                dark:text-gray-300
+
                 hover:text-gray-400
-                dark:hover:text-gray-200
+
                 hover:underline
               "
             >
@@ -373,7 +373,7 @@
           </div>
         </div>
 
-        <hr class="my-10 border-gray-200 dark:border-gray-700" />
+        <hr class="my-10 border-gray-200 " />
 
         <div class="sm:flex sm:items-center sm:justify-between">
           <p class="text-sm text-gray-400">
@@ -387,7 +387,7 @@
                 mx-2
                 text-gray-400
                 hover:text-gray-500
-                dark:hover:text-gray-300
+
               "
               aria-label="Reddit"
             >
@@ -409,7 +409,7 @@
                 mx-2
                 text-gray-400
                 hover:text-gray-500
-                dark:hover:text-gray-300
+
               "
               aria-label="Facebook"
             >
@@ -431,7 +431,7 @@
                 mx-2
                 text-gray-400
                 hover:text-gray-500
-                dark:hover:text-gray-300
+
               "
               aria-label="Github"
             >

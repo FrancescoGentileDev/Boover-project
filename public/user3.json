@@ -1,0 +1,404 @@
+{
+    "users": [
+
+
+                {
+                  "name": "Alessio",
+                  "lastname": "Rossi",
+                  "gender": "M",
+                  "presentation": "Esperto di sviluppo siti web con una grande passione per il web design",
+                  "skills": [17]
+                },
+
+                {
+                  "name": "Beatrice",
+                  "lastname": "Verdi",
+                  "gender": "F",
+                  "presentation": "Esperta di brand identity con un occhio per il branding",
+                  "skills": [17, 2]
+                },
+                {
+                  "name": "Carlo",
+                  "lastname": "Bianchi",
+                  "gender": "M",
+                  "presentation": "Esperto di e-commerce con una grande passione per il marketing online",
+                  "skills": [17, 6]
+                },
+                {
+                  "name": "Daniela",
+                  "lastname": "Neri",
+                  "gender": "F",
+                  "presentation": "Esperta di sviluppo siti web con anni di esperienza nel settore",
+                  "skills": [17]
+                },
+                {
+                  "name": "Emanuele",
+                  "lastname": "Rosa",
+                  "gender": "M",
+                  "presentation": "Esperto di brand identity con una grande passione per il design grafico",
+                  "skills": [17, 2]
+                },
+                {
+                  "name": "Francesca",
+                  "lastname": "Viola",
+                  "gender": "F",
+                  "presentation": "Esperta di e-commerce con anni di esperienza nel settore delle vendite online",
+                  "skills": [17, 6]
+                },
+                {
+                  "name": "Giorgio",
+                  "lastname": "Gialli",
+                  "gender": "M",
+                  "presentation": "Esperto di sviluppo siti web con una grande passione per la programmazione",
+                  "skills": [17]
+                },
+                {
+                    "name": "Mario",
+                    "lastname": "Rossi",
+                    "gender": "M",
+                    "presentation": "Sviluppatore web con 3 anni di esperienza",
+                    "skills": [
+                      17,
+                      2
+                    ]
+                  },
+                  {
+                    "name": "Sara",
+                    "lastname": "Bianchi",
+                    "gender": "F",
+                    "presentation": "Grafico e web designer con 5 anni di esperienza",
+                    "skills": [
+                      17,
+                      2,
+                      6
+                    ]
+                  },
+                  {
+                    "name": "Antonio",
+                    "lastname": "Verdi",
+                    "gender": "M",
+                    "presentation": "Sviluppatore web junior con 2 anni di esperienza",
+                    "skills": [
+                      17
+                    ]
+                  },
+                  {
+                    "name": "Chiara",
+                    "lastname": "Azzurri",
+                    "gender": "F",
+                    "presentation": "Grafico e web designer con 3 anni di esperienza",
+                    "skills": [
+                      17,
+                      2
+                    ]
+                  },
+                  {
+                    "name": "Francesco",
+                    "lastname": "Gialli",
+                    "gender": "M",
+                    "presentation": "Sviluppatore web senior con 10 anni di esperienza",
+                    "skills": [
+                      17,
+                      2,
+                      6
+                    ]
+                  },
+                  {
+                    "name": "Laura",
+                    "lastname": "Neri",
+                    "gender": "F",
+                    "presentation": "Grafico e web designer con 7 anni di esperienza",
+                    "skills": [
+                      17,
+                      2,
+                      6
+                    ]
+                  },
+                    {
+                        "name": "Giuseppe",
+                        "lastname": "Viola",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web junior con 1 anno di esperienza",
+                        "skills": [
+                        17
+                        ]
+                    },
+                    {
+                        "name": "Giulia",
+                        "lastname": "Rosa",
+                        "gender": "F",
+                        "presentation": "Grafico e web designer con 4 anni di esperienza",
+                        "skills": [
+                        17,
+                        2,
+                        6
+                        ]
+                    },
+                    {
+                        "name": "Giovanni",
+                        "lastname": "Bianchi",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web senior con 8 anni di esperienza",
+                        "skills": [
+                        17,
+                        2,
+                        6
+                        ]
+                    },
+                    {
+                        "name": "Martina",
+                        "lastname": "Rossi",
+                        "gender": "F",
+                        "presentation": "Grafico e web designer con 2 anni di esperienza",
+                        "skills": [
+                        17,
+                        2
+                        ]
+                    },
+                    {
+                        "name": "Luca",
+                        "lastname": "Verdi",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web junior con 1 anno di esperienza",
+                        "skills": [
+                        17
+                        ]
+                    },
+                    {
+                        "name": "Alessandra",
+                        "lastname": "Gialli",
+                        "gender": "F",
+                        "presentation": "Grafico e web designer con 6 anni di esperienza",
+                        "skills": [
+                        17,
+                        2,
+                        6
+                        ]
+                    },
+                    {
+                        "name": "Alessia",
+                        "lastname": "Moretti",
+                        "gender": "F",
+                        "presentation": "Specializzata in sviluppo siti web e brand identity",
+                        "skills": [17, 2]
+                      },
+                      {
+                        "name": "Graziano",
+                        "lastname": "Barbieri",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web e appassionato di e-commerce",
+                        "skills": [17, 6]
+                      },
+                      {
+                        "name": "Veronica",
+                        "lastname": "Caputi",
+                        "gender": "F",
+                        "presentation": "Esperta di brand identity e e-commerce",
+                        "skills": [17, 2, 6]
+                      },
+                      {
+                        "name": "Silvio",
+                        "lastname": "Giordano",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web",
+                        "skills": [17]
+                      },
+                      {
+                        "name": "Serena",
+                        "lastname": "Rinaldi",
+                        "gender": "F",
+                        "presentation": "Specializzata in sviluppo siti web e brand identity",
+                        "skills": [17, 2]
+                      },
+                      {
+                        "name": "Vittorio",
+                        "lastname": "Morelli",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web e appassionato di e-commerce",
+                        "skills": [17, 6]
+                      },
+                      {
+                        "name": "Flavia",
+                        "lastname": "De Santis",
+                        "gender": "F",
+                        "presentation": "Esperta di brand identity e e-commerce",
+                        "skills": [17, 2, 6]
+                      },
+                      {
+                        "name": "Federico",
+                        "lastname": "Neri",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web",
+                        "skills": [17]
+                      },
+                      {
+                        "name": "Daniela",
+                        "lastname": "Fontana",
+                        "gender": "F",
+                        "presentation": "Specializzata in sviluppo siti web e brand identity",
+                        "skills": [17, 2]
+                      },
+                      {
+                        "name": "Emanuele",
+                        "lastname": "Sica",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web e appassionato di e-commerce",
+                        "skills": [17, 6]
+                      },
+                      {
+                        "name": "Laura",
+                        "lastname": "Orlando",
+                        "gender": "F",
+                        "presentation": "Esperta di brand identity e e-commerce",
+                        "skills": [17, 2, 6]
+                      },
+                      {
+                        "name": "Marino",
+                        "lastname": "Paris",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web",
+                        "skills": [17]
+                      },
+                      {
+                        "name": "Patrizia",
+                        "lastname": "Conte",
+                        "gender": "F",
+                        "presentation": "Specializzata in sviluppo siti web e brand identity",
+                        "skills": [17, 2]
+                      },
+                      {
+                        "name": "Vincenzo",
+                        "lastname": "Gallo",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web e appassionato di e-commerce",
+                        "skills": [17, 6]
+                      },
+                      {
+                        "name": "Elisa",
+                        "lastname": "De Angelis",
+                        "gender": "F",
+                        "presentation": "Esperta di brand identity e e-commerce",
+                        "skills": [17, 2, 6]
+                      },
+                      {
+                        "name": "Piero",
+                        "lastname": "Mazzi",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web",
+                        "skills": [17]
+                      },
+                      {
+                        "name": "Alessandro",
+                        "lastname": "Verdi",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web con esperienza in brand identity e design di siti web",
+                        "skills": [17, 2]
+                      },
+                      {
+                        "name": "Martina",
+                        "lastname": "Bianchi",
+                        "gender": "F",
+                        "presentation": "Specializzata in e-commerce e ottimizzazione delle vendite online",
+                        "skills": [17, 6]
+                      },
+                      {
+                        "name": "Luca",
+                        "lastname": "Rossi",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web con conoscenze avanzate di HTML, CSS e JavaScript",
+                        "skills": [17]
+                      },
+                      {
+                        "name": "Chiara",
+                        "lastname": "Ferrari",
+                        "gender": "F",
+                        "presentation": "Esperta di brand identity, e-commerce e marketing online",
+                        "skills": [17, 2, 6]
+                      },
+                      {
+                        "name": "Giorgio",
+                        "lastname": "Esposito",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web con interesse per il commercio elettronico e l'analisi delle vendite online",
+                        "skills": [17, 6]
+                      },
+                      {
+                        "name": "Francesca",
+                        "lastname": "Rizzo",
+                        "gender": "F",
+                        "presentation": "Specializzata in sviluppo siti web e creazione di identità di marca efficaci",
+                        "skills": [17, 2]
+                      },
+                      {
+                        "name": "Stefano",
+                        "lastname": "Conti",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web con conoscenze avanzate di PHP e MySQL",
+                        "skills": [17]
+                      },
+                      {
+                        "name": "Eleonora",
+                        "lastname": "De Luca",
+                        "gender": "F",
+                        "presentation": "Esperta di brand identity, e-commerce e SEO",
+                        "skills": [17, 2, 6]
+                      },
+                      {
+                        "name": "Alessia",
+                        "lastname": "Moretti",
+                        "gender": "F",
+                        "presentation": "Specializzata in sviluppo siti web e creazione di identità di marca accattivanti",
+                        "skills": [17, 2]
+                      },
+                      {
+                        "name": "Graziano",
+                        "lastname": "Barbieri",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web con interesse per il commercio elettronico e la gestione delle vendite online",
+                        "skills": [17, 6]
+                      },
+                      {
+                        "name": "Veronica",
+                        "lastname": "Caputi",
+                        "gender": "F",
+                        "presentation": "Esperta di brand identity, e-commerce e marketing digitale",
+                        "skills": [17, 2, 6]
+                      },
+                      {
+                        "name": "Silvio",
+                        "lastname": "Giordano",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web con conoscenze avanzate di programmazione orientata agli oggetti",
+                        "skills": [17]
+                      },
+                      {
+                        "name": "Serena",
+                        "lastname": "Rinaldi",
+                        "gender": "F",
+                        "presentation": "Specializzata in sviluppo siti web e creazione di identità di marca professionali",
+                        "skills": [17, 2]
+                      },
+                      {
+                        "name": "Vittorio",
+                        "lastname": "Morelli",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web con interesse per il commercio elettronico e l'ottimizzazione delle conversioni",
+                        "skills": [17, 6]
+                      },
+                      {
+                        "name": "Flavia",
+                        "lastname": "De Santis",
+                        "gender": "F",
+                        "presentation": "Esperta di brand identity, e-commerce e gestione dei social media",
+                        "skills": [17, 2, 6]
+                      },
+                      {
+                        "name": "Federico",
+                        "lastname": "Neri",
+                        "gender": "M",
+                        "presentation": "Sviluppatore web con conoscenze avanzate di sviluppo front-end e back-end",
+                        "skills": [17]
+                      }
+
+    ]
+}

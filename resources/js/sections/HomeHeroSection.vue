@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="bg-base-200 dark:bg-gray-900">
+    <header class="bg-base-200 ">
       <div
         class="
           container
@@ -20,13 +20,13 @@
                 font-semibold
                 tracking-wide
                 text-gray-400
-                dark:text-white
+
                 lg:text-4xl
               "
             >
               This hero's title
             </h1>
-            <p class="mt-4 text-gray-500 dark:text-gray-300">
+            <p class="mt-4 text-gray-500 ">
               Hero's description: Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Debitis dicta aspernatur, eveniet, dolorem
               veniam odit dolorum assumenda quos, similique atque sed saepe!
@@ -35,7 +35,7 @@
             </p>
             <div class="grid gap-6 mt-8 sm:grid-cols-2">
               <div
-                class="flex items-center text-gray-500 -px-3 dark:text-gray-200"
+                class="flex items-center text-gray-500 -px-3 "
               >
                 <svg
                   class="w-5 h-5 mx-3"
@@ -56,7 +56,7 @@
               </div>
 
               <div
-                class="flex items-center text-gray-500 -px-3 dark:text-gray-200"
+                class="flex items-center text-gray-500 -px-3 "
               >
                 <svg
                   class="w-5 h-5 mx-3"
@@ -77,7 +77,7 @@
               </div>
 
               <div
-                class="flex items-center text-gray-500 -px-3 dark:text-gray-200"
+                class="flex items-center text-gray-500 -px-3 "
               >
                 <svg
                   class="w-5 h-5 mx-3"
@@ -98,7 +98,7 @@
               </div>
 
               <div
-                class="flex items-center text-gray-500 -px-3 dark:text-gray-200"
+                class="flex items-center text-gray-500 -px-3 "
               >
                 <svg
                   class="w-5 h-5 mx-3"
@@ -119,7 +119,7 @@
               </div>
 
               <div
-                class="flex items-center text-gray-500 -px-3 dark:text-gray-200"
+                class="flex items-center text-gray-500 -px-3 "
               >
                 <svg
                   class="w-5 h-5 mx-3"
@@ -140,7 +140,7 @@
               </div>
 
               <div
-                class="flex items-center text-gray-500 -px-3 dark:text-gray-200"
+                class="flex items-center text-gray-500 -px-3 "
               >
                 <svg
                   class="w-5 h-5 mx-3"

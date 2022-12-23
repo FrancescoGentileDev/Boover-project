@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\models\Review::class, function (Faker $faker) {
 
-    $date = date('Y-m-d H:i:s', $faker->dateTimeBetween('-359 days', 'now')->getTimestamp());
+    $date =  $faker->dateTimeBetween('-365 days', 'now')->getTimestamp();
 
     return [
         //

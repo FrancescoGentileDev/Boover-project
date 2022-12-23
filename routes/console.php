@@ -6,6 +6,7 @@ use App\User;
 use App\models\Skill;
 use Illuminate\Support\Collection;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
@@ -62,19 +63,7 @@ Artisan::command('test2', function (Faker $faker) {
 
     dump($users->toArray()[114]);
 });
-function getSlugs($fullname)
-{
-    $slug = Str::slug($fullname, '-');
-    $slugBase = $slug;
-    $userWithSlug = User::where('slug', $slug)->first();
-    $counter = 1;
-    while ($userWithSlug) {
-        $slug = $slugBase . '-' . $counter;
-        $counter++;
-        $userWithSlug = User::where('slug', $slug)->first();
-    }
-    return $slug;
-}
+
 Artisan::command('test3', function (Faker $faker) {
 
     $users =  User::where('avatar', null)->get();
@@ -106,7 +95,28 @@ Artisan::command('natalia', function (Faker $faker) {
 Artisan::command('nataliaRemove', function (Faker $faker) {
     $user = User::query()->where('email', 'nataliabruni@example.it')->first();
 
+    $user->skills()->sync([]);
     $user->inboxes()->delete();
     $user->reviews()->delete();
+    $user->sponsors()->sync([]);
+    $user->delete();
 });
 
+Artisan::command('ping', function (Faker $faker) {
+    $startTime = microtime(true);
+
+    $users = User::query()
+    ->leftJoin('sponsor_user', 'users.id', '=', 'sponsor_user.user_id')
+    ->leftJoin(DB::raw('(SELECT user_id, CEIL(AVG(vote)) as avg_vote FROM reviews GROUP BY user_id) as rv1'), 'users.id', '=', 'rv1.user_id')
+    ->select('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote')
+    ->addSelect(DB::raw('IF(sponsor_user.expire_date > NOW(), 1, 0) as is_sponsorized'))
+    ->groupBy('users.id', 'users.name', 'users.lastname', 'users.avatar', 'users.slug', 'users.phone', 'users.presentation', 'users.detailed_description', 'users.birthday_date', 'rv1.avg_vote', 'is_sponsorized')
+    ->where('is_available', 1)
+    ->orderBy('is_sponsorized', 'desc')->where('name', 'like', 'b%')->get();
+
+    $endTime = microtime(true);
+    $responseTime = $endTime - $startTime;
+
+    $formattedResponseTime = number_format($responseTime, 3);
+    echo "Tempo di risposta: {$formattedResponseTime} ms";
+});

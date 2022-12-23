@@ -1,18 +1,18 @@
 @extends('layouts.auth')
 
 @section('content')
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white ">
         <div class="container flex items-center justify-center min-h-screen px-6 mx-auto">
             <form class="w-full max-w-md" action="{{ route('register') }}" method="POST" enctype='multipart/form-data'>
                 @csrf
                 <div class="flex items-center justify-center mt-6">
                     <a href="/login"
-                        class="w-1/3 pb-4 font-medium text-center text-gray-500 capitalize border-b dark:border-gray-400 dark:text-gray-300">
+                        class="w-1/3 pb-4 font-medium text-center text-gray-500 capitalize border-b  ">
                         sign in
                     </a>
 
                     <a href="/register"
-                        class="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-blue-500 dark:border-blue-400 dark:text-white">
+                        class="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-blue-500  ">
                         sign up
                     </a>
                 </div>
@@ -31,7 +31,7 @@
                     {{-- NAME --}}
                     <div class="relative flex items-center mt-8">
                         <span class="absolute">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 "
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -40,14 +40,14 @@
                         <input required name="name" value="{{ old('name') }}" type="text" autocomplete="name"
                             class="
                             @error('name') ring-2 ring-red-500 @enderror
-                            block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            block w-full py-3 text-gray-700 bg-white border rounded-lg px-11    focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             placeholder="Name">
                     </div>
 
                     {{-- LASTNAME --}}
                     <div class="relative flex items-center mt-8">
                         <span class="absolute">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 "
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -56,7 +56,7 @@
                         <input required name="lastname" value="{{ old('lastname') }}" type="text" autocomplete="lastname"
                             class="
                             @error('lastname') ring-2 ring-red-500 @enderror
-                            block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            block w-full py-3 text-gray-700 bg-white border rounded-lg px-11    focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             placeholder="Lastname">
                     </div>
 
@@ -64,7 +64,7 @@
                 {{-- EMAIL --}}
                 <div class="relative flex items-center mt-6">
                     <span class="absolute">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 "
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -74,14 +74,14 @@
                     <input required name="email" type="email" value="{{ old('email') }}" autocomplete="email"
                         class="
                         @error('email') ring-2 ring-red-500 @enderror
-                        block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                        block w-full py-3 text-gray-700 bg-white border rounded-lg px-11    focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         placeholder="Email address">
                 </div>
 
                 {{-- BIRTHDAY DATE --}}
                 <div class="relative flex items-center mt-6">
                     <span class="absolute">
-                        <i class="fa-regular fa-calendar text-gray-300 text-xl px-4 dark:text-gray-500"></i>
+                        <i class="fa-regular fa-calendar text-gray-300 text-xl px-4 "></i>
                     </span>
 
                     <input required name="birthday_date" type="date"
@@ -89,13 +89,13 @@
                         autocomplete="birthday_date"
                         class="
                         @error('birthday_date') ring-2 ring-red-500 @enderror
-                        block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+                        block w-full py-3 text-gray-700 bg-white border rounded-lg px-11    focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
                 </div>
 
                 {{-- PROFILE PHOTO --}}
                 <label for="dropzone-file" style="justify-content: space-between;"
-                    class="flex items-center justify-between px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-lg cursor-pointer dark:border-gray-600 dark:bg-gray-900">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300 dark:text-gray-500" fill="none"
+                    class="flex items-center justify-between px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-lg cursor-pointer  ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300 " fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
@@ -110,7 +110,7 @@
                 {{-- PASSWORD --}}
                 <div class="relative flex items-center mt-4">
                     <span class="absolute">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 "
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -120,7 +120,7 @@
                     <input required name="password" type="password" autocomplete="new-password"
                         class="
                         @error('password') ring-2 ring-red-500 @enderror
-                        block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                        block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg    focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         placeholder="Password">
                 </div>
 
@@ -128,7 +128,7 @@
 
                 <div class="relative flex items-center mt-4">
                     <span class="absolute">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 "
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -139,7 +139,7 @@
                         autocomplete="new-password"
                         class="
                         @error('password_confirmation') ring-2 ring-red-500 @enderror
-                        block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                        block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg    focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         placeholder="Confirm Password">
                 </div>
 
@@ -150,7 +150,7 @@
                     </button>
 
                     <div class="mt-6 text-center ">
-                        <a href="/login" class="text-sm text-blue-500 hover:underline dark:text-blue-400">
+                        <a href="/login" class="text-sm text-blue-500 hover:underline ">
                             Already have an account?
                         </a>
                     </div>

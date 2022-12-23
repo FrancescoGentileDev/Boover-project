@@ -378,7 +378,7 @@ export default {
       },
       {
         freelancer: "Eli Golam",
-        profession: "Front-End Developer",
+        profession: "Full-Stack Developer",
         image: "/assets/team-mahfuzul.png",
       },
       {
