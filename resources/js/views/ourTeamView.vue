@@ -419,28 +419,35 @@ export default {
     ],
     faqs: [
       {
-        question: "Question1",
-        answer: "Hidden answer showed at click.",
+        question: "Come posso diventare freelance su questo sito?",
+        answer:
+          "Per diventare freelance su questo sito, è necessario creare un account e compilare il tuo profilo con informazioni sulla tua esperienza e le tue competenze. Una volta che il tuo profilo è completo, potrai iniziare a cercare opportunità di lavoro e candidarti per i progetti che ti interessano.",
       },
       {
-        question: "Question2",
-        answer: "Hidden answer showed at click.",
+        question: "Come posso trovare lavoro come freelance su questo sito?",
+        answer:
+          "Ci sono diversi modi per trovare lavoro come freelance su questo sito. Potrai cercare progetti specifici utilizzando i filtri di ricerca, inviare candidature spontanee ai clienti che cercano freelancer con le tue competenze, o utilizzare le funzionalità di matching per trovare opportunità di lavoro in base alle tue preferenze e al tuo profilo.",
       },
       {
         question: "Quanto mi costa?",
-        answer: "Hidden answer showed at click.",
+        answer:
+          "Dipende soltanto da te! Puoi lavorare liberamente quanto ritieni opportuno per le tue esigenze. Molti freelancers lavorano su Boover full-time, mentre altri lo sfruttano come piattaforma di lavoro part-time per avere delle entrate extra.",
       },
       {
-        question: "Question4",
-        answer: "Hidden answer showed at click.",
+        question:
+          "Come posso inviare una candidatura per un progetto come freelance?",
+        answer:
+          "Per inviare una candidatura per un progetto come freelance, dovrai accedere al tuo account e cercare il progetto che ti interessa. Una volta trovato il progetto, potrai inviare la tua candidatura cliccando sul pulsante Candidati per questo progetto e seguendo le istruzioni indicate. Assicurati di fornire tutte le informazioni richieste e di caricare il tuo CV o il tuo portfolio per presentare le tue competenze e la tua esperienza.",
       },
       {
-        question: "Question5",
-        answer: "Hidden answer showed at click.",
+        question: "Come vengo pagato?",
+        answer:
+          "Una volta che hai completato un accordo di collaborazione, i soldi percepiti vengono direttamente versati sul tuo saldo Boover. In qualsiasi momento puoi collegare il tuo conto corrente al profilo Boover per effettuare spostamenti di denaro senza particolari vincoli!",
       },
       {
-        question: "Question6",
-        answer: "Hidden answer showed at click.",
+        question: "Quanto tempo devo investire su Boover?",
+        answer:
+          "Dipende interamente dalle tue esigenze! Ogni freelancer su Boover non ha alcun tipo di vincolo sulla gestione della propria disponibilità e sui tempi di lavoro.",
       },
     ],
   }),
