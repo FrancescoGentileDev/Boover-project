@@ -670,6 +670,14 @@ export default {
         setTimeout(() => {
             window.dispatchEvent(new Event("resize"));
         }, 1000);
+        /* corregge un bug sul carousel */
+        setTimeout(() => {
+            window.dispatchEvent(new Event("resize"));
+        }, 2000);
+        /* corregge un bug sul carousel */
+        setTimeout(() => {
+            window.dispatchEvent(new Event("resize"));
+        }, 3000);
     },
     mounted() {
         this.$parent.paddingHandling(true, 1000);
