@@ -21,7 +21,7 @@
             </slide>
         </carousel>
         <div class="absolute left-24 top-1/2 -translate-y-1/2 w-1/2">
-            <h1 class="text-5xl w-full lg:w-3/4 font-normal text-white py-4">
+            <h1 class="text-5xl w-full lg:w-3/4 font-normal text-white py-4 hidden sm:block">
                 Cerca il
                 <span class="font-bold">professionista</span> di cui hai bisogno
                 per far crescere la tua

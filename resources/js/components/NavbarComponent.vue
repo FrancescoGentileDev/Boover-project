@@ -75,9 +75,9 @@
                             </svg>
                         </router-link>
                     </div>
-                    <button class="sm:hidden text-xl nav0 nav0-text">
+                    <a href="/login" class="sm:hidden text-xl nav0 nav0-text">
                         Iscriviti
-                    </button>
+                    </a>
                 </div>
                 <div
                     class="searchNav w-full relative"
@@ -144,7 +144,7 @@
                 </a>
             </div>
             <div
-                class="sidebar absolute h-screen w-56 bg-base-200 top-0 left-0 z-30 p-3"
+                class="sidebar absolute h-screen w-56 bg-base-200 top-0 left-0 z-30 p-3 overflow-auto"
                 :class="{ hidden: !ShowSidebar }"
             >
                 <div class="flex flex-col w-full">
