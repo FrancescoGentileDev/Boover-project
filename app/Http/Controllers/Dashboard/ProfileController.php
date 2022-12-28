@@ -9,6 +9,7 @@ use App\User;
 use App\models\Sponsor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+
 class ProfileController extends Controller
 {
     //
@@ -22,33 +23,37 @@ class ProfileController extends Controller
         $skills = Skill::all();
         $skills = $skills->makeHidden(['created_at', 'updated_at', 'category_id', 'description', 'image', 'slug']); // hide pivot table
         return view('dashboard.profile.profile', compact('user', 'skills'));
-
     }
 
     public function updateProfile(Request $request)
     {
 
-        $request -> validate([
+        $request->validate([
             'name' => 'required | string | max:255 | min:3  ',
             'lastname' => 'required | string | max:255 | min:3 ',
             'presentation' => 'required | string | max:255 | min:3 ',
             'phone' => 'required| numeric| digits_between:10,15| ',
             'detailed_description' => 'required | string | min:3 ',
             'skills_id' => ['required', 'array', 'min:1', 'max:5', 'exists:skills,id'],
-            'avatar' => ' file|mimes:jpg,jpeg,png,gif|max:1024',
+            'avatar' => ' file|mimes:jpg,jpeg,png,gif|max:8000',
         ]);
         $logged = Auth::user()->id;
         $user = User::find($logged);
-        $user-> name = $request->name;
-        $user-> lastname = $request->lastname;
-        $user-> presentation = $request->presentation;
-        $user->  phone = $request->phone;
-        $user-> detailed_description = $request->detailed_description;
-        $user->  is_available = '1';
+        $user->name = $request->name;
+        $user->lastname = $request->lastname;
+        $user->presentation = $request->presentation;
+        $user->phone = $request->phone;
+        $user->detailed_description = $request->detailed_description;
+        $user->is_available = '1';
 
-        if($request->hasFile('avatar')){
-            $path = Storage::putFile('uploads/avatars', $request->file('avatar'));
-            $user->avatar = asset('storage/' . $path);
+        if ($request->hasFile('avatar')) {
+
+            $avatar = $request->file('avatar');
+            $filename = time().'.'.$avatar->getClientOriginalExtension();
+            $path = $avatar->move(public_path('avatars'), $filename);
+
+            $user->avatar = asset('/avatars/' . $filename);
+
         }
         $user->save();
         $user->skills()->sync($request->skills_id);

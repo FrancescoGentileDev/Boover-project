@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+
 class RegisterController extends Controller
 {
     /*
@@ -54,9 +55,9 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'birthday_date'=> ['required', 'date', 'before:today'],
+            'birthday_date' => ['required', 'date', 'before:today'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'avatar' => ['file', 'mimes:jpg,jpeg,png,gif', 'max:1024'],
+            'avatar' => ['file', 'mimes:jpg,jpeg,png,gif', 'max:8000'],
         ]);
     }
 
@@ -78,22 +79,26 @@ class RegisterController extends Controller
             'is_avaiable' => '0',
         ]);
         if (isset($data['avatar'])) {
-            $path = Storage::putFile('uploads/avatars', $data['avatar']);
-            $user->avatar = asset('storage/' . $path);
+
+            $avatar = $data['avatar'];
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            $path = $avatar->move(public_path('avatars'), $filename);
+
+            $user->avatar = asset('/avatars/' . $filename);
         }
         $slug = $this->getSlug($user->name . ' ' . $user->lastname);
         $user->slug = $slug;
         $user->save();
         return $user;
-
     }
 
-    private function getSlug($fullname) {
+    private function getSlug($fullname)
+    {
         $slug = Str::slug($fullname, '-');
         $slugBase = $slug;
         $userWithSlug = User::where('slug', $slug)->first();
         $counter = 1;
-        while($userWithSlug) {
+        while ($userWithSlug) {
             $slug = $slugBase . '-' . $counter;
             $counter++;
             $userWithSlug = User::where('slug', $slug)->first();
